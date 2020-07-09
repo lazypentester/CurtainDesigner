@@ -16,6 +16,7 @@ namespace CurtainDesigner
         //Fields
         private bool subMenuIsOpen;
         private IconButton currentButton;
+        private IconButton currentButtonSubMenu;
         private bool orderButtonIsActivate;
         private object currentClickButton;
 
@@ -25,6 +26,7 @@ namespace CurtainDesigner
             panelSubMenu.Height = panelSubMenu.MinimumSize.Height;
             subMenuIsOpen = false;
             this.Size = this.MinimumSize;
+            startprogramm_SetSelectedButton();
         }
 
         //Animation SubMenu
@@ -75,7 +77,7 @@ namespace CurtainDesigner
         //Timer for SubMenu animation
         private void iconButtonNewOrder_Click_1(object sender, EventArgs e)
         {
-            ActivateButton(sender, Colors.color6);
+            ActivateButton(sender, Colors.color3);
             currentClickButton = sender;
             timerOpenSubMenu.Start();
         }
@@ -89,9 +91,10 @@ namespace CurtainDesigner
             public static Color color4 = Color.FromArgb(95,77,221);
             public static Color color5 = Color.FromArgb(249,88,155);
             public static Color color6 = Color.FromArgb(24,161,251);
-
+            public static Color color7 = Color.Silver;
         }
 
+        #region [Design][ActivateMainMenuButton]
         private void ActivateButton(object SenderBtn, Color color)
         {
             if(SenderBtn != null)
@@ -136,10 +139,43 @@ namespace CurtainDesigner
                 currentButton.IconSize = 32;
             }
         }
+        #endregion
+
+        #region [Design][ActivateSubMainMenuButton]
+        private void ActivateSubMenuButton(object SenderBtn, Color color)
+        {
+            if(SenderBtn != null)
+            {
+                DeactivateSubMenuButton();
+                currentButtonSubMenu = (IconButton)SenderBtn;
+                currentButtonSubMenu.BackColor = Color.FromArgb(31, 53, 97);
+                currentButtonSubMenu.ForeColor = color;
+                currentButtonSubMenu.IconColor = color;
+                currentButtonSubMenu.IconSize = currentButton.IconSize + 3;
+            }
+        }
+
+        private void DeactivateSubMenuButton()
+        {
+            if (currentButtonSubMenu != null)
+            {
+                //Return previous button to normal state
+                currentButtonSubMenu.BackColor = Color.FromArgb(98, 117, 155);
+                currentButtonSubMenu.ForeColor = Color.Gainsboro;
+                currentButtonSubMenu.IconColor = Color.Gainsboro;
+                currentButtonSubMenu.IconSize = 30;
+            }
+        }
+        #endregion
+
+        private void startprogramm_SetSelectedButton()
+        {
+            ActivateButton(iconButtonAllOrders, Colors.color2);
+        }
 
         private void iconButtonAllOrders_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Colors.color2);
+            ActivateButton(sender, Colors.color6);
             orderButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
@@ -147,7 +183,7 @@ namespace CurtainDesigner
 
         private void iconButtonSettings_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Colors.color3);
+            ActivateButton(sender, Colors.color2);
             orderButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
@@ -159,6 +195,66 @@ namespace CurtainDesigner
             orderButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
+        }
+
+        private void iconButtonFabricCurtains_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonFabricCurtains_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButton2_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButton2_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButton3_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButton3_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButton4_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButton4_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButton5_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButton5_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButton6_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButton6_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
         }
     }
 }

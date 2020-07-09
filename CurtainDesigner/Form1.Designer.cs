@@ -40,9 +40,9 @@
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonFabricCurtains = new FontAwesome.Sharp.IconButton();
             this.timerOpenSubMenu = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMainContent = new System.Windows.Forms.Panel();
             this.panelMainMenu.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
             this.SuspendLayout();
@@ -168,7 +168,7 @@
             this.panelSubMenu.Controls.Add(this.iconButton4);
             this.panelSubMenu.Controls.Add(this.iconButton3);
             this.panelSubMenu.Controls.Add(this.iconButton2);
-            this.panelSubMenu.Controls.Add(this.iconButton1);
+            this.panelSubMenu.Controls.Add(this.iconButtonFabricCurtains);
             this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenu.Location = new System.Drawing.Point(0, 59);
             this.panelSubMenu.MaximumSize = new System.Drawing.Size(0, 90);
@@ -196,6 +196,8 @@
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.MouseEnter += new System.EventHandler(this.iconButton6_MouseEnter);
+            this.iconButton6.MouseLeave += new System.EventHandler(this.iconButton6_MouseLeave);
             // 
             // iconButton5
             // 
@@ -217,6 +219,8 @@
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.MouseEnter += new System.EventHandler(this.iconButton5_MouseEnter);
+            this.iconButton5.MouseLeave += new System.EventHandler(this.iconButton5_MouseLeave);
             // 
             // iconButton4
             // 
@@ -238,6 +242,8 @@
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.MouseEnter += new System.EventHandler(this.iconButton4_MouseEnter);
+            this.iconButton4.MouseLeave += new System.EventHandler(this.iconButton4_MouseLeave);
             // 
             // iconButton3
             // 
@@ -259,6 +265,8 @@
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.MouseEnter += new System.EventHandler(this.iconButton3_MouseEnter);
+            this.iconButton3.MouseLeave += new System.EventHandler(this.iconButton3_MouseLeave);
             // 
             // iconButton2
             // 
@@ -280,41 +288,45 @@
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.MouseEnter += new System.EventHandler(this.iconButton2_MouseEnter);
+            this.iconButton2.MouseLeave += new System.EventHandler(this.iconButton2_MouseLeave);
             // 
-            // iconButton1
+            // iconButtonFabricCurtains
             // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(155, 90);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.Text = "Тканинні ролети";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButtonFabricCurtains.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonFabricCurtains.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonFabricCurtains.FlatAppearance.BorderSize = 0;
+            this.iconButtonFabricCurtains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonFabricCurtains.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonFabricCurtains.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonFabricCurtains.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButtonFabricCurtains.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonFabricCurtains.IconSize = 30;
+            this.iconButtonFabricCurtains.Location = new System.Drawing.Point(0, 0);
+            this.iconButtonFabricCurtains.Name = "iconButtonFabricCurtains";
+            this.iconButtonFabricCurtains.Rotation = 0D;
+            this.iconButtonFabricCurtains.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonFabricCurtains.TabIndex = 1;
+            this.iconButtonFabricCurtains.Text = "Тканинні ролети";
+            this.iconButtonFabricCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonFabricCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonFabricCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonFabricCurtains.MouseEnter += new System.EventHandler(this.iconButtonFabricCurtains_MouseEnter);
+            this.iconButtonFabricCurtains.MouseLeave += new System.EventHandler(this.iconButtonFabricCurtains_MouseLeave);
             // 
             // timerOpenSubMenu
             // 
             this.timerOpenSubMenu.Interval = 5;
             this.timerOpenSubMenu.Tick += new System.EventHandler(this.timerOpenSubMenu_Tick);
             // 
-            // panel1
+            // panelMainContent
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 149);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 451);
-            this.panel1.TabIndex = 2;
+            this.panelMainContent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainContent.Location = new System.Drawing.Point(0, 149);
+            this.panelMainContent.Name = "panelMainContent";
+            this.panelMainContent.Size = new System.Drawing.Size(934, 451);
+            this.panelMainContent.TabIndex = 2;
             // 
             // Form1
             // 
@@ -323,7 +335,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(934, 600);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelMainContent);
             this.Controls.Add(this.panelSubMenu);
             this.Controls.Add(this.panelMainMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -351,9 +363,9 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButtonFabricCurtains;
         private System.Windows.Forms.Timer timerOpenSubMenu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelMainContent;
     }
 }
 
