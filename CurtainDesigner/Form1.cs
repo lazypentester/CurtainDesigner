@@ -89,9 +89,6 @@ namespace CurtainDesigner
             public static Color color4 = Color.FromArgb(95,77,221);
             public static Color color5 = Color.FromArgb(249,88,155);
             public static Color color6 = Color.FromArgb(24,161,251);
-            public static Color color7 = Color.FromArgb(204, 255, 153);
-            public static Color color8 = Color.FromArgb(199, 4, 4);
-            public static Color color9 = Color.FromArgb(102, 102, 102);
 
         }
 
