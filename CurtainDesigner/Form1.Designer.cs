@@ -41,8 +41,8 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.panelSideSubMenu = new System.Windows.Forms.Panel();
             this.timerOpenSubMenu = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMainMenu.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             this.iconButtonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonInfo.UseVisualStyleBackColor = true;
+            this.iconButtonInfo.Click += new System.EventHandler(this.iconButtonInfo_Click);
             // 
             // iconButtonSettings
             // 
@@ -107,6 +108,7 @@
             this.iconButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonSettings.UseVisualStyleBackColor = true;
+            this.iconButtonSettings.Click += new System.EventHandler(this.iconButtonSettings_Click);
             // 
             // iconButtonAllOrders
             // 
@@ -131,6 +133,7 @@
             this.iconButtonAllOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAllOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAllOrders.UseVisualStyleBackColor = true;
+            this.iconButtonAllOrders.Click += new System.EventHandler(this.iconButtonAllOrders_Click);
             // 
             // iconButtonNewOrder
             // 
@@ -175,7 +178,6 @@
             // 
             // iconButton6
             // 
-            this.iconButton6.AutoSize = true;
             this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton6.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButton6.FlatAppearance.BorderSize = 0;
@@ -197,7 +199,6 @@
             // 
             // iconButton5
             // 
-            this.iconButton5.AutoSize = true;
             this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton5.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButton5.FlatAppearance.BorderSize = 0;
@@ -219,7 +220,6 @@
             // 
             // iconButton4
             // 
-            this.iconButton4.AutoSize = true;
             this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton4.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButton4.FlatAppearance.BorderSize = 0;
@@ -241,7 +241,6 @@
             // 
             // iconButton3
             // 
-            this.iconButton3.AutoSize = true;
             this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton3.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButton3.FlatAppearance.BorderSize = 0;
@@ -263,7 +262,6 @@
             // 
             // iconButton2
             // 
-            this.iconButton2.AutoSize = true;
             this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton2.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButton2.FlatAppearance.BorderSize = 0;
@@ -285,7 +283,6 @@
             // 
             // iconButton1
             // 
-            this.iconButton1.AutoSize = true;
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButton1.FlatAppearance.BorderSize = 0;
@@ -305,19 +302,19 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // panelSideSubMenu
-            // 
-            this.panelSideSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.panelSideSubMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelSideSubMenu.Location = new System.Drawing.Point(636, 149);
-            this.panelSideSubMenu.Name = "panelSideSubMenu";
-            this.panelSideSubMenu.Size = new System.Drawing.Size(298, 412);
-            this.panelSideSubMenu.TabIndex = 2;
-            // 
             // timerOpenSubMenu
             // 
             this.timerOpenSubMenu.Interval = 5;
             this.timerOpenSubMenu.Tick += new System.EventHandler(this.timerOpenSubMenu_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 149);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(934, 451);
+            this.panel1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -325,8 +322,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.panelSideSubMenu);
+            this.ClientSize = new System.Drawing.Size(934, 600);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSubMenu);
             this.Controls.Add(this.panelMainMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -337,7 +334,6 @@
             this.panelMainMenu.ResumeLayout(false);
             this.panelMainMenu.PerformLayout();
             this.panelSubMenu.ResumeLayout(false);
-            this.panelSubMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -346,7 +342,6 @@
 
         private System.Windows.Forms.Panel panelMainMenu;
         private System.Windows.Forms.Panel panelSubMenu;
-        private System.Windows.Forms.Panel panelSideSubMenu;
         private FontAwesome.Sharp.IconButton iconButtonNewOrder;
         private FontAwesome.Sharp.IconButton iconButtonInfo;
         private FontAwesome.Sharp.IconButton iconButtonSettings;
@@ -358,6 +353,7 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Timer timerOpenSubMenu;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
