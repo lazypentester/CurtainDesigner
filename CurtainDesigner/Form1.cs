@@ -154,7 +154,8 @@ namespace CurtainDesigner
                 currentButtonSubMenu.BackColor = Color.FromArgb(31, 53, 97);
                 currentButtonSubMenu.ForeColor = color;
                 currentButtonSubMenu.IconColor = color;
-                currentButtonSubMenu.IconSize = currentButton.IconSize + 3;
+                currentButtonSubMenu.IconSize = currentButton.IconSize + 1;
+                currentButtonSubMenu.Font = new System.Drawing.Font("Century Gothic", 10.00F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
 
@@ -167,6 +168,7 @@ namespace CurtainDesigner
                 currentButtonSubMenu.ForeColor = Color.Gainsboro;
                 currentButtonSubMenu.IconColor = Color.Gainsboro;
                 currentButtonSubMenu.IconSize = 30;
+                currentButtonSubMenu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
         #endregion
