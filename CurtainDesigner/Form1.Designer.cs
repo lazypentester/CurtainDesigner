@@ -62,7 +62,7 @@
             // 
             // iconButtonInfo
             // 
-            this.iconButtonInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.iconButtonInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconButtonInfo.AutoSize = true;
             this.iconButtonInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonInfo.FlatAppearance.BorderSize = 0;
@@ -87,7 +87,7 @@
             // 
             // iconButtonSettings
             // 
-            this.iconButtonSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.iconButtonSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconButtonSettings.AutoSize = true;
             this.iconButtonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonSettings.FlatAppearance.BorderSize = 0;
@@ -112,7 +112,7 @@
             // 
             // iconButtonAllOrders
             // 
-            this.iconButtonAllOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.iconButtonAllOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconButtonAllOrders.AutoSize = true;
             this.iconButtonAllOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonAllOrders.FlatAppearance.BorderSize = 0;
@@ -125,7 +125,7 @@
             this.iconButtonAllOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAllOrders.Location = new System.Drawing.Point(233, 0);
             this.iconButtonAllOrders.Name = "iconButtonAllOrders";
-            this.iconButtonAllOrders.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.iconButtonAllOrders.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.iconButtonAllOrders.Rotation = 0D;
             this.iconButtonAllOrders.Size = new System.Drawing.Size(233, 59);
             this.iconButtonAllOrders.TabIndex = 1;
@@ -137,7 +137,7 @@
             // 
             // iconButtonNewOrder
             // 
-            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.iconButtonNewOrder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconButtonNewOrder.AutoSize = true;
             this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
@@ -340,9 +340,10 @@
             this.Controls.Add(this.panelMainMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(946, 600);
             this.Name = "Form1";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMainMenu.ResumeLayout(false);
             this.panelMainMenu.PerformLayout();
             this.panelSubMenu.ResumeLayout(false);

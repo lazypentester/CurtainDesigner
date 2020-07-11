@@ -114,6 +114,7 @@ namespace CurtainDesigner
                     currentButton.ForeColor = color;
                     currentButton.IconColor = color;
                     currentButton.IconSize = currentButton.IconSize + 2;
+                    currentButton.Font = new System.Drawing.Font("Century Gothic", 10.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                     orderButtonIsActivate = true;
                     return;
                 }
@@ -125,6 +126,7 @@ namespace CurtainDesigner
                 currentButton.ForeColor = color;
                 currentButton.IconColor = color;
                 currentButton.IconSize = currentButton.IconSize + 2;
+                currentButton.Font = new System.Drawing.Font("Century Gothic", 10.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
 
@@ -137,6 +139,7 @@ namespace CurtainDesigner
                 currentButton.ForeColor = Color.Gainsboro;
                 currentButton.IconColor = Color.Gainsboro;
                 currentButton.IconSize = 32;
+                currentButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
         #endregion
@@ -255,6 +258,11 @@ namespace CurtainDesigner
         private void iconButton6_MouseLeave(object sender, EventArgs e)
         {
             DeactivateSubMenuButton();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
