@@ -43,12 +43,12 @@
             this.iconButtonOrderFabricCurtains = new FontAwesome.Sharp.IconButton();
             this.timerOpenSubMenu = new System.Windows.Forms.Timer(this.components);
             this.panelSubMenuTables = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableMosquitoNets = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableVerticalJalousie = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableRomanCurtains = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableProtectiveCurtains = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableDay_NightCurtains = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableFabricCurtains = new FontAwesome.Sharp.IconButton();
             this.panelMainContent = new System.Windows.Forms.Panel();
             this.panelMainMenu.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
@@ -331,12 +331,12 @@
             // panelSubMenuTables
             // 
             this.panelSubMenuTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(117)))), ((int)(((byte)(155)))));
-            this.panelSubMenuTables.Controls.Add(this.iconButton1);
-            this.panelSubMenuTables.Controls.Add(this.iconButton2);
-            this.panelSubMenuTables.Controls.Add(this.iconButton3);
-            this.panelSubMenuTables.Controls.Add(this.iconButton4);
-            this.panelSubMenuTables.Controls.Add(this.iconButton5);
-            this.panelSubMenuTables.Controls.Add(this.iconButton6);
+            this.panelSubMenuTables.Controls.Add(this.iconButtonTableMosquitoNets);
+            this.panelSubMenuTables.Controls.Add(this.iconButtonTableVerticalJalousie);
+            this.panelSubMenuTables.Controls.Add(this.iconButtonTableRomanCurtains);
+            this.panelSubMenuTables.Controls.Add(this.iconButtonTableProtectiveCurtains);
+            this.panelSubMenuTables.Controls.Add(this.iconButtonTableDay_NightCurtains);
+            this.panelSubMenuTables.Controls.Add(this.iconButtonTableFabricCurtains);
             this.panelSubMenuTables.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuTables.Location = new System.Drawing.Point(0, 149);
             this.panelSubMenuTables.MaximumSize = new System.Drawing.Size(0, 90);
@@ -344,131 +344,143 @@
             this.panelSubMenuTables.Size = new System.Drawing.Size(934, 90);
             this.panelSubMenuTables.TabIndex = 3;
             // 
-            // iconButton1
+            // iconButtonTableMosquitoNets
             // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(775, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(155, 90);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Москітні сітки";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButtonTableMosquitoNets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableMosquitoNets.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableMosquitoNets.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableMosquitoNets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableMosquitoNets.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableMosquitoNets.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableMosquitoNets.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableMosquitoNets.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableMosquitoNets.IconSize = 30;
+            this.iconButtonTableMosquitoNets.Location = new System.Drawing.Point(775, 0);
+            this.iconButtonTableMosquitoNets.Name = "iconButtonTableMosquitoNets";
+            this.iconButtonTableMosquitoNets.Rotation = 0D;
+            this.iconButtonTableMosquitoNets.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonTableMosquitoNets.TabIndex = 6;
+            this.iconButtonTableMosquitoNets.Text = "Москітні сітки";
+            this.iconButtonTableMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableMosquitoNets.UseVisualStyleBackColor = true;
+            this.iconButtonTableMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseEnter);
+            this.iconButtonTableMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseLeave);
             // 
-            // iconButton2
+            // iconButtonTableVerticalJalousie
             // 
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(620, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(155, 90);
-            this.iconButton2.TabIndex = 5;
-            this.iconButton2.Text = "Вертикальні жалюзі";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButtonTableVerticalJalousie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableVerticalJalousie.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableVerticalJalousie.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableVerticalJalousie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableVerticalJalousie.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableVerticalJalousie.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableVerticalJalousie.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableVerticalJalousie.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableVerticalJalousie.IconSize = 30;
+            this.iconButtonTableVerticalJalousie.Location = new System.Drawing.Point(620, 0);
+            this.iconButtonTableVerticalJalousie.Name = "iconButtonTableVerticalJalousie";
+            this.iconButtonTableVerticalJalousie.Rotation = 0D;
+            this.iconButtonTableVerticalJalousie.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonTableVerticalJalousie.TabIndex = 5;
+            this.iconButtonTableVerticalJalousie.Text = "Вертикальні жалюзі";
+            this.iconButtonTableVerticalJalousie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableVerticalJalousie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableVerticalJalousie.UseVisualStyleBackColor = true;
+            this.iconButtonTableVerticalJalousie.MouseEnter += new System.EventHandler(this.iconButtonTableVerticalJalousie_MouseEnter);
+            this.iconButtonTableVerticalJalousie.MouseLeave += new System.EventHandler(this.iconButtonTableVerticalJalousie_MouseLeave);
             // 
-            // iconButton3
+            // iconButtonTableRomanCurtains
             // 
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(465, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(155, 90);
-            this.iconButton3.TabIndex = 4;
-            this.iconButton3.Text = "Римські штори";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButtonTableRomanCurtains.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableRomanCurtains.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableRomanCurtains.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableRomanCurtains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableRomanCurtains.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableRomanCurtains.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableRomanCurtains.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableRomanCurtains.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableRomanCurtains.IconSize = 30;
+            this.iconButtonTableRomanCurtains.Location = new System.Drawing.Point(465, 0);
+            this.iconButtonTableRomanCurtains.Name = "iconButtonTableRomanCurtains";
+            this.iconButtonTableRomanCurtains.Rotation = 0D;
+            this.iconButtonTableRomanCurtains.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonTableRomanCurtains.TabIndex = 4;
+            this.iconButtonTableRomanCurtains.Text = "Римські штори";
+            this.iconButtonTableRomanCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableRomanCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableRomanCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonTableRomanCurtains.MouseEnter += new System.EventHandler(this.iconButtonTableRomanCurtains_MouseEnter);
+            this.iconButtonTableRomanCurtains.MouseLeave += new System.EventHandler(this.iconButtonTableRomanCurtains_MouseLeave);
             // 
-            // iconButton4
+            // iconButtonTableProtectiveCurtains
             // 
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton4.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(310, 0);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Rotation = 0D;
-            this.iconButton4.Size = new System.Drawing.Size(155, 90);
-            this.iconButton4.TabIndex = 3;
-            this.iconButton4.Text = "Захисні ролети";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButtonTableProtectiveCurtains.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableProtectiveCurtains.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableProtectiveCurtains.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableProtectiveCurtains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableProtectiveCurtains.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableProtectiveCurtains.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableProtectiveCurtains.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableProtectiveCurtains.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableProtectiveCurtains.IconSize = 30;
+            this.iconButtonTableProtectiveCurtains.Location = new System.Drawing.Point(310, 0);
+            this.iconButtonTableProtectiveCurtains.Name = "iconButtonTableProtectiveCurtains";
+            this.iconButtonTableProtectiveCurtains.Rotation = 0D;
+            this.iconButtonTableProtectiveCurtains.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonTableProtectiveCurtains.TabIndex = 3;
+            this.iconButtonTableProtectiveCurtains.Text = "Захисні ролети";
+            this.iconButtonTableProtectiveCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableProtectiveCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableProtectiveCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonTableProtectiveCurtains.MouseEnter += new System.EventHandler(this.iconButtonTableProtectiveCurtains_MouseEnter);
+            this.iconButtonTableProtectiveCurtains.MouseLeave += new System.EventHandler(this.iconButtonTableProtectiveCurtains_MouseLeave);
             // 
-            // iconButton5
+            // iconButtonTableDay_NightCurtains
             // 
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton5.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.Location = new System.Drawing.Point(155, 0);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(155, 90);
-            this.iconButton5.TabIndex = 2;
-            this.iconButton5.Text = "Ролети День-Ніч";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButtonTableDay_NightCurtains.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableDay_NightCurtains.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableDay_NightCurtains.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableDay_NightCurtains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableDay_NightCurtains.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableDay_NightCurtains.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableDay_NightCurtains.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableDay_NightCurtains.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableDay_NightCurtains.IconSize = 30;
+            this.iconButtonTableDay_NightCurtains.Location = new System.Drawing.Point(155, 0);
+            this.iconButtonTableDay_NightCurtains.Name = "iconButtonTableDay_NightCurtains";
+            this.iconButtonTableDay_NightCurtains.Rotation = 0D;
+            this.iconButtonTableDay_NightCurtains.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonTableDay_NightCurtains.TabIndex = 2;
+            this.iconButtonTableDay_NightCurtains.Text = "Ролети День-Ніч";
+            this.iconButtonTableDay_NightCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableDay_NightCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableDay_NightCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonTableDay_NightCurtains.MouseEnter += new System.EventHandler(this.iconButtonTableDay_NightCurtains_MouseEnter);
+            this.iconButtonTableDay_NightCurtains.MouseLeave += new System.EventHandler(this.iconButtonTableDay_NightCurtains_MouseLeave);
             // 
-            // iconButton6
+            // iconButtonTableFabricCurtains
             // 
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton6.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton6.IconSize = 30;
-            this.iconButton6.Location = new System.Drawing.Point(0, 0);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Rotation = 0D;
-            this.iconButton6.Size = new System.Drawing.Size(155, 90);
-            this.iconButton6.TabIndex = 1;
-            this.iconButton6.Text = "Тканинні ролети";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButtonTableFabricCurtains.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableFabricCurtains.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableFabricCurtains.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableFabricCurtains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableFabricCurtains.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableFabricCurtains.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableFabricCurtains.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableFabricCurtains.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableFabricCurtains.IconSize = 30;
+            this.iconButtonTableFabricCurtains.Location = new System.Drawing.Point(0, 0);
+            this.iconButtonTableFabricCurtains.Name = "iconButtonTableFabricCurtains";
+            this.iconButtonTableFabricCurtains.Rotation = 0D;
+            this.iconButtonTableFabricCurtains.Size = new System.Drawing.Size(155, 90);
+            this.iconButtonTableFabricCurtains.TabIndex = 1;
+            this.iconButtonTableFabricCurtains.Text = "Тканинні ролети";
+            this.iconButtonTableFabricCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableFabricCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableFabricCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonTableFabricCurtains.MouseEnter += new System.EventHandler(this.iconButtonTableFabricCurtains_MouseEnter);
+            this.iconButtonTableFabricCurtains.MouseLeave += new System.EventHandler(this.iconButtonTableFabricCurtains_MouseLeave);
             // 
             // panelMainContent
             // 
@@ -520,12 +532,12 @@
         private FontAwesome.Sharp.IconButton iconButtonOrderFabricCurtains;
         private System.Windows.Forms.Timer timerOpenSubMenu;
         private System.Windows.Forms.Panel panelSubMenuTables;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton iconButtonTableMosquitoNets;
+        private FontAwesome.Sharp.IconButton iconButtonTableVerticalJalousie;
+        private FontAwesome.Sharp.IconButton iconButtonTableRomanCurtains;
+        private FontAwesome.Sharp.IconButton iconButtonTableProtectiveCurtains;
+        private FontAwesome.Sharp.IconButton iconButtonTableDay_NightCurtains;
+        private FontAwesome.Sharp.IconButton iconButtonTableFabricCurtains;
         private System.Windows.Forms.Panel panelMainContent;
     }
 }

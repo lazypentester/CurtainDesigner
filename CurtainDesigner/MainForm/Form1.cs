@@ -15,9 +15,11 @@ namespace CurtainDesigner
     {
         //Fields
         private bool subMenuIsOpen;
+        private bool subMenuTablesIsOpen;
         private IconButton currentButton;
         private IconButton currentButtonSubMenu;
         private bool orderButtonIsActivate;
+        private bool tableButtonIsActivate;
         private object currentClickButton;
         private Form activeForm;
 
@@ -25,19 +27,35 @@ namespace CurtainDesigner
         {
             InitializeComponent();
             panelSubMenu.Height = panelSubMenu.MinimumSize.Height;
+            panelSubMenuTables.Height = panelSubMenuTables.MinimumSize.Height;
             subMenuIsOpen = false;
             this.Size = this.MinimumSize;
-            startprogramm_SetSelectedButton();
+            //startprogramm_SetSelectedButton();
         }
 
         //Animation SubMenu
         private void timerOpenSubMenu_Tick(object sender, EventArgs e)
         {
-            //Check, whick button has been clicked
+            //Check, which button has been clicked
+            //check first panel
             if ((currentClickButton as Button).Name.Equals("iconButtonNewOrder"))
             {
                 if (!this.subMenuIsOpen)
                 {
+                    if (this.subMenuTablesIsOpen)
+                    {
+                        if (panelSubMenuTables.Height != panelSubMenuTables.MinimumSize.Height)
+                        {
+                            panelSubMenuTables.Visible = false;
+                            panelSubMenuTables.Height = panelSubMenuTables.Height - 10;
+                        }
+                        else
+                        {
+                            this.subMenuTablesIsOpen = false;
+                            panelSubMenuTables.Visible = true;
+                        }
+                    }
+
                     if (panelSubMenu.Height != panelSubMenu.MaximumSize.Height)
                     {
                         panelSubMenu.Height = panelSubMenu.Height + 10;
@@ -61,15 +79,63 @@ namespace CurtainDesigner
                     }
                 }
             }
+            //check second panel
+            else if ((currentClickButton as Button).Name.Equals("iconButtonAllOrders"))
+            {
+                if (!this.subMenuTablesIsOpen)
+                {
+                    if (this.subMenuIsOpen)
+                    {
+                        if (panelSubMenu.Height != panelSubMenu.MinimumSize.Height)
+                        {
+                            panelSubMenu.Visible = false;
+                            panelSubMenu.Height = panelSubMenu.Height - 10;
+                        }
+                        else
+                        {
+                            panelSubMenu.Visible = true;
+                            this.subMenuIsOpen = false;
+                        }
+                    }
+
+                    if (panelSubMenuTables.Height != panelSubMenuTables.MaximumSize.Height)
+                    {
+                        panelSubMenuTables.Height = panelSubMenuTables.Height + 10;
+                    }
+                    else
+                    {
+                        this.subMenuTablesIsOpen = true;
+                        timerOpenSubMenu.Stop();
+                    }
+                }
+                else
+                {
+                    if (panelSubMenuTables.Height != panelSubMenuTables.MinimumSize.Height)
+                    {
+                        panelSubMenuTables.Height = panelSubMenuTables.Height - 10;
+                    }
+                    else
+                    {
+                        this.subMenuTablesIsOpen = false;
+                        timerOpenSubMenu.Stop();
+                    }
+                }
+            }
+            //check if open first and second submenu panels - close it
             else
             {
                 if (panelSubMenu.Height != panelSubMenu.MinimumSize.Height)
                 {
                     panelSubMenu.Height = panelSubMenu.Height - 10;
                 }
+                else if (panelSubMenuTables.Height != panelSubMenuTables.MinimumSize.Height)
+                {
+                    panelSubMenuTables.Height = panelSubMenuTables.Height - 10;
+                }
                 else
                 {
                     this.subMenuIsOpen = false;
+                    this.subMenuTablesIsOpen = false;
                     timerOpenSubMenu.Stop();
                 }
             }
@@ -79,6 +145,7 @@ namespace CurtainDesigner
         private void iconButtonNewOrder_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, Colors.color3);
+            tableButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
         }
@@ -119,12 +186,46 @@ namespace CurtainDesigner
                     orderButtonIsActivate = true;
                     return;
                 }
+                else if ((SenderBtn as Button).Name.Equals("iconButtonAllOrders") && tableButtonIsActivate)
+                {
+                    DeactivateButton();
+                    tableButtonIsActivate = false;
+                    return;
+                }
+                else if ((SenderBtn as Button).Name.Equals("iconButtonAllOrders") && !tableButtonIsActivate)
+                {
+                    DeactivateButton();
+                    currentButton = (IconButton)SenderBtn;
+                    currentButton.BackColor = Color.FromArgb(31, 53, 97);
+                    currentButton.ForeColor = color;
+                    currentButton.IconColor = color;
+                    currentButton.IconSize = currentButton.IconSize + 2;
+                    currentButton.Font = new System.Drawing.Font("Century Gothic", 10.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    tableButtonIsActivate = true;
+                    return;
+                }
+                else
+                {
+                    DeactivateButton();
+                    //Customize selected button
+                    currentButton = (IconButton)SenderBtn;
+                    currentButton.BackColor = Color.FromArgb(31, 53, 97);
+                    currentButton.ForeColor = color;
+                    currentButton.IconColor = color;
+                    currentButton.IconSize = currentButton.IconSize + 2;
+                    currentButton.Font = new System.Drawing.Font("Century Gothic", 10.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    orderButtonIsActivate = false;
+                    tableButtonIsActivate = false;
+                    return;
+                }
+                /*
                 else if (!(SenderBtn as Button).Name.Equals("iconButtonNewOrder") && orderButtonIsActivate)
                 {
                     DeactivateButton();
                     orderButtonIsActivate = false;
                     return;
                 }
+                
 
                 DeactivateButton();
                 //Customize selected button
@@ -134,6 +235,7 @@ namespace CurtainDesigner
                 currentButton.IconColor = color;
                 currentButton.IconSize = currentButton.IconSize + 2;
                 currentButton.Font = new System.Drawing.Font("Century Gothic", 10.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                */
             }
         }
 
@@ -151,7 +253,7 @@ namespace CurtainDesigner
         }
         #endregion
 
-        #region [Design][ActivateSubMainMenuButton]
+        #region [Design][ActivateSubMainMenusButton]
         private void ActivateSubMenuButton(object SenderBtn, Color color)
         {
             if (SenderBtn != null)
@@ -215,6 +317,7 @@ namespace CurtainDesigner
         {
             ActivateButton(sender, Colors.color2);
             orderButtonIsActivate = false;
+            tableButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
         }
@@ -223,6 +326,7 @@ namespace CurtainDesigner
         {
             ActivateButton(sender, Colors.color4);
             orderButtonIsActivate = false;
+            tableButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
         }
@@ -240,7 +344,7 @@ namespace CurtainDesigner
             OpenChildForm(new CurtainDesigner.FormFabricCurtainOrder(), sender);
         }
 
-        #region [Buttons][SubMenu][Click,Enter,Leave]
+        #region [Buttons][OrderSubMenu][Click,Enter,Leave]
         private void iconButtonOrderFabricCurtains_MouseEnter(object sender, EventArgs e)
         {
             ActivateSubMenuButton(sender, Colors.color7);
@@ -297,6 +401,69 @@ namespace CurtainDesigner
         }
 
         private void iconButtonOrderMosquitoNets_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+        #endregion
+
+
+        #region [Buttons][TableSubMenu][Click,Enter,Leave]
+        private void iconButtonTableFabricCurtains_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonTableFabricCurtains_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButtonTableDay_NightCurtains_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonTableDay_NightCurtains_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButtonTableProtectiveCurtains_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonTableProtectiveCurtains_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButtonTableRomanCurtains_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonTableRomanCurtains_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButtonTableVerticalJalousie_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonTableVerticalJalousie_MouseLeave(object sender, EventArgs e)
+        {
+            DeactivateSubMenuButton();
+        }
+
+        private void iconButtonTableMosquitoNets_MouseEnter(object sender, EventArgs e)
+        {
+            ActivateSubMenuButton(sender, Colors.color7);
+        }
+
+        private void iconButtonTableMosquitoNets_MouseLeave(object sender, EventArgs e)
         {
             DeactivateSubMenuButton();
         }
