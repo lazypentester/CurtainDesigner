@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace CurtainDesigner.Models.Interfaces
 {
-    interface IObjectManage
+    interface IObjectManage<L>
     {
+        L list { get; set; }
         Task<bool> writeObject(object obj);
-        Task<object[]> readObjects();
+        Task<L> readObjects();
         Task<bool> editObject();
     }
 }

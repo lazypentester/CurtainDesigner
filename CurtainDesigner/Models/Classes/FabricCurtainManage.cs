@@ -10,23 +10,25 @@ using CurtainDesigner.Models.Interfaces;
 
 namespace CurtainDesigner.Models.Classes
 {
-    class FabricCurtainManage : CurtainDesigner.Models.Interfaces.IObjectManage
+    class FabricCurtainManage<L> : CurtainDesigner.Models.Interfaces.IObjectManage<L>
     {
-        public static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
-        CurtainDesigner.Classes.FabricCurtain fabricCurtain;
-        SqlConnection connection;
+        private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
+        private CurtainDesigner.Classes.FabricCurtain fabricCurtain;
+        private SqlConnection connection;
+        public L list { get; set; }
 
-        Task<bool> IObjectManage.editObject()
+        public Task<bool> editObject()
         {
             throw new NotImplementedException();
         }
 
-        Task<object[]> IObjectManage.readObjects()
+        async public Task<L> readObjects()
         {
-            throw new NotImplementedException();
+            return list;
+            
         }
 
-        async Task<bool> IObjectManage.writeObject(object obj)
+        async public Task<bool> writeObject(object obj)
         {
             if (obj != null)
                 fabricCurtain = (CurtainDesigner.Classes.FabricCurtain)obj;
