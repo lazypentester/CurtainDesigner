@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CurtainDesigner.Views.Interfaces
 {
-    interface IViewManage<O, L>
+    interface IViewManage<O, L, F>
     {
         Task<bool> writeObjects(L list);
-        Task<O> readObject();
+        O readObject(F form, O obj);
     }
 }

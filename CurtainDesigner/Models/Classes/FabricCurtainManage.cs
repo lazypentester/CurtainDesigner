@@ -45,6 +45,7 @@ namespace CurtainDesigner.Models.Classes
 
             try
             {
+                /*
                 SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] Values ({fabricCurtain.fabric_id}, " +
                                                                                                     $"{fabricCurtain.width}, " +
                                                                                                     $"{fabricCurtain.height}, " +
@@ -61,9 +62,14 @@ namespace CurtainDesigner.Models.Classes
                                                                                                     $"{fabricCurtain.price}, " +
                                                                                                     $"{fabricCurtain.installation_id});", connection);
                 await command_addFB.ExecuteNonQueryAsync();
+                */
+
+                SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] (Width) Values ({fabricCurtain.width});", connection);
+                await command_addFB.ExecuteNonQueryAsync();
             }
-            catch
+            catch(Exception exeption)
             {
+                MessageBox.Show(exeption.ToString(), "!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

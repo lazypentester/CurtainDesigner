@@ -341,7 +341,9 @@ namespace CurtainDesigner
             ActivateButton(sender, Colors.color3);
             currentClickButton = sender;
             timerOpenSubMenu.Start();
-            OpenChildForm(new CurtainDesigner.FormFabricCurtainOrder(), sender);
+            CurtainDesigner.FormFabricCurtainOrder childform = new CurtainDesigner.FormFabricCurtainOrder(); //убрать скорее всего
+            childform.formthis = childform;
+            OpenChildForm(childform, sender);
         }
 
         #region [Buttons][OrderSubMenu][Click,Enter,Leave]
