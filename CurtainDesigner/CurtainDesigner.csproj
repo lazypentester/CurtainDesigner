@@ -106,6 +106,8 @@
     <Compile Include="UserControls\FabricCurtainTableControl.Designer.cs">
       <DependentUpon>FabricCurtainTableControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
+    <Compile Include="Views\Interfaces\IViewManage.cs" />
     <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
