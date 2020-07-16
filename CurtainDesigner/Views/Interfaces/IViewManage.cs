@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace CurtainDesigner.Views.Interfaces
 {
-    interface IViewManage<O, L, F>
+    interface IViewManage<O, L, F, T>
     {
-        Task<bool> writeObjects(L list);
+        Task<bool> writeObjects(L list, T table);
         O readObject(F form, O obj);
     }
 }

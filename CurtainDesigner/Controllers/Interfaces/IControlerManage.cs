@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CurtainDesigner.Controllers
 {
-    interface IControlerManage<O, L, F>
+    interface IControlerManage<O, L, F, T>
     {
-        void read_and_write(O obj, L list, F form);
+        void packing(O obj, L list, F form);
+        void unpacking(L list, T table);
     }
 }

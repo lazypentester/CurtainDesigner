@@ -9,16 +9,18 @@ namespace CurtainDesigner.Classes
 {
     class FabricCurtain2
     {
+        public string fb_id { get; set; }
+
         public string type { get; set; }
         public string subtype { get; set; }
 
         public string fabric_name { get; set; }
         public string fabric_additionally { get; set; }
-        public Image fabric_image { get; set; }
+        public string fabric_image { get; set; }
         public float fabric_price { get; set; }
 
         public string system_color_name { get; set; }
-        public Image system_color_image { get; set; }
+        public string system_color_image { get; set; }
 
         public float width { get; set; }
         public float height { get; set; }
@@ -32,9 +34,8 @@ namespace CurtainDesigner.Classes
 
         public string installation_obj { get; set; }
         public float installation_price { get; set; }
-        public float installation_without { get; set; }
 
-
+        public string customer_id { get; set; }
         public string customer_name { get; set; }
         public string customer_surname { get; set; }
         public string customer_address { get; set; }
