@@ -27,11 +27,9 @@ namespace CurtainDesigner.ReportOrderForms
 
         private void set_buttonsStyle()
         {
-            this.bunifuCustomDataGrid1.Columns.AddRange(new DataGridViewColumn[] {
-                new DataGridViewImageColumn() { Visible = true },
-                new DataGridViewImageColumn() { Visible = true },
-                new DataGridViewImageColumn() { Visible = true }
-                });
+            this.bunifuCustomDataGrid1.Rows.Add();
+            this.bunifuCustomDataGrid1.Rows.Add();
+            this.bunifuCustomDataGrid1.Rows.Add();
         }
     }
 }
