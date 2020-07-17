@@ -124,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportOrderForms\FormFabricCurtainTable.resx">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
@@ -146,6 +147,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\imgs\icons8_print_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_pencil_drawing_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_delete_bin_30px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -22,6 +22,33 @@ namespace CurtainDesigner.Models.Classes
             throw new NotImplementedException();
         }
 
+        public void closeConnection() => connection.Close();
+
+        async public Task<SqlDataReader> getDataFromDB(string command)
+        {
+            if (command == null)
+                throw new NullReferenceException();
+
+            if (connection == null || connection.State == ConnectionState.Closed)
+            {
+                connection = new SqlConnection(connect_str);
+                await connection.OpenAsync();
+            }
+
+            SqlDataReader reader = null;
+            SqlCommand sqlCommand = new SqlCommand(command, connection);
+            try
+            {
+                reader = await sqlCommand.ExecuteReaderAsync();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return reader;
+        }
+
         async public Task<L> readObjects(L list)
         {
             if (list == null)

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.labelPrice = new System.Windows.Forms.Label();
             this.labelP = new System.Windows.Forms.Label();
             this.dateTimePickerDateEnd = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
@@ -93,6 +93,14 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
+            this.labelPrice = new System.Windows.Forms.Label();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -104,11 +112,13 @@
             this.panel28.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel33.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.panel1.Controls.Add(this.panel33);
             this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel3);
@@ -123,17 +133,15 @@
             // 
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Controls.Add(this.panel15);
-            this.panel13.Controls.Add(this.labelPrice);
-            this.panel13.Controls.Add(this.labelP);
             this.panel13.Controls.Add(this.dateTimePickerDateEnd);
             this.panel13.Controls.Add(this.label21);
             this.panel13.Controls.Add(this.label22);
             this.panel13.Controls.Add(this.panel16);
             this.panel13.Controls.Add(this.panel17);
             this.panel13.Controls.Add(this.dateTimePickerDateStart);
-            this.panel13.Location = new System.Drawing.Point(13, 295);
+            this.panel13.Location = new System.Drawing.Point(13, 263);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(317, 124);
+            this.panel13.Size = new System.Drawing.Size(317, 89);
             this.panel13.TabIndex = 9;
             // 
             // panel14
@@ -142,7 +150,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel14.Location = new System.Drawing.Point(315, 25);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(2, 97);
+            this.panel14.Size = new System.Drawing.Size(2, 62);
             this.panel14.TabIndex = 3;
             // 
             // panel15
@@ -151,35 +159,24 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel15.Location = new System.Drawing.Point(0, 25);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(2, 97);
+            this.panel15.Size = new System.Drawing.Size(2, 62);
             this.panel15.TabIndex = 2;
-            // 
-            // labelPrice
-            // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.labelPrice.Location = new System.Drawing.Point(57, 95);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(36, 16);
-            this.labelPrice.TabIndex = 0;
-            this.labelPrice.Text = "3423";
             // 
             // labelP
             // 
             this.labelP.AutoSize = true;
-            this.labelP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.labelP.Location = new System.Drawing.Point(8, 95);
+            this.labelP.Location = new System.Drawing.Point(5, 38);
             this.labelP.Name = "labelP";
-            this.labelP.Size = new System.Drawing.Size(43, 16);
+            this.labelP.Size = new System.Drawing.Size(50, 19);
             this.labelP.TabIndex = 0;
             this.labelP.Text = "Ціна:";
             // 
             // dateTimePickerDateEnd
             // 
             this.dateTimePickerDateEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerDateEnd.Location = new System.Drawing.Point(133, 66);
+            this.dateTimePickerDateEnd.Location = new System.Drawing.Point(133, 61);
             this.dateTimePickerDateEnd.Name = "dateTimePickerDateEnd";
             this.dateTimePickerDateEnd.Size = new System.Drawing.Size(176, 20);
             this.dateTimePickerDateEnd.TabIndex = 7;
@@ -189,7 +186,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label21.Location = new System.Drawing.Point(6, 40);
+            this.label21.Location = new System.Drawing.Point(6, 35);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(120, 16);
             this.label21.TabIndex = 0;
@@ -200,7 +197,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label22.Location = new System.Drawing.Point(6, 66);
+            this.label22.Location = new System.Drawing.Point(6, 61);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(121, 16);
             this.label22.TabIndex = 0;
@@ -210,7 +207,7 @@
             // 
             this.panel16.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel16.Location = new System.Drawing.Point(0, 122);
+            this.panel16.Location = new System.Drawing.Point(0, 87);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(317, 2);
             this.panel16.TabIndex = 1;
@@ -227,7 +224,7 @@
             // dateTimePickerDateStart
             // 
             this.dateTimePickerDateStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerDateStart.Location = new System.Drawing.Point(133, 40);
+            this.dateTimePickerDateStart.Location = new System.Drawing.Point(133, 35);
             this.dateTimePickerDateStart.Name = "dateTimePickerDateStart";
             this.dateTimePickerDateStart.Size = new System.Drawing.Size(176, 20);
             this.dateTimePickerDateStart.TabIndex = 7;
@@ -242,9 +239,9 @@
             this.panel8.Controls.Add(this.labelCustomer);
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.panel12);
-            this.panel8.Location = new System.Drawing.Point(13, 169);
+            this.panel8.Location = new System.Drawing.Point(13, 148);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(317, 120);
+            this.panel8.Size = new System.Drawing.Size(317, 109);
             this.panel8.TabIndex = 9;
             // 
             // panel9
@@ -253,7 +250,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel9.Location = new System.Drawing.Point(315, 25);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(2, 93);
+            this.panel9.Size = new System.Drawing.Size(2, 82);
             this.panel9.TabIndex = 3;
             // 
             // panel10
@@ -262,7 +259,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 25);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(2, 93);
+            this.panel10.Size = new System.Drawing.Size(2, 82);
             this.panel10.TabIndex = 2;
             // 
             // label19
@@ -279,11 +276,13 @@
             // iconButton1
             // 
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconSize = 16;
-            this.iconButton1.Location = new System.Drawing.Point(159, 77);
+            this.iconButton1.Location = new System.Drawing.Point(159, 72);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(150, 30);
@@ -294,11 +293,13 @@
             // iconButton3
             // 
             this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconSize = 16;
-            this.iconButton3.Location = new System.Drawing.Point(8, 77);
+            this.iconButton3.Location = new System.Drawing.Point(8, 72);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Rotation = 0D;
             this.iconButton3.Size = new System.Drawing.Size(150, 30);
@@ -321,7 +322,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 118);
+            this.panel11.Location = new System.Drawing.Point(0, 107);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(317, 2);
             this.panel11.TabIndex = 1;
@@ -353,7 +354,7 @@
             this.panel3.Controls.Add(this.label13);
             this.panel3.Location = new System.Drawing.Point(13, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 151);
+            this.panel3.Size = new System.Drawing.Size(317, 130);
             this.panel3.TabIndex = 9;
             // 
             // panel7
@@ -362,7 +363,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel7.Location = new System.Drawing.Point(315, 25);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2, 124);
+            this.panel7.Size = new System.Drawing.Size(2, 103);
             this.panel7.TabIndex = 3;
             // 
             // panel6
@@ -371,14 +372,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 25);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2, 124);
+            this.panel6.Size = new System.Drawing.Size(2, 103);
             this.panel6.TabIndex = 2;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 149);
+            this.panel5.Location = new System.Drawing.Point(0, 128);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(317, 2);
             this.panel5.TabIndex = 1;
@@ -397,7 +398,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label3.Location = new System.Drawing.Point(166, 40);
+            this.label3.Location = new System.Drawing.Point(166, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 0;
@@ -408,7 +409,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label11.Location = new System.Drawing.Point(5, 40);
+            this.label11.Location = new System.Drawing.Point(5, 36);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 16);
             this.label11.TabIndex = 0;
@@ -418,14 +419,14 @@
             // 
             this.comboBoxInstallation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxInstallation.FormattingEnabled = true;
-            this.comboBoxInstallation.Location = new System.Drawing.Point(119, 111);
+            this.comboBoxInstallation.Location = new System.Drawing.Point(119, 97);
             this.comboBoxInstallation.Name = "comboBoxInstallation";
             this.comboBoxInstallation.Size = new System.Drawing.Size(190, 21);
             this.comboBoxInstallation.TabIndex = 1;
             // 
             // numericUpDownCount
             // 
-            this.numericUpDownCount.Location = new System.Drawing.Point(239, 74);
+            this.numericUpDownCount.Location = new System.Drawing.Point(239, 66);
             this.numericUpDownCount.Name = "numericUpDownCount";
             this.numericUpDownCount.Size = new System.Drawing.Size(70, 20);
             this.numericUpDownCount.TabIndex = 5;
@@ -435,7 +436,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label15.Location = new System.Drawing.Point(163, 77);
+            this.label15.Location = new System.Drawing.Point(163, 69);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 16);
             this.label15.TabIndex = 0;
@@ -443,7 +444,7 @@
             // 
             // numericUpDownHeight
             // 
-            this.numericUpDownHeight.Location = new System.Drawing.Point(232, 40);
+            this.numericUpDownHeight.Location = new System.Drawing.Point(232, 36);
             this.numericUpDownHeight.Name = "numericUpDownHeight";
             this.numericUpDownHeight.Size = new System.Drawing.Size(77, 20);
             this.numericUpDownHeight.TabIndex = 5;
@@ -453,7 +454,7 @@
             this.labelYardage.AutoSize = true;
             this.labelYardage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelYardage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.labelYardage.Location = new System.Drawing.Point(108, 78);
+            this.labelYardage.Location = new System.Drawing.Point(108, 70);
             this.labelYardage.Name = "labelYardage";
             this.labelYardage.Size = new System.Drawing.Size(36, 16);
             this.labelYardage.TabIndex = 0;
@@ -462,7 +463,7 @@
             // numericUpDownWidth
             // 
             this.numericUpDownWidth.DecimalPlaces = 4;
-            this.numericUpDownWidth.Location = new System.Drawing.Point(77, 40);
+            this.numericUpDownWidth.Location = new System.Drawing.Point(77, 36);
             this.numericUpDownWidth.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -477,7 +478,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label18.Location = new System.Drawing.Point(8, 112);
+            this.label18.Location = new System.Drawing.Point(8, 98);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(105, 16);
             this.label18.TabIndex = 0;
@@ -488,7 +489,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label13.Location = new System.Drawing.Point(7, 77);
+            this.label13.Location = new System.Drawing.Point(7, 69);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(95, 16);
             this.label13.TabIndex = 0;
@@ -504,16 +505,17 @@
             this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
             this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonNewOrder.IconSize = 32;
             this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 439);
+            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 452);
             this.iconButtonNewOrder.Name = "iconButtonNewOrder";
-            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
             this.iconButtonNewOrder.Rotation = 0D;
-            this.iconButtonNewOrder.Size = new System.Drawing.Size(318, 38);
+            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
             this.iconButtonNewOrder.TabIndex = 8;
             this.iconButtonNewOrder.Text = "Створити замовлення";
             this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -813,6 +815,89 @@
             this.comboBoxCurtainSubtype.Size = new System.Drawing.Size(179, 21);
             this.comboBoxCurtainSubtype.TabIndex = 5;
             // 
+            // labelPrice
+            // 
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.labelPrice.Location = new System.Drawing.Point(60, 38);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(98, 19);
+            this.labelPrice.TabIndex = 0;
+            this.labelPrice.Text = "[ 5458 грн. ]";
+            // 
+            // panel33
+            // 
+            this.panel33.Controls.Add(this.iconButton2);
+            this.panel33.Controls.Add(this.panel34);
+            this.panel33.Controls.Add(this.panel35);
+            this.panel33.Controls.Add(this.labelPrice);
+            this.panel33.Controls.Add(this.labelP);
+            this.panel33.Controls.Add(this.panel36);
+            this.panel33.Controls.Add(this.panel37);
+            this.panel33.Location = new System.Drawing.Point(13, 358);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(317, 76);
+            this.panel33.TabIndex = 9;
+            // 
+            // panel34
+            // 
+            this.panel34.BackColor = System.Drawing.Color.Orange;
+            this.panel34.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel34.Location = new System.Drawing.Point(315, 25);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(2, 49);
+            this.panel34.TabIndex = 3;
+            // 
+            // panel35
+            // 
+            this.panel35.BackColor = System.Drawing.Color.Orange;
+            this.panel35.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel35.Location = new System.Drawing.Point(0, 25);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(2, 49);
+            this.panel35.TabIndex = 2;
+            // 
+            // panel36
+            // 
+            this.panel36.BackColor = System.Drawing.Color.Orange;
+            this.panel36.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel36.Location = new System.Drawing.Point(0, 74);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(317, 2);
+            this.panel36.TabIndex = 1;
+            // 
+            // panel37
+            // 
+            this.panel37.BackColor = System.Drawing.Color.Orange;
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel37.Location = new System.Drawing.Point(0, 0);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(317, 25);
+            this.panel37.TabIndex = 0;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconSize = 16;
+            this.iconButton2.Location = new System.Drawing.Point(159, 36);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(150, 26);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.Text = "Детальніше";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 3;
+            this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
+            // 
             // FormFabricCurtainOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -841,6 +926,8 @@
             this.panel23.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.panel33.ResumeLayout(false);
+            this.panel33.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -911,6 +998,13 @@
         internal System.Windows.Forms.Label labelCustomer;
         internal System.Windows.Forms.DateTimePicker dateTimePickerDateEnd;
         internal System.Windows.Forms.DateTimePicker dateTimePickerDateStart;
-        internal System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Panel panel33;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Panel panel37;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,33 @@ namespace CurtainDesigner.Views.Classes
 {
     class FabricCurtainViewManage<O, L, F, T> : CurtainDesigner.Views.Interfaces.IViewManage<O, L, F, T>
     {
+
+        public async void loadDataFromDB_comboboxes(ComboBox comboBox, SqlDataReader reader, BindingList<KeyValuePair<string, int>> pair, string key_name, string value_name)
+        {
+            if (reader == null || comboBox == null || pair == null)
+                throw new NullReferenceException();
+    
+            try
+            {
+                comboBox.DisplayMember = "Key";
+                comboBox.ValueMember = "Value";
+                comboBox.DataSource = pair;
+                while (await reader.ReadAsync())
+                {
+                    pair.Add(new KeyValuePair<string, int>(reader[key_name].ToString(), Convert.ToInt32(reader[value_name])));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+        }
+
         public O readObject(F form, O obj)
         {
             if (obj == null || form == null)

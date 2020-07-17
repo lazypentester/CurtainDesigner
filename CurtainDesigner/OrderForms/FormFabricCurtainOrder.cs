@@ -22,12 +22,21 @@ namespace CurtainDesigner
             comboBoxCurtainType.DataSource = types;
             types.Add(new KeyValuePair<string, int>("закритий", 0));
             types.Add(new KeyValuePair<string, int>("Відкритий", 1));
+
+            LoadDataFromDb();
         }
 
         private void iconButtonNewOrder_Click(object sender, EventArgs e)
         {
             CurtainDesigner.Controllers.IControlerManage<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
             controler.packing(new Classes.FabricCurtain(), new List<Classes.FabricCurtain2>(), this);
+        }
+
+        private async void LoadDataFromDb()
+        {
+            CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
+            // В любом случае надо запустить в асинхронее
+            controler.load_data(this);
         }
     }
 }
