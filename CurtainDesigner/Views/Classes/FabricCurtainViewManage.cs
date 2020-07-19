@@ -17,15 +17,31 @@ namespace CurtainDesigner.Views.Classes
         {
             if (reader == null || comboBox == null || pair == null)
                 throw new NullReferenceException();
-    
+
             try
             {
-                comboBox.DisplayMember = "Key";
-                comboBox.ValueMember = "Value";
-                comboBox.DataSource = pair;
-                while (await reader.ReadAsync())
+                if (comboBox.InvokeRequired)
                 {
-                    pair.Add(new KeyValuePair<string, int>(reader[key_name].ToString(), Convert.ToInt32(reader[value_name])));
+                    comboBox.Invoke((MethodInvoker)async delegate
+                    {
+                        comboBox.DisplayMember = "Key";
+                        comboBox.ValueMember = "Value";
+                        comboBox.DataSource = pair;
+                        while (await reader.ReadAsync())
+                        {
+                            pair.Add(new KeyValuePair<string, int>(reader[key_name].ToString(), Convert.ToInt32(reader[value_name])));
+                        }
+                    });
+                }
+                else
+                {
+                    comboBox.DisplayMember = "Key";
+                    comboBox.ValueMember = "Value";
+                    comboBox.DataSource = pair;
+                    while (await reader.ReadAsync())
+                    {
+                        pair.Add(new KeyValuePair<string, int>(reader[key_name].ToString(), Convert.ToInt32(reader[value_name])));
+                    }
                 }
             }
             catch (Exception ex)

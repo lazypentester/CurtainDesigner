@@ -12,16 +12,16 @@ namespace CurtainDesigner
 {
     public partial class FormFabricCurtainOrder : Form
     {
-        private readonly BindingList<KeyValuePair<string, int>> types = new BindingList<KeyValuePair<string, int>>();
+        //private readonly BindingList<KeyValuePair<string, int>> types = new BindingList<KeyValuePair<string, int>>();
 
         public FormFabricCurtainOrder()
         {
             InitializeComponent();
-            comboBoxCurtainType.DisplayMember = "Key";
-            comboBoxCurtainType.ValueMember = "Value";
-            comboBoxCurtainType.DataSource = types;
-            types.Add(new KeyValuePair<string, int>("закритий", 0));
-            types.Add(new KeyValuePair<string, int>("Відкритий", 1));
+            //comboBoxCurtainType.DisplayMember = "Key";
+            //comboBoxCurtainType.ValueMember = "Value";
+            //comboBoxCurtainType.DataSource = types;
+            //types.Add(new KeyValuePair<string, int>("закритий", 0));
+            //types.Add(new KeyValuePair<string, int>("Відкритий", 1));
 
             LoadDataFromDb();
         }
@@ -36,7 +36,7 @@ namespace CurtainDesigner
         {
             CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
             // В любом случае надо запустить в асинхронее
-            controler.load_data(this);
+            await Task.Run(() => controler.load_data(this));
         }
     }
 }
