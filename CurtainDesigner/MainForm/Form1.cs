@@ -320,6 +320,7 @@ namespace CurtainDesigner
             tableButtonIsActivate = false;
             currentClickButton = sender;
             timerOpenSubMenu.Start();
+            OpenChildForm(new SettingForm.FormSettings(), sender);
         }
 
         private void iconButtonInfo_Click(object sender, EventArgs e)
