@@ -16,10 +16,14 @@ namespace CurtainDesigner.SettingForm
         private Bunifu.Framework.UI.BunifuFlatButton currentButton = null;
         private bool iconIsActive = false;
         private bool ButtonOthersIsActive = false;
+        private UserControl activeControl;
+        private UserControls.UserControlClientDataBase control_clients;
 
         public FormSettings()
         {
             InitializeComponent();
+            addUserControlls();
+            panelContainer.Controls.Add(panelOthers);
         }
 
         //Color struct
@@ -32,6 +36,22 @@ namespace CurtainDesigner.SettingForm
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.Silver;
+        }
+
+        private void addUserControlls()
+        {
+            this.panelContainer.Controls.Add(control_clients = new UserControls.UserControlClientDataBase()); control_clients.Hide();
+        }
+
+        private void OpenChildControl(UserControl childControl, object sender)
+        {
+            if (activeControl != null)
+                activeControl.Hide();
+            activeControl = childControl ?? throw new NullReferenceException();
+            childControl.Dock = DockStyle.Fill;
+            this.panelContainer.Tag = childControl;
+            childControl.BringToFront();
+            childControl.Show();
         }
 
         private void ActivateButton(object SenderBtn)
@@ -90,6 +110,7 @@ namespace CurtainDesigner.SettingForm
         {
             ActivateButton(sender);
             do_visiblePanelOthers(sender);
+            OpenChildControl(control_clients, sender);
         }
 
         private void bunifuColorDataBaseButton_Click(object sender, EventArgs e)
@@ -133,9 +154,16 @@ namespace CurtainDesigner.SettingForm
             if ((button as Bunifu.Framework.UI.BunifuFlatButton).Text == "Інше")
             {
                 if (!panelOthers.Visible)
+                {
                     panelOthers.Visible = true;
+                    panelOthers.BringToFront();
+                    panelOthers.Show();
+                }
                 else
+                {
                     panelOthers.Visible = false;
+                    panelOthers.Hide();
+                }
             }
             else
                 if(panelOthers.Visible)
