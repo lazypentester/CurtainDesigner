@@ -25,5 +25,6 @@ namespace CurtainDesigner.Classes
         public DateTime end_order_time { get; set; }
         public Image picture { get; set; }
         public float price { get; set; }
+        public int category_id { get; set; }
     }
 }
