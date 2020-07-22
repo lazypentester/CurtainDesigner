@@ -229,7 +229,7 @@ namespace CurtainDesigner.Models.Classes
                 await command_addFB.ExecuteNonQueryAsync();
                 */
 
-                SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] (Width) Values ({fabricCurtain.width});", connection);
+                SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] ([Width]) Values ({fabricCurtain.width});", connection);
                 await command_addFB.ExecuteNonQueryAsync();
             }
             catch(Exception exeption)

@@ -74,6 +74,8 @@
             this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
+            this.comboBoxFabricCategory = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
@@ -96,8 +98,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.comboBoxFabricCategory = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -504,6 +504,11 @@
             // 
             this.numericUpDownCount.Enabled = false;
             this.numericUpDownCount.Location = new System.Drawing.Point(239, 66);
+            this.numericUpDownCount.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownCount.Name = "numericUpDownCount";
             this.numericUpDownCount.Size = new System.Drawing.Size(70, 20);
             this.numericUpDownCount.TabIndex = 5;
@@ -639,6 +644,28 @@
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(460, 128);
             this.panel28.TabIndex = 9;
+            // 
+            // comboBoxFabricCategory
+            // 
+            this.comboBoxFabricCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxFabricCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFabricCategory.Enabled = false;
+            this.comboBoxFabricCategory.FormattingEnabled = true;
+            this.comboBoxFabricCategory.Location = new System.Drawing.Point(284, 35);
+            this.comboBoxFabricCategory.Name = "comboBoxFabricCategory";
+            this.comboBoxFabricCategory.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxFabricCategory.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label4.Location = new System.Drawing.Point(201, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Категорія:";
             // 
             // panel29
             // 
@@ -864,28 +891,6 @@
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
             // 
-            // comboBoxFabricCategory
-            // 
-            this.comboBoxFabricCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBoxFabricCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFabricCategory.Enabled = false;
-            this.comboBoxFabricCategory.FormattingEnabled = true;
-            this.comboBoxFabricCategory.Location = new System.Drawing.Point(284, 35);
-            this.comboBoxFabricCategory.Name = "comboBoxFabricCategory";
-            this.comboBoxFabricCategory.Size = new System.Drawing.Size(168, 21);
-            this.comboBoxFabricCategory.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label4.Location = new System.Drawing.Point(201, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Категорія:";
-            // 
             // FormFabricCurtainOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -983,11 +988,11 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Panel panel34;
         private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Panel panel37;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         internal System.Windows.Forms.ComboBox comboBoxFabricCategory;
         private System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label labelPrice;
     }
 }
