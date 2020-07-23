@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelFooterContent = new System.Windows.Forms.Panel();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -58,9 +58,9 @@
             this.panelFooter.BackColor = System.Drawing.SystemColors.Control;
             this.panelFooter.Controls.Add(this.panelFooterContent);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 434);
+            this.panelFooter.Location = new System.Drawing.Point(0, 440);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1010, 68);
+            this.panelFooter.Size = new System.Drawing.Size(728, 68);
             this.panelFooter.TabIndex = 7;
             // 
             // panelFooterContent
@@ -70,7 +70,7 @@
             this.panelFooterContent.Controls.Add(this.buttonAdd);
             this.panelFooterContent.Location = new System.Drawing.Point(6, 3);
             this.panelFooterContent.Name = "panelFooterContent";
-            this.panelFooterContent.Size = new System.Drawing.Size(998, 65);
+            this.panelFooterContent.Size = new System.Drawing.Size(716, 65);
             this.panelFooterContent.TabIndex = 9;
             // 
             // buttonAdd
@@ -84,7 +84,7 @@
             this.buttonAdd.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonAdd.Image = global::CurtainDesigner.Properties.Resources.icons8_add_user_male_30px;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(791, 15);
+            this.buttonAdd.Location = new System.Drawing.Point(517, 15);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.buttonAdd.Size = new System.Drawing.Size(189, 37);
@@ -103,7 +103,7 @@
             this.panelTable.Controls.Add(this.bunifuCustomDataGridClientsDataBase);
             this.panelTable.Location = new System.Drawing.Point(6, 6);
             this.panelTable.Name = "panelTable";
-            this.panelTable.Size = new System.Drawing.Size(998, 422);
+            this.panelTable.Size = new System.Drawing.Size(716, 428);
             this.panelTable.TabIndex = 8;
             // 
             // bunifuCustomDataGridClientsDataBase
@@ -112,23 +112,23 @@
             this.bunifuCustomDataGridClientsDataBase.AllowUserToDeleteRows = false;
             this.bunifuCustomDataGridClientsDataBase.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGridClientsDataBase.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCustomDataGridClientsDataBase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuCustomDataGridClientsDataBase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGridClientsDataBase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGridClientsDataBase.BackgroundColor = System.Drawing.Color.White;
             this.bunifuCustomDataGridClientsDataBase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridClientsDataBase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.bunifuCustomDataGridClientsDataBase.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridClientsDataBase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridClientsDataBase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.bunifuCustomDataGridClientsDataBase.ColumnHeadersHeight = 50;
             this.bunifuCustomDataGridClientsDataBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.bunifuCustomDataGridClientsDataBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -140,14 +140,14 @@
             this.ColumnEdit,
             this.ColumnDelete});
             this.bunifuCustomDataGridClientsDataBase.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuCustomDataGridClientsDataBase.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGridClientsDataBase.DefaultCellStyle = dataGridViewCellStyle6;
             this.bunifuCustomDataGridClientsDataBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCustomDataGridClientsDataBase.DoubleBuffered = true;
             this.bunifuCustomDataGridClientsDataBase.EnableHeadersVisualStyles = false;
@@ -165,7 +165,7 @@
             this.bunifuCustomDataGridClientsDataBase.RowTemplate.Height = 50;
             this.bunifuCustomDataGridClientsDataBase.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bunifuCustomDataGridClientsDataBase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuCustomDataGridClientsDataBase.Size = new System.Drawing.Size(998, 422);
+            this.bunifuCustomDataGridClientsDataBase.Size = new System.Drawing.Size(716, 428);
             this.bunifuCustomDataGridClientsDataBase.TabIndex = 7;
             // 
             // Number
@@ -239,7 +239,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelTable);
             this.Name = "UserControlClientDataBase";
-            this.Size = new System.Drawing.Size(1010, 502);
+            this.Size = new System.Drawing.Size(728, 508);
             this.panelFooter.ResumeLayout(false);
             this.panelFooterContent.ResumeLayout(false);
             this.panelTable.ResumeLayout(false);

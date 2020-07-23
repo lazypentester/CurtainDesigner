@@ -114,6 +114,18 @@
     <Compile Include="SettingForm\FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trash\ListOthers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trash\ListOthers.Designer.cs">
+      <DependentUpon>ListOthers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsSideBarMenus\SideBarSettingFabricCurtains.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsSideBarMenus\SideBarSettingFabricCurtains.Designer.cs">
+      <DependentUpon>SideBarSettingFabricCurtains.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlClientDataBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     <EmbeddedResource Include="SettingForm\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trash\ListOthers.resx">
+      <DependentUpon>ListOthers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsSideBarMenus\SideBarSettingFabricCurtains.resx">
+      <DependentUpon>SideBarSettingFabricCurtains.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlClientDataBase.resx">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +197,8 @@
     <None Include="bin\Debug\imgs\icons8_database_administrator_48px_1.png" />
     <None Include="bin\Debug\imgs\icons8_maintenance_20px.png" />
     <None Include="bin\Debug\imgs\icons8_add_user_male_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_sphere_20px.png" />
+    <None Include="bin\Debug\imgs\icons8_job_45px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

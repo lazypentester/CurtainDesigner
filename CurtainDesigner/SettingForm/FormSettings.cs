@@ -14,25 +14,37 @@ namespace CurtainDesigner.SettingForm
     public partial class FormSettings : Form
     {
         private Bunifu.Framework.UI.BunifuFlatButton currentButton = null;
+        private Bunifu.Framework.UI.BunifuFlatButton currentButtonMainMenu = null;
         private bool iconIsActive = false;
         private bool ButtonOthersIsActive = false;
         private UserControl activeControl;
-        private UserControls.UserControlClientDataBase control_clients;
+
+        internal UserControls.UserControlClientDataBase control_clients;
+
+        internal UserControls.UCSettingsSideBarMenus.SideBarSettingFabricCurtains control_sideBar_fabricCurtains;
+
+        private Panel mainMenuSidePanel = null;
 
         public FormSettings()
         {
             InitializeComponent();
             addUserControlls();
-            panelContainer.Controls.Add(panelOthers);
+            bunifuFlatButtonMainSettingFabricCurtains.Controls.Add(mainMenuSidePanel = new Panel { Size = new Size(10, 41), Dock = DockStyle.Right, BackColor = Color.FromArgb(255, 229, 127), Visible = true }); mainMenuSidePanel.BringToFront(); mainMenuSidePanel.Show();
         }
 
         //Color struct
         private struct Colors
         {
-            public static Color colorMainMenuButtonInactive = Color.FromArgb(232, 238, 245);
-            public static Color colorMainMenuTextInactive = Color.FromArgb(112, 123, 140);
-            public static Color colorMainMenuButtonActive = Color.FromArgb(223, 232, 242);
-            public static Color colorMainMenuTextActive = Color.FromArgb(62, 72, 93);
+            public static Color colorMainMenuButtonInactive = Color.FromArgb(18, 16, 51);
+            public static Color colorMainMenuTextInactive = Color.FromArgb(62, 72, 93);
+            public static Color colorMainMenuButtonActive = Color.FromArgb(7, 5, 33);
+            public static Color colorMainMenuTextActive = Color.FromArgb(112, 123, 140);
+
+            public static Color colorSubMenuButtonInactive = Color.FromArgb(232, 238, 245);
+            public static Color colorSubMenuTextInactive = Color.FromArgb(112, 123, 140);
+            public static Color colorSubMenuButtonActive = Color.FromArgb(223, 232, 242);
+            public static Color colorSubMenuTextActive = Color.FromArgb(62, 72, 93);
+
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.Silver;
@@ -41,9 +53,11 @@ namespace CurtainDesigner.SettingForm
         private void addUserControlls()
         {
             this.panelContainer.Controls.Add(control_clients = new UserControls.UserControlClientDataBase()); control_clients.Hide();
+
+            this.panelSideBarMenu.Controls.Add(control_sideBar_fabricCurtains = new UserControls.UCSettingsSideBarMenus.SideBarSettingFabricCurtains(this)); control_sideBar_fabricCurtains.Dock = DockStyle.Fill; control_sideBar_fabricCurtains.BringToFront(); control_sideBar_fabricCurtains.Show();
         }
 
-        private void OpenChildControl(UserControl childControl, object sender)
+        internal void OpenChildControl(UserControl childControl, object sender)
         {
             if (activeControl != null)
                 activeControl.Hide();
@@ -52,6 +66,36 @@ namespace CurtainDesigner.SettingForm
             this.panelContainer.Tag = childControl;
             childControl.BringToFront();
             childControl.Show();
+        }
+
+        private void CloseChildControl()
+        {
+            if (activeControl != null)
+                activeControl.Hide();
+        }
+
+        private void AvtivateMainMenuButton(object sender)
+        {
+            DeactivateMainMenuButton();
+            //Customize selected button
+            currentButtonMainMenu = (Bunifu.Framework.UI.BunifuFlatButton)sender;
+            currentButtonMainMenu.Normalcolor = Colors.colorMainMenuButtonActive;
+            currentButtonMainMenu.Textcolor = Colors.colorMainMenuTextActive;
+            currentButtonMainMenu.IconZoom = 60;
+            pictureBoxView.BackgroundImage = currentButtonMainMenu.Iconimage;
+            labelView.Text = currentButtonMainMenu.Text + " :";
+            //ButtonOthersIsActive = true;
+        }
+
+        private void DeactivateMainMenuButton()
+        {
+            if (currentButtonMainMenu != null)
+            {
+                //Return previous button to normal state
+                currentButtonMainMenu.Normalcolor = Colors.colorMainMenuButtonInactive;
+                currentButtonMainMenu.Textcolor = Colors.colorMainMenuTextInactive;
+                currentButtonMainMenu.IconZoom = 55;
+            }
         }
 
         private void ActivateButton(object SenderBtn)
@@ -63,8 +107,8 @@ namespace CurtainDesigner.SettingForm
                     DeactivateButton();
                     //Customize selected button
                     currentButton = (Bunifu.Framework.UI.BunifuFlatButton)SenderBtn;
-                    currentButton.Normalcolor = Colors.colorMainMenuButtonActive;
-                    currentButton.Textcolor = Colors.colorMainMenuTextActive;
+                    currentButton.Normalcolor = Colors.colorSubMenuButtonActive;
+                    currentButton.Textcolor = Colors.colorSubMenuTextActive;
                     currentButton.IconZoom = 60;
                     pictureBoxView.BackgroundImage = currentButton.Iconimage;
                     labelView.Text = currentButton.Text;
@@ -81,8 +125,8 @@ namespace CurtainDesigner.SettingForm
                 DeactivateButton();
                 //Customize selected button
                 currentButton = (Bunifu.Framework.UI.BunifuFlatButton)SenderBtn;
-                currentButton.Normalcolor = Colors.colorMainMenuButtonActive;
-                currentButton.Textcolor = Colors.colorMainMenuTextActive;
+                currentButton.Normalcolor = Colors.colorSubMenuButtonActive;
+                currentButton.Textcolor = Colors.colorSubMenuTextActive;
                 currentButton.IconZoom = 60;
                 pictureBoxView.BackgroundImage = currentButton.Iconimage;
                 labelView.Text = currentButton.Text;
@@ -94,8 +138,8 @@ namespace CurtainDesigner.SettingForm
             if (currentButton != null)
             {
                 //Return previous button to normal state
-                currentButton.Normalcolor = Colors.colorMainMenuButtonInactive;
-                currentButton.Textcolor = Colors.colorMainMenuTextInactive;
+                currentButton.Normalcolor = Colors.colorSubMenuButtonInactive;
+                currentButton.Textcolor = Colors.colorSubMenuTextInactive;
                 currentButton.IconZoom = 55;
             }
         }
@@ -103,72 +147,71 @@ namespace CurtainDesigner.SettingForm
         private void bunifuMainSettingsButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
         }
 
         private void bunifuClientDataBaseButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
             OpenChildControl(control_clients, sender);
         }
 
         private void bunifuColorDataBaseButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
         }
 
         private void bunifuFabricDataBaseButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
         }
 
         private void bunifuSystemTypesButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+           // do_visiblePanelOthers(sender);
         }
 
         private void bunifuAdditionalEquipmentButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
         }
 
         private void bunifuOthersButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
         }
 
         private void bunifuConnectDataBaseButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            do_visiblePanelOthers(sender);
+            AvtivateMainMenuButton(sender);
         }
 
-        private void do_visiblePanelOthers(object button)
-        {
-            if ((button as Bunifu.Framework.UI.BunifuFlatButton).Text == "Інше")
-            {
-                if (!panelOthers.Visible)
-                {
-                    panelOthers.Visible = true;
-                    panelOthers.BringToFront();
-                    panelOthers.Show();
-                }
-                else
-                {
-                    panelOthers.Visible = false;
-                    panelOthers.Hide();
-                }
-            }
-            else
-                if(panelOthers.Visible)
-                panelOthers.Visible = false;
-        }
+        //private void do_visiblePanelOthers(object button)
+        //{
+        //    if ((button as Bunifu.Framework.UI.BunifuFlatButton).Text == "Інше")
+        //    {
+        //        if (!panelOthers.Visible)
+        //        {
+        //            panelOthers.Visible = true;
+        //            panelOthers.BringToFront();
+        //            panelOthers.Show();
+        //        }
+        //        else
+        //        {
+        //            panelOthers.Visible = false;
+        //            panelOthers.Hide();
+        //        }
+        //    }
+        //    else
+        //        if(panelOthers.Visible)
+        //        panelOthers.Visible = false;
+        //}
 
         private void timerForIconSettingsAndLabel_Tick(object sender, EventArgs e)
         {
@@ -206,6 +249,54 @@ namespace CurtainDesigner.SettingForm
         private void iconPictureBoxSettings_MouseLeave(object sender, EventArgs e)
         {
             timerForIconSettingsAndLabel.Start();
+        }
+
+        private void bunifuFlatButtonMainSettingFabricCurtains_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingDay_NightCurtains_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingProtectiveCurtains_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingRomanCurtains_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingHorisontallJalousie_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingVerticalJalousie_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingMosquitoNets_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
+        }
+
+        private void bunifuFlatButtonMainSettingPliseCurtain_Click(object sender, EventArgs e)
+        {
+            AvtivateMainMenuButton(sender);
+            CloseChildControl();
         }
     }
 }
