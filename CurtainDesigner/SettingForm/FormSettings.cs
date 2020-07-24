@@ -18,10 +18,9 @@ namespace CurtainDesigner.SettingForm
         private bool iconIsActive = false;
         private bool ButtonOthersIsActive = false;
         private UserControl activeControl;
+        private Panel currentOpenPanel = null;
 
         internal UserControls.UserControlClientDataBase control_clients;
-
-        internal UserControls.UCSettingsSideBarMenus.SideBarSettingFabricCurtains control_sideBar_fabricCurtains;
 
         private Panel mainMenuSidePanel = null;
 
@@ -29,7 +28,10 @@ namespace CurtainDesigner.SettingForm
         {
             InitializeComponent();
             addUserControlls();
-            bunifuFlatButtonMainSettingFabricCurtains.Controls.Add(mainMenuSidePanel = new Panel { Size = new Size(10, 41), Dock = DockStyle.Right, BackColor = Color.FromArgb(255, 229, 127), Visible = true }); mainMenuSidePanel.BringToFront(); mainMenuSidePanel.Show();
+            
+            panelSidePanelFabricCurtain.Hide();
+
+            init_MainbuttonSelectedPanel();
         }
 
         //Color struct
@@ -50,14 +52,27 @@ namespace CurtainDesigner.SettingForm
             public static Color color7 = Color.Silver;
         }
 
+        private void init_MainbuttonSelectedPanel()
+        {
+            mainMenuSidePanel = new Panel { Size = new Size(8, 41), Dock = DockStyle.Right, BackColor = Color.FromArgb(255, 229, 127), Visible = true };
+        }
+
         private void addUserControlls()
         {
             this.panelContainer.Controls.Add(control_clients = new UserControls.UserControlClientDataBase()); control_clients.Hide();
 
-            this.panelSideBarMenu.Controls.Add(control_sideBar_fabricCurtains = new UserControls.UCSettingsSideBarMenus.SideBarSettingFabricCurtains(this)); control_sideBar_fabricCurtains.Dock = DockStyle.Fill; control_sideBar_fabricCurtains.BringToFront(); control_sideBar_fabricCurtains.Show();
         }
 
-        internal void OpenChildControl(UserControl childControl, object sender)
+        private void openSidePanel(Panel sender)
+        {
+            if (currentOpenPanel != null)
+                currentOpenPanel.Hide();
+            currentOpenPanel = sender;
+            sender.BringToFront();
+            sender.Show();
+        }
+
+        private void OpenChildControl(UserControl childControl, object sender)
         {
             if (activeControl != null)
                 activeControl.Hide();
@@ -84,6 +99,9 @@ namespace CurtainDesigner.SettingForm
             currentButtonMainMenu.IconZoom = 60;
             pictureBoxView.BackgroundImage = currentButtonMainMenu.Iconimage;
             labelView.Text = currentButtonMainMenu.Text + " :";
+            currentButtonMainMenu.Controls.Add(mainMenuSidePanel);
+            mainMenuSidePanel.BringToFront();
+            mainMenuSidePanel.Show();
             //ButtonOthersIsActive = true;
         }
 
@@ -95,6 +113,7 @@ namespace CurtainDesigner.SettingForm
                 currentButtonMainMenu.Normalcolor = Colors.colorMainMenuButtonInactive;
                 currentButtonMainMenu.Textcolor = Colors.colorMainMenuTextInactive;
                 currentButtonMainMenu.IconZoom = 55;
+                currentButtonMainMenu.Controls.Remove(mainMenuSidePanel);
             }
         }
 
@@ -110,8 +129,8 @@ namespace CurtainDesigner.SettingForm
                     currentButton.Normalcolor = Colors.colorSubMenuButtonActive;
                     currentButton.Textcolor = Colors.colorSubMenuTextActive;
                     currentButton.IconZoom = 60;
-                    pictureBoxView.BackgroundImage = currentButton.Iconimage;
-                    labelView.Text = currentButton.Text;
+                    pictureBoxView2.BackgroundImage = currentButton.Iconimage;
+                    labelView2.Text = currentButton.Text;
                     ButtonOthersIsActive = true;
                 }
                 else
@@ -128,8 +147,8 @@ namespace CurtainDesigner.SettingForm
                 currentButton.Normalcolor = Colors.colorSubMenuButtonActive;
                 currentButton.Textcolor = Colors.colorSubMenuTextActive;
                 currentButton.IconZoom = 60;
-                pictureBoxView.BackgroundImage = currentButton.Iconimage;
-                labelView.Text = currentButton.Text;
+                pictureBoxView2.BackgroundImage = currentButton.Iconimage;
+                labelView2.Text = currentButton.Text;
             }
         }
 
@@ -255,6 +274,7 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+            openSidePanel(panelSidePanelFabricCurtain);
         }
 
         private void bunifuFlatButtonMainSettingDay_NightCurtains_Click(object sender, EventArgs e)

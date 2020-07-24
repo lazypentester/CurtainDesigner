@@ -136,8 +136,9 @@
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 22;
-            this.bunifuCustomDataGrid1.RowTemplate.Height = 50;
+            this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
+            this.bunifuCustomDataGrid1.RowTemplate.Height = 3;
+            this.bunifuCustomDataGrid1.RowTemplate.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1266, 478);
@@ -253,8 +254,8 @@
             // 
             // bunifuElipse1
             // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
+            this.bunifuElipse1.ElipseRadius = 2;
+            this.bunifuElipse1.TargetControl = this.bunifuCustomDataGrid1;
             // 
             // dataGridViewImageColumn1
             // 

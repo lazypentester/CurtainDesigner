@@ -98,6 +98,12 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDownCustomInstallationPrice = new System.Windows.Forms.NumericUpDown();
+            this.bunifuCheckboxCustomInstallation = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -109,6 +115,7 @@
             this.panel2.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomInstallationPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,7 +129,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(947, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(343, 502);
+            this.panel1.Size = new System.Drawing.Size(343, 592);
             this.panel1.TabIndex = 0;
             // 
             // panel33
@@ -134,7 +141,7 @@
             this.panel33.Controls.Add(this.labelP);
             this.panel33.Controls.Add(this.panel36);
             this.panel33.Controls.Add(this.panel37);
-            this.panel33.Location = new System.Drawing.Point(13, 358);
+            this.panel33.Location = new System.Drawing.Point(13, 416);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(317, 76);
             this.panel33.TabIndex = 9;
@@ -225,7 +232,7 @@
             this.panel13.Controls.Add(this.panel16);
             this.panel13.Controls.Add(this.panel17);
             this.panel13.Controls.Add(this.dateTimePickerDateStart);
-            this.panel13.Location = new System.Drawing.Point(13, 263);
+            this.panel13.Location = new System.Drawing.Point(13, 321);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(317, 89);
             this.panel13.TabIndex = 9;
@@ -314,7 +321,7 @@
             this.panel8.Controls.Add(this.labelCustomer);
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.panel12);
-            this.panel8.Location = new System.Drawing.Point(13, 148);
+            this.panel8.Location = new System.Drawing.Point(13, 206);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(317, 109);
             this.panel8.TabIndex = 9;
@@ -413,6 +420,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.bunifuCheckboxCustomInstallation);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
@@ -423,13 +431,18 @@
             this.panel3.Controls.Add(this.numericUpDownCount);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.numericUpDownHeight);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.labelYardage);
+            this.panel3.Controls.Add(this.numericUpDownCustomInstallationPrice);
             this.panel3.Controls.Add(this.numericUpDownWidth);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Location = new System.Drawing.Point(13, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 130);
+            this.panel3.Size = new System.Drawing.Size(317, 188);
             this.panel3.TabIndex = 9;
             // 
             // panel7
@@ -438,7 +451,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel7.Location = new System.Drawing.Point(315, 25);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2, 103);
+            this.panel7.Size = new System.Drawing.Size(2, 161);
             this.panel7.TabIndex = 3;
             // 
             // panel6
@@ -447,14 +460,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 25);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2, 103);
+            this.panel6.Size = new System.Drawing.Size(2, 161);
             this.panel6.TabIndex = 2;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 128);
+            this.panel5.Location = new System.Drawing.Point(0, 186);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(317, 2);
             this.panel5.TabIndex = 1;
@@ -484,7 +497,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label11.Location = new System.Drawing.Point(5, 36);
+            this.label11.Location = new System.Drawing.Point(8, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 16);
             this.label11.TabIndex = 0;
@@ -495,9 +508,9 @@
             this.comboBoxInstallation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxInstallation.Enabled = false;
             this.comboBoxInstallation.FormattingEnabled = true;
-            this.comboBoxInstallation.Location = new System.Drawing.Point(119, 97);
+            this.comboBoxInstallation.Location = new System.Drawing.Point(119, 99);
             this.comboBoxInstallation.Name = "comboBoxInstallation";
-            this.comboBoxInstallation.Size = new System.Drawing.Size(190, 21);
+            this.comboBoxInstallation.Size = new System.Drawing.Size(124, 21);
             this.comboBoxInstallation.TabIndex = 1;
             // 
             // numericUpDownCount
@@ -553,7 +566,7 @@
             // 
             this.numericUpDownWidth.DecimalPlaces = 2;
             this.numericUpDownWidth.Enabled = false;
-            this.numericUpDownWidth.Location = new System.Drawing.Point(77, 36);
+            this.numericUpDownWidth.Location = new System.Drawing.Point(80, 35);
             this.numericUpDownWidth.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -568,7 +581,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label18.Location = new System.Drawing.Point(8, 98);
+            this.label18.Location = new System.Drawing.Point(8, 100);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(105, 16);
             this.label18.TabIndex = 0;
@@ -602,7 +615,7 @@
             this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonNewOrder.IconSize = 32;
             this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 452);
+            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
             this.iconButtonNewOrder.Name = "iconButtonNewOrder";
             this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
             this.iconButtonNewOrder.Rotation = 0D;
@@ -891,11 +904,81 @@
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label5.Location = new System.Drawing.Point(8, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(191, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Власна ціна встановлення:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label6.Location = new System.Drawing.Point(8, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ціна встановлення:";
+            // 
+            // numericUpDownCustomInstallationPrice
+            // 
+            this.numericUpDownCustomInstallationPrice.DecimalPlaces = 2;
+            this.numericUpDownCustomInstallationPrice.Enabled = false;
+            this.numericUpDownCustomInstallationPrice.Location = new System.Drawing.Point(153, 159);
+            this.numericUpDownCustomInstallationPrice.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDownCustomInstallationPrice.Name = "numericUpDownCustomInstallationPrice";
+            this.numericUpDownCustomInstallationPrice.Size = new System.Drawing.Size(77, 20);
+            this.numericUpDownCustomInstallationPrice.TabIndex = 5;
+            // 
+            // bunifuCheckboxCustomInstallation
+            // 
+            this.bunifuCheckboxCustomInstallation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckboxCustomInstallation.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckboxCustomInstallation.Checked = false;
+            this.bunifuCheckboxCustomInstallation.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckboxCustomInstallation.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckboxCustomInstallation.Location = new System.Drawing.Point(205, 130);
+            this.bunifuCheckboxCustomInstallation.Name = "bunifuCheckboxCustomInstallation";
+            this.bunifuCheckboxCustomInstallation.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckboxCustomInstallation.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label7.Location = new System.Drawing.Point(249, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "$";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label8.Location = new System.Drawing.Point(236, 159);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 16);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "$";
+            // 
             // FormFabricCurtainOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1290, 502);
+            this.ClientSize = new System.Drawing.Size(1290, 592);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -919,6 +1002,7 @@
             this.panel28.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomInstallationPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -994,5 +1078,11 @@
         internal System.Windows.Forms.ComboBox comboBoxFabricCategory;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckboxCustomInstallation;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.NumericUpDown numericUpDownCustomInstallationPrice;
+        private System.Windows.Forms.Label label6;
+        internal System.Windows.Forms.Label label8;
     }
 }

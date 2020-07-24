@@ -120,12 +120,6 @@
     <Compile Include="Trash\ListOthers.Designer.cs">
       <DependentUpon>ListOthers.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCSettingsSideBarMenus\SideBarSettingFabricCurtains.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCSettingsSideBarMenus\SideBarSettingFabricCurtains.Designer.cs">
-      <DependentUpon>SideBarSettingFabricCurtains.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlClientDataBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,9 +156,6 @@
     <EmbeddedResource Include="Trash\ListOthers.resx">
       <DependentUpon>ListOthers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCSettingsSideBarMenus\SideBarSettingFabricCurtains.resx">
-      <DependentUpon>SideBarSettingFabricCurtains.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlClientDataBase.resx">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +190,9 @@
     <None Include="bin\Debug\imgs\icons8_add_user_male_30px.png" />
     <None Include="bin\Debug\imgs\icons8_sphere_20px.png" />
     <None Include="bin\Debug\imgs\icons8_job_45px.png" />
+    <None Include="bin\Debug\imgs\icons8_tree_structure_25px.png" />
+    <None Include="bin\Debug\imgs\icons8_tags_25px.png" />
+    <None Include="bin\Debug\imgs\icons8_crane_25px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -219,6 +213,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UserControls\UCSettingsSideBarMenus\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

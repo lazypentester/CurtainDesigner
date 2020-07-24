@@ -73,6 +73,16 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_crane_25px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_crane_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_customer_25px {
             get {
                 object obj = ResourceManager.GetObject("icons8_customer_25px", resourceCulture);
@@ -106,6 +116,16 @@ namespace CurtainDesigner.Properties {
         internal static System.Drawing.Bitmap icons8_divider_25px {
             get {
                 object obj = ResourceManager.GetObject("icons8_divider_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_divider_25px1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_divider_25px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +223,29 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_tags_25px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_tags_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_text_width_25px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_text_width_25px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tree_structure_25px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_tree_structure_25px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
