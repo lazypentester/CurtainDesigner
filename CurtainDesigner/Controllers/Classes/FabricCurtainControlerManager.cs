@@ -38,10 +38,13 @@ namespace CurtainDesigner.Controllers.Classes
             reader = await model.getDataFromDB("Select * From [System_color];");
             view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxSystemColor, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Name", "Color_id");
 
+            reader = await model.getDataFromDB($"Select * From [Installation];");
+            view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxInstallation, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Installation_object", "Installation_id");
+
             model.closeConnection();
         }
 
-        public async void load_data(F form, int type_id)
+        public async void load_subtype(F form, int type_id)
         {
             CurtainDesigner.Models.Classes.FabricCurtainManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();
             CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T> view = new CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T>();
@@ -49,26 +52,31 @@ namespace CurtainDesigner.Controllers.Classes
 
             reader = await model.getDataFromDB($"Select * From [Fabric_curtains_subtypes] fcs Where [fcs].[Type_id] = {type_id};");
             view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxCurtainSubtype, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Subtype_name", "Subtype_id");
-
-            reader = await model.getDataFromDB($"Select * From [Additional_equipment] ae Where [ae].[Type_id] = {type_id};");
-            view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxEquipment, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Equipment", "Equipment_id");
-
-            reader = await model.getDataFromDB($"Select * From [Fabric] f Where [f].[Type_id] = {type_id};");
-            view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxFabric, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Name", "Fabric_id");
-
-            reader = await model.getDataFromDB($"Select * From [Installation] i Where [i].[Type_id] = {type_id};");
-            view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxInstallation, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Installation_object", "Installation_id");
-
-            model.closeConnection();
         }
 
-        public async void load_FabricCategorydata(F form, int type_id, int fabric_id)
+        public async void load_data(F form, int type_id, int subtype_id)
         {
             CurtainDesigner.Models.Classes.FabricCurtainManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();
             CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T> view = new CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T>();
             SqlDataReader reader = null;
 
-            reader = await model.getDataFromDB($"Select * From [Fabric_curtains_category] fcc Where [fcc].[Category_id] IN (Select Category_id From [Fabric_fabricCategory] ffc Where and [ffc].[Fabric_id] = {fabric_id}) and [fcc].[Type_id] = {type_id};");
+            reader = await model.getDataFromDB($"Select * From [Additional_equipment] ae Where [ae].[Type_id] = {type_id} and [fcc].[Subtype_id] = {subtype_id};");
+            view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxEquipment, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Equipment", "Equipment_id");
+
+            reader = await model.getDataFromDB($"Select * From [Fabric] f Where [f].[Type_id] = {type_id} and [fcc].[Subtype_id] = {subtype_id};");
+            view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxFabric, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Name", "Fabric_id");
+
+
+            model.closeConnection();
+        }
+
+        public async void load_FabricCategorydata(F form, int type_id, int fabric_id, int subtype_id)
+        {
+            CurtainDesigner.Models.Classes.FabricCurtainManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();
+            CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T> view = new CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T>();
+            SqlDataReader reader = null;
+
+            reader = await model.getDataFromDB($"Select * From [Fabric_curtains_category] fcc Where [fcc].[Category_id] IN (Select Category_id From [Fabric_fabricCategory] ffc Where and [ffc].[Fabric_id] = {fabric_id}) and [fcc].[Type_id] = {type_id} and [fcc].[Subtype_id] = {subtype_id};");
             view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxFabricCategory, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Category", "Category_id");
 
             model.closeConnection();

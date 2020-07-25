@@ -18,7 +18,8 @@ namespace CurtainDesigner
         {
             InitializeComponent();
             LoadDataFromDb();
-            comboBoxCurtainType.SelectionChangeCommitted += new EventHandler(loadNextDataFromDB);
+            comboBoxCurtainType.SelectionChangeCommitted += new EventHandler(loadSubtypes);
+            comboBoxCurtainSubtype.SelectionChangeCommitted += new EventHandler(loadNextDataFromDB);
             comboBoxFabric.SelectionChangeCommitted += new EventHandler(loadFabricCategoryFromBD);
         }
 
@@ -34,23 +35,47 @@ namespace CurtainDesigner
             await Task.Run(() => controler.load_data(this));
         }
 
+        private async void loadSubtypes(object sender, EventArgs e)
+        {
+            CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
+            await Task.Run(() => controler.load_subtype(this, comboBoxCurtainType.SelectedIndex));
+            comboBoxCurtainSubtype.Enabled = true;
+        }
+
         private async void loadNextDataFromDB(object sender, EventArgs e)
         {
-            comboBoxCurtainSubtype.Enabled = true;
             comboBoxFabric.Enabled = true;
             comboBoxEquipment.Enabled = true;
-            comboBoxInstallation.Enabled = true;
 
             CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            await Task.Run(() => controler.load_data(this, comboBoxCurtainType.SelectedIndex));
+            await Task.Run(() => controler.load_data(this, comboBoxCurtainType.SelectedIndex, comboBoxCurtainSubtype.SelectedIndex));
         }
 
         private async void loadFabricCategoryFromBD(object sender, EventArgs e)
         {
-            comboBoxFabricCategory.Enabled = true;
-
             CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            await Task.Run(() => controler.load_FabricCategorydata(this, comboBoxCurtainType.SelectedIndex, comboBoxFabricCategory.SelectedIndex));
+            await Task.Run(() => controler.load_FabricCategorydata(this, comboBoxCurtainType.SelectedIndex, comboBoxFabricCategory.SelectedIndex, comboBoxCurtainSubtype.SelectedIndex));
+
+            comboBoxFabricCategory.Enabled = true;
+        }
+
+        private void panel37_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuCheckboxCustomInstallation_OnChange(object sender, EventArgs e)
+        {
+            if(bunifuCheckboxCustomInstallation.Checked == true)
+            {
+                numericUpDownCustomInstallationPrice.Enabled = true;
+                comboBoxInstallation.Enabled = false;
+            }
+            else
+            {
+                numericUpDownCustomInstallationPrice.Enabled = false;
+                comboBoxInstallation.Enabled = true;
+            }
         }
     }
 }
