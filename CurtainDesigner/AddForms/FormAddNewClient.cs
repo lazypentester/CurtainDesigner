@@ -27,6 +27,7 @@ namespace CurtainDesigner.AddForms
         public FormAddNewClient(string id, string surname, string name, string phone, string address)
         {
             InitializeComponent();
+            labelFormName.Text = "  Редагування";
             tooltips();
             isEditClient = true;
             client_id = id;
@@ -195,6 +196,81 @@ namespace CurtainDesigner.AddForms
             }
 
             return sended;
+        }
+
+        private void bunifuMaterialTextboxName_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextboxPhone_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextboxAddress_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextboxSurname_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel28_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel29_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel30_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel31_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel32_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonDrag_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFormName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,7 @@ namespace CurtainDesigner.UserControls
             newClient.DialogResult = DialogResult.None;
             newClient.ShowDialog();
             if (newClient.DialogResult == DialogResult.OK)
-                load_data();
+                load_clients();
         }
 
         internal async void load_clients()
@@ -105,7 +105,7 @@ namespace CurtainDesigner.UserControls
                 editClient.DialogResult = DialogResult.None;
                 editClient.ShowDialog();
                 if (editClient.DialogResult == DialogResult.OK)
-                    load_data();
+                    load_clients();
             }
             else if(e.ColumnIndex == 6)
             {

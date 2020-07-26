@@ -75,6 +75,24 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.Designer.cs">
+      <DependentUpon>FCFabricCategoryAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricSubtypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricSubtypeAddForm.Designer.cs">
+      <DependentUpon>FCFabricSubtypeAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricTypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricTypeAddForm.Designer.cs">
+      <DependentUpon>FCFabricTypeAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\FormAddNewClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +138,24 @@
     <Compile Include="Trash\ListOthers.Designer.cs">
       <DependentUpon>ListOthers.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.Designer.cs">
+      <DependentUpon>UserControlCurt_categoryFB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_SubtypeFC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_SubtypeFC.Designer.cs">
+      <DependentUpon>UserControlCurt_SubtypeFC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_TypeFC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_TypeFC.Designer.cs">
+      <DependentUpon>UserControlCurt_TypeFC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlClientDataBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +164,15 @@
     </Compile>
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
+    <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.resx">
+      <DependentUpon>FCFabricCategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricSubtypeAddForm.resx">
+      <DependentUpon>FCFabricSubtypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricTypeAddForm.resx">
+      <DependentUpon>FCFabricTypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\FormAddNewClient.resx">
       <DependentUpon>FormAddNewClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +200,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trash\ListOthers.resx">
       <DependentUpon>ListOthers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.resx">
+      <DependentUpon>UserControlCurt_categoryFB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_SubtypeFC.resx">
+      <DependentUpon>UserControlCurt_SubtypeFC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_TypeFC.resx">
+      <DependentUpon>UserControlCurt_TypeFC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlClientDataBase.resx">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>
@@ -193,6 +247,9 @@
     <None Include="bin\Debug\imgs\icons8_tree_structure_25px.png" />
     <None Include="bin\Debug\imgs\icons8_tags_25px.png" />
     <None Include="bin\Debug\imgs\icons8_crane_25px.png" />
+    <None Include="bin\Debug\imgs\icons8_add_tag_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_add_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_add_row_30px_1.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -213,8 +270,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControls\UCSettingsSideBarMenus\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

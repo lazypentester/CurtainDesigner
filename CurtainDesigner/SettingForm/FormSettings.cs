@@ -20,7 +20,11 @@ namespace CurtainDesigner.SettingForm
         private UserControl activeControl;
         private Panel currentOpenPanel = null;
 
-        internal UserControls.UserControlClientDataBase control_clients;
+        private UserControls.UserControlClientDataBase control_clients;
+
+        private UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB control_fc_categories;
+        private UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC control_fc_types;
+        private UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC control_fc_subtypes;
 
         private Panel mainMenuSidePanel = null;
 
@@ -60,7 +64,9 @@ namespace CurtainDesigner.SettingForm
         private void addUserControlls()
         {
             this.panelContainer.Controls.Add(control_clients = new UserControls.UserControlClientDataBase()); control_clients.Hide();
-
+            this.panelContainer.Controls.Add(control_fc_categories = new UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB()); control_fc_categories.Hide();
+            this.panelContainer.Controls.Add(control_fc_types = new UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC()); control_fc_types.Hide();
+            this.panelContainer.Controls.Add(control_fc_subtypes = new UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC()); control_fc_subtypes.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -191,13 +197,15 @@ namespace CurtainDesigner.SettingForm
         private void bunifuSystemTypesButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-           // do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender);
+            OpenChildControl(control_fc_types, sender);
         }
 
         private void bunifuAdditionalEquipmentButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
+            OpenChildControl(control_fc_categories, sender);
         }
 
         private void bunifuOthersButton_Click(object sender, EventArgs e)
@@ -317,6 +325,13 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+        }
+
+        private void bunifuSubtypesSystemButtonFC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            //do_visiblePanelOthers(sender);
+            OpenChildControl(control_fc_subtypes, sender);
         }
     }
 }

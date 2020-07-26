@@ -45,7 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelFormName = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -70,12 +70,13 @@
             this.panel28.Controls.Add(this.label4);
             this.panel28.Controls.Add(this.label3);
             this.panel28.Controls.Add(this.label2);
-            this.panel28.Controls.Add(this.label1);
+            this.panel28.Controls.Add(this.labelFormName);
             this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel28.Location = new System.Drawing.Point(0, 0);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(336, 360);
-            this.panel28.TabIndex = 10;
+            this.panel28.TabIndex = 0;
+            this.panel28.Paint += new System.Windows.Forms.PaintEventHandler(this.panel28_Paint);
             // 
             // iconButtonCancel
             // 
@@ -98,7 +99,7 @@
             this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.iconButtonCancel.Rotation = 0D;
             this.iconButtonCancel.Size = new System.Drawing.Size(155, 38);
-            this.iconButtonCancel.TabIndex = 10;
+            this.iconButtonCancel.TabIndex = 6;
             this.iconButtonCancel.Text = "Скасувати";
             this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -126,7 +127,7 @@
             this.iconButtonOk.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.iconButtonOk.Rotation = 0D;
             this.iconButtonOk.Size = new System.Drawing.Size(155, 38);
-            this.iconButtonOk.TabIndex = 10;
+            this.iconButtonOk.TabIndex = 5;
             this.iconButtonOk.Text = "Підтвердити";
             this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -149,8 +150,9 @@
             this.bunifuMaterialTextboxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextboxPhone.Name = "bunifuMaterialTextboxPhone";
             this.bunifuMaterialTextboxPhone.Size = new System.Drawing.Size(219, 32);
-            this.bunifuMaterialTextboxPhone.TabIndex = 9;
+            this.bunifuMaterialTextboxPhone.TabIndex = 4;
             this.bunifuMaterialTextboxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextboxPhone.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextboxPhone_OnValueChanged);
             // 
             // bunifuMaterialTextboxAddress
             // 
@@ -168,8 +170,9 @@
             this.bunifuMaterialTextboxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextboxAddress.Name = "bunifuMaterialTextboxAddress";
             this.bunifuMaterialTextboxAddress.Size = new System.Drawing.Size(219, 32);
-            this.bunifuMaterialTextboxAddress.TabIndex = 9;
+            this.bunifuMaterialTextboxAddress.TabIndex = 3;
             this.bunifuMaterialTextboxAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextboxAddress.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextboxAddress_OnValueChanged);
             // 
             // bunifuMaterialTextboxSurname
             // 
@@ -187,8 +190,9 @@
             this.bunifuMaterialTextboxSurname.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextboxSurname.Name = "bunifuMaterialTextboxSurname";
             this.bunifuMaterialTextboxSurname.Size = new System.Drawing.Size(219, 32);
-            this.bunifuMaterialTextboxSurname.TabIndex = 9;
+            this.bunifuMaterialTextboxSurname.TabIndex = 2;
             this.bunifuMaterialTextboxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextboxSurname.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextboxSurname_OnValueChanged);
             // 
             // bunifuMaterialTextboxName
             // 
@@ -206,8 +210,9 @@
             this.bunifuMaterialTextboxName.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextboxName.Name = "bunifuMaterialTextboxName";
             this.bunifuMaterialTextboxName.Size = new System.Drawing.Size(219, 32);
-            this.bunifuMaterialTextboxName.TabIndex = 9;
+            this.bunifuMaterialTextboxName.TabIndex = 1;
             this.bunifuMaterialTextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextboxName.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextboxName_OnValueChanged);
             // 
             // panel29
             // 
@@ -217,6 +222,7 @@
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(2, 333);
             this.panel29.TabIndex = 3;
+            this.panel29.Paint += new System.Windows.Forms.PaintEventHandler(this.panel29_Paint);
             // 
             // panel30
             // 
@@ -226,6 +232,7 @@
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(2, 333);
             this.panel30.TabIndex = 2;
+            this.panel30.Paint += new System.Windows.Forms.PaintEventHandler(this.panel30_Paint);
             // 
             // panel31
             // 
@@ -235,6 +242,7 @@
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(336, 2);
             this.panel31.TabIndex = 1;
+            this.panel31.Paint += new System.Windows.Forms.PaintEventHandler(this.panel31_Paint);
             // 
             // panel32
             // 
@@ -245,6 +253,7 @@
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(336, 25);
             this.panel32.TabIndex = 0;
+            this.panel32.Paint += new System.Windows.Forms.PaintEventHandler(this.panel32_Paint);
             // 
             // buttonDrag
             // 
@@ -255,7 +264,9 @@
             this.buttonDrag.Name = "buttonDrag";
             this.buttonDrag.Size = new System.Drawing.Size(196, 7);
             this.buttonDrag.TabIndex = 0;
+            this.buttonDrag.TabStop = false;
             this.buttonDrag.UseVisualStyleBackColor = false;
+            this.buttonDrag.Click += new System.EventHandler(this.buttonDrag_Click);
             // 
             // label5
             // 
@@ -265,8 +276,9 @@
             this.label5.Location = new System.Drawing.Point(15, 262);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 18);
-            this.label5.TabIndex = 6;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Телефон:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -276,8 +288,9 @@
             this.label4.Location = new System.Drawing.Point(22, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 18);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Адреса:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -287,8 +300,9 @@
             this.label3.Location = new System.Drawing.Point(12, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 18);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Прізвище:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -298,19 +312,21 @@
             this.label2.Location = new System.Drawing.Point(56, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 18);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Ім\'я:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // labelFormName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(107, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Новий клієнт";
+            this.labelFormName.AutoSize = true;
+            this.labelFormName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFormName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.labelFormName.Location = new System.Drawing.Point(107, 49);
+            this.labelFormName.Name = "labelFormName";
+            this.labelFormName.Size = new System.Drawing.Size(113, 19);
+            this.labelFormName.TabIndex = 0;
+            this.labelFormName.Text = "Новий клієнт";
+            this.labelFormName.Click += new System.EventHandler(this.labelFormName_Click);
             // 
             // bunifuElipse1
             // 
@@ -367,7 +383,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButtonOk;
         private FontAwesome.Sharp.IconButton iconButtonCancel;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
@@ -375,5 +390,6 @@
         private System.Windows.Forms.Button buttonDrag;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        internal System.Windows.Forms.Label labelFormName;
     }
 }
