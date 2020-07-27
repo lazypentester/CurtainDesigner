@@ -76,7 +76,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                 {
                     while (await reader.ReadAsync())
                         bunifuCustomDataGridSubTypesDataBase.Rows.Add(
-                    new object[] { reader["Type_id"].ToString(), reader["Subype_id"].ToString(), reader["Subtype_name"].ToString() });
+                    new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Subtype_name"].ToString() });
                 }
             }
             catch (Exception exeption)

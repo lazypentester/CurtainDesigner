@@ -160,10 +160,10 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.bunifuCustomDataGridCategoriesDataBase.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Silver;
+            this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.DividerHeight = 1;
             this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.Height = 25;
             this.bunifuCustomDataGridCategoriesDataBase.RowTemplate.ReadOnly = true;

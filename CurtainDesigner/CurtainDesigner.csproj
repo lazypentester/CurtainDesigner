@@ -75,6 +75,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricAdditionalEquipmentAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricAdditionalEquipmentAddForm.Designer.cs">
+      <DependentUpon>FCFabricAdditionalEquipmentAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="Trash\ListOthers.Designer.cs">
       <DependentUpon>ListOthers.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.Designer.cs">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentFC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +176,9 @@
     </Compile>
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
+    <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricAdditionalEquipmentAddForm.resx">
+      <DependentUpon>FCFabricAdditionalEquipmentAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.resx">
       <DependentUpon>FCFabricCategoryAddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trash\ListOthers.resx">
       <DependentUpon>ListOthers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.resx">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentFC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.resx">
       <DependentUpon>UserControlCurt_categoryFB.cs</DependentUpon>

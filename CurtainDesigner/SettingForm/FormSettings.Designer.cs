@@ -807,7 +807,7 @@
             this.bunifuFlatFabricCategiryButtonFC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatFabricCategiryButtonFC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
             this.bunifuFlatFabricCategiryButtonFC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatFabricCategiryButtonFC.Click += new System.EventHandler(this.bunifuAdditionalEquipmentButton_Click);
+            this.bunifuFlatFabricCategiryButtonFC.Click += new System.EventHandler(this.bunifuFlatFabricCategiryButtonFC_Click);
             // 
             // bunifuAdditionalEquipmentButton
             // 

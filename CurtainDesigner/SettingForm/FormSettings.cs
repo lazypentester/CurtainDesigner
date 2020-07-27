@@ -25,6 +25,7 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB control_fc_categories;
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC control_fc_types;
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC control_fc_subtypes;
+        private UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC control_fc_additionalEquipment;
 
         private Panel mainMenuSidePanel = null;
 
@@ -67,6 +68,7 @@ namespace CurtainDesigner.SettingForm
             this.panelContainer.Controls.Add(control_fc_categories = new UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB()); control_fc_categories.Hide();
             this.panelContainer.Controls.Add(control_fc_types = new UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC()); control_fc_types.Hide();
             this.panelContainer.Controls.Add(control_fc_subtypes = new UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC()); control_fc_subtypes.Hide();
+            this.panelContainer.Controls.Add(control_fc_additionalEquipment = new UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC()); control_fc_additionalEquipment.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -205,7 +207,7 @@ namespace CurtainDesigner.SettingForm
         {
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
-            OpenChildControl(control_fc_categories, sender);
+            OpenChildControl(control_fc_additionalEquipment, sender);
         }
 
         private void bunifuOthersButton_Click(object sender, EventArgs e)
@@ -332,6 +334,13 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_fc_subtypes, sender);
+        }
+
+        private void bunifuFlatFabricCategiryButtonFC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            //do_visiblePanelOthers(sender);
+            OpenChildControl(control_fc_categories, sender);
         }
     }
 }

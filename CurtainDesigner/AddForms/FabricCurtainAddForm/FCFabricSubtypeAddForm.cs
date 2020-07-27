@@ -101,6 +101,7 @@ namespace CurtainDesigner.AddForms.FabricCurtainAddForm
                     while (await reader.ReadAsync())
                     {
                         pairTypes.Add(new KeyValuePair<string, int>(reader["Type_name"].ToString(), Convert.ToInt32(reader["Type_id"])));
+                        if (reader["Type_id"].ToString() == type_id)
                         { comboBoxCurtainType.SelectedItem = reader["Type_name"].ToString(); comboBoxCurtainType.SelectedValue = reader["Type_id"]; }
                     }
                 }

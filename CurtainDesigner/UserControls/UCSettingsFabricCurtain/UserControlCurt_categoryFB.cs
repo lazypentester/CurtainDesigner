@@ -55,18 +55,18 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                 await connection.OpenAsync();
             }
 
-            SqlCommand command_loadclients = new SqlCommand("Select * From [Fabric_curtains_category];", connection);
+            SqlCommand command_loadcategories = new SqlCommand("Select * From [Fabric_curtains_category];", connection);
 
             SqlDataReader reader = null;
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
+                reader = await command_loadcategories.ExecuteReaderAsync();
                 if (bunifuCustomDataGridCategoriesDataBase.InvokeRequired)
                 {
-                    bunifuCustomDataGridCategoriesDataBase.Invoke((MethodInvoker)async delegate
+                    bunifuCustomDataGridCategoriesDataBase.Invoke((MethodInvoker) delegate
                     {
-                        while (await reader.ReadAsync())
+                        while (reader.Read())
                             bunifuCustomDataGridCategoriesDataBase.Rows.Add(
                         new object[] { reader["Category_id"].ToString(), reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Category"].ToString(), reader["Price"].ToString() });
                     });
@@ -98,6 +98,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                 AddForms.FabricCurtainAddForm.FCFabricCategoryAddForm editCategory = new AddForms.FabricCurtainAddForm.FCFabricCategoryAddForm(
                     bunifuCustomDataGridCategoriesDataBase.Rows[e.RowIndex].Cells["ColumnCategory_id"].Value.ToString(),
                     bunifuCustomDataGridCategoriesDataBase.Rows[e.RowIndex].Cells["ColumnType_id"].Value.ToString(),
+                    bunifuCustomDataGridCategoriesDataBase.Rows[e.RowIndex].Cells["ColumnSubtype_id"].Value.ToString(),
                     bunifuCustomDataGridCategoriesDataBase.Rows[e.RowIndex].Cells["ColumnCategory"].Value.ToString(),
                     Convert.ToDecimal(bunifuCustomDataGridCategoriesDataBase.Rows[e.RowIndex].Cells["ColumnPrice"].Value)
                     );
