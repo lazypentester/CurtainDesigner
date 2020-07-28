@@ -163,6 +163,16 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_fabric_sample_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_fabric_sample_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_job_45px {
             get {
                 object obj = ResourceManager.GetObject("icons8_job_45px", resourceCulture);
@@ -206,6 +216,16 @@ namespace CurtainDesigner.Properties {
         internal static System.Drawing.Bitmap icons8_pencil_drawing_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_pencil_drawing_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pictures_folder_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pictures_folder_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

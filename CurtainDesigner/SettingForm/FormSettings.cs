@@ -26,6 +26,7 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC control_fc_types;
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC control_fc_subtypes;
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC control_fc_additionalEquipment;
+        private UserControls.UCSettingsFabricCurtain.UserControlCurt_fabricFC control_fc_fabric;
 
         private Panel mainMenuSidePanel = null;
 
@@ -69,6 +70,7 @@ namespace CurtainDesigner.SettingForm
             this.panelContainer.Controls.Add(control_fc_types = new UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC()); control_fc_types.Hide();
             this.panelContainer.Controls.Add(control_fc_subtypes = new UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC()); control_fc_subtypes.Hide();
             this.panelContainer.Controls.Add(control_fc_additionalEquipment = new UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC()); control_fc_additionalEquipment.Hide();
+            this.panelContainer.Controls.Add(control_fc_fabric = new UserControls.UCSettingsFabricCurtain.UserControlCurt_fabricFC()); control_fc_fabric.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -193,7 +195,8 @@ namespace CurtainDesigner.SettingForm
         private void bunifuFabricDataBaseButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            //do_visiblePanelOthers(sender);
+            //do_visiblePanelOthers(sender); control_fc_fabric
+            OpenChildControl(control_fc_fabric, sender);
         }
 
         private void bunifuSystemTypesButton_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        private SqlConnection connectionForTypeName;
 
         public UserControlCurt_SubtypeFC()
         {
@@ -66,17 +67,25 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                 {
                     bunifuCustomDataGridSubTypesDataBase.Invoke((MethodInvoker)async delegate
                     {
+                        string tp_name = "";
                         while (await reader.ReadAsync())
+                        {
+                            tp_name = get_TypeName(reader["Type_id"].ToString());
                             bunifuCustomDataGridSubTypesDataBase.Rows.Add(
-                        new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Subtype_name"].ToString() });
+                            new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), tp_name, reader["Subtype_name"].ToString() });
+                        }
                     });
 
                 }
                 else
                 {
+                    string tp_name = "";
                     while (await reader.ReadAsync())
+                    {
+                        tp_name = get_TypeName(reader["Type_id"].ToString());
                         bunifuCustomDataGridSubTypesDataBase.Rows.Add(
-                    new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Subtype_name"].ToString() });
+                        new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), tp_name, reader["Subtype_name"].ToString() });
+                    }
                 }
             }
             catch (Exception exeption)
@@ -93,7 +102,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
 
         private void bunifuCustomDataGridSubTypesDataBase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3)
+            if (e.ColumnIndex == 4)
             {
                 AddForms.FabricCurtainAddForm.FCFabricSubtypeAddForm editSubtype = new AddForms.FabricCurtainAddForm.FCFabricSubtypeAddForm(
                     bunifuCustomDataGridSubTypesDataBase.Rows[e.RowIndex].Cells["ColumnType_id"].Value.ToString(),
@@ -105,13 +114,47 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                 if (editSubtype.DialogResult == DialogResult.OK)
                     load_subtypes();
             }
-            else if (e.ColumnIndex == 4)
+            else if (e.ColumnIndex == 5)
             {
                 AddForms.FabricCurtainAddForm.FCFabricSubtypeAddForm removeSubtype = new AddForms.FabricCurtainAddForm.FCFabricSubtypeAddForm(
                     bunifuCustomDataGridSubTypesDataBase.Rows[e.RowIndex].Cells["ColumnSubtype_id"].Value.ToString(),
                     this
                     );
             }
+        }
+
+        private string get_TypeName(string type_id)
+        {
+            string type_name = "";
+
+            if (connectionForTypeName == null || connectionForTypeName.State == ConnectionState.Closed)
+            {
+                connectionForTypeName = new SqlConnection(connect_str);
+                connectionForTypeName.Open();
+            }
+
+            SqlCommand command_loadtypename = new SqlCommand($"Select Type_name From [Fabric_curtains_types] Where Type_id = {type_id};", connectionForTypeName);
+
+            SqlDataReader reader2 = null;
+
+            try
+            {
+                reader2 = command_loadtypename.ExecuteReader();
+                while (reader2.Read())
+                    type_name = reader2["Type_name"].ToString();
+            }
+            catch (Exception exeption)
+            {
+                MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader2 != null && !reader2.IsClosed)
+                    reader2.Close();
+                connectionForTypeName.Close();
+            }
+
+            return type_name;
         }
     }
 }

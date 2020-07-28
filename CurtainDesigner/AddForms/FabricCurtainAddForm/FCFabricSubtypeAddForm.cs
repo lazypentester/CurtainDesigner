@@ -120,7 +120,7 @@ namespace CurtainDesigner.AddForms.FabricCurtainAddForm
 
         private bool checkIsEmpty()
         {
-            if (comboBoxCurtainType.DataSource == null ||
+            if (comboBoxCurtainType.DataSource == null || comboBoxCurtainType.SelectedValue == null ||
                 string.IsNullOrWhiteSpace(bunifuMaterialTextboxSubtypeName.Text))
                 return true;
             return false;

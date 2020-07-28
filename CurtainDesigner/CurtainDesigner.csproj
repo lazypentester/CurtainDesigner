@@ -87,6 +87,12 @@
     <Compile Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.Designer.cs">
       <DependentUpon>FCFabricCategoryAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricFabricAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FabricCurtainAddForm\FCFabricFabricAddForm.Designer.cs">
+      <DependentUpon>FCFabricFabricAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\FabricCurtainAddForm\FCFabricSubtypeAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,12 @@
     <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.Designer.cs">
       <DependentUpon>UserControlCurt_categoryFB.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_fabricFC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_fabricFC.Designer.cs">
+      <DependentUpon>UserControlCurt_fabricFC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_SubtypeFC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricCategoryAddForm.resx">
       <DependentUpon>FCFabricCategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricFabricAddForm.resx">
+      <DependentUpon>FCFabricFabricAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricSubtypeAddForm.resx">
       <DependentUpon>FCFabricSubtypeAddForm.cs</DependentUpon>
@@ -221,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_categoryFB.resx">
       <DependentUpon>UserControlCurt_categoryFB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_fabricFC.resx">
+      <DependentUpon>UserControlCurt_fabricFC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_SubtypeFC.resx">
       <DependentUpon>UserControlCurt_SubtypeFC.cs</DependentUpon>
@@ -268,6 +286,8 @@
     <None Include="bin\Debug\imgs\icons8_add_tag_30px.png" />
     <None Include="bin\Debug\imgs\icons8_add_30px.png" />
     <None Include="bin\Debug\imgs\icons8_add_row_30px_1.png" />
+    <None Include="bin\Debug\imgs\icons8_fabric_sample_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_pictures_folder_30px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

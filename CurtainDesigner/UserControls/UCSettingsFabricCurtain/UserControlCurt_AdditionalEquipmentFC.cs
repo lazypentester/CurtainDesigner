@@ -56,13 +56,13 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                 await connection.OpenAsync();
             }
 
-            SqlCommand command_loadclients = new SqlCommand("Select * From [Additional_equipment];", connection);
+            SqlCommand command_loadEQUIPMENT = new SqlCommand("Select * From [Additional_equipment];", connection);
 
             SqlDataReader reader = null;
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
+                reader = await command_loadEQUIPMENT.ExecuteReaderAsync();
                 if (bunifuCustomDataGridEquipmentsDataBase.InvokeRequired)
                 {
                     bunifuCustomDataGridEquipmentsDataBase.Invoke((MethodInvoker)async delegate
@@ -107,7 +107,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             if (connectionForTypeName == null || connectionForTypeName.State == ConnectionState.Closed)
             {
                 connectionForTypeName = new SqlConnection(connect_str);
-                connectionForTypeName.OpenAsync();
+                connectionForTypeName.Open();
             }
 
             SqlCommand command_loadtypename = new SqlCommand($"Select Type_name From [Fabric_curtains_types] Where Type_id = {type_id};", connectionForTypeName);

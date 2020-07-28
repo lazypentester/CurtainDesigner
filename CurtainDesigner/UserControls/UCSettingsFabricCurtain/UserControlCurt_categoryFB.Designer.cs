@@ -39,6 +39,9 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseTable = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomDataGridCategoriesDataBase = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.panelTable = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnCategory_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnType_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSubtype_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +49,6 @@
             this.ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panelTable = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelFooter.SuspendLayout();
             this.panelFooterContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridCategoriesDataBase)).BeginInit();
@@ -173,52 +173,6 @@
             this.bunifuCustomDataGridCategoriesDataBase.TabIndex = 7;
             this.bunifuCustomDataGridCategoriesDataBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGridCategoriesDataBase_CellContentClick);
             // 
-            // ColumnCategory_id
-            // 
-            this.ColumnCategory_id.HeaderText = "id Категорії";
-            this.ColumnCategory_id.Name = "ColumnCategory_id";
-            this.ColumnCategory_id.Visible = false;
-            // 
-            // ColumnType_id
-            // 
-            this.ColumnType_id.HeaderText = " id Типу";
-            this.ColumnType_id.Name = "ColumnType_id";
-            this.ColumnType_id.Visible = false;
-            // 
-            // ColumnSubtype_id
-            // 
-            this.ColumnSubtype_id.HeaderText = "id Підтипу";
-            this.ColumnSubtype_id.Name = "ColumnSubtype_id";
-            this.ColumnSubtype_id.Visible = false;
-            // 
-            // ColumnCategory
-            // 
-            this.ColumnCategory.FillWeight = 229.941F;
-            this.ColumnCategory.HeaderText = "Категорія";
-            this.ColumnCategory.Name = "ColumnCategory";
-            // 
-            // ColumnPrice
-            // 
-            this.ColumnPrice.FillWeight = 21.57836F;
-            this.ColumnPrice.HeaderText = "Ціна";
-            this.ColumnPrice.Name = "ColumnPrice";
-            // 
-            // ColumnEdit
-            // 
-            this.ColumnEdit.FillWeight = 20.02341F;
-            this.ColumnEdit.HeaderText = "";
-            this.ColumnEdit.Image = global::CurtainDesigner.Properties.Resources.icons8_pencil_drawing_30px;
-            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnEdit.Name = "ColumnEdit";
-            // 
-            // ColumnDelete
-            // 
-            this.ColumnDelete.FillWeight = 20.70483F;
-            this.ColumnDelete.HeaderText = "";
-            this.ColumnDelete.Image = global::CurtainDesigner.Properties.Resources.icons8_delete_bin_30px;
-            this.ColumnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnDelete.Name = "ColumnDelete";
-            // 
             // panelTable
             // 
             this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -247,6 +201,57 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 77;
+            // 
+            // ColumnCategory_id
+            // 
+            this.ColumnCategory_id.HeaderText = "id Категорії";
+            this.ColumnCategory_id.Name = "ColumnCategory_id";
+            this.ColumnCategory_id.Visible = false;
+            // 
+            // ColumnType_id
+            // 
+            this.ColumnType_id.HeaderText = " id Типу";
+            this.ColumnType_id.Name = "ColumnType_id";
+            this.ColumnType_id.Visible = false;
+            // 
+            // ColumnSubtype_id
+            // 
+            this.ColumnSubtype_id.FillWeight = 16.62661F;
+            this.ColumnSubtype_id.HeaderText = "id Підтипу";
+            this.ColumnSubtype_id.MinimumWidth = 180;
+            this.ColumnSubtype_id.Name = "ColumnSubtype_id";
+            // 
+            // ColumnCategory
+            // 
+            this.ColumnCategory.FillWeight = 263.1797F;
+            this.ColumnCategory.HeaderText = "Категорія";
+            this.ColumnCategory.MinimumWidth = 196;
+            this.ColumnCategory.Name = "ColumnCategory";
+            // 
+            // ColumnPrice
+            // 
+            this.ColumnPrice.FillWeight = 12.65886F;
+            this.ColumnPrice.HeaderText = "Ціна";
+            this.ColumnPrice.MinimumWidth = 140;
+            this.ColumnPrice.Name = "ColumnPrice";
+            // 
+            // ColumnEdit
+            // 
+            this.ColumnEdit.FillWeight = 0.2271125F;
+            this.ColumnEdit.HeaderText = "";
+            this.ColumnEdit.Image = global::CurtainDesigner.Properties.Resources.icons8_pencil_drawing_30px;
+            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnEdit.MinimumWidth = 50;
+            this.ColumnEdit.Name = "ColumnEdit";
+            // 
+            // ColumnDelete
+            // 
+            this.ColumnDelete.FillWeight = 99.55522F;
+            this.ColumnDelete.HeaderText = "";
+            this.ColumnDelete.Image = global::CurtainDesigner.Properties.Resources.icons8_delete_bin_30px;
+            this.ColumnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnDelete.MinimumWidth = 50;
+            this.ColumnDelete.Name = "ColumnDelete";
             // 
             // UserControlCurt_categoryFB
             // 

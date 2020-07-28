@@ -39,14 +39,15 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseTable = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomDataGridSubTypesDataBase = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.ColumnType_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSubtype_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSubtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelTable = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnType_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSubtype_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnType_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSubtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelFooter.SuspendLayout();
             this.panelFooterContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridSubTypesDataBase)).BeginInit();
@@ -131,6 +132,7 @@
             this.bunifuCustomDataGridSubTypesDataBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnType_id,
             this.ColumnSubtype_id,
+            this.ColumnType_name,
             this.ColumnSubtype,
             this.ColumnEdit,
             this.ColumnDelete});
@@ -169,39 +171,6 @@
             this.bunifuCustomDataGridSubTypesDataBase.TabIndex = 7;
             this.bunifuCustomDataGridSubTypesDataBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGridSubTypesDataBase_CellContentClick);
             // 
-            // ColumnType_id
-            // 
-            this.ColumnType_id.HeaderText = "id Типу";
-            this.ColumnType_id.Name = "ColumnType_id";
-            this.ColumnType_id.Visible = false;
-            // 
-            // ColumnSubtype_id
-            // 
-            this.ColumnSubtype_id.HeaderText = "id Підтипу";
-            this.ColumnSubtype_id.Name = "ColumnSubtype_id";
-            // 
-            // ColumnSubtype
-            // 
-            this.ColumnSubtype.FillWeight = 229.941F;
-            this.ColumnSubtype.HeaderText = "Підтип системи";
-            this.ColumnSubtype.Name = "ColumnSubtype";
-            // 
-            // ColumnEdit
-            // 
-            this.ColumnEdit.FillWeight = 20.02341F;
-            this.ColumnEdit.HeaderText = "";
-            this.ColumnEdit.Image = global::CurtainDesigner.Properties.Resources.icons8_pencil_drawing_30px;
-            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnEdit.Name = "ColumnEdit";
-            // 
-            // ColumnDelete
-            // 
-            this.ColumnDelete.FillWeight = 20.70483F;
-            this.ColumnDelete.HeaderText = "";
-            this.ColumnDelete.Image = global::CurtainDesigner.Properties.Resources.icons8_delete_bin_30px;
-            this.ColumnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnDelete.Name = "ColumnDelete";
-            // 
             // panelTable
             // 
             this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -230,6 +199,53 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 77;
+            // 
+            // ColumnType_id
+            // 
+            this.ColumnType_id.HeaderText = "id Типу";
+            this.ColumnType_id.MinimumWidth = 10;
+            this.ColumnType_id.Name = "ColumnType_id";
+            this.ColumnType_id.Visible = false;
+            // 
+            // ColumnSubtype_id
+            // 
+            this.ColumnSubtype_id.HeaderText = "id Підтипу";
+            this.ColumnSubtype_id.MinimumWidth = 10;
+            this.ColumnSubtype_id.Name = "ColumnSubtype_id";
+            // 
+            // ColumnType_name
+            // 
+            this.ColumnType_name.FillWeight = 27.87781F;
+            this.ColumnType_name.HeaderText = "Тип системи";
+            this.ColumnType_name.MinimumWidth = 120;
+            this.ColumnType_name.Name = "ColumnType_name";
+            // 
+            // ColumnSubtype
+            // 
+            this.ColumnSubtype.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnSubtype.FillWeight = 342.4457F;
+            this.ColumnSubtype.HeaderText = "Підтип системи";
+            this.ColumnSubtype.MinimumWidth = 100;
+            this.ColumnSubtype.Name = "ColumnSubtype";
+            this.ColumnSubtype.Width = 400;
+            // 
+            // ColumnEdit
+            // 
+            this.ColumnEdit.FillWeight = 0.1699721F;
+            this.ColumnEdit.HeaderText = "";
+            this.ColumnEdit.Image = global::CurtainDesigner.Properties.Resources.icons8_pencil_drawing_30px;
+            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnEdit.MinimumWidth = 35;
+            this.ColumnEdit.Name = "ColumnEdit";
+            // 
+            // ColumnDelete
+            // 
+            this.ColumnDelete.FillWeight = 0.1757565F;
+            this.ColumnDelete.HeaderText = "";
+            this.ColumnDelete.Image = global::CurtainDesigner.Properties.Resources.icons8_delete_bin_30px;
+            this.ColumnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnDelete.MinimumWidth = 35;
+            this.ColumnDelete.Name = "ColumnDelete";
             // 
             // UserControlCurt_SubtypeFC
             // 
@@ -260,6 +276,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSubtype_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnType_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSubtype;
         private System.Windows.Forms.DataGridViewImageColumn ColumnEdit;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDelete;
