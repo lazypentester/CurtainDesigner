@@ -116,6 +116,10 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             }
             else if (e.ColumnIndex == 5)
             {
+                DialogResult dialog = MessageBox.Show("Ви дійсно бажаєте видалити цей об'єкт?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                    return;
+
                 AddForms.FabricCurtainAddForm.FCFabricSubtypeAddForm removeSubtype = new AddForms.FabricCurtainAddForm.FCFabricSubtypeAddForm(
                     bunifuCustomDataGridSubTypesDataBase.Rows[e.RowIndex].Cells["ColumnSubtype_id"].Value.ToString(),
                     this

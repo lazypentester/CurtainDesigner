@@ -114,6 +114,7 @@
     <Compile Include="Classes\ConnectionString.cs" />
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
+    <Compile Include="Classes\PathCombiner.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />
     <Compile Include="MainForm\Form1.cs">
@@ -288,6 +289,7 @@
     <None Include="bin\Debug\imgs\icons8_add_row_30px_1.png" />
     <None Include="bin\Debug\imgs\icons8_fabric_sample_30px.png" />
     <None Include="bin\Debug\imgs\icons8_pictures_folder_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_add_image_30px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

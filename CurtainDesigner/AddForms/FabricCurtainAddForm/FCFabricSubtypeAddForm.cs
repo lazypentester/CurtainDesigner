@@ -138,12 +138,24 @@ namespace CurtainDesigner.AddForms.FabricCurtainAddForm
                 MessageBox.Show("Помилка при видаленні категорії.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private bool check_message_length(int max_length, string text)
+        {
+            if (text.Length > max_length)
+                return false;
+            return true;
+        }
+
         private async void iconButtonOk_Click(object sender, EventArgs e)
         {
             if (checkIsEmpty())
             {
                 MessageBox.Show("Одне з полів не заповнено.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            if (!check_message_length(5000, bunifuMaterialTextboxSubtypeName.Text))
+            {
+                MessageBox.Show("Занадто великий обсяг тексту, помилка.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

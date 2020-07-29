@@ -109,6 +109,10 @@ namespace CurtainDesigner.UserControls
             }
             else if(e.ColumnIndex == 6)
             {
+                DialogResult dialog = MessageBox.Show("Ви дійсно бажаєте видалити цей об'єкт?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                    return;
+
                 AddForms.FormAddNewClient removeClient = new AddForms.FormAddNewClient(
                     bunifuCustomDataGridClientsDataBase.Rows[e.RowIndex].Cells["ColumnNumber"].Value.ToString(), 
                     this

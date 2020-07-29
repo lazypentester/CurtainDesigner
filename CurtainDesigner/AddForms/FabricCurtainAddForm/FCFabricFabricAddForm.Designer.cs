@@ -31,15 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.bunifuImageButtonSelectImg = new Bunifu.Framework.UI.BunifuImageButton();
             this.textBoxImgPath = new System.Windows.Forms.TextBox();
             this.bunifuCheckboxWithOutImg = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.pictureBoxSelectedImg = new System.Windows.Forms.PictureBox();
             this.bunifuMetroTextboxFabric = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.comboBoxCurtainType = new System.Windows.Forms.ComboBox();
-            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
-            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
@@ -59,10 +55,14 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuImageButtonSelectImg = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBoxSelectedImg = new System.Windows.Forms.PictureBox();
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
+            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.panel28.SuspendLayout();
+            this.panel32.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSelectImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedImg)).BeginInit();
-            this.panel32.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxCurtainSubtype
@@ -108,30 +108,16 @@
             this.panel28.Size = new System.Drawing.Size(389, 501);
             this.panel28.TabIndex = 1;
             // 
-            // bunifuImageButtonSelectImg
-            // 
-            this.bunifuImageButtonSelectImg.BackColor = System.Drawing.Color.DarkGray;
-            this.bunifuImageButtonSelectImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButtonSelectImg.Image = global::CurtainDesigner.Properties.Resources.icons8_pictures_folder_30px;
-            this.bunifuImageButtonSelectImg.ImageActive = null;
-            this.bunifuImageButtonSelectImg.Location = new System.Drawing.Point(330, 358);
-            this.bunifuImageButtonSelectImg.Name = "bunifuImageButtonSelectImg";
-            this.bunifuImageButtonSelectImg.Size = new System.Drawing.Size(39, 24);
-            this.bunifuImageButtonSelectImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButtonSelectImg.TabIndex = 12;
-            this.bunifuImageButtonSelectImg.TabStop = false;
-            this.bunifuImageButtonSelectImg.Zoom = 10;
-            this.bunifuImageButtonSelectImg.Click += new System.EventHandler(this.bunifuImageButtonSelectImg_Click);
-            // 
             // textBoxImgPath
             // 
             this.textBoxImgPath.BackColor = System.Drawing.Color.Silver;
             this.textBoxImgPath.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxImgPath.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxImgPath.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxImgPath.Location = new System.Drawing.Point(13, 358);
+            this.textBoxImgPath.Multiline = true;
             this.textBoxImgPath.Name = "textBoxImgPath";
             this.textBoxImgPath.ReadOnly = true;
-            this.textBoxImgPath.Size = new System.Drawing.Size(356, 24);
+            this.textBoxImgPath.Size = new System.Drawing.Size(319, 24);
             this.textBoxImgPath.TabIndex = 13;
             // 
             // bunifuCheckboxWithOutImg
@@ -145,15 +131,7 @@
             this.bunifuCheckboxWithOutImg.Name = "bunifuCheckboxWithOutImg";
             this.bunifuCheckboxWithOutImg.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckboxWithOutImg.TabIndex = 11;
-            // 
-            // pictureBoxSelectedImg
-            // 
-            this.pictureBoxSelectedImg.Location = new System.Drawing.Point(12, 388);
-            this.pictureBoxSelectedImg.Name = "pictureBoxSelectedImg";
-            this.pictureBoxSelectedImg.Size = new System.Drawing.Size(36, 31);
-            this.pictureBoxSelectedImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSelectedImg.TabIndex = 10;
-            this.pictureBoxSelectedImg.TabStop = false;
+            this.bunifuCheckboxWithOutImg.OnChange += new System.EventHandler(this.bunifuCheckboxWithOutImg_OnChange);
             // 
             // bunifuMetroTextboxFabric
             // 
@@ -194,62 +172,6 @@
             this.comboBoxCurtainType.Name = "comboBoxCurtainType";
             this.comboBoxCurtainType.Size = new System.Drawing.Size(244, 21);
             this.comboBoxCurtainType.TabIndex = 1;
-            // 
-            // iconButtonCancel
-            // 
-            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonCancel.AutoSize = true;
-            this.iconButtonCancel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
-            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonCancel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconButtonCancel.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonCancel.IconSize = 28;
-            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.Location = new System.Drawing.Point(196, 451);
-            this.iconButtonCancel.Name = "iconButtonCancel";
-            this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.iconButtonCancel.Rotation = 0D;
-            this.iconButtonCancel.Size = new System.Drawing.Size(181, 38);
-            this.iconButtonCancel.TabIndex = 6;
-            this.iconButtonCancel.Text = "Скасувати";
-            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonCancel.UseVisualStyleBackColor = false;
-            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
-            // 
-            // iconButtonOk
-            // 
-            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonOk.AutoSize = true;
-            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
-            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonOk.FlatAppearance.BorderSize = 0;
-            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconSize = 28;
-            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.Location = new System.Drawing.Point(12, 451);
-            this.iconButtonOk.Name = "iconButtonOk";
-            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.iconButtonOk.Rotation = 0D;
-            this.iconButtonOk.Size = new System.Drawing.Size(181, 38);
-            this.iconButtonOk.TabIndex = 5;
-            this.iconButtonOk.Text = "Підтвердити";
-            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonOk.UseVisualStyleBackColor = false;
-            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
             // 
             // panel29
             // 
@@ -440,6 +362,86 @@
             this.bunifuDragControl1.TargetControl = this.buttonDrag;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // bunifuImageButtonSelectImg
+            // 
+            this.bunifuImageButtonSelectImg.BackColor = System.Drawing.Color.Gray;
+            this.bunifuImageButtonSelectImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButtonSelectImg.Image = global::CurtainDesigner.Properties.Resources.icons8_pictures_folder_30px;
+            this.bunifuImageButtonSelectImg.ImageActive = global::CurtainDesigner.Properties.Resources.icons8_add_image_30px;
+            this.bunifuImageButtonSelectImg.Location = new System.Drawing.Point(330, 358);
+            this.bunifuImageButtonSelectImg.Name = "bunifuImageButtonSelectImg";
+            this.bunifuImageButtonSelectImg.Size = new System.Drawing.Size(39, 24);
+            this.bunifuImageButtonSelectImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButtonSelectImg.TabIndex = 12;
+            this.bunifuImageButtonSelectImg.TabStop = false;
+            this.bunifuImageButtonSelectImg.Zoom = 2;
+            this.bunifuImageButtonSelectImg.Click += new System.EventHandler(this.bunifuImageButtonSelectImg_Click);
+            // 
+            // pictureBoxSelectedImg
+            // 
+            this.pictureBoxSelectedImg.Location = new System.Drawing.Point(12, 388);
+            this.pictureBoxSelectedImg.Name = "pictureBoxSelectedImg";
+            this.pictureBoxSelectedImg.Size = new System.Drawing.Size(36, 31);
+            this.pictureBoxSelectedImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSelectedImg.TabIndex = 10;
+            this.pictureBoxSelectedImg.TabStop = false;
+            // 
+            // iconButtonCancel
+            // 
+            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonCancel.AutoSize = true;
+            this.iconButtonCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
+            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonCancel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconButtonCancel.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCancel.IconSize = 28;
+            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.Location = new System.Drawing.Point(196, 451);
+            this.iconButtonCancel.Name = "iconButtonCancel";
+            this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.iconButtonCancel.Rotation = 0D;
+            this.iconButtonCancel.Size = new System.Drawing.Size(181, 38);
+            this.iconButtonCancel.TabIndex = 6;
+            this.iconButtonCancel.Text = "Скасувати";
+            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
+            // 
+            // iconButtonOk
+            // 
+            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonOk.AutoSize = true;
+            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
+            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonOk.FlatAppearance.BorderSize = 0;
+            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconSize = 28;
+            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.Location = new System.Drawing.Point(12, 451);
+            this.iconButtonOk.Name = "iconButtonOk";
+            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.iconButtonOk.Rotation = 0D;
+            this.iconButtonOk.Size = new System.Drawing.Size(181, 38);
+            this.iconButtonOk.TabIndex = 5;
+            this.iconButtonOk.Text = "Підтвердити";
+            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOk.UseVisualStyleBackColor = false;
+            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
+            // 
             // FCFabricFabricAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,9 +454,9 @@
             this.Text = "FCFabricFabricAddForm";
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
+            this.panel32.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSelectImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedImg)).EndInit();
-            this.panel32.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
