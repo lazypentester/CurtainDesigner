@@ -86,10 +86,10 @@
             this.buttonAdd.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonAdd.Image = global::CurtainDesigner.Properties.Resources.icons8_add_user_male_30px;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(517, 15);
+            this.buttonAdd.Location = new System.Drawing.Point(525, 15);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.buttonAdd.Size = new System.Drawing.Size(189, 37);
+            this.buttonAdd.Size = new System.Drawing.Size(181, 37);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Новий клієнт";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

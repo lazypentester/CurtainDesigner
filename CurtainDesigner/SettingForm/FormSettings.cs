@@ -21,6 +21,9 @@ namespace CurtainDesigner.SettingForm
         private Panel currentOpenPanel = null;
 
         private UserControls.UserControlClientDataBase control_clients;
+        private UserControls.UserControlColorDataBase control_colors;
+        private UserControls.UserControlSideControllDataBase control_sidecontrol;
+        private UserControls.UserControlInstallationDataBase control_installation;
 
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB control_fc_categories;
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC control_fc_types;
@@ -65,6 +68,9 @@ namespace CurtainDesigner.SettingForm
 
         private void addUserControlls()
         {
+            this.panelContainer.Controls.Add(control_installation = new UserControls.UserControlInstallationDataBase()); control_installation.Hide();
+            this.panelContainer.Controls.Add(control_sidecontrol = new UserControls.UserControlSideControllDataBase()); control_sidecontrol.Hide();
+            this.panelContainer.Controls.Add(control_colors = new UserControls.UserControlColorDataBase()); control_colors.Hide();
             this.panelContainer.Controls.Add(control_clients = new UserControls.UserControlClientDataBase()); control_clients.Hide();
             this.panelContainer.Controls.Add(control_fc_categories = new UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB()); control_fc_categories.Hide();
             this.panelContainer.Controls.Add(control_fc_types = new UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC()); control_fc_types.Hide();
@@ -344,6 +350,27 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_fc_categories, sender);
+        }
+
+        private void bunifuColorDataBaseButton_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            //do_visiblePanelOthers(sender);
+            OpenChildControl(control_colors, sender);
+        }
+
+        private void bunifuSideManageButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            //do_visiblePanelOthers(sender);
+            OpenChildControl(control_sidecontrol, sender);
+        }
+
+        private void bunifuInstallationButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            //do_visiblePanelOthers(sender);
+            OpenChildControl(control_installation, sender);
         }
     }
 }

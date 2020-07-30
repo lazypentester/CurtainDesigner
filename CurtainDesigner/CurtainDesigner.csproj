@@ -111,6 +111,24 @@
     <Compile Include="AddForms\FormAddNewClient.Designer.cs">
       <DependentUpon>FormAddNewClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\FormAddNewInstallation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FormAddNewInstallation.Designer.cs">
+      <DependentUpon>FormAddNewInstallation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\FormAddNewSideControll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FormAddNewSideControll.Designer.cs">
+      <DependentUpon>FormAddNewSideControll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\FormAddNewSystemColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\FormAddNewSystemColor.Designer.cs">
+      <DependentUpon>FormAddNewSystemColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ConnectionString.cs" />
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
@@ -187,6 +205,24 @@
     <Compile Include="UserControls\UserControlClientDataBase.Designer.cs">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlColorDataBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlColorDataBase.Designer.cs">
+      <DependentUpon>UserControlColorDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlInstallationDataBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlInstallationDataBase.Designer.cs">
+      <DependentUpon>UserControlInstallationDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlSideControllDataBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSideControllDataBase.Designer.cs">
+      <DependentUpon>UserControlSideControllDataBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
     <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricAdditionalEquipmentAddForm.resx">
@@ -206,6 +242,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\FormAddNewClient.resx">
       <DependentUpon>FormAddNewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\FormAddNewInstallation.resx">
+      <DependentUpon>FormAddNewInstallation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\FormAddNewSideControll.resx">
+      <DependentUpon>FormAddNewSideControll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\FormAddNewSystemColor.resx">
+      <DependentUpon>FormAddNewSystemColor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -250,6 +295,15 @@
     <EmbeddedResource Include="UserControls\UserControlClientDataBase.resx">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlColorDataBase.resx">
+      <DependentUpon>UserControlColorDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlInstallationDataBase.resx">
+      <DependentUpon>UserControlInstallationDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlSideControllDataBase.resx">
+      <DependentUpon>UserControlSideControllDataBase.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -290,6 +344,12 @@
     <None Include="bin\Debug\imgs\icons8_fabric_sample_30px.png" />
     <None Include="bin\Debug\imgs\icons8_pictures_folder_30px.png" />
     <None Include="bin\Debug\imgs\icons8_add_image_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_paint_palette_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_plus_math_30px_1.png" />
+    <None Include="bin\Debug\imgs\icons8_chevron_right_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_scissor_lift_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_drill_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_needle_30px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

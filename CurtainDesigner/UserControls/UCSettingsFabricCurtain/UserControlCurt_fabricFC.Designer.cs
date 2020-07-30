@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelFooterContent = new System.Windows.Forms.Panel();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseTable = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomDataGridFabricDataBase = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panelTable = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.ColumnImg_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFabric_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnType_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,28 +81,6 @@
             this.panelFooterContent.Size = new System.Drawing.Size(716, 65);
             this.panelFooterContent.TabIndex = 9;
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonAdd.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAdd.FlatAppearance.BorderSize = 0;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonAdd.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonAdd.Image = global::CurtainDesigner.Properties.Resources.icons8_fabric_sample_30px;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(532, 15);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.buttonAdd.Size = new System.Drawing.Size(174, 37);
-            this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Нова тканина";
-            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 3;
@@ -119,21 +97,21 @@
             this.bunifuCustomDataGridFabricDataBase.AllowUserToDeleteRows = false;
             this.bunifuCustomDataGridFabricDataBase.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGridFabricDataBase.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGridFabricDataBase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGridFabricDataBase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGridFabricDataBase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGridFabricDataBase.BackgroundColor = System.Drawing.Color.White;
             this.bunifuCustomDataGridFabricDataBase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridFabricDataBase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.bunifuCustomDataGridFabricDataBase.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridFabricDataBase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridFabricDataBase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGridFabricDataBase.ColumnHeadersHeight = 50;
             this.bunifuCustomDataGridFabricDataBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.bunifuCustomDataGridFabricDataBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -151,14 +129,14 @@
             this.ColumnEdit,
             this.ColumnDelete});
             this.bunifuCustomDataGridFabricDataBase.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuCustomDataGridFabricDataBase.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGridFabricDataBase.DefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGridFabricDataBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCustomDataGridFabricDataBase.DoubleBuffered = true;
             this.bunifuCustomDataGridFabricDataBase.EnableHeadersVisualStyles = false;
@@ -169,8 +147,8 @@
             this.bunifuCustomDataGridFabricDataBase.Name = "bunifuCustomDataGridFabricDataBase";
             this.bunifuCustomDataGridFabricDataBase.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGridFabricDataBase.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.bunifuCustomDataGridFabricDataBase.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.bunifuCustomDataGridFabricDataBase.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGridFabricDataBase.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             this.bunifuCustomDataGridFabricDataBase.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridFabricDataBase.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -215,6 +193,28 @@
             this.dataGridViewImageColumn2.MinimumWidth = 50;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 77;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonAdd.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd.FlatAppearance.BorderSize = 0;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonAdd.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonAdd.Image = global::CurtainDesigner.Properties.Resources.icons8_needle_30px;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(532, 15);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.buttonAdd.Size = new System.Drawing.Size(174, 37);
+            this.buttonAdd.TabIndex = 0;
+            this.buttonAdd.Text = "Нова тканина";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // ColumnImg_path
             // 
@@ -291,7 +291,7 @@
             this.ColumnEdit.HeaderText = "";
             this.ColumnEdit.Image = global::CurtainDesigner.Properties.Resources.icons8_pencil_drawing_30px;
             this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnEdit.MinimumWidth = 50;
+            this.ColumnEdit.MinimumWidth = 40;
             this.ColumnEdit.Name = "ColumnEdit";
             // 
             // ColumnDelete
@@ -300,7 +300,7 @@
             this.ColumnDelete.HeaderText = "";
             this.ColumnDelete.Image = global::CurtainDesigner.Properties.Resources.icons8_delete_bin_30px;
             this.ColumnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnDelete.MinimumWidth = 50;
+            this.ColumnDelete.MinimumWidth = 40;
             this.ColumnDelete.Name = "ColumnDelete";
             // 
             // UserControlCurt_fabricFC

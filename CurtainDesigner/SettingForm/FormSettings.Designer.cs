@@ -613,6 +613,7 @@
             this.bunifuInstallationButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuInstallationButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
             this.bunifuInstallationButton.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuInstallationButton.Click += new System.EventHandler(this.bunifuInstallationButton_Click);
             // 
             // bunifuClientDataBaseButton
             // 
@@ -686,6 +687,7 @@
             this.bunifuSideManageButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuSideManageButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
             this.bunifuSideManageButton.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSideManageButton.Click += new System.EventHandler(this.bunifuSideManageButton_Click);
             // 
             // bunifuColorDataBaseButton
             // 
@@ -722,6 +724,7 @@
             this.bunifuColorDataBaseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuColorDataBaseButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
             this.bunifuColorDataBaseButton.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuColorDataBaseButton.Click += new System.EventHandler(this.bunifuColorDataBaseButton_Click_1);
             // 
             // panelSidePanelFabricCurtain
             // 
