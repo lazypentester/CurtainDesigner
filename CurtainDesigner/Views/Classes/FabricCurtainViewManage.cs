@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,28 +56,96 @@ namespace CurtainDesigner.Views.Classes
             }
         }
 
+        public async void loadDataFromDB_label(Label labelprice, Label label_id, SqlDataReader reader, string value_name, string key)
+        {
+            if (reader == null || labelprice == null)
+                throw new NullReferenceException();
+
+            try
+            {
+                while (await reader.ReadAsync())
+                {
+                    if (labelprice.InvokeRequired)
+                    {
+                        labelprice.Invoke((MethodInvoker)delegate
+                        {
+                            if (value_name.Equals("Price"))
+                                labelprice.Text = string.Join("", reader[value_name].ToString(), "$");
+                            else
+                                labelprice.Text = reader[value_name].ToString();
+                        });
+                    }
+                    else
+                    {
+                        if (value_name.Equals("Price"))
+                            labelprice.Text = string.Join("", reader[value_name].ToString(), "$");
+                        else
+                            labelprice.Text = reader[value_name].ToString();
+                    }
+
+                    if (label_id.InvokeRequired)
+                    {
+                        label_id.Invoke((MethodInvoker)delegate
+                        {
+                            label_id.Text = reader[key].ToString();
+                        });
+                    }
+                    else
+                    {
+                        label_id.Text = reader[key].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+        }
+
         public O readObject(F form, O obj)
         {
             if (obj == null || form == null)
                 throw new NullReferenceException();
-            //(obj as CurtainDesigner.Classes.FabricCurtain).type_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxCurtainType.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).subtype_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxCurtainSubtype.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).fabric_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxFabric.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).category_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxFabricCategory.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).system_color_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxSystemColor.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).type_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxCurtainType.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).subtype_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxCurtainSubtype.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).fabric_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxFabric.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).category_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).labelFabricCategoryId.Text);
+            (obj as CurtainDesigner.Classes.FabricCurtain).system_color_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxSystemColor.SelectedValue.ToString());
             (obj as CurtainDesigner.Classes.FabricCurtain).width = string.Join(".", Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).numericUpDownWidth.Value), 2, MidpointRounding.AwayFromZero)).Split(','));
             (obj as CurtainDesigner.Classes.FabricCurtain).height = string.Join(".", Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(','));
             (obj as CurtainDesigner.Classes.FabricCurtain).yardage = string.Join(".", Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).labelYardage.Text), 2, MidpointRounding.AwayFromZero)).Split(','));
             (obj as CurtainDesigner.Classes.FabricCurtain).count = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).numericUpDownCount.Value.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).side_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxSide.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).equipment_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxEquipment.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).installation_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxInstallation.SelectedValue.ToString());
-            //(obj as CurtainDesigner.Classes.FabricCurtain).customer_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).labelCustomer.Text.Split(' ')[2]);
+            (obj as CurtainDesigner.Classes.FabricCurtain).side_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxSide.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).equipment_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxEquipment.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).installation_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxInstallation.SelectedValue.ToString());
+            (obj as CurtainDesigner.Classes.FabricCurtain).customer_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).labelCustomer.Text.Split(' ')[2]);
+
+            string startDate = "";
+
+            //if ((form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToLongTimeString().Split(':')[0].Length == 1)
+                //startDate = string.Join(":", "0" + (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToLongTimeString().Split(':')[0], (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToLongTimeString().Split(':')[1], (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToLongTimeString().Split(':')[2]);
+           // else
+                startDate = (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToLongTimeString();
+
             (obj as CurtainDesigner.Classes.FabricCurtain).start_order_time = string.Join("-",(form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToShortDateString().Split('.').Reverse()) + " " + 
-                (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value.ToLongTimeString();
+                "T12:32:21";
+
+            string endDate = "";
+
+            if ((form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToLongTimeString().Split(':')[0].Length == 1)
+                endDate = string.Join(":", "0" + (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToLongTimeString().Split(':')[0], (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToLongTimeString().Split(':')[1], (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToLongTimeString().Split(':')[2]);
+            else
+                endDate = (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToLongTimeString();
+
             (obj as CurtainDesigner.Classes.FabricCurtain).end_order_time = string.Join("-", (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToShortDateString().Split('.').Reverse()) + " " +
-                (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToLongTimeString();
-            //(obj as CurtainDesigner.Classes.FabricCurtain).picture = null;
+                 "T12:32:21";
+
+            (obj as CurtainDesigner.Classes.FabricCurtain).picture = new Bitmap(32,32);
             (obj as CurtainDesigner.Classes.FabricCurtain).price = Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).labelPrice.Text.Split(' ')[1])));
             return obj;
         }

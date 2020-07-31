@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel34 = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
             this.labelPrice = new System.Windows.Forms.Label();
@@ -51,8 +50,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -77,10 +74,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.comboBoxFabricCategory = new System.Windows.Forms.ComboBox();
+            this.labelFabricCategory = new System.Windows.Forms.Label();
+            this.labelFabricCategoryId = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
@@ -104,6 +101,11 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.bunifuButtonCustomInstallPrice = new Bunifu.Framework.UI.BunifuImageButton();
+            this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -116,6 +118,7 @@
             this.panel2.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -145,24 +148,6 @@
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(317, 76);
             this.panel33.TabIndex = 9;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.Enabled = false;
-            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconSize = 16;
-            this.iconButton2.Location = new System.Drawing.Point(159, 36);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(150, 26);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.Text = "Детальніше";
-            this.iconButton2.UseVisualStyleBackColor = true;
             // 
             // panel34
             // 
@@ -356,40 +341,6 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Замовник:";
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconSize = 16;
-            this.iconButton1.Location = new System.Drawing.Point(159, 72);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(150, 30);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Створити нового";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconSize = 16;
-            this.iconButton3.Location = new System.Drawing.Point(8, 72);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(150, 30);
-            this.iconButton3.TabIndex = 6;
-            this.iconButton3.Text = "Вибрати зі списку";
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
             // labelCustomer
             // 
             this.labelCustomer.AutoSize = true;
@@ -421,6 +372,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.bunifuButtonCustomInstallPrice);
             this.panel3.Controls.Add(this.bunifuCheckboxCustomInstallation);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
@@ -523,12 +475,11 @@
             this.comboBoxInstallation.FormattingEnabled = true;
             this.comboBoxInstallation.Location = new System.Drawing.Point(119, 99);
             this.comboBoxInstallation.Name = "comboBoxInstallation";
-            this.comboBoxInstallation.Size = new System.Drawing.Size(124, 21);
+            this.comboBoxInstallation.Size = new System.Drawing.Size(106, 21);
             this.comboBoxInstallation.TabIndex = 1;
             // 
             // numericUpDownCount
             // 
-            this.numericUpDownCount.Enabled = false;
             this.numericUpDownCount.Location = new System.Drawing.Point(239, 66);
             this.numericUpDownCount.Maximum = new decimal(new int[] {
             10000,
@@ -553,7 +504,6 @@
             // numericUpDownHeight
             // 
             this.numericUpDownHeight.DecimalPlaces = 2;
-            this.numericUpDownHeight.Enabled = false;
             this.numericUpDownHeight.Location = new System.Drawing.Point(232, 36);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
             100000,
@@ -580,7 +530,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label7.Location = new System.Drawing.Point(249, 100);
+            this.label7.Location = new System.Drawing.Point(231, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 16);
             this.label7.TabIndex = 0;
@@ -614,7 +564,6 @@
             // numericUpDownWidth
             // 
             this.numericUpDownWidth.DecimalPlaces = 2;
-            this.numericUpDownWidth.Enabled = false;
             this.numericUpDownWidth.Location = new System.Drawing.Point(80, 35);
             this.numericUpDownWidth.Maximum = new decimal(new int[] {
             100000,
@@ -669,35 +618,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Квадратура:";
             // 
-            // iconButtonNewOrder
-            // 
-            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonNewOrder.AutoSize = true;
-            this.iconButtonNewOrder.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonNewOrder.Enabled = false;
-            this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
-            this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonNewOrder.IconSize = 32;
-            this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
-            this.iconButtonNewOrder.Name = "iconButtonNewOrder";
-            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.iconButtonNewOrder.Rotation = 0D;
-            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
-            this.iconButtonNewOrder.TabIndex = 8;
-            this.iconButtonNewOrder.Text = "Створити замовлення";
-            this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonNewOrder.UseVisualStyleBackColor = false;
-            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
@@ -712,7 +632,8 @@
             // panel28
             // 
             this.panel28.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel28.Controls.Add(this.comboBoxFabricCategory);
+            this.panel28.Controls.Add(this.labelFabricCategory);
+            this.panel28.Controls.Add(this.labelFabricCategoryId);
             this.panel28.Controls.Add(this.label4);
             this.panel28.Controls.Add(this.panel29);
             this.panel28.Controls.Add(this.panel30);
@@ -729,27 +650,39 @@
             this.panel28.Size = new System.Drawing.Size(460, 128);
             this.panel28.TabIndex = 9;
             // 
-            // comboBoxFabricCategory
+            // labelFabricCategory
             // 
-            this.comboBoxFabricCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBoxFabricCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFabricCategory.Enabled = false;
-            this.comboBoxFabricCategory.FormattingEnabled = true;
-            this.comboBoxFabricCategory.Location = new System.Drawing.Point(284, 35);
-            this.comboBoxFabricCategory.Name = "comboBoxFabricCategory";
-            this.comboBoxFabricCategory.Size = new System.Drawing.Size(168, 21);
-            this.comboBoxFabricCategory.TabIndex = 9;
+            this.labelFabricCategory.AutoSize = true;
+            this.labelFabricCategory.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFabricCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.labelFabricCategory.Location = new System.Drawing.Point(383, 35);
+            this.labelFabricCategory.Name = "labelFabricCategory";
+            this.labelFabricCategory.Size = new System.Drawing.Size(24, 18);
+            this.labelFabricCategory.TabIndex = 10;
+            this.labelFabricCategory.Text = "0$";
+            // 
+            // labelFabricCategoryId
+            // 
+            this.labelFabricCategoryId.AutoSize = true;
+            this.labelFabricCategoryId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFabricCategoryId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.labelFabricCategoryId.Location = new System.Drawing.Point(426, 37);
+            this.labelFabricCategoryId.Name = "labelFabricCategoryId";
+            this.labelFabricCategoryId.Size = new System.Drawing.Size(12, 16);
+            this.labelFabricCategoryId.TabIndex = 10;
+            this.labelFabricCategoryId.Text = "!";
+            this.labelFabricCategoryId.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label4.Location = new System.Drawing.Point(201, 36);
+            this.label4.Location = new System.Drawing.Point(251, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.Size = new System.Drawing.Size(126, 16);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Категорія:";
+            this.label4.Text = "Цінова категорія:";
             // 
             // panel29
             // 
@@ -786,7 +719,7 @@
             this.comboBoxFabric.FormattingEnabled = true;
             this.comboBoxFabric.Location = new System.Drawing.Point(80, 35);
             this.comboBoxFabric.Name = "comboBoxFabric";
-            this.comboBoxFabric.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxFabric.Size = new System.Drawing.Size(165, 21);
             this.comboBoxFabric.TabIndex = 3;
             // 
             // label27
@@ -975,6 +908,102 @@
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.Enabled = false;
+            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconSize = 16;
+            this.iconButton2.Location = new System.Drawing.Point(159, 36);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(150, 26);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.Text = "Детальніше";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconSize = 16;
+            this.iconButton1.Location = new System.Drawing.Point(159, 72);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(150, 30);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.Text = "Створити нового";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconSize = 16;
+            this.iconButton3.Location = new System.Drawing.Point(8, 72);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Rotation = 0D;
+            this.iconButton3.Size = new System.Drawing.Size(150, 30);
+            this.iconButton3.TabIndex = 6;
+            this.iconButton3.Text = "Вибрати зі списку";
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // bunifuButtonCustomInstallPrice
+            // 
+            this.bunifuButtonCustomInstallPrice.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuButtonCustomInstallPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuButtonCustomInstallPrice.Enabled = false;
+            this.bunifuButtonCustomInstallPrice.Image = global::CurtainDesigner.Properties.Resources.icons8_save_25px;
+            this.bunifuButtonCustomInstallPrice.ImageActive = null;
+            this.bunifuButtonCustomInstallPrice.Location = new System.Drawing.Point(257, 156);
+            this.bunifuButtonCustomInstallPrice.Name = "bunifuButtonCustomInstallPrice";
+            this.bunifuButtonCustomInstallPrice.Size = new System.Drawing.Size(25, 25);
+            this.bunifuButtonCustomInstallPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuButtonCustomInstallPrice.TabIndex = 7;
+            this.bunifuButtonCustomInstallPrice.TabStop = false;
+            this.bunifuButtonCustomInstallPrice.Zoom = 7;
+            this.bunifuButtonCustomInstallPrice.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
+            // 
+            // iconButtonNewOrder
+            // 
+            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonNewOrder.AutoSize = true;
+            this.iconButtonNewOrder.BackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
+            this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonNewOrder.IconSize = 32;
+            this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
+            this.iconButtonNewOrder.Name = "iconButtonNewOrder";
+            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
+            this.iconButtonNewOrder.Rotation = 0D;
+            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
+            this.iconButtonNewOrder.TabIndex = 8;
+            this.iconButtonNewOrder.Text = "Створити замовлення";
+            this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonNewOrder.UseVisualStyleBackColor = false;
+            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
+            // 
             // FormFabricCurtainOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1004,6 +1033,7 @@
             this.panel28.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1076,14 +1106,16 @@
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Panel panel37;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        internal System.Windows.Forms.ComboBox comboBoxFabricCategory;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckboxCustomInstallation;
         internal System.Windows.Forms.Label label7;
         internal System.Windows.Forms.NumericUpDown numericUpDownCustomInstallationPrice;
         private System.Windows.Forms.Label label6;
         internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Label labelFabricCategory;
+        internal System.Windows.Forms.Label labelFabricCategoryId;
+        internal Bunifu.Framework.UI.BunifuCheckbox bunifuCheckboxCustomInstallation;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuButtonCustomInstallPrice;
     }
 }

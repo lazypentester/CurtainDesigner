@@ -210,7 +210,7 @@ namespace CurtainDesigner.Models.Classes
 
             try
             {
-                /*
+
                 SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] Values ({fabricCurtain.fabric_id}, " +
                                                                                                     $"{fabricCurtain.width}, " +
                                                                                                     $"{fabricCurtain.height}, " +
@@ -220,17 +220,21 @@ namespace CurtainDesigner.Models.Classes
                                                                                                     $"{fabricCurtain.equipment_id}, " +
                                                                                                     $"{fabricCurtain.customer_id}, " +
                                                                                                     $"{fabricCurtain.system_color_id}, " +
-                                                                                                    $"{fabricCurtain.start_order_time}, " +
-                                                                                                    $"{fabricCurtain.end_order_time}, " +
+                                                                                                    $"@start_date, " +
+                                                                                                    $"@end_date, " +
                                                                                                     $"{fabricCurtain.type_id}, " +
-                                                                                                    $"{fabricCurtain.picture}, " +
+                                                                                                    $"@image, " +
                                                                                                     $"{fabricCurtain.price}, " +
-                                                                                                    $"{fabricCurtain.installation_id});", connection);
+                                                                                                    $"{fabricCurtain.installation_id}, " +
+                                                                                                    $"{fabricCurtain.subtype_id}, " +
+                                                                                                    $"{fabricCurtain.category_id});", connection);
+                command_addFB.Parameters.Add("@image", SqlDbType.Image).Value = fabricCurtain.picture;
+                command_addFB.Parameters.Add("@start_date", SqlDbType.DateTime2).Value = fabricCurtain.start_order_time;
+                command_addFB.Parameters.Add("@end_date", SqlDbType.DateTime2).Value = fabricCurtain.end_order_time;
                 await command_addFB.ExecuteNonQueryAsync();
-                */
 
-                SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] ([Width]) Values ({fabricCurtain.width});", connection);
-                await command_addFB.ExecuteNonQueryAsync();
+                //SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] ([Order_data]) Values (N'{fabricCurtain.start_order_time}');", connection);
+                //await command_addFB.ExecuteNonQueryAsync();
             }
             catch(Exception exeption)
             {

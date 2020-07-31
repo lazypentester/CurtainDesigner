@@ -350,6 +350,7 @@
     <None Include="bin\Debug\imgs\icons8_scissor_lift_30px.png" />
     <None Include="bin\Debug\imgs\icons8_drill_30px.png" />
     <None Include="bin\Debug\imgs\icons8_needle_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_save_25px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
