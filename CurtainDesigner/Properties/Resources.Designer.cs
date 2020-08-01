@@ -113,6 +113,36 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_21px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_cancel_21px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_checked_21px_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_checked_21px_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_checked_25px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_checked_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_chevron_right_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_chevron_right_30px", resourceCulture);
@@ -236,6 +266,16 @@ namespace CurtainDesigner.Properties {
         internal static System.Drawing.Bitmap icons8_needle_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_needle_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ok_21px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_ok_21px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +416,16 @@ namespace CurtainDesigner.Properties {
         internal static System.Drawing.Bitmap icons8_tree_structure_25px {
             get {
                 object obj = ResourceManager.GetObject("icons8_tree_structure_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_unchecked_radio_button_21px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_unchecked_radio_button_21px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

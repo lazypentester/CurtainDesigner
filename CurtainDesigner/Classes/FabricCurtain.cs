@@ -23,7 +23,7 @@ namespace CurtainDesigner.Classes
         public int customer_id { get; set; }
         public string start_order_time { get; set; }
         public string end_order_time { get; set; }
-        public Image picture { get; set; }
+        public string picture { get; set; }
         public string price { get; set; }
         public int category_id { get; set; }
     }

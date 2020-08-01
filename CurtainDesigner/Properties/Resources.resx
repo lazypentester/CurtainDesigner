@@ -121,6 +121,9 @@
   <data name="icons8_database_administrator_48px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_database_administrator_48px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_unchecked_radio_button_21px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\imgs\icons8_unchecked_radio_button_21px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_add_row_30px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_add_row_30px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +145,9 @@
   <data name="icons8_needle_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_needle_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_checked_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\imgs\icons8_checked_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_maintenance_25px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_maintenance_25px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +159,9 @@
   </data>
   <data name="icons8_customer_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_customer_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_save_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\imgs\icons8_save_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_maintenance_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_maintenance_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +181,9 @@
   <data name="icons8_tree_structure_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_tree_structure_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_checked_21px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\imgs\icons8_checked_21px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_paint_palette_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_paint_palette_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,6 +195,9 @@
   </data>
   <data name="icons8_pencil_drawing_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_pencil_drawing_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_ok_21px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\imgs\icons8_ok_21px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_delete_bin_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_delete_bin_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,7 +229,7 @@
   <data name="icons8_job_45px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgs\icons8_job_45px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_save_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\imgs\icons8_save_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_cancel_21px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\imgs\icons8_cancel_21px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

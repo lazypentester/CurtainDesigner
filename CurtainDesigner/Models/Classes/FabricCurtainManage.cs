@@ -228,7 +228,7 @@ namespace CurtainDesigner.Models.Classes
                                                                                                     $"{fabricCurtain.installation_id}, " +
                                                                                                     $"{fabricCurtain.subtype_id}, " +
                                                                                                     $"{fabricCurtain.category_id});", connection);
-                command_addFB.Parameters.Add("@image", SqlDbType.Image).Value = fabricCurtain.picture;
+                command_addFB.Parameters.Add("@image", SqlDbType.NVarChar).Value = fabricCurtain.picture;
                 command_addFB.Parameters.Add("@start_date", SqlDbType.DateTime2).Value = fabricCurtain.start_order_time;
                 command_addFB.Parameters.Add("@end_date", SqlDbType.DateTime2).Value = fabricCurtain.end_order_time;
                 await command_addFB.ExecuteNonQueryAsync();

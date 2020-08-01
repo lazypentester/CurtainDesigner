@@ -145,7 +145,7 @@ namespace CurtainDesigner.Views.Classes
             (obj as CurtainDesigner.Classes.FabricCurtain).end_order_time = string.Join("-", (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value.ToShortDateString().Split('.').Reverse()) + " " +
                  "T12:32:21";
 
-            (obj as CurtainDesigner.Classes.FabricCurtain).picture = new Bitmap(32,32);
+            (obj as CurtainDesigner.Classes.FabricCurtain).picture = "";
             (obj as CurtainDesigner.Classes.FabricCurtain).price = Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).labelPrice.Text.Split(' ')[1])));
             return obj;
         }
