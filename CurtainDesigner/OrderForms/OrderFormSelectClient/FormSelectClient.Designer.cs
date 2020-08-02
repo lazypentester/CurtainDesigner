@@ -35,6 +35,7 @@
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel5 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.uCwaitLoad1 = new CurtainDesigner.OrderForms.OrderFormSelectClient.UCWAITLOAD.UCwaitLoad();
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.panelContainer = new System.Windows.Forms.Panel();
@@ -46,8 +47,10 @@
             this.labelSurname = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel4 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuFlatButtonSearchClear = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButtonSearch = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuMaterialTextboxSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuImageButtonExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.uCwaitLoad1 = new CurtainDesigner.OrderForms.OrderFormSelectClient.UCWAITLOAD.UCwaitLoad();
             this.bunifuGradientPanel5.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -58,6 +61,7 @@
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // bunifuElipse2
             // 
@@ -92,6 +96,14 @@
             this.bunifuGradientPanel5.Quality = 10;
             this.bunifuGradientPanel5.Size = new System.Drawing.Size(750, 486);
             this.bunifuGradientPanel5.TabIndex = 10;
+            // 
+            // uCwaitLoad1
+            // 
+            this.uCwaitLoad1.BackColor = System.Drawing.Color.Gainsboro;
+            this.uCwaitLoad1.Location = new System.Drawing.Point(15, 61);
+            this.uCwaitLoad1.Name = "uCwaitLoad1";
+            this.uCwaitLoad1.Size = new System.Drawing.Size(720, 367);
+            this.uCwaitLoad1.TabIndex = 9;
             // 
             // iconButtonCancel
             // 
@@ -195,7 +207,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
-            this.label6.Location = new System.Drawing.Point(36, 17);
+            this.label6.Location = new System.Drawing.Point(27, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(22, 18);
             this.label6.TabIndex = 1;
@@ -207,7 +219,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(555, 17);
+            this.label5.Location = new System.Drawing.Point(568, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 3;
@@ -219,7 +231,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(100, 17);
+            this.label1.Location = new System.Drawing.Point(89, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 18);
             this.label1.TabIndex = 6;
@@ -231,7 +243,7 @@
             this.labelSurname.BackColor = System.Drawing.Color.Transparent;
             this.labelSurname.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
-            this.labelSurname.Location = new System.Drawing.Point(194, 17);
+            this.labelSurname.Location = new System.Drawing.Point(177, 17);
             this.labelSurname.Name = "labelSurname";
             this.labelSurname.Size = new System.Drawing.Size(85, 18);
             this.labelSurname.TabIndex = 5;
@@ -243,7 +255,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(359, 17);
+            this.label4.Location = new System.Drawing.Point(330, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 18);
             this.label4.TabIndex = 4;
@@ -253,6 +265,9 @@
             // 
             this.bunifuGradientPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel4.BackgroundImage")));
             this.bunifuGradientPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel4.Controls.Add(this.bunifuFlatButtonSearchClear);
+            this.bunifuGradientPanel4.Controls.Add(this.bunifuFlatButtonSearch);
+            this.bunifuGradientPanel4.Controls.Add(this.bunifuMaterialTextboxSearch);
             this.bunifuGradientPanel4.Controls.Add(this.bunifuImageButtonExit);
             this.bunifuGradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.bunifuGradientPanel4.GradientBottomLeft = System.Drawing.Color.LightSkyBlue;
@@ -264,6 +279,96 @@
             this.bunifuGradientPanel4.Quality = 10;
             this.bunifuGradientPanel4.Size = new System.Drawing.Size(750, 59);
             this.bunifuGradientPanel4.TabIndex = 9;
+            // 
+            // bunifuFlatButtonSearchClear
+            // 
+            this.bunifuFlatButtonSearchClear.Activecolor = System.Drawing.Color.DimGray;
+            this.bunifuFlatButtonSearchClear.BackColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButtonSearchClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButtonSearchClear.BorderRadius = 0;
+            this.bunifuFlatButtonSearchClear.ButtonText = "Очистити";
+            this.bunifuFlatButtonSearchClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButtonSearchClear.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButtonSearchClear.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButtonSearchClear.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_broom_30px;
+            this.bunifuFlatButtonSearchClear.Iconimage_right = null;
+            this.bunifuFlatButtonSearchClear.Iconimage_right_Selected = null;
+            this.bunifuFlatButtonSearchClear.Iconimage_Selected = null;
+            this.bunifuFlatButtonSearchClear.IconMarginLeft = 0;
+            this.bunifuFlatButtonSearchClear.IconMarginRight = 0;
+            this.bunifuFlatButtonSearchClear.IconRightVisible = true;
+            this.bunifuFlatButtonSearchClear.IconRightZoom = 0D;
+            this.bunifuFlatButtonSearchClear.IconVisible = true;
+            this.bunifuFlatButtonSearchClear.IconZoom = 60D;
+            this.bunifuFlatButtonSearchClear.IsTab = false;
+            this.bunifuFlatButtonSearchClear.Location = new System.Drawing.Point(429, -1);
+            this.bunifuFlatButtonSearchClear.Name = "bunifuFlatButtonSearchClear";
+            this.bunifuFlatButtonSearchClear.Normalcolor = System.Drawing.Color.Gray;
+            this.bunifuFlatButtonSearchClear.OnHovercolor = System.Drawing.Color.DimGray;
+            this.bunifuFlatButtonSearchClear.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButtonSearchClear.selected = false;
+            this.bunifuFlatButtonSearchClear.Size = new System.Drawing.Size(116, 44);
+            this.bunifuFlatButtonSearchClear.TabIndex = 7;
+            this.bunifuFlatButtonSearchClear.Text = "Очистити";
+            this.bunifuFlatButtonSearchClear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButtonSearchClear.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButtonSearchClear.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButtonSearchClear.Click += new System.EventHandler(this.bunifuFlatButtonSearchClear_Click);
+            // 
+            // bunifuFlatButtonSearch
+            // 
+            this.bunifuFlatButtonSearch.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.bunifuFlatButtonSearch.BackColor = System.Drawing.Color.SteelBlue;
+            this.bunifuFlatButtonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButtonSearch.BorderRadius = 0;
+            this.bunifuFlatButtonSearch.ButtonText = "Пошук по прізвищу";
+            this.bunifuFlatButtonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButtonSearch.DisabledColor = System.Drawing.Color.SteelBlue;
+            this.bunifuFlatButtonSearch.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButtonSearch.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_conversion_30px;
+            this.bunifuFlatButtonSearch.Iconimage_right = null;
+            this.bunifuFlatButtonSearch.Iconimage_right_Selected = null;
+            this.bunifuFlatButtonSearch.Iconimage_Selected = null;
+            this.bunifuFlatButtonSearch.IconMarginLeft = 0;
+            this.bunifuFlatButtonSearch.IconMarginRight = 0;
+            this.bunifuFlatButtonSearch.IconRightVisible = true;
+            this.bunifuFlatButtonSearch.IconRightZoom = 0D;
+            this.bunifuFlatButtonSearch.IconVisible = true;
+            this.bunifuFlatButtonSearch.IconZoom = 60D;
+            this.bunifuFlatButtonSearch.IsTab = false;
+            this.bunifuFlatButtonSearch.Location = new System.Drawing.Point(245, -1);
+            this.bunifuFlatButtonSearch.Name = "bunifuFlatButtonSearch";
+            this.bunifuFlatButtonSearch.Normalcolor = System.Drawing.Color.SteelBlue;
+            this.bunifuFlatButtonSearch.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.bunifuFlatButtonSearch.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButtonSearch.selected = false;
+            this.bunifuFlatButtonSearch.Size = new System.Drawing.Size(179, 44);
+            this.bunifuFlatButtonSearch.TabIndex = 7;
+            this.bunifuFlatButtonSearch.Text = "Пошук по прізвищу";
+            this.bunifuFlatButtonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButtonSearch.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButtonSearch.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButtonSearch.Click += new System.EventHandler(this.bunifuFlatButtonSearch_Click);
+            // 
+            // bunifuMaterialTextboxSearch
+            // 
+            this.bunifuMaterialTextboxSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bunifuMaterialTextboxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextboxSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuMaterialTextboxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextboxSearch.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextboxSearch.HintText = "";
+            this.bunifuMaterialTextboxSearch.isPassword = false;
+            this.bunifuMaterialTextboxSearch.LineFocusedColor = System.Drawing.Color.RoyalBlue;
+            this.bunifuMaterialTextboxSearch.LineIdleColor = System.Drawing.Color.SteelBlue;
+            this.bunifuMaterialTextboxSearch.LineMouseHoverColor = System.Drawing.Color.SteelBlue;
+            this.bunifuMaterialTextboxSearch.LineThickness = 3;
+            this.bunifuMaterialTextboxSearch.Location = new System.Drawing.Point(15, -1);
+            this.bunifuMaterialTextboxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMaterialTextboxSearch.Name = "bunifuMaterialTextboxSearch";
+            this.bunifuMaterialTextboxSearch.Size = new System.Drawing.Size(212, 44);
+            this.bunifuMaterialTextboxSearch.TabIndex = 6;
+            this.bunifuMaterialTextboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuImageButtonExit
             // 
@@ -279,14 +384,6 @@
             this.bunifuImageButtonExit.TabStop = false;
             this.bunifuImageButtonExit.Zoom = 7;
             this.bunifuImageButtonExit.Click += new System.EventHandler(this.bunifuImageButtonExit_Click);
-            // 
-            // uCwaitLoad1
-            // 
-            this.uCwaitLoad1.BackColor = System.Drawing.Color.Gainsboro;
-            this.uCwaitLoad1.Location = new System.Drawing.Point(15, 61);
-            this.uCwaitLoad1.Name = "uCwaitLoad1";
-            this.uCwaitLoad1.Size = new System.Drawing.Size(720, 367);
-            this.uCwaitLoad1.TabIndex = 9;
             // 
             // FormSelectClient
             // 
@@ -332,5 +429,8 @@
         private System.Windows.Forms.Label label1;
         private UCWAITLOAD.UCwaitLoad uCwaitLoad1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButtonExit;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButtonSearch;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextboxSearch;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButtonSearchClear;
     }
 }

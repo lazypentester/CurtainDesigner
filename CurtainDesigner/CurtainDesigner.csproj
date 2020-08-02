@@ -394,6 +394,9 @@
     <None Include="bin\Debug\imgs\icons8_cancel_21px.png" />
     <None Include="bin\Debug\imgs\Spinner-1s-200px.gif" />
     <None Include="bin\Debug\imgs\icons8_shutdown_25px.png" />
+    <None Include="bin\Debug\imgs\icons8_conversion_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_broom_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_info_40px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

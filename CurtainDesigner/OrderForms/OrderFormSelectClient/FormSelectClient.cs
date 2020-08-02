@@ -20,7 +20,12 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
         Bunifu.Framework.UI.BunifuGradientPanel currentSelectedPanel;
         Bunifu.Framework.UI.BunifuElipse bunifuElipse;
 
+        private bool operation_doing = false;
+
         Label write_client;
+
+        ToolTip ToolTip;
+        ToolTip mainFormToolTip;
 
         Label label_id;
         Label label_name;
@@ -28,38 +33,86 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
         Label label_address;
         Label label_phone;
 
+        Label label_original_id;
+
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
 
         public FormSelectClient()
         {
             InitializeComponent();
+            this.ToolTip = new ToolTip();
+            bunifuMaterialTextboxSearch.KeyDown += (s, e) => { enter_key_down(s, e); };
+            operation_doing = true;
             load_clients();
         }
 
-        public FormSelectClient(Label label)
+        public FormSelectClient(Label label, ToolTip tip)
         {
             InitializeComponent();
+            this.ToolTip = new ToolTip();
+            bunifuMaterialTextboxSearch.KeyDown += (s, e) => { enter_key_down(s, e); };
+            operation_doing = true;
             if (label != null)
             write_client = label;
+            if(tip != null)
+            mainFormToolTip = tip;
             load_clients();
+        }
+
+        private void enter_key_down(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Enter && e.KeyData == (Keys.Enter)))
+                return;
+            if (operation_doing)
+                return;
+            operation_doing = true;
+            clear_subContainer();
+            search_clients();
         }
 
         internal async void load_clients()
         {
-            panelSubContainer.Hide();
-            bunifuGradientPanel1.Visible = false;
+            //panelSubContainer.Hide();
+            //bunifuGradientPanel1.Visible = false;
             Task t1 = Task.Run(() => load_data());
             await Task.WhenAll(t1);
-            uCwaitLoad1.Hide();
-            panelSubContainer.BringToFront();
-            panelSubContainer.Show();
-            bunifuGradientPanel1.Visible = true;
+            //uCwaitLoad1.Hide();
+            //panelSubContainer.BringToFront();
+            //panelSubContainer.Show();
+            //bunifuGradientPanel1.Visible = true;
         }
 
-        private async void load_data()
+        internal async void search_clients()
         {
-            Thread.Sleep(1000);
+            if (uCwaitLoad1.InvokeRequired)
+                uCwaitLoad1.Invoke((MethodInvoker)delegate
+               {
+                   uCwaitLoad1.BringToFront();
+                   uCwaitLoad1.Show();
+               });
+            else
+            {
+                uCwaitLoad1.BringToFront();
+                uCwaitLoad1.Show();
+            }
+
+            //Task t1;
+            if (string.IsNullOrEmpty(bunifuMaterialTextboxSearch.Text))
+                await Task.Run(() => search_data(""));
+            else
+                await Task.Run(() => search_data($" Where Surname Like N'%{bunifuMaterialTextboxSearch.Text}%' "));
+            //await Task.WhenAll(t1);
+        }
+
+        private void clear_subContainer()
+        {
+            this.panelSubContainer.Controls.Clear();
+        }
+
+        private async void search_data(string search_text)
+        {
+            //Thread.Sleep(500);
 
             if (connection == null || connection.State == ConnectionState.Closed)
             {
@@ -67,7 +120,7 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
                 await connection.OpenAsync();
             }
 
-            SqlCommand command_loadclients = new SqlCommand("Select * From [Clients];", connection);
+            SqlCommand command_loadclients = new SqlCommand($"Select * From [Clients] {search_text};", connection);
 
             SqlDataReader reader = null;
 
@@ -80,39 +133,42 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
                     {
                         while (await reader.ReadAsync())
                         {
-                            if (panelSubContainer.InvokeRequired)
-                                panelSubContainer.Invoke((MethodInvoker)delegate
-                                {
-                                    uCwaitLoad1.BringToFront();
-                                    uCwaitLoad1.Show();
-                                });
-                            else
-                            {
-                                uCwaitLoad1.BringToFront();
-                                uCwaitLoad1.Show();
-                            }
+                            //if (panelSubContainer.InvokeRequired)
+                            //    panelSubContainer.Invoke((MethodInvoker)delegate
+                            //    {
+                            //        uCwaitLoad1.BringToFront();
+                            //        uCwaitLoad1.Show();
+                            //    });
+                            //else
+                            //{
+                            //    uCwaitLoad1.BringToFront();
+                            //    uCwaitLoad1.Show();
+                            //}
+
 
                             create_panel();
                             create_panelSplitter();
                             create_elipse();
-                            create_label(this.label_id, reader["Customer_id"].ToString(), 32, 8, gradientPanel);
-                            create_label(this.label_name, reader["Name"].ToString(), 97, 8, gradientPanel);
-                            create_label(this.label_surname, reader["Surname"].ToString(), 191, 8, gradientPanel);
-                            create_label(this.label_address, reader["Address"].ToString(), 356, 8, gradientPanel);
-                            create_label(this.label_phone, reader["Phone"].ToString(), 552, 8, gradientPanel);
+                            create_label(this.label_id, reader["Customer_id"].ToString(), 25, 8, gradientPanel, 3);
+                            create_label(this.label_name, reader["Name"].ToString(), 85, 8, gradientPanel, 8);
+                            create_label(this.label_surname, reader["Surname"].ToString(), 180, 8, gradientPanel, 13);
+                            create_label(this.label_address, reader["Address"].ToString(), 325, 8, gradientPanel, 25);
+                            create_label(this.label_phone, reader["Phone"].ToString(), 560, 8, gradientPanel, 13);
 
-                            if (panelSubContainer.InvokeRequired)
-                                panelSubContainer.Invoke((MethodInvoker)delegate
-                                {
-                                    uCwaitLoad1.BringToFront();
-                                    uCwaitLoad1.Show();
-                                });
-                            else
-                            {
-                                uCwaitLoad1.BringToFront();
-                                uCwaitLoad1.Show();
-                            }
-                        }                    
+                            create_lable_originalId(label_original_id, reader["Customer_id"].ToString(), gradientPanel);
+
+                            //if (panelSubContainer.InvokeRequired)
+                            //    panelSubContainer.Invoke((MethodInvoker)delegate
+                            //    {
+                            //        uCwaitLoad1.BringToFront();
+                            //        uCwaitLoad1.Show();
+                            //    });
+                            //else
+                            //{
+                            //    uCwaitLoad1.BringToFront();
+                            //    uCwaitLoad1.Show();
+                            //}
+                        }
                     });
 
                 }
@@ -120,38 +176,28 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
                 {
                     while (await reader.ReadAsync())
                     {
-                        if (panelSubContainer.InvokeRequired)
-                            panelSubContainer.Invoke((MethodInvoker)delegate
-                            {
-                                uCwaitLoad1.BringToFront();
-                                uCwaitLoad1.Show();
-                            });
-                        else
-                        {
-                            uCwaitLoad1.BringToFront();
-                            uCwaitLoad1.Show();
-                        }
+                        //if (panelSubContainer.InvokeRequired)
+                        //    panelSubContainer.Invoke((MethodInvoker)delegate
+                        //    {
+                        //        uCwaitLoad1.BringToFront();
+                        //        uCwaitLoad1.Show();
+                        //    });
+                        //else
+                        //{
+                        //    uCwaitLoad1.BringToFront();
+                        //    uCwaitLoad1.Show();
+                        //}
 
                         create_panel();
                         create_panelSplitter();
                         create_elipse();
-                        create_label(this.label_id, reader["Customer_id"].ToString(), 32, 8, gradientPanel);
-                        create_label(this.label_name, reader["Name"].ToString(), 97, 8, gradientPanel);
-                        create_label(this.label_surname, reader["Surname"].ToString(), 191, 8, gradientPanel);
-                        create_label(this.label_address, reader["Address"].ToString(), 356, 8, gradientPanel);
-                        create_label(this.label_phone, reader["Phone"].ToString(), 552, 8, gradientPanel);
+                        create_label(this.label_id, reader["Customer_id"].ToString(), 25, 8, gradientPanel, 3);
+                        create_label(this.label_name, reader["Name"].ToString(), 85, 8, gradientPanel, 8);
+                        create_label(this.label_surname, reader["Surname"].ToString(), 180, 8, gradientPanel, 13);
+                        create_label(this.label_address, reader["Address"].ToString(), 325, 8, gradientPanel, 25);
+                        create_label(this.label_phone, reader["Phone"].ToString(), 560, 8, gradientPanel, 13);
 
-                        if (panelSubContainer.InvokeRequired)
-                            panelSubContainer.Invoke((MethodInvoker)delegate
-                            {
-                                uCwaitLoad1.BringToFront();
-                                uCwaitLoad1.Show();
-                            });
-                        else
-                        {
-                            uCwaitLoad1.BringToFront();
-                            uCwaitLoad1.Show();
-                        }
+                        create_lable_originalId(label_original_id, reader["Customer_id"].ToString(), gradientPanel);
                     }
                 }
             }
@@ -174,6 +220,86 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
                 {
                     uCwaitLoad1.Hide();
                 }
+
+                operation_doing = false;
+            }
+        }
+
+        private async void load_data()
+        {
+            Thread.Sleep(500);
+
+            if (connection == null || connection.State == ConnectionState.Closed)
+            {
+                connection = new SqlConnection(connect_str);
+                await connection.OpenAsync();
+            }
+
+            SqlCommand command_loadclients = new SqlCommand("Select * From [Clients];", connection);
+
+            SqlDataReader reader = null;
+
+            try
+            {
+                reader = await command_loadclients.ExecuteReaderAsync();
+                if (panelSubContainer.InvokeRequired)
+                {
+                    panelSubContainer.Invoke((MethodInvoker)async delegate
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            create_panel();
+                            create_panelSplitter();
+                            create_elipse();
+                            create_label(this.label_id, reader["Customer_id"].ToString(), 25, 8, gradientPanel, 3);
+                            create_label(this.label_name, reader["Name"].ToString(), 85, 8, gradientPanel, 8);
+                            create_label(this.label_surname, reader["Surname"].ToString(), 180, 8, gradientPanel, 13);
+                            create_label(this.label_address, reader["Address"].ToString(), 325, 8, gradientPanel, 25);
+                            create_label(this.label_phone, reader["Phone"].ToString(), 560, 8, gradientPanel, 13);
+
+                            create_lable_originalId(label_original_id, reader["Customer_id"].ToString(), gradientPanel);
+                        }                    
+                    });
+
+                }
+                else
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        create_panel();
+                        create_panelSplitter();
+                        create_elipse();
+                        create_label(this.label_id, reader["Customer_id"].ToString(), 25, 8, gradientPanel, 3);
+                        create_label(this.label_name, reader["Name"].ToString(), 85, 8, gradientPanel, 8);
+                        create_label(this.label_surname, reader["Surname"].ToString(), 180, 8, gradientPanel, 13);
+                        create_label(this.label_address, reader["Address"].ToString(), 325, 8, gradientPanel, 25);
+                        create_label(this.label_phone, reader["Phone"].ToString(), 560, 8, gradientPanel, 13);
+
+                        create_lable_originalId(label_original_id, reader["Customer_id"].ToString(), gradientPanel);
+                    }
+                }
+            }
+            catch (Exception exeption)
+            {
+                MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                if (panelSubContainer.InvokeRequired)
+                    panelSubContainer.Invoke((MethodInvoker)delegate
+                    {
+                        uCwaitLoad1.Hide();
+                    });
+                else
+                {
+                    uCwaitLoad1.Hide();
+                }
+
+                operation_doing = false;
             }
         }
 
@@ -266,10 +392,38 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
             gradientPanel.Show();
         }
 
-        private void create_label(Label label, string name, int loc_x, int loc_y, BunifuGradientPanel panel)
+        private void create_lable_originalId(Label label, string id, BunifuGradientPanel panel)
         {
             try
             {
+                label = new Label()
+                {
+                    Text = id,
+                    Name = "OriginalId"
+                };
+
+                if (panel == null)
+                    throw new NullReferenceException();
+                panel.Controls.Add(label);
+                label.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void create_label(Label label, string name, int loc_x, int loc_y, BunifuGradientPanel panel, int tooltip_num)
+        {
+            bool create_tooltip = false;
+            string tooltip_name = name;
+
+            if (name.Length > tooltip_num)
+            { name = string.Join("...", name.ToString().Remove(tooltip_num), ""); create_tooltip = true; }
+
+            try
+            {
+                
                 label = new Label()
                 {
                     BackColor = Color.Transparent,
@@ -282,12 +436,17 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
                     Text = name
                 };
 
+                if (create_tooltip)
+                    this.ToolTip.SetToolTip(label, tooltip_name);
+
                 if (panel == null)
                     throw new NullReferenceException();
                 panel.Controls.Add(label);
                 label.BringToFront();
                 label.Show();
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -337,15 +496,19 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
 
         private void iconButtonOk_Click(object sender, EventArgs e)
         {
-            if(currentSelectedPanel != null && write_client != null)
+            if(currentSelectedPanel != null && write_client != null && mainFormToolTip != null)
             {
                 if (write_client.InvokeRequired)
                     write_client.Invoke((MethodInvoker)delegate
                     {
-                        write_client.Text = string.Join(" ", currentSelectedPanel.Controls[2].Text, currentSelectedPanel.Controls[3].Text, currentSelectedPanel.Controls[4].Text);
+                        write_client.Text = currentSelectedPanel.Controls["OriginalId"].Text;
+                        mainFormToolTip.SetToolTip(write_client, string.Join(" ", currentSelectedPanel.Controls[2].Text, currentSelectedPanel.Controls[3].Text, currentSelectedPanel.Controls[4].Text));                   
                     });
                 else
-                    write_client.Text = string.Join(" ", currentSelectedPanel.Controls[2].Text, currentSelectedPanel.Controls[3].Text, currentSelectedPanel.Controls[4].Text);
+                {
+                    write_client.Text = currentSelectedPanel.Controls["OriginalId"].Text;
+                    mainFormToolTip.SetToolTip(write_client, string.Join(" ", currentSelectedPanel.Controls[2].Text, currentSelectedPanel.Controls[3].Text, currentSelectedPanel.Controls[4].Text));
+                }
 
                 this.Close();
             }
@@ -354,6 +517,25 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient
         private void bunifuImageButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private async void bunifuFlatButtonSearch_Click(object sender, EventArgs e)
+        {
+            if (operation_doing)
+                return;
+            operation_doing = true;
+            clear_subContainer();
+            await Task.Run(() => search_clients());
+        }
+
+        private void bunifuFlatButtonSearchClear_Click(object sender, EventArgs e)
+        {
+            if (operation_doing)
+                return;
+            operation_doing = true;
+            bunifuMaterialTextboxSearch.Text = "";
+            clear_subContainer();
+            search_clients();
         }
     }
 }

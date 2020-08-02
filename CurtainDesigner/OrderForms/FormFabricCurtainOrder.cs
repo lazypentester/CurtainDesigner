@@ -16,7 +16,7 @@ namespace CurtainDesigner
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
         //private readonly BindingList<KeyValuePair<string, int>> types = new BindingList<KeyValuePair<string, int>>();
-        private ToolTip tip;
+        internal ToolTip tip;
 
         public FormFabricCurtainOrder()
         {
@@ -45,6 +45,8 @@ namespace CurtainDesigner
             comboBoxInstallation.SelectionChangeCommitted += new EventHandler(update_status);
             labelCustomer.TextChanged += (s, e) => { update_status_onlabel(s, e); };
             labelPrice.TextChanged += (s, e) => { update_status_onlabel(s, e); };
+
+            bunifuImageButtonSeeClientDetail.Click += (s, e) => { if (!string.IsNullOrEmpty(labelCustomer.Text)) MessageBox.Show(tip.GetToolTip(labelCustomer), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); };
         }
 
         private void iconButtonNewOrder_Click(object sender, EventArgs e)
@@ -368,7 +370,7 @@ namespace CurtainDesigner
                     break;
 
                 case "labelPrice":
-                    if (iconButtonSeeElse.Enabled)
+                    if (bunifuImageButtonSeePriceDetail.Enabled)
                     {
                         ucStatusNotOk4.Hide();
                         ucStatusOk4.BringToFront();
@@ -386,9 +388,70 @@ namespace CurtainDesigner
 
         private void iconButtonSelectClient_Click(object sender, EventArgs e)
         {
-            OrderForms.OrderFormSelectClient.FormSelectClient formSelectClient = new OrderForms.OrderFormSelectClient.FormSelectClient(this.labelCustomer);
+            OrderForms.OrderFormSelectClient.FormSelectClient formSelectClient = new OrderForms.OrderFormSelectClient.FormSelectClient(this.labelCustomer, this.tip);
             formSelectClient.ShowDialog();
+        }
 
+        private void iconButtonCreateNewClientAndSelect_Click(object sender, EventArgs e)
+        {
+            AddForms.FormAddNewClient newClient = new AddForms.FormAddNewClient();
+            newClient.DialogResult = DialogResult.None;
+            newClient.ShowDialog();
+            if (newClient.DialogResult == DialogResult.OK)
+                load_Newclient();
+        }
+
+        internal async void load_Newclient()
+        {
+            await Task.Run(() => load_data());
+        }
+
+        private async void load_data()
+        {
+            if (connection == null || connection.State == ConnectionState.Closed)
+            {
+                connection = new SqlConnection(connect_str);
+                await connection.OpenAsync();
+            }
+
+            SqlCommand command_loadclient = new SqlCommand("Select Customer_id, Name, Surname From [Clients] Where Customer_id = (Select Max(Customer_id) From [Clients]);", connection);
+
+            SqlDataReader reader = null;
+
+            try
+            {
+                reader = await command_loadclient.ExecuteReaderAsync();
+                if (labelCustomer.InvokeRequired)
+                {
+                    labelCustomer.Invoke((MethodInvoker)async delegate
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            labelCustomer.Text = reader["Customer_id"].ToString();
+                            tip.SetToolTip(labelCustomer, string.Join(" ", reader["Surname"].ToString(), reader["Name"].ToString(), reader["Customer_id"].ToString()));
+                        }
+                    });
+
+                }
+                else
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        labelCustomer.Text = reader["Customer_id"].ToString();
+                        tip.SetToolTip(labelCustomer, string.Join(" ", reader["Surname"].ToString(), reader["Name"].ToString(), reader["Customer_id"].ToString()));
+                    }
+                }
+            }
+            catch (Exception exeption)
+            {
+                MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+            }
         }
     }
 }

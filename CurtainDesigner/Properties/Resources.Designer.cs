@@ -113,6 +113,16 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_broom_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_broom_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_21px {
             get {
                 object obj = ResourceManager.GetObject("icons8_cancel_21px", resourceCulture);
@@ -146,6 +156,16 @@ namespace CurtainDesigner.Properties {
         internal static System.Drawing.Bitmap icons8_chevron_right_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_chevron_right_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_conversion_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_conversion_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +246,16 @@ namespace CurtainDesigner.Properties {
         internal static System.Drawing.Bitmap icons8_fabric_sample_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_fabric_sample_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_info_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_info_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

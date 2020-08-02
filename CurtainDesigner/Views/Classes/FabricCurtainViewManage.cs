@@ -123,7 +123,7 @@ namespace CurtainDesigner.Views.Classes
             (obj as CurtainDesigner.Classes.FabricCurtain).side_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxSide.SelectedValue.ToString());
             (obj as CurtainDesigner.Classes.FabricCurtain).equipment_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxEquipment.SelectedValue.ToString());
             (obj as CurtainDesigner.Classes.FabricCurtain).installation_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxInstallation.SelectedValue.ToString());
-            (obj as CurtainDesigner.Classes.FabricCurtain).customer_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).labelCustomer.Text.Split(' ')[2]);
+            (obj as CurtainDesigner.Classes.FabricCurtain).customer_id = Int32.Parse((form as CurtainDesigner.FormFabricCurtainOrder).labelCustomer.Text);
 
             string startDate = "";
 
