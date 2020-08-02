@@ -386,8 +386,9 @@ namespace CurtainDesigner
 
         private void iconButtonSelectClient_Click(object sender, EventArgs e)
         {
-            OrderForms.OrderFormSelectClient.FormSelectClient formSelectClient = new OrderForms.OrderFormSelectClient.FormSelectClient();
-            formSelectClient.Show();
+            OrderForms.OrderFormSelectClient.FormSelectClient formSelectClient = new OrderForms.OrderFormSelectClient.FormSelectClient(this.labelCustomer);
+            formSelectClient.ShowDialog();
+
         }
     }
 }

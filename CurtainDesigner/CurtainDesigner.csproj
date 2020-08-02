@@ -155,6 +155,12 @@
     <Compile Include="OrderForms\OrderFormSelectClient\FormSelectClient.Designer.cs">
       <DependentUpon>FormSelectClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderForms\OrderFormSelectClient\UCWAITLOAD\UCwaitLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderForms\OrderFormSelectClient\UCWAITLOAD\UCwaitLoad.Designer.cs">
+      <DependentUpon>UCwaitLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportOrderForms\FormFabricCurtainTable.cs">
@@ -279,6 +285,9 @@
     <EmbeddedResource Include="OrderForms\OrderFormSelectClient\FormSelectClient.resx">
       <DependentUpon>FormSelectClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\OrderFormSelectClient\UCWAITLOAD\UCwaitLoad.resx">
+      <DependentUpon>UCwaitLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -383,6 +392,8 @@
     <None Include="bin\Debug\imgs\icons8_ok_21px.png" />
     <None Include="bin\Debug\imgs\icons8_unchecked_radio_button_21px.png" />
     <None Include="bin\Debug\imgs\icons8_cancel_21px.png" />
+    <None Include="bin\Debug\imgs\Spinner-1s-200px.gif" />
+    <None Include="bin\Debug\imgs\icons8_shutdown_25px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
