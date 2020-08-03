@@ -32,12 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSelectClient));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel5 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.uCwaitLoad1 = new CurtainDesigner.OrderForms.OrderFormSelectClient.UCWAITLOAD.UCwaitLoad();
-            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
-            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelSubContainer = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -68,42 +67,38 @@
             this.bunifuElipse2.ElipseRadius = 3;
             this.bunifuElipse2.TargetControl = this.iconButtonOk;
             // 
+            // iconButtonOk
+            // 
+            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonOk.AutoSize = true;
+            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
+            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonOk.FlatAppearance.BorderSize = 0;
+            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconSize = 28;
+            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.Location = new System.Drawing.Point(14, 437);
+            this.iconButtonOk.Name = "iconButtonOk";
+            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
+            this.iconButtonOk.Rotation = 0D;
+            this.iconButtonOk.Size = new System.Drawing.Size(361, 38);
+            this.iconButtonOk.TabIndex = 7;
+            this.iconButtonOk.Text = "Підтвердити";
+            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOk.UseVisualStyleBackColor = false;
+            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
+            // 
             // bunifuElipse3
             // 
             this.bunifuElipse3.ElipseRadius = 3;
             this.bunifuElipse3.TargetControl = this.iconButtonCancel;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 5;
-            this.bunifuElipse4.TargetControl = this;
-            // 
-            // bunifuGradientPanel5
-            // 
-            this.bunifuGradientPanel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel5.BackgroundImage")));
-            this.bunifuGradientPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel5.Controls.Add(this.uCwaitLoad1);
-            this.bunifuGradientPanel5.Controls.Add(this.iconButtonCancel);
-            this.bunifuGradientPanel5.Controls.Add(this.iconButtonOk);
-            this.bunifuGradientPanel5.Controls.Add(this.panelContainer);
-            this.bunifuGradientPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel5.GradientBottomLeft = System.Drawing.Color.LightSkyBlue;
-            this.bunifuGradientPanel5.GradientBottomRight = System.Drawing.Color.Gold;
-            this.bunifuGradientPanel5.GradientTopLeft = System.Drawing.Color.LightSkyBlue;
-            this.bunifuGradientPanel5.GradientTopRight = System.Drawing.Color.LightGray;
-            this.bunifuGradientPanel5.Location = new System.Drawing.Point(0, 59);
-            this.bunifuGradientPanel5.Name = "bunifuGradientPanel5";
-            this.bunifuGradientPanel5.Quality = 10;
-            this.bunifuGradientPanel5.Size = new System.Drawing.Size(750, 486);
-            this.bunifuGradientPanel5.TabIndex = 10;
-            // 
-            // uCwaitLoad1
-            // 
-            this.uCwaitLoad1.BackColor = System.Drawing.Color.Gainsboro;
-            this.uCwaitLoad1.Location = new System.Drawing.Point(15, 61);
-            this.uCwaitLoad1.Name = "uCwaitLoad1";
-            this.uCwaitLoad1.Size = new System.Drawing.Size(720, 367);
-            this.uCwaitLoad1.TabIndex = 9;
             // 
             // iconButtonCancel
             // 
@@ -133,33 +128,28 @@
             this.iconButtonCancel.UseVisualStyleBackColor = false;
             this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
             // 
-            // iconButtonOk
+            // bunifuElipse4
             // 
-            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonOk.AutoSize = true;
-            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
-            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonOk.FlatAppearance.BorderSize = 0;
-            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconSize = 28;
-            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.Location = new System.Drawing.Point(14, 437);
-            this.iconButtonOk.Name = "iconButtonOk";
-            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.iconButtonOk.Rotation = 0D;
-            this.iconButtonOk.Size = new System.Drawing.Size(361, 38);
-            this.iconButtonOk.TabIndex = 7;
-            this.iconButtonOk.Text = "Підтвердити";
-            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonOk.UseVisualStyleBackColor = false;
-            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this;
+            // 
+            // bunifuGradientPanel5
+            // 
+            this.bunifuGradientPanel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel5.BackgroundImage")));
+            this.bunifuGradientPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel5.Controls.Add(this.iconButtonCancel);
+            this.bunifuGradientPanel5.Controls.Add(this.iconButtonOk);
+            this.bunifuGradientPanel5.Controls.Add(this.panelContainer);
+            this.bunifuGradientPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel5.GradientBottomLeft = System.Drawing.Color.LightSkyBlue;
+            this.bunifuGradientPanel5.GradientBottomRight = System.Drawing.Color.Gold;
+            this.bunifuGradientPanel5.GradientTopLeft = System.Drawing.Color.LightSkyBlue;
+            this.bunifuGradientPanel5.GradientTopRight = System.Drawing.Color.LightGray;
+            this.bunifuGradientPanel5.Location = new System.Drawing.Point(0, 59);
+            this.bunifuGradientPanel5.Name = "bunifuGradientPanel5";
+            this.bunifuGradientPanel5.Quality = 10;
+            this.bunifuGradientPanel5.Size = new System.Drawing.Size(750, 486);
+            this.bunifuGradientPanel5.TabIndex = 10;
             // 
             // panelContainer
             // 
@@ -179,7 +169,6 @@
             this.panelSubContainer.Name = "panelSubContainer";
             this.panelSubContainer.Size = new System.Drawing.Size(720, 367);
             this.panelSubContainer.TabIndex = 1;
-            this.panelSubContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubContainer_Paint);
             // 
             // bunifuGradientPanel1
             // 
@@ -397,7 +386,6 @@
             this.Name = "FormSelectClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSelectClient";
-            this.Load += new System.EventHandler(this.FormSelectClient_Load);
             this.bunifuGradientPanel5.ResumeLayout(false);
             this.bunifuGradientPanel5.PerformLayout();
             this.panelContainer.ResumeLayout(false);
@@ -427,7 +415,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private UCWAITLOAD.UCwaitLoad uCwaitLoad1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButtonExit;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButtonSearch;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextboxSearch;

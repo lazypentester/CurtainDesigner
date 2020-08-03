@@ -155,6 +155,13 @@
     <Compile Include="OrderForms\OrderFormSelectClient\FormSelectClient.Designer.cs">
       <DependentUpon>FormSelectClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderForms\OrderFormSelectClient\UCSELECTCLIENT\Client.cs" />
+    <Compile Include="OrderForms\OrderFormSelectClient\UCSELECTCLIENT\SelectClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderForms\OrderFormSelectClient\UCSELECTCLIENT\SelectClient.Designer.cs">
+      <DependentUpon>SelectClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderForms\OrderFormSelectClient\UCWAITLOAD\UCwaitLoad.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -284,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\OrderFormSelectClient\FormSelectClient.resx">
       <DependentUpon>FormSelectClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\OrderFormSelectClient\UCSELECTCLIENT\SelectClient.resx">
+      <DependentUpon>SelectClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\OrderFormSelectClient\UCWAITLOAD\UCwaitLoad.resx">
       <DependentUpon>UCwaitLoad.cs</DependentUpon>
