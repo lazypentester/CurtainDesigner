@@ -31,15 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.bunifuImageButtonSeePriceDetail = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel34 = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelP = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
             this.panel37 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -48,30 +45,20 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.dateTimePickerDateStart = new System.Windows.Forms.DateTimePicker();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.bunifuImageButtonSeeClientDetail = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.iconButtonCreateNewClientAndSelect = new FontAwesome.Sharp.IconButton();
-            this.iconButtonSelectClient = new FontAwesome.Sharp.IconButton();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuButtonCustomInstallPrice = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCheckboxCustomInstallation = new Bunifu.Framework.UI.BunifuCheckbox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBoxInstallation = new System.Windows.Forms.ComboBox();
@@ -87,7 +74,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.labelFabricCategory = new System.Windows.Forms.Label();
@@ -101,8 +87,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxEquipment = new System.Windows.Forms.ComboBox();
             this.panel32 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.comboBoxSystemColor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -113,32 +97,36 @@
             this.comboBoxCurtainType = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuImageButtonSeeClientDetail = new Bunifu.Framework.UI.BunifuImageButton();
+            this.iconButtonCreateNewClientAndSelect = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSelectClient = new FontAwesome.Sharp.IconButton();
+            this.bunifuButtonCustomInstallPrice = new Bunifu.Framework.UI.BunifuImageButton();
+            this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
+            this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
+            this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
+            this.ucStatusNotOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
+            this.ucStatusNotOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
+            this.ucStatusNotOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
+            this.ucStatusNotOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.panel1.SuspendLayout();
             this.panel33.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeePriceDetail)).BeginInit();
             this.panel37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).BeginInit();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomInstallationPrice)).BeginInit();
@@ -146,12 +134,22 @@
             this.panel2.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel32.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -170,7 +168,6 @@
             // 
             // panel33
             // 
-            this.panel33.Controls.Add(this.bunifuImageButtonSeePriceDetail);
             this.panel33.Controls.Add(this.panel34);
             this.panel33.Controls.Add(this.panel35);
             this.panel33.Controls.Add(this.labelPrice);
@@ -181,22 +178,6 @@
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(317, 76);
             this.panel33.TabIndex = 9;
-            // 
-            // bunifuImageButtonSeePriceDetail
-            // 
-            this.bunifuImageButtonSeePriceDetail.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButtonSeePriceDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButtonSeePriceDetail.Enabled = false;
-            this.bunifuImageButtonSeePriceDetail.Image = global::CurtainDesigner.Properties.Resources.icons8_info_40px;
-            this.bunifuImageButtonSeePriceDetail.ImageActive = null;
-            this.bunifuImageButtonSeePriceDetail.Location = new System.Drawing.Point(282, 35);
-            this.bunifuImageButtonSeePriceDetail.Name = "bunifuImageButtonSeePriceDetail";
-            this.bunifuImageButtonSeePriceDetail.Size = new System.Drawing.Size(25, 25);
-            this.bunifuImageButtonSeePriceDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButtonSeePriceDetail.TabIndex = 7;
-            this.bunifuImageButtonSeePriceDetail.TabStop = false;
-            this.bunifuImageButtonSeePriceDetail.Zoom = 7;
-            this.bunifuImageButtonSeePriceDetail.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
             // 
             // panel34
             // 
@@ -223,9 +204,9 @@
             this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.labelPrice.Location = new System.Drawing.Point(60, 38);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(98, 19);
+            this.labelPrice.Size = new System.Drawing.Size(49, 19);
             this.labelPrice.TabIndex = 0;
-            this.labelPrice.Text = "[ 5458 грн. ]";
+            this.labelPrice.Text = "[ 0 $ ]";
             // 
             // labelP
             // 
@@ -258,31 +239,6 @@
             this.panel37.Size = new System.Drawing.Size(317, 25);
             this.panel37.TabIndex = 0;
             this.panel37.Paint += new System.Windows.Forms.PaintEventHandler(this.panel37_Paint);
-            // 
-            // ucStatusNotOk6
-            // 
-            this.ucStatusNotOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk6.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk6.Name = "ucStatusNotOk6";
-            this.ucStatusNotOk6.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk6.TabIndex = 2;
-            this.ucStatusNotOk6.TabStop = false;
-            // 
-            // ucStatusOk6
-            // 
-            this.ucStatusOk6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk6.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk6.Name = "ucStatusOk6";
-            this.ucStatusOk6.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk6.TabIndex = 1;
-            this.ucStatusOk6.TabStop = false;
             // 
             // panel13
             // 
@@ -367,31 +323,6 @@
             this.panel17.Size = new System.Drawing.Size(317, 25);
             this.panel17.TabIndex = 0;
             // 
-            // ucStatusNotOk5
-            // 
-            this.ucStatusNotOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk5.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk5.Name = "ucStatusNotOk5";
-            this.ucStatusNotOk5.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk5.TabIndex = 2;
-            this.ucStatusNotOk5.TabStop = false;
-            // 
-            // ucStatusOk5
-            // 
-            this.ucStatusOk5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk5.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk5.Name = "ucStatusOk5";
-            this.ucStatusOk5.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk5.TabIndex = 1;
-            this.ucStatusOk5.TabStop = false;
-            // 
             // dateTimePickerDateStart
             // 
             this.dateTimePickerDateStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -415,20 +346,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(317, 109);
             this.panel8.TabIndex = 9;
-            // 
-            // bunifuImageButtonSeeClientDetail
-            // 
-            this.bunifuImageButtonSeeClientDetail.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButtonSeeClientDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButtonSeeClientDetail.Image = global::CurtainDesigner.Properties.Resources.icons8_info_40px;
-            this.bunifuImageButtonSeeClientDetail.ImageActive = null;
-            this.bunifuImageButtonSeeClientDetail.Location = new System.Drawing.Point(282, 37);
-            this.bunifuImageButtonSeeClientDetail.Name = "bunifuImageButtonSeeClientDetail";
-            this.bunifuImageButtonSeeClientDetail.Size = new System.Drawing.Size(25, 25);
-            this.bunifuImageButtonSeeClientDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButtonSeeClientDetail.TabIndex = 7;
-            this.bunifuImageButtonSeeClientDetail.TabStop = false;
-            this.bunifuImageButtonSeeClientDetail.Zoom = 7;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // panel9
             // 
@@ -458,42 +376,6 @@
             this.label19.Size = new System.Drawing.Size(102, 16);
             this.label19.TabIndex = 0;
             this.label19.Text = "ID Замовника:";
-            // 
-            // iconButtonCreateNewClientAndSelect
-            // 
-            this.iconButtonCreateNewClientAndSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonCreateNewClientAndSelect.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonCreateNewClientAndSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCreateNewClientAndSelect.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButtonCreateNewClientAndSelect.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonCreateNewClientAndSelect.IconColor = System.Drawing.Color.Black;
-            this.iconButtonCreateNewClientAndSelect.IconSize = 16;
-            this.iconButtonCreateNewClientAndSelect.Location = new System.Drawing.Point(159, 72);
-            this.iconButtonCreateNewClientAndSelect.Name = "iconButtonCreateNewClientAndSelect";
-            this.iconButtonCreateNewClientAndSelect.Rotation = 0D;
-            this.iconButtonCreateNewClientAndSelect.Size = new System.Drawing.Size(150, 30);
-            this.iconButtonCreateNewClientAndSelect.TabIndex = 6;
-            this.iconButtonCreateNewClientAndSelect.Text = "Створити нового";
-            this.iconButtonCreateNewClientAndSelect.UseVisualStyleBackColor = true;
-            this.iconButtonCreateNewClientAndSelect.Click += new System.EventHandler(this.iconButtonCreateNewClientAndSelect_Click);
-            // 
-            // iconButtonSelectClient
-            // 
-            this.iconButtonSelectClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonSelectClient.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonSelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSelectClient.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButtonSelectClient.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonSelectClient.IconColor = System.Drawing.Color.Black;
-            this.iconButtonSelectClient.IconSize = 16;
-            this.iconButtonSelectClient.Location = new System.Drawing.Point(8, 72);
-            this.iconButtonSelectClient.Name = "iconButtonSelectClient";
-            this.iconButtonSelectClient.Rotation = 0D;
-            this.iconButtonSelectClient.Size = new System.Drawing.Size(150, 30);
-            this.iconButtonSelectClient.TabIndex = 6;
-            this.iconButtonSelectClient.Text = "Вибрати зі списку";
-            this.iconButtonSelectClient.UseVisualStyleBackColor = true;
-            this.iconButtonSelectClient.Click += new System.EventHandler(this.iconButtonSelectClient_Click);
             // 
             // labelCustomer
             // 
@@ -526,31 +408,6 @@
             this.panel12.Size = new System.Drawing.Size(317, 25);
             this.panel12.TabIndex = 0;
             // 
-            // ucStatusNotOk4
-            // 
-            this.ucStatusNotOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk4.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk4.Name = "ucStatusNotOk4";
-            this.ucStatusNotOk4.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk4.TabIndex = 2;
-            this.ucStatusNotOk4.TabStop = false;
-            // 
-            // ucStatusOk4
-            // 
-            this.ucStatusOk4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk4.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk4.Name = "ucStatusOk4";
-            this.ucStatusOk4.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk4.TabIndex = 1;
-            this.ucStatusOk4.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.bunifuButtonCustomInstallPrice);
@@ -579,25 +436,9 @@
             this.panel3.Size = new System.Drawing.Size(317, 188);
             this.panel3.TabIndex = 9;
             // 
-            // bunifuButtonCustomInstallPrice
-            // 
-            this.bunifuButtonCustomInstallPrice.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButtonCustomInstallPrice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButtonCustomInstallPrice.Enabled = false;
-            this.bunifuButtonCustomInstallPrice.Image = global::CurtainDesigner.Properties.Resources.icons8_save_25px;
-            this.bunifuButtonCustomInstallPrice.ImageActive = null;
-            this.bunifuButtonCustomInstallPrice.Location = new System.Drawing.Point(257, 156);
-            this.bunifuButtonCustomInstallPrice.Name = "bunifuButtonCustomInstallPrice";
-            this.bunifuButtonCustomInstallPrice.Size = new System.Drawing.Size(25, 25);
-            this.bunifuButtonCustomInstallPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuButtonCustomInstallPrice.TabIndex = 7;
-            this.bunifuButtonCustomInstallPrice.TabStop = false;
-            this.bunifuButtonCustomInstallPrice.Zoom = 7;
-            this.bunifuButtonCustomInstallPrice.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
-            // 
             // bunifuCheckboxCustomInstallation
             // 
-            this.bunifuCheckboxCustomInstallation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckboxCustomInstallation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckboxCustomInstallation.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckboxCustomInstallation.Checked = false;
             this.bunifuCheckboxCustomInstallation.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -646,52 +487,29 @@
             this.panel4.Size = new System.Drawing.Size(317, 25);
             this.panel4.TabIndex = 0;
             // 
-            // ucStatusNotOk3
-            // 
-            this.ucStatusNotOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk3.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk3.Name = "ucStatusNotOk3";
-            this.ucStatusNotOk3.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk3.TabIndex = 2;
-            this.ucStatusNotOk3.TabStop = false;
-            // 
-            // ucStatusOk3
-            // 
-            this.ucStatusOk3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk3.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk3.Name = "ucStatusOk3";
-            this.ucStatusOk3.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk3.TabIndex = 1;
-            this.ucStatusOk3.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label3.Location = new System.Drawing.Point(166, 36);
+            this.label3.Location = new System.Drawing.Point(166, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Висота:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label11.Location = new System.Drawing.Point(8, 35);
+            this.label11.Location = new System.Drawing.Point(8, 36);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 16);
             this.label11.TabIndex = 0;
             this.label11.Text = "Ширина:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // comboBoxInstallation
             // 
@@ -704,7 +522,7 @@
             // 
             // numericUpDownCount
             // 
-            this.numericUpDownCount.Location = new System.Drawing.Point(239, 66);
+            this.numericUpDownCount.Location = new System.Drawing.Point(257, 68);
             this.numericUpDownCount.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -716,7 +534,7 @@
             0,
             0});
             this.numericUpDownCount.Name = "numericUpDownCount";
-            this.numericUpDownCount.Size = new System.Drawing.Size(70, 20);
+            this.numericUpDownCount.Size = new System.Drawing.Size(52, 20);
             this.numericUpDownCount.TabIndex = 5;
             this.numericUpDownCount.Value = new decimal(new int[] {
             1,
@@ -729,7 +547,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label15.Location = new System.Drawing.Point(163, 69);
+            this.label15.Location = new System.Drawing.Point(182, 69);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 16);
             this.label15.TabIndex = 0;
@@ -740,7 +558,7 @@
             this.numericUpDownHeight.DecimalPlaces = 2;
             this.numericUpDownHeight.Location = new System.Drawing.Point(232, 36);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
-            100000,
+            1000,
             0,
             0,
             0});
@@ -775,11 +593,11 @@
             this.labelYardage.AutoSize = true;
             this.labelYardage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelYardage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.labelYardage.Location = new System.Drawing.Point(108, 70);
+            this.labelYardage.Location = new System.Drawing.Point(100, 70);
             this.labelYardage.Name = "labelYardage";
-            this.labelYardage.Size = new System.Drawing.Size(36, 16);
+            this.labelYardage.Size = new System.Drawing.Size(15, 16);
             this.labelYardage.TabIndex = 0;
-            this.labelYardage.Text = "4353";
+            this.labelYardage.Text = "0";
             // 
             // numericUpDownCustomInstallationPrice
             // 
@@ -800,7 +618,7 @@
             this.numericUpDownWidth.DecimalPlaces = 2;
             this.numericUpDownWidth.Location = new System.Drawing.Point(80, 35);
             this.numericUpDownWidth.Maximum = new decimal(new int[] {
-            100000,
+            1000,
             0,
             0,
             0});
@@ -852,34 +670,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Квадратура:";
             // 
-            // iconButtonNewOrder
-            // 
-            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonNewOrder.AutoSize = true;
-            this.iconButtonNewOrder.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
-            this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonNewOrder.IconSize = 32;
-            this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
-            this.iconButtonNewOrder.Name = "iconButtonNewOrder";
-            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.iconButtonNewOrder.Rotation = 0D;
-            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
-            this.iconButtonNewOrder.TabIndex = 8;
-            this.iconButtonNewOrder.Text = "Створити замовлення";
-            this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonNewOrder.UseVisualStyleBackColor = false;
-            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
@@ -930,9 +720,9 @@
             this.labelFabricCategoryId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.labelFabricCategoryId.Location = new System.Drawing.Point(426, 37);
             this.labelFabricCategoryId.Name = "labelFabricCategoryId";
-            this.labelFabricCategoryId.Size = new System.Drawing.Size(12, 16);
+            this.labelFabricCategoryId.Size = new System.Drawing.Size(21, 16);
             this.labelFabricCategoryId.TabIndex = 10;
-            this.labelFabricCategoryId.Text = "!";
+            this.labelFabricCategoryId.Text = "id";
             this.labelFabricCategoryId.Visible = false;
             // 
             // label4
@@ -1027,31 +817,6 @@
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(460, 25);
             this.panel32.TabIndex = 0;
-            // 
-            // ucStatusNotOk2
-            // 
-            this.ucStatusNotOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk2.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk2.Name = "ucStatusNotOk2";
-            this.ucStatusNotOk2.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk2.TabIndex = 2;
-            this.ucStatusNotOk2.TabStop = false;
-            // 
-            // ucStatusOk2
-            // 
-            this.ucStatusOk2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk2.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk2.Name = "ucStatusOk2";
-            this.ucStatusOk2.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk2.TabIndex = 1;
-            this.ucStatusOk2.TabStop = false;
             // 
             // comboBoxSystemColor
             // 
@@ -1161,31 +926,6 @@
             this.panel22.Size = new System.Drawing.Size(460, 25);
             this.panel22.TabIndex = 0;
             // 
-            // ucStatusNotOk1
-            // 
-            this.ucStatusNotOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk1.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk1.Name = "ucStatusNotOk1";
-            this.ucStatusNotOk1.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk1.TabIndex = 1;
-            this.ucStatusNotOk1.TabStop = false;
-            // 
-            // ucStatusOk1
-            // 
-            this.ucStatusOk1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk1.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk1.Name = "ucStatusOk1";
-            this.ucStatusOk1.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk1.TabIndex = 0;
-            this.ucStatusOk1.TabStop = false;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1224,6 +964,262 @@
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
             // 
+            // bunifuImageButtonSeeClientDetail
+            // 
+            this.bunifuImageButtonSeeClientDetail.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButtonSeeClientDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButtonSeeClientDetail.Image = global::CurtainDesigner.Properties.Resources.icons8_info_40px;
+            this.bunifuImageButtonSeeClientDetail.ImageActive = null;
+            this.bunifuImageButtonSeeClientDetail.Location = new System.Drawing.Point(282, 37);
+            this.bunifuImageButtonSeeClientDetail.Name = "bunifuImageButtonSeeClientDetail";
+            this.bunifuImageButtonSeeClientDetail.Size = new System.Drawing.Size(25, 25);
+            this.bunifuImageButtonSeeClientDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButtonSeeClientDetail.TabIndex = 7;
+            this.bunifuImageButtonSeeClientDetail.TabStop = false;
+            this.bunifuImageButtonSeeClientDetail.Zoom = 7;
+            // 
+            // iconButtonCreateNewClientAndSelect
+            // 
+            this.iconButtonCreateNewClientAndSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCreateNewClientAndSelect.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonCreateNewClientAndSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCreateNewClientAndSelect.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButtonCreateNewClientAndSelect.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonCreateNewClientAndSelect.IconColor = System.Drawing.Color.Black;
+            this.iconButtonCreateNewClientAndSelect.IconSize = 16;
+            this.iconButtonCreateNewClientAndSelect.Location = new System.Drawing.Point(159, 72);
+            this.iconButtonCreateNewClientAndSelect.Name = "iconButtonCreateNewClientAndSelect";
+            this.iconButtonCreateNewClientAndSelect.Rotation = 0D;
+            this.iconButtonCreateNewClientAndSelect.Size = new System.Drawing.Size(150, 30);
+            this.iconButtonCreateNewClientAndSelect.TabIndex = 6;
+            this.iconButtonCreateNewClientAndSelect.Text = "Створити нового";
+            this.iconButtonCreateNewClientAndSelect.UseVisualStyleBackColor = true;
+            this.iconButtonCreateNewClientAndSelect.Click += new System.EventHandler(this.iconButtonCreateNewClientAndSelect_Click);
+            // 
+            // iconButtonSelectClient
+            // 
+            this.iconButtonSelectClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonSelectClient.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonSelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSelectClient.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButtonSelectClient.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonSelectClient.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSelectClient.IconSize = 16;
+            this.iconButtonSelectClient.Location = new System.Drawing.Point(8, 72);
+            this.iconButtonSelectClient.Name = "iconButtonSelectClient";
+            this.iconButtonSelectClient.Rotation = 0D;
+            this.iconButtonSelectClient.Size = new System.Drawing.Size(150, 30);
+            this.iconButtonSelectClient.TabIndex = 6;
+            this.iconButtonSelectClient.Text = "Вибрати зі списку";
+            this.iconButtonSelectClient.UseVisualStyleBackColor = true;
+            this.iconButtonSelectClient.Click += new System.EventHandler(this.iconButtonSelectClient_Click);
+            // 
+            // bunifuButtonCustomInstallPrice
+            // 
+            this.bunifuButtonCustomInstallPrice.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuButtonCustomInstallPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuButtonCustomInstallPrice.Enabled = false;
+            this.bunifuButtonCustomInstallPrice.Image = global::CurtainDesigner.Properties.Resources.icons8_save_25px;
+            this.bunifuButtonCustomInstallPrice.ImageActive = null;
+            this.bunifuButtonCustomInstallPrice.Location = new System.Drawing.Point(257, 156);
+            this.bunifuButtonCustomInstallPrice.Name = "bunifuButtonCustomInstallPrice";
+            this.bunifuButtonCustomInstallPrice.Size = new System.Drawing.Size(25, 25);
+            this.bunifuButtonCustomInstallPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuButtonCustomInstallPrice.TabIndex = 7;
+            this.bunifuButtonCustomInstallPrice.TabStop = false;
+            this.bunifuButtonCustomInstallPrice.Zoom = 7;
+            this.bunifuButtonCustomInstallPrice.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
+            // 
+            // iconButtonNewOrder
+            // 
+            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonNewOrder.AutoSize = true;
+            this.iconButtonNewOrder.BackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
+            this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonNewOrder.IconSize = 32;
+            this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
+            this.iconButtonNewOrder.Name = "iconButtonNewOrder";
+            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
+            this.iconButtonNewOrder.Rotation = 0D;
+            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
+            this.iconButtonNewOrder.TabIndex = 8;
+            this.iconButtonNewOrder.Text = "Створити замовлення";
+            this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonNewOrder.UseVisualStyleBackColor = false;
+            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
+            // 
+            // ucStatusNotOk2
+            // 
+            this.ucStatusNotOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk2.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk2.Name = "ucStatusNotOk2";
+            this.ucStatusNotOk2.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk2.TabIndex = 2;
+            this.ucStatusNotOk2.TabStop = false;
+            this.ucStatusNotOk2.Visible = false;
+            // 
+            // ucStatusOk2
+            // 
+            this.ucStatusOk2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk2.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk2.Name = "ucStatusOk2";
+            this.ucStatusOk2.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk2.TabIndex = 1;
+            this.ucStatusOk2.TabStop = false;
+            this.ucStatusOk2.Visible = false;
+            // 
+            // ucStatusNotOk1
+            // 
+            this.ucStatusNotOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk1.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk1.Name = "ucStatusNotOk1";
+            this.ucStatusNotOk1.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk1.TabIndex = 1;
+            this.ucStatusNotOk1.TabStop = false;
+            this.ucStatusNotOk1.Visible = false;
+            // 
+            // ucStatusOk1
+            // 
+            this.ucStatusOk1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk1.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk1.Name = "ucStatusOk1";
+            this.ucStatusOk1.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk1.TabIndex = 0;
+            this.ucStatusOk1.TabStop = false;
+            this.ucStatusOk1.Visible = false;
+            // 
+            // ucStatusNotOk6
+            // 
+            this.ucStatusNotOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk6.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk6.Name = "ucStatusNotOk6";
+            this.ucStatusNotOk6.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk6.TabIndex = 2;
+            this.ucStatusNotOk6.TabStop = false;
+            this.ucStatusNotOk6.Visible = false;
+            // 
+            // ucStatusOk6
+            // 
+            this.ucStatusOk6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk6.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk6.Name = "ucStatusOk6";
+            this.ucStatusOk6.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk6.TabIndex = 1;
+            this.ucStatusOk6.TabStop = false;
+            this.ucStatusOk6.Visible = false;
+            // 
+            // ucStatusNotOk5
+            // 
+            this.ucStatusNotOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk5.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk5.Name = "ucStatusNotOk5";
+            this.ucStatusNotOk5.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk5.TabIndex = 2;
+            this.ucStatusNotOk5.TabStop = false;
+            this.ucStatusNotOk5.Visible = false;
+            // 
+            // ucStatusOk5
+            // 
+            this.ucStatusOk5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk5.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk5.Name = "ucStatusOk5";
+            this.ucStatusOk5.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk5.TabIndex = 1;
+            this.ucStatusOk5.TabStop = false;
+            this.ucStatusOk5.Visible = false;
+            // 
+            // ucStatusNotOk4
+            // 
+            this.ucStatusNotOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk4.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk4.Name = "ucStatusNotOk4";
+            this.ucStatusNotOk4.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk4.TabIndex = 2;
+            this.ucStatusNotOk4.TabStop = false;
+            this.ucStatusNotOk4.Visible = false;
+            // 
+            // ucStatusOk4
+            // 
+            this.ucStatusOk4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk4.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk4.Name = "ucStatusOk4";
+            this.ucStatusOk4.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk4.TabIndex = 1;
+            this.ucStatusOk4.TabStop = false;
+            this.ucStatusOk4.Visible = false;
+            // 
+            // ucStatusNotOk3
+            // 
+            this.ucStatusNotOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk3.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk3.Name = "ucStatusNotOk3";
+            this.ucStatusNotOk3.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk3.TabIndex = 2;
+            this.ucStatusNotOk3.TabStop = false;
+            this.ucStatusNotOk3.Visible = false;
+            // 
+            // ucStatusOk3
+            // 
+            this.ucStatusOk3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk3.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk3.Name = "ucStatusOk3";
+            this.ucStatusOk3.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk3.TabIndex = 1;
+            this.ucStatusOk3.TabStop = false;
+            this.ucStatusOk3.Visible = false;
+            // 
             // FormFabricCurtainOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1239,27 +1235,16 @@
             this.panel1.PerformLayout();
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeePriceDetail)).EndInit();
             this.panel37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).EndInit();
             this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomInstallationPrice)).EndInit();
@@ -1268,13 +1253,23 @@
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel32.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1357,19 +1352,18 @@
         internal System.Windows.Forms.Label labelFabricCategoryId;
         internal Bunifu.Framework.UI.BunifuCheckbox bunifuCheckboxCustomInstallation;
         private Bunifu.Framework.UI.BunifuImageButton bunifuButtonCustomInstallPrice;
-        private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk1;
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk6;
+        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk6;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButtonSeeClientDetail;
+        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk5;
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk5;
+        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk4;
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk4;
+        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk3;
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk3;
+        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk2;
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk2;
         private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk1;
-        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk6;
-        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk5;
-        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk4;
-        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk3;
-        private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButtonSeeClientDetail;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButtonSeePriceDetail;
+        private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk1;
     }
 }

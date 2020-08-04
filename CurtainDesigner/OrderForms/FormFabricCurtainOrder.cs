@@ -15,12 +15,13 @@ namespace CurtainDesigner
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
-        //private readonly BindingList<KeyValuePair<string, int>> types = new BindingList<KeyValuePair<string, int>>();
         internal ToolTip tip;
+        private bool processing;
 
         public FormFabricCurtainOrder()
         {
             InitializeComponent();
+            processing = true;
             this.tip = new ToolTip();
             tip.UseAnimation = true;
             tip.UseFading = true;
@@ -32,27 +33,201 @@ namespace CurtainDesigner
             comboBoxCurtainSubtype.SelectionChangeCommitted += new EventHandler(loadNextDataFromDB);
             comboBoxFabric.SelectionChangeCommitted += new EventHandler(loadFabricCategoryFromBD);
 
-            comboBoxSide.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); update_status(s, e); };
-            comboBoxSystemColor.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSystemColor.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); update_status(s, e);  };
-            comboBoxEquipment.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxEquipment.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); update_status(s, e);  };
+            comboBoxSide.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxSystemColor.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSystemColor.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxEquipment.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxEquipment.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
 
-            //comboBoxCurtainType.SelectionChangeCommitted += new EventHandler(update_status);
-            //comboBoxCurtainSubtype.SelectionChangeCommitted += new EventHandler(update_status);
-            //comboBoxSide.SelectionChangeCommitted += new EventHandler(update_status);
-            //comboBoxFabric.SelectionChangeCommitted += new EventHandler(update_status);
-            //comboBoxSystemColor.SelectionChangeCommitted += new EventHandler(update_status);
-            //comboBoxEquipment.SelectionChangeCommitted += new EventHandler(update_status);
-            comboBoxInstallation.SelectionChangeCommitted += new EventHandler(update_status);
-            labelCustomer.TextChanged += (s, e) => { update_status_onlabel(s, e); };
-            labelPrice.TextChanged += (s, e) => { update_status_onlabel(s, e); };
+            //comboBoxInstallation.SelectionChangeCommitted += new EventHandler(update_status);
+            //labelCustomer.TextChanged += (s, e) => { update_status_onlabel(s, e); };
+            //labelPrice.TextChanged += (s, e) => { update_status_onlabel(s, e); };
 
             bunifuImageButtonSeeClientDetail.Click += (s, e) => { if (!string.IsNullOrEmpty(labelCustomer.Text)) MessageBox.Show(tip.GetToolTip(labelCustomer), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); };
+
+            numericUpDownWidth.ValueChanged += (s, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
+            numericUpDownHeight.ValueChanged += (s, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
+
+            setTooltipsyardage();
+
+            labelFabricCategory.TextChanged += (s, e) => { updatePrice(); };
+            comboBoxEquipment.SelectedValueChanged += (s, e) => { updatePrice(); };
+            labelYardage.TextChanged += (s, e) => { updatePrice(); };
+            comboBoxInstallation.SelectedValueChanged += (s, e) => { updatePrice(); };
+            numericUpDownCount.ValueChanged += (s, e) => { updatePrice(); };
+            processing = false;
+
+        }
+
+        private async void updatePrice()
+        {
+            if (processing)
+                return;
+            processing = true;
+
+            if (labelFabricCategory.Text != "0$" && 
+                !string.IsNullOrEmpty(labelFabricCategory.Text) &&
+                comboBoxEquipment.DataSource != null &&
+                comboBoxEquipment.SelectedValue != null &&
+                labelYardage.Text != "0" &&
+                !string.IsNullOrEmpty(labelYardage.Text) &&
+                numericUpDownCount.Value != 0 &&
+                comboBoxInstallation.DataSource != null &&
+                comboBoxInstallation.SelectedValue != null &&
+                comboBoxFabric.DataSource != null &&
+                comboBoxFabric.SelectedValue != null)
+            {
+                double yardage = 0;
+                double categoryPrice = 0;
+                double installation = 0;
+                double equipment_price = 0;
+                int good_count = 0;
+
+                try
+                {
+                    equipment_price = await getEquipmentPrice(comboBoxEquipment.SelectedValue.ToString());
+                    installation = Convert.ToDouble((comboBoxInstallation.DataSource as BindingList<KeyValuePair<string, int>>).Where(x => x.Value == Convert.ToInt32(comboBoxInstallation.SelectedValue)).Select(x => x.Key).Single());
+                    yardage = Convert.ToDouble(labelYardage.Text);
+                    categoryPrice = Convert.ToDouble(labelFabricCategory.Text.Split('$')[0]);
+                    good_count = Convert.ToInt32(numericUpDownCount.Value);
+
+                    labelPrice.Text = string.Join(" ", "[", ((yardage * categoryPrice + installation + equipment_price) * good_count).ToString(), "$", "]");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Помилка при спробі розрахунку ціни, подробиці: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    labelPrice.Text = "[ 0 $ ]";
+                }
+            }
+            else
+            {
+                labelPrice.Text = "[ 0 $ ]";
+            }
+
+            processing = false;
+        }
+
+        private async Task<double> getEquipmentPrice(string Equipment_id)
+        {
+            double price = 0;
+
+            if (connection == null || connection.State == ConnectionState.Closed)
+            {
+                connection = new SqlConnection(connect_str);
+                await connection.OpenAsync();
+            }
+
+            SqlCommand sqlCommand = new SqlCommand($"Select Price From [Additional_equipment] Where Equipment_id = {Equipment_id};", connection);
+            SqlDataReader reader = null;
+
+            try
+            {
+                reader = await sqlCommand.ExecuteReaderAsync();
+
+                while(await reader.ReadAsync())
+                {
+                    price = Convert.ToDouble(reader["Price"]);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (!reader.IsClosed && reader != null)
+                    reader.Close();
+                connection.Close();
+            }
+
+            return price;
+        }
+
+        private void setTooltipsyardage()
+        {
+            tip.SetToolTip(numericUpDownWidth, string.Join(" ", numericUpDownWidth.Value.ToString(), "м"));
+            tip.SetToolTip(numericUpDownHeight, string.Join(" ", numericUpDownHeight.Value.ToString(), "м"));
+            tip.SetToolTip(labelYardage, string.Join(" ", labelYardage.Text, "м2"));
         }
 
         private void iconButtonNewOrder_Click(object sender, EventArgs e)
         {
+            #region [Check information before create order]
+            if (comboBoxCurtainType.DataSource == null || comboBoxCurtainType.Items.Count == 0 || comboBoxCurtainType.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Тип системи\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxCurtainSubtype.DataSource == null || comboBoxCurtainSubtype.Items.Count == 0 || comboBoxCurtainSubtype.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Підтип системи\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxSide.DataSource == null || comboBoxSide.Items.Count == 0 || comboBoxSide.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Керування\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxFabric.DataSource == null || comboBoxFabric.Items.Count == 0 || comboBoxFabric.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Тканина\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(labelFabricCategory.Text) || labelFabricCategory.Text == "0$" || string.IsNullOrEmpty(labelFabricCategoryId.Text))
+            {
+                MessageBox.Show("Поле \"Цінова категорія тканини\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxSystemColor.DataSource == null || comboBoxSystemColor.Items.Count == 0 || comboBoxSystemColor.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Колір системи\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxEquipment.DataSource == null || comboBoxEquipment.Items.Count == 0 || comboBoxEquipment.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Додаткова комплектація\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(labelYardage.Text) || labelYardage.Text == "0")
+            {
+                MessageBox.Show("Поле \"Квадратура(площа)\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxInstallation.DataSource == null || comboBoxInstallation.Items.Count == 0 || comboBoxInstallation.SelectedValue == null)
+            {
+                MessageBox.Show("Поле \"Ціна встановлення\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (numericUpDownCount.Value == 0)
+            {
+                MessageBox.Show("Поле \"Кількість\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(labelCustomer.Text) || string.IsNullOrWhiteSpace(labelCustomer.Text))
+            {
+                MessageBox.Show("Поле \"Замовник\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(labelPrice.Text) || labelPrice.Text == "[ 0 $ ]")
+            {
+                MessageBox.Show("Поле \"Ціна\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion
+
             CurtainDesigner.Controllers.IControlerManage<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
             controler.packing(new Classes.FabricCurtain(), new List<Classes.FabricCurtain2>(), this);
+            MessageBox.Show("Замовлення успішно створено.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private async void LoadDataFromDb()
@@ -86,8 +261,8 @@ namespace CurtainDesigner
             comboBoxCurtainSubtype.Enabled = true;
             comboBoxEquipment.Enabled = true;
             await Task.WhenAll(t1);
-            update_status(sender, e);
-            update_status(comboBoxEquipment, e);
+            //update_status(sender, e);
+            //update_status(comboBoxEquipment, e);
         }
 
         private async void loadNextDataFromDB(object sender, EventArgs e)
@@ -119,8 +294,8 @@ namespace CurtainDesigner
             Task t1 = Task.Run(() => controler.load_data(this, boxCurtainType, boxCurtainSubType));
             comboBoxFabric.Enabled = true;
             await Task.WhenAll(t1);
-            update_status(sender, e);
-            update_status(comboBoxFabric, e);
+            //update_status(sender, e);
+            //update_status(comboBoxFabric, e);
         }
 
         private async void loadFabricCategoryFromBD(object sender, EventArgs e)
@@ -156,7 +331,7 @@ namespace CurtainDesigner
             CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
             Task t1 = Task.Run(() => controler.load_FabricCategorydata(this, boxCurtainType, boxCurtainFabric, boxCurtainSubType));
             await Task.WhenAll(t1);
-            update_status(sender, e);
+            //update_status(sender, e);
         }
 
         private void panel37_Paint(object sender, PaintEventArgs e)
@@ -215,7 +390,7 @@ namespace CurtainDesigner
             comboBoxInstallation.Enabled = true;
             bunifuCheckboxCustomInstallation.Checked = false;
 
-            update_status(sender, e);
+            //update_status(comboBoxInstallation, e);
         }
 
         private async Task<bool> sendNewInstallation(string name, decimal price)
@@ -253,138 +428,138 @@ namespace CurtainDesigner
             await Task.Run(() => controler.load_installations(this));
         }
 
-        private void update_status(object sender, EventArgs e)
-        {
-            switch((sender as ComboBox).Name)
-            {
-                case "comboBoxCurtainType":
-                case "comboBoxCurtainSubtype":
-                case "comboBoxSide":
-                    if (comboBoxCurtainType.SelectedValue != null && comboBoxCurtainType.Items.Count != 0 && comboBoxCurtainSubtype.SelectedValue != null && comboBoxCurtainSubtype.Items.Count != 0 && comboBoxCurtainSubtype.DataSource != null && comboBoxSide.SelectedValue != null && comboBoxSide.Items.Count != 0)
-                    {
-                        ucStatusNotOk1.Hide();
-                        ucStatusOk1.BringToFront();
-                        ucStatusOk1.Show();
-                    }
-                    else
-                    {
-                        ucStatusOk1.Hide();
-                        ucStatusNotOk1.BringToFront();
-                        ucStatusNotOk1.Show();
-                    }
-                    break;
+        //private void update_status(object sender, EventArgs e)
+        //{
+        //    switch((sender as ComboBox).Name)
+        //    {
+        //        case "comboBoxCurtainType":
+        //        case "comboBoxCurtainSubtype":
+        //        case "comboBoxSide":
+        //            if (comboBoxCurtainType.SelectedValue != null && comboBoxCurtainType.Items.Count != 0 && comboBoxCurtainSubtype.SelectedValue != null && comboBoxCurtainSubtype.Items.Count != 0 && comboBoxCurtainSubtype.DataSource != null && comboBoxSide.SelectedValue != null && comboBoxSide.Items.Count != 0)
+        //            {
+        //                ucStatusNotOk1.Hide();
+        //                ucStatusOk1.BringToFront();
+        //                ucStatusOk1.Show();
+        //            }
+        //            else
+        //            {
+        //                ucStatusOk1.Hide();
+        //                ucStatusNotOk1.BringToFront();
+        //                ucStatusNotOk1.Show();
+        //            }
+        //            break;
 
-                case "comboBoxFabric":
-                case "comboBoxSystemColor":
-                case "comboBoxEquipment":
-                    if (comboBoxFabric.SelectedValue != null && comboBoxFabric.Items.Count != 0 && comboBoxFabric.DataSource != null && comboBoxSystemColor.SelectedValue != null && comboBoxSystemColor.Items.Count != 0 && comboBoxEquipment.SelectedValue != null && comboBoxEquipment.Items.Count != 0)
-                    {
-                        ucStatusNotOk2.Hide();
-                        ucStatusOk2.BringToFront();
-                        ucStatusOk2.Show();
-                    }
-                    else
-                    {
-                        ucStatusOk2.Hide();
-                        ucStatusNotOk2.BringToFront();
-                        ucStatusNotOk2.Show();
-                    }
-                    break;
+        //        case "comboBoxFabric":
+        //        case "comboBoxSystemColor":
+        //        case "comboBoxEquipment":
+        //            if (comboBoxFabric.SelectedValue != null && comboBoxFabric.Items.Count != 0 && comboBoxFabric.DataSource != null && comboBoxSystemColor.SelectedValue != null && comboBoxSystemColor.Items.Count != 0 && comboBoxEquipment.SelectedValue != null && comboBoxEquipment.Items.Count != 0)
+        //            {
+        //                ucStatusNotOk2.Hide();
+        //                ucStatusOk2.BringToFront();
+        //                ucStatusOk2.Show();
+        //            }
+        //            else
+        //            {
+        //                ucStatusOk2.Hide();
+        //                ucStatusNotOk2.BringToFront();
+        //                ucStatusNotOk2.Show();
+        //            }
+        //            break;
 
-                case "comboBoxInstallation":
-                    if (comboBoxInstallation.SelectedValue != null && comboBoxInstallation.Items.Count != 0)
-                    {
-                        ucStatusNotOk3.Hide();
-                        ucStatusOk3.BringToFront();
-                        ucStatusOk3.Show();
-                    }
-                    else
-                    {
-                        ucStatusOk3.Hide();
-                        ucStatusNotOk3.BringToFront();
-                        ucStatusNotOk3.Show();
-                    }
-                    break;
-            }
-        }
+        //        case "comboBoxInstallation":
+        //            if (comboBoxInstallation.SelectedValue != null && comboBoxInstallation.Items.Count != 0)
+        //            {
+        //                ucStatusNotOk3.Hide();
+        //                ucStatusOk3.BringToFront();
+        //                ucStatusOk3.Show();
+        //            }
+        //            else
+        //            {
+        //                ucStatusOk3.Hide();
+        //                ucStatusNotOk3.BringToFront();
+        //                ucStatusNotOk3.Show();
+        //            }
+        //            break;
+        //    }
+        //}
 
         private void FormFabricCurtainOrder_Load(object sender, EventArgs e)
         {
-            panel22.Controls.Add(ucStatusOk1);
-            panel22.Controls.Add(ucStatusNotOk1);
+            //panel22.Controls.Add(ucStatusOk1);
+            //panel22.Controls.Add(ucStatusNotOk1);
 
-            panel32.Controls.Add(ucStatusOk2);
-            panel32.Controls.Add(ucStatusNotOk2);
+            //panel32.Controls.Add(ucStatusOk2);
+            //panel32.Controls.Add(ucStatusNotOk2);
 
-            panel4.Controls.Add(ucStatusOk3);
-            panel4.Controls.Add(ucStatusNotOk3);
+            //panel4.Controls.Add(ucStatusOk3);
+            //panel4.Controls.Add(ucStatusNotOk3);
 
-            panel12.Controls.Add(ucStatusOk4);
-            panel12.Controls.Add(ucStatusNotOk4);
+            //panel12.Controls.Add(ucStatusOk4);
+            //panel12.Controls.Add(ucStatusNotOk4);
 
-            panel17.Controls.Add(ucStatusOk5);
-            panel17.Controls.Add(ucStatusNotOk5);
+            //panel17.Controls.Add(ucStatusOk5);
+            //panel17.Controls.Add(ucStatusNotOk5);
 
-            panel37.Controls.Add(ucStatusOk6);
-            panel37.Controls.Add(ucStatusNotOk6);
+            //panel37.Controls.Add(ucStatusOk6);
+            //panel37.Controls.Add(ucStatusNotOk6);
 
-            ucStatusOk1.Hide();
-            ucStatusOk2.Hide();
-            ucStatusOk3.Hide();
-            ucStatusOk4.Hide();
-            ucStatusNotOk5.Hide();
-            ucStatusOk6.Hide();
+            //ucStatusOk1.Hide();
+            //ucStatusOk2.Hide();
+            //ucStatusOk3.Hide();
+            //ucStatusOk4.Hide();
+            //ucStatusNotOk5.Hide();
+            //ucStatusOk6.Hide();
 
-            ucStatusNotOk1.BringToFront();
-            ucStatusNotOk2.BringToFront();
-            ucStatusNotOk3.BringToFront();
-            ucStatusNotOk4.BringToFront();
-            ucStatusOk5.BringToFront();
-            ucStatusNotOk6.BringToFront();
+            //ucStatusNotOk1.BringToFront();
+            //ucStatusNotOk2.BringToFront();
+            //ucStatusNotOk3.BringToFront();
+            //ucStatusNotOk4.BringToFront();
+            //ucStatusOk5.BringToFront();
+            //ucStatusNotOk6.BringToFront();
 
-            ucStatusNotOk1.Show();
-            ucStatusNotOk2.Show();
-            ucStatusNotOk3.Show();
-            ucStatusNotOk4.Show();
-            ucStatusOk5.Show();
-            ucStatusNotOk6.Show();
+            //ucStatusNotOk1.Show();
+            //ucStatusNotOk2.Show();
+            //ucStatusNotOk3.Show();
+            //ucStatusNotOk4.Show();
+            //ucStatusOk5.Show();
+            //ucStatusNotOk6.Show();
         }
 
-        private void update_status_onlabel(object sender, EventArgs e)
-        {
-            switch ((sender as Label).Name)
-            { 
-                case "labelCustomer":
-                    if (!string.IsNullOrEmpty(labelCustomer.Text))
-                    {
-                        ucStatusNotOk4.Hide();
-                        ucStatusOk4.BringToFront();
-                        ucStatusOk4.Show();
-                    }
-                    else
-                    {
-                        ucStatusOk4.Hide();
-                        ucStatusNotOk4.BringToFront();
-                        ucStatusNotOk4.Show();
-                    }
-                    break;
+        //private void update_status_onlabel(object sender, EventArgs e)
+        //{
+        //    switch ((sender as Label).Name)
+        //    { 
+        //        case "labelCustomer":
+        //            if (!string.IsNullOrEmpty(labelCustomer.Text))
+        //            {
+        //                ucStatusNotOk4.Hide();
+        //                ucStatusOk4.BringToFront();
+        //                ucStatusOk4.Show();
+        //            }
+        //            else
+        //            {
+        //                ucStatusOk4.Hide();
+        //                ucStatusNotOk4.BringToFront();
+        //                ucStatusNotOk4.Show();
+        //            }
+        //            break;
 
-                case "labelPrice":
-                    if (bunifuImageButtonSeePriceDetail.Enabled)
-                    {
-                        ucStatusNotOk4.Hide();
-                        ucStatusOk4.BringToFront();
-                        ucStatusOk4.Show();
-                    }
-                    else
-                    {
-                        ucStatusOk4.Hide();
-                        ucStatusNotOk4.BringToFront();
-                        ucStatusNotOk4.Show();
-                    }
-                    break;
-            }
-        }
+        //        case "labelPrice":
+        //            if (!string.IsNullOrEmpty(labelPrice.Text) && labelPrice.Text != "[ 0 $ ]")
+        //            {
+        //                ucStatusNotOk6.Hide();
+        //                ucStatusOk6.BringToFront();
+        //                ucStatusOk6.Show();
+        //            }
+        //            else
+        //            {
+        //                ucStatusOk6.Hide();
+        //                ucStatusNotOk6.BringToFront();
+        //                ucStatusNotOk6.Show();
+        //            }
+        //            break;
+        //    }
+        //}
 
         private void iconButtonSelectClient_Click(object sender, EventArgs e)
         {
@@ -452,6 +627,21 @@ namespace CurtainDesigner
                     reader.Close();
                 connection.Close();
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

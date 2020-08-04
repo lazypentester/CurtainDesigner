@@ -50,6 +50,7 @@
             this.bunifuFlatButtonSearch = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuMaterialTextboxSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuImageButtonExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel5.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -374,6 +375,13 @@
             this.bunifuImageButtonExit.Zoom = 7;
             this.bunifuImageButtonExit.Click += new System.EventHandler(this.bunifuImageButtonExit_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel4;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // FormSelectClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,5 +427,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButtonSearch;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextboxSearch;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButtonSearchClear;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

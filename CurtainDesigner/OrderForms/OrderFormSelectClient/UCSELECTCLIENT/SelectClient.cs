@@ -107,7 +107,7 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient.UCSELECTCLIENT
                 create_lable_originalId(label_original_id, client.id, gradientPanel);
             }
 
-            clients.Clear();          
+            clients.Clear();
         }
 
         private void create_panel()
@@ -299,6 +299,6 @@ namespace CurtainDesigner.OrderForms.OrderFormSelectClient.UCSELECTCLIENT
             };
 
             return customer;
-        }
+        }     
     }
 }
