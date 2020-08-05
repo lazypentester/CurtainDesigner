@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.buttonDrag = new System.Windows.Forms.Button();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.labelFormName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
-            this.buttonDrag = new System.Windows.Forms.Button();
             this.panel31 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
             this.bunifuMaterialTextboxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
-            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.panel28 = new System.Windows.Forms.Panel();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,15 +59,83 @@
             this.bunifuDragControl1.TargetControl = this.buttonDrag;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // buttonDrag
+            // 
+            this.buttonDrag.BackColor = System.Drawing.Color.Gold;
+            this.buttonDrag.FlatAppearance.BorderSize = 0;
+            this.buttonDrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDrag.Location = new System.Drawing.Point(70, 7);
+            this.buttonDrag.Name = "buttonDrag";
+            this.buttonDrag.Size = new System.Drawing.Size(196, 7);
+            this.buttonDrag.TabIndex = 0;
+            this.buttonDrag.TabStop = false;
+            this.buttonDrag.UseVisualStyleBackColor = false;
+            // 
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 3;
             this.bunifuElipse2.TargetControl = this.iconButtonCancel;
             // 
+            // iconButtonCancel
+            // 
+            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonCancel.AutoSize = true;
+            this.iconButtonCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
+            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonCancel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconButtonCancel.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCancel.IconSize = 28;
+            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.Location = new System.Drawing.Point(169, 185);
+            this.iconButtonCancel.Name = "iconButtonCancel";
+            this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.iconButtonCancel.Rotation = 0D;
+            this.iconButtonCancel.Size = new System.Drawing.Size(155, 38);
+            this.iconButtonCancel.TabIndex = 6;
+            this.iconButtonCancel.Text = "Скасувати";
+            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
+            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonOk;
+            // 
+            // iconButtonOk
+            // 
+            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonOk.AutoSize = true;
+            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
+            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonOk.FlatAppearance.BorderSize = 0;
+            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconSize = 28;
+            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.Location = new System.Drawing.Point(12, 185);
+            this.iconButtonOk.Name = "iconButtonOk";
+            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.iconButtonOk.Rotation = 0D;
+            this.iconButtonOk.Size = new System.Drawing.Size(155, 38);
+            this.iconButtonOk.TabIndex = 5;
+            this.iconButtonOk.Text = "Підтвердити";
+            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOk.UseVisualStyleBackColor = false;
+            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
             // 
             // bunifuElipse3
             // 
@@ -105,18 +173,6 @@
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(336, 25);
             this.panel32.TabIndex = 0;
-            // 
-            // buttonDrag
-            // 
-            this.buttonDrag.BackColor = System.Drawing.Color.Gold;
-            this.buttonDrag.FlatAppearance.BorderSize = 0;
-            this.buttonDrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDrag.Location = new System.Drawing.Point(70, 7);
-            this.buttonDrag.Name = "buttonDrag";
-            this.buttonDrag.Size = new System.Drawing.Size(196, 7);
-            this.buttonDrag.TabIndex = 0;
-            this.buttonDrag.TabStop = false;
-            this.buttonDrag.UseVisualStyleBackColor = false;
             // 
             // panel31
             // 
@@ -164,62 +220,6 @@
             this.bunifuMaterialTextboxName.TabIndex = 1;
             this.bunifuMaterialTextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // iconButtonOk
-            // 
-            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonOk.AutoSize = true;
-            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
-            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonOk.FlatAppearance.BorderSize = 0;
-            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconSize = 28;
-            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.Location = new System.Drawing.Point(12, 185);
-            this.iconButtonOk.Name = "iconButtonOk";
-            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.iconButtonOk.Rotation = 0D;
-            this.iconButtonOk.Size = new System.Drawing.Size(155, 38);
-            this.iconButtonOk.TabIndex = 5;
-            this.iconButtonOk.Text = "Підтвердити";
-            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonOk.UseVisualStyleBackColor = false;
-            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
-            // 
-            // iconButtonCancel
-            // 
-            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonCancel.AutoSize = true;
-            this.iconButtonCancel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
-            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonCancel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconButtonCancel.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonCancel.IconSize = 28;
-            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.Location = new System.Drawing.Point(169, 185);
-            this.iconButtonCancel.Name = "iconButtonCancel";
-            this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.iconButtonCancel.Rotation = 0D;
-            this.iconButtonCancel.Size = new System.Drawing.Size(155, 38);
-            this.iconButtonCancel.TabIndex = 6;
-            this.iconButtonCancel.Text = "Скасувати";
-            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonCancel.UseVisualStyleBackColor = false;
-            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
-            // 
             // panel28
             // 
             this.panel28.Controls.Add(this.numericUpDownPrice);
@@ -245,6 +245,11 @@
             this.numericUpDownPrice.DecimalPlaces = 2;
             this.numericUpDownPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDownPrice.Location = new System.Drawing.Point(218, 138);
+            this.numericUpDownPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(78, 21);
             this.numericUpDownPrice.TabIndex = 9;

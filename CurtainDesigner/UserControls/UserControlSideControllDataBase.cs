@@ -15,11 +15,12 @@ namespace CurtainDesigner.UserControls
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        private List<Classes.Side> sides;
 
         public UserControlSideControllDataBase()
         {
             InitializeComponent();
-            load_sides();
+            sides = new List<Classes.Side>();
         }
 
         internal async void load_sides()
@@ -27,7 +28,7 @@ namespace CurtainDesigner.UserControls
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridSideDataBase.Rows.Count != 0)
             {
@@ -40,10 +41,13 @@ namespace CurtainDesigner.UserControls
                     bunifuCustomDataGridSideDataBase.Rows.Clear();
             }
 
+            if (sides != null)
+                sides.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadclients = new SqlCommand("Select * From [Control];", connection);
@@ -52,33 +56,50 @@ namespace CurtainDesigner.UserControls
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
-                if (bunifuCustomDataGridSideDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridSideDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        while (await reader.ReadAsync())
-                            bunifuCustomDataGridSideDataBase.Rows.Add(
-                        new object[] { reader["Control_id"].ToString(), reader["Control_side"].ToString() });
-                    });
+                reader = command_loadclients.ExecuteReader();
 
-                }
-                else
+                while(reader.Read())
                 {
-                    while (await reader.ReadAsync())
-                        bunifuCustomDataGridSideDataBase.Rows.Add(
-                    new object[] { reader["Control_id"].ToString(), reader["Control_side"].ToString() });
+                    sides.Add(new Classes.Side()
+                    {
+                        id = reader["Control_id"].ToString(),
+                        name = reader["Control_side"].ToString()
+                    });
                 }
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
+            }          
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (sides == null)
+                return;
+
+            if (bunifuCustomDataGridSideDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridSideDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Side side in sides)
+                    {
+                        bunifuCustomDataGridSideDataBase.Rows.Add(new object[] { side.id, side.name });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Side side in sides)
+                {
+                    bunifuCustomDataGridSideDataBase.Rows.Add(new object[] { side.id, side.name });
+                }
             }
         }
 

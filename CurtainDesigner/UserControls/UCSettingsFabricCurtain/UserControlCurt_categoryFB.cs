@@ -15,11 +15,12 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        List<Classes.Category> categories;
 
         public UserControlCurt_categoryFB()
         {
             InitializeComponent();
-            load_categories();
+            categories = new List<Classes.Category>();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridCategoriesDataBase.Rows.Count != 0)
             {
@@ -49,10 +50,13 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                     bunifuCustomDataGridCategoriesDataBase.Rows.Clear();
             }
 
+            if (categories != null)
+                categories.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadcategories = new SqlCommand("Select * From [Fabric_curtains_category];", connection);
@@ -61,33 +65,53 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
 
             try
             {
-                reader = await command_loadcategories.ExecuteReaderAsync();
-                if (bunifuCustomDataGridCategoriesDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridCategoriesDataBase.Invoke((MethodInvoker) delegate
-                    {
-                        while (reader.Read())
-                            bunifuCustomDataGridCategoriesDataBase.Rows.Add(
-                        new object[] { reader["Category_id"].ToString(), reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Category"].ToString(), reader["Price"].ToString() });
-                    });
+                reader = command_loadcategories.ExecuteReader();
 
-                }
-                else
+                while (reader.Read())
                 {
-                    while (await reader.ReadAsync())
-                        bunifuCustomDataGridCategoriesDataBase.Rows.Add(
-                    new object[] { reader["Category_id"].ToString(), reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Category"].ToString(), reader["Price"].ToString() });
-                }
+                    categories.Add(new Classes.Category()
+                    {
+                        id = reader["Category_id"].ToString(),
+                        type_id = reader["Type_id"].ToString(),
+                        subtype_id = reader["Subtype_id"].ToString(),
+                        category_name = reader["Category"].ToString(),
+                        price = reader["Price"].ToString()
+                    });
+                }      
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (categories == null)
+                return;
+
+            if (bunifuCustomDataGridCategoriesDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridCategoriesDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Category category in categories)
+                    {
+                        bunifuCustomDataGridCategoriesDataBase.Rows.Add(new object[] { category.id, category.type_id, category.subtype_id, category.category_name, category.price });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Category category in categories)
+                {
+                    bunifuCustomDataGridCategoriesDataBase.Rows.Add(new object[] { category.id, category.type_id, category.subtype_id, category.category_name, category.price });
+                }
             }
         }
 

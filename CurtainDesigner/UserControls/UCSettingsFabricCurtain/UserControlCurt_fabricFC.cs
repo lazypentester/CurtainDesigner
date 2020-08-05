@@ -19,11 +19,12 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
         private SqlConnection connectionForTypeName;
         private SqlConnection connectionForSubTypeName;
         private SqlConnection connectionForCategoryName;
+        private List<Classes.Fabric> fabrics;
 
         public UserControlCurt_fabricFC()
         {
             InitializeComponent();
-            load_fabrics();
+            fabrics = new List<Classes.Fabric>();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridFabricDataBase.Rows.Count != 0)
             {
@@ -53,10 +54,13 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                     bunifuCustomDataGridFabricDataBase.Rows.Clear();
             }
 
+            if (fabrics != null)
+                fabrics.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadclients = new SqlCommand("Select * From [Fabric];", connection);
@@ -65,57 +69,66 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
-                if (bunifuCustomDataGridFabricDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridFabricDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        string tp_name = "";
-                        string sbtp_name = "";
-                        string ctg_name = "";
-                        while (await reader.ReadAsync())
-                        {
-                            tp_name = get_TypeName(reader["Type_id"].ToString());
-                            sbtp_name = get_SubTypeName(reader["Subtype_id"].ToString());
-                            ctg_name = get_CategoryName(reader["Category_id"].ToString());
-                            Bitmap img = null;
-                            if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"])))
-                                img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"]));
+                reader = command_loadclients.ExecuteReader();
 
-                            bunifuCustomDataGridFabricDataBase.Rows.Add(
-                            new object[] { reader["Picture"], reader["Fabric_id"], reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Category_id"], tp_name, sbtp_name, ctg_name, reader["Name"], img, reader["Additionally"] });
-                        }
+                while (reader.Read())
+                {
+                    fabrics.Add(new Classes.Fabric()
+                    {
+                        id = reader["Fabric_id"].ToString(),
+                        picture = reader["Picture"].ToString(),
+                        type_id = reader["Type_id"].ToString(),
+                        subtype_id = reader["Subtype_id"].ToString(),
+                        category_id = reader["Category_id"].ToString(),
+                        type_name = get_TypeName(reader["Type_id"].ToString()),
+                        subtype_name = get_SubTypeName(reader["Subtype_id"].ToString()),
+                        category_name = get_CategoryName(reader["Category_id"].ToString()),
+                        fabric_name = reader["Name"].ToString(),
+                        fabric_additionall = reader["Additionally"].ToString()
                     });
-
                 }
-                else
-                {
-                    string tp_name = "";
-                    string sbtp_name = "";
-                    string ctg_name = "";
-                    while (await reader.ReadAsync())
-                    {
-                        tp_name = get_TypeName(reader["Type_id"].ToString());
-                        sbtp_name = get_SubTypeName(reader["Subtype_id"].ToString());
-                        ctg_name = get_CategoryName(reader["Category_id"].ToString());
-                        Bitmap img = null;
-                        if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"])))
-                            img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"]));
 
-                        bunifuCustomDataGridFabricDataBase.Rows.Add(
-                        new object[] { reader["Picture"], reader["Fabric_id"], reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), reader["Category_id"], tp_name, sbtp_name, ctg_name, reader["Name"], img, reader["Additionally"] });
-                    }
-                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (fabrics == null)
+                return;
+
+            if (bunifuCustomDataGridFabricDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridFabricDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Fabric fabric in fabrics)
+                    {
+                        Bitmap img = null;
+                        if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), fabric.picture)))
+                            img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), fabric.picture));
+
+                        bunifuCustomDataGridFabricDataBase.Rows.Add(new object[] { fabric.picture, fabric.id, fabric.type_id, fabric.subtype_id, fabric.category_id, fabric.type_name, fabric.subtype_name, fabric.category_name, fabric.fabric_name, img, fabric.fabric_additionall });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Fabric fabric in fabrics)
+                {
+                    Bitmap img = null;
+                    if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), fabric.picture)))
+                        img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), fabric.picture));
+
+                    bunifuCustomDataGridFabricDataBase.Rows.Add(new object[] { fabric.picture, fabric.id, fabric.type_id, fabric.subtype_id, fabric.category_id, fabric.type_name, fabric.subtype_name, fabric.category_name, fabric.fabric_name, img, fabric.fabric_additionall });
+                }
             }
         }
 

@@ -16,11 +16,12 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
         private SqlConnection connectionForTypeName;
+        private List<Classes.Subtype> subtypes;
 
         public UserControlCurt_SubtypeFC()
         {
             InitializeComponent();
-            load_subtypes();
+            subtypes = new List<Classes.Subtype>();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridSubTypesDataBase.Rows.Count != 0)
             {
@@ -50,10 +51,13 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                     bunifuCustomDataGridSubTypesDataBase.Rows.Clear();
             }
 
+            if(subtypes != null)
+                subtypes.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadclients = new SqlCommand("Select * From [Fabric_curtains_subtypes];", connection);
@@ -62,41 +66,52 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
-                if (bunifuCustomDataGridSubTypesDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridSubTypesDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        string tp_name = "";
-                        while (await reader.ReadAsync())
-                        {
-                            tp_name = get_TypeName(reader["Type_id"].ToString());
-                            bunifuCustomDataGridSubTypesDataBase.Rows.Add(
-                            new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), tp_name, reader["Subtype_name"].ToString() });
-                        }
-                    });
+                reader = command_loadclients.ExecuteReader();
 
-                }
-                else
+                while (reader.Read())
                 {
-                    string tp_name = "";
-                    while (await reader.ReadAsync())
+                    subtypes.Add(new Classes.Subtype()
                     {
-                        tp_name = get_TypeName(reader["Type_id"].ToString());
-                        bunifuCustomDataGridSubTypesDataBase.Rows.Add(
-                        new object[] { reader["Type_id"].ToString(), reader["Subtype_id"].ToString(), tp_name, reader["Subtype_name"].ToString() });
-                    }
+                        id = reader["Type_id"].ToString(),
+                        type_id = reader["Subtype_id"].ToString(),
+                        type = get_TypeName(reader["Type_id"].ToString()),
+                        name = reader["Subtype_name"].ToString()
+                    });
                 }
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (subtypes == null)
+                return;
+
+            if (bunifuCustomDataGridSubTypesDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridSubTypesDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Subtype subtype in subtypes)
+                    {
+                        bunifuCustomDataGridSubTypesDataBase.Rows.Add(new object[] { subtype.id, subtype.type_id, subtype.type, subtype.name });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Subtype subtype in subtypes)
+                {
+                    bunifuCustomDataGridSubTypesDataBase.Rows.Add(new object[] { subtype.id, subtype.type, subtype.name });
+                }
             }
         }
 

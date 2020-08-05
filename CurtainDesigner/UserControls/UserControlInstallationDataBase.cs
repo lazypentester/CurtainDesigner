@@ -15,11 +15,12 @@ namespace CurtainDesigner.UserControls
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        private List<Classes.Installation> installations;
 
         public UserControlInstallationDataBase()
         {
             InitializeComponent();
-            load_installations();
+            installations = new List<Classes.Installation>();
         }
 
         internal async void load_installations()
@@ -27,7 +28,7 @@ namespace CurtainDesigner.UserControls
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridInstallationDataBase.Rows.Count != 0)
             {
@@ -40,10 +41,13 @@ namespace CurtainDesigner.UserControls
                     bunifuCustomDataGridInstallationDataBase.Rows.Clear();
             }
 
+            if (installations != null)
+                installations.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadinst = new SqlCommand("Select * From [Installation];", connection);
@@ -52,33 +56,51 @@ namespace CurtainDesigner.UserControls
 
             try
             {
-                reader = await command_loadinst.ExecuteReaderAsync();
-                if (bunifuCustomDataGridInstallationDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridInstallationDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        while (await reader.ReadAsync())
-                            bunifuCustomDataGridInstallationDataBase.Rows.Add(
-                        new object[] { reader["Installation_id"].ToString(), reader["Installation_object"].ToString(), reader["Price"].ToString() });
-                    });
+                reader = command_loadinst.ExecuteReader();
 
-                }
-                else
+                while(reader.Read())
                 {
-                    while (await reader.ReadAsync())
-                        bunifuCustomDataGridInstallationDataBase.Rows.Add(
-                    new object[] { reader["Installation_id"].ToString(), reader["Installation_object"].ToString(), reader["Price"].ToString() });
+                    installations.Add(new Classes.Installation()
+                    {
+                        id = reader["Installation_id"].ToString(),
+                        Obj_name = reader["Installation_object"].ToString(),
+                        price = reader["Price"].ToString()
+                    });
                 }
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (installations == null)
+                return;
+
+            if (bunifuCustomDataGridInstallationDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridInstallationDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Installation installation in installations)
+                    {
+                        bunifuCustomDataGridInstallationDataBase.Rows.Add(new object[] { installation.id, installation.Obj_name, installation.price });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Installation installation in installations)
+                {
+                    bunifuCustomDataGridInstallationDataBase.Rows.Add(new object[] { installation.id, installation.Obj_name, installation.price });
+                }
             }
         }
 

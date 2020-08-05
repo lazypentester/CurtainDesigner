@@ -16,11 +16,12 @@ namespace CurtainDesigner.UserControls
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        private List<Classes.Color> colors;
 
         public UserControlColorDataBase()
         {
             InitializeComponent();
-            load_colors();
+            colors = new List<Classes.Color>();
         }
 
         internal async void load_colors()
@@ -28,7 +29,7 @@ namespace CurtainDesigner.UserControls
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridColorDataBase.Rows.Count != 0)
             {
@@ -41,10 +42,13 @@ namespace CurtainDesigner.UserControls
                     bunifuCustomDataGridColorDataBase.Rows.Clear();
             }
 
+            if (colors != null)
+                colors.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadcolors = new SqlCommand("Select * From [System_color];", connection);
@@ -53,45 +57,57 @@ namespace CurtainDesigner.UserControls
 
             try
             {
-                reader = await command_loadcolors.ExecuteReaderAsync();
-                if (bunifuCustomDataGridColorDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridColorDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        while (await reader.ReadAsync())
-                        {
-                            Bitmap img = null;
-                            if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"])))
-                                img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"]));
+                reader = command_loadcolors.ExecuteReader();
 
-                            bunifuCustomDataGridColorDataBase.Rows.Add(
-                        new object[] { reader["Color_id"], reader["Picture"], reader["Name"], img });
-                        }
+                while (reader.Read())
+                    colors.Add(new Classes.Color()
+                    {
+                        id = reader["Color_id"].ToString(),
+                        picture = reader["Picture"].ToString(),
+                        name = reader["Name"].ToString()
                     });
 
-                }
-                else
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        Bitmap img = null;
-                        if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"])))
-                            img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), reader["Picture"]));
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
 
-                        bunifuCustomDataGridColorDataBase.Rows.Add(
-                    new object[] { reader["Color_id"], reader["Picture"], reader["Name"], img });
-                    }
-                }
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (colors == null)
+                return;
+
+            if (bunifuCustomDataGridColorDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridColorDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Color color in colors)
+                    {
+                        Bitmap img = null;
+                        if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), color.picture)))
+                            img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), color.picture));
+
+                        bunifuCustomDataGridColorDataBase.Rows.Add(new object[] { color.id, color.picture, color.name, img });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Color color in colors)
+                {
+                    Bitmap img = null;
+                    if (File.Exists(string.Join("", Directory.GetCurrentDirectory(), color.picture)))
+                        img = new Bitmap(string.Join("", Directory.GetCurrentDirectory(), color.picture));
+
+                    bunifuCustomDataGridColorDataBase.Rows.Add(new object[] { color.id, color.picture, color.name, img });
+                }
             }
         }
 

@@ -188,6 +188,15 @@
     <Compile Include="Trash\ListOthers.Designer.cs">
       <DependentUpon>ListOthers.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Classes\AdditionalEquipment.cs" />
+    <Compile Include="UserControls\Classes\Category.cs" />
+    <Compile Include="UserControls\Classes\Client.cs" />
+    <Compile Include="UserControls\Classes\Color.cs" />
+    <Compile Include="UserControls\Classes\Fabric.cs" />
+    <Compile Include="UserControls\Classes\Installation.cs" />
+    <Compile Include="UserControls\Classes\Side.cs" />
+    <Compile Include="UserControls\Classes\Subtype.cs" />
+    <Compile Include="UserControls\Classes\Type.cs" />
     <Compile Include="UserControls\UCFormFCORDER\UCStatusNotOk.cs">
       <SubType>Component</SubType>
     </Compile>

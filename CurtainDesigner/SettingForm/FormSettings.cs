@@ -92,11 +92,18 @@ namespace CurtainDesigner.SettingForm
         {
             if (activeControl != null)
                 activeControl.Hide();
-            activeControl = childControl ?? throw new NullReferenceException();
-            childControl.Dock = DockStyle.Fill;
-            this.panelContainer.Tag = childControl;
-            childControl.BringToFront();
-            childControl.Show();
+            try
+            {
+                activeControl = childControl ?? throw new NullReferenceException();
+                childControl.Dock = DockStyle.Fill;
+                this.panelContainer.Tag = childControl;
+                childControl.BringToFront();
+                childControl.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CloseChildControl()
@@ -190,6 +197,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_clients, sender);
+            control_clients.load_clients();
         }
 
         private void bunifuColorDataBaseButton_Click(object sender, EventArgs e)
@@ -203,6 +211,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender); control_fc_fabric
             OpenChildControl(control_fc_fabric, sender);
+            control_fc_fabric.load_fabrics();
         }
 
         private void bunifuSystemTypesButton_Click(object sender, EventArgs e)
@@ -210,6 +219,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_fc_types, sender);
+            control_fc_types.load_types();
         }
 
         private void bunifuAdditionalEquipmentButton_Click(object sender, EventArgs e)
@@ -217,6 +227,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_fc_additionalEquipment, sender);
+            control_fc_additionalEquipment.load_equipments();
         }
 
         private void bunifuOthersButton_Click(object sender, EventArgs e)
@@ -343,6 +354,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_fc_subtypes, sender);
+            control_fc_subtypes.load_subtypes();
         }
 
         private void bunifuFlatFabricCategiryButtonFC_Click(object sender, EventArgs e)
@@ -350,6 +362,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_fc_categories, sender);
+            control_fc_categories.load_categories();
         }
 
         private void bunifuColorDataBaseButton_Click_1(object sender, EventArgs e)
@@ -357,6 +370,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_colors, sender);
+            control_colors.load_colors();
         }
 
         private void bunifuSideManageButton_Click(object sender, EventArgs e)
@@ -364,6 +378,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_sidecontrol, sender);
+            control_sidecontrol.load_sides();
         }
 
         private void bunifuInstallationButton_Click(object sender, EventArgs e)
@@ -371,6 +386,7 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_installation, sender);
+            control_installation.load_installations();
         }
     }
 }

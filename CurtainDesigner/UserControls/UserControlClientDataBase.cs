@@ -15,11 +15,12 @@ namespace CurtainDesigner.UserControls
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        private List<Classes.Client> clients;
 
         public UserControlClientDataBase()
         {
             InitializeComponent();
-            load_clients();
+            clients = new List<Classes.Client>();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace CurtainDesigner.UserControls
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridClientsDataBase.Rows.Count != 0)
             {
@@ -49,10 +50,13 @@ namespace CurtainDesigner.UserControls
                     bunifuCustomDataGridClientsDataBase.Rows.Clear();
             }
 
+            if (clients != null)
+                clients.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadclients = new SqlCommand("Select * From [Clients];", connection);
@@ -61,34 +65,46 @@ namespace CurtainDesigner.UserControls
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
-                if (bunifuCustomDataGridClientsDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridClientsDataBase.Invoke((MethodInvoker) async delegate
-                    {
-                        while (await reader.ReadAsync())
-                            bunifuCustomDataGridClientsDataBase.Rows.Add(
-                        new object[] { reader["Customer_id"].ToString(), reader["Surname"].ToString(), reader["Name"].ToString(), reader["Phone"].ToString(), reader["Address"].ToString() });
+                reader = command_loadclients.ExecuteReader();
+                while (reader.Read())
+                    clients.Add(new Classes.Client() {
+                        id = reader["Customer_id"].ToString(),
+                        surname = reader["Surname"].ToString(),
+                        name = reader["Name"].ToString(),
+                        phone = reader["Phone"].ToString(),
+                        address = reader["Address"].ToString()
                     });
-                    
-                }
-                else
-                {
-                    while (await reader.ReadAsync())
-                        bunifuCustomDataGridClientsDataBase.Rows.Add(
-                    new object[] { reader["Customer_id"].ToString(), reader["Surname"].ToString(), reader["Name"].ToString(), reader["Phone"].ToString(), reader["Address"].ToString() });
-                }
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (clients == null)
+                return;
+
+            if (bunifuCustomDataGridClientsDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridClientsDataBase.Invoke((MethodInvoker)delegate
+               {
+                   foreach (Classes.Client client in clients)
+                       bunifuCustomDataGridClientsDataBase.Rows.Add(new object[] { client.id, client.surname, client.name, client.phone, client.address });                 
+               });
             }
+            else
+            {
+                foreach (Classes.Client client in clients)
+                    bunifuCustomDataGridClientsDataBase.Rows.Add(new object[] { client.id, client.surname, client.name, client.phone, client.address });
+            }           
         }
 
         private void bunifuCustomDataGridClientsDataBase_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -50,6 +50,7 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             this.panel32.SuspendLayout();
             this.panel28.SuspendLayout();
@@ -72,6 +73,11 @@
             this.numericUpDownPrice.DecimalPlaces = 2;
             this.numericUpDownPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDownPrice.Location = new System.Drawing.Point(269, 297);
+            this.numericUpDownPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(78, 21);
             this.numericUpDownPrice.TabIndex = 4;
@@ -213,6 +219,7 @@
             this.panel28.Controls.Add(this.panel31);
             this.panel28.Controls.Add(this.panel32);
             this.panel28.Controls.Add(this.label6);
+            this.panel28.Controls.Add(this.label1);
             this.panel28.Controls.Add(this.label5);
             this.panel28.Controls.Add(this.label4);
             this.panel28.Controls.Add(this.label2);
@@ -310,6 +317,17 @@
             this.bunifuDragControl1.TargetControl = this.buttonDrag;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label1.Location = new System.Drawing.Point(353, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "$";
+            // 
             // FCFabricAdditionalEquipmentAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,5 +369,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label label1;
     }
 }

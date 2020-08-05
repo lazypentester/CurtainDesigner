@@ -15,11 +15,12 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
+        private List<Classes.Type> types;
 
         public UserControlCurt_TypeFC()
         {
             InitializeComponent();
-            load_types();
+            types = new List<Classes.Type>();
         }
 
         internal async void load_types()
@@ -27,7 +28,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridTypesDataBase.Rows.Count != 0)
             {
@@ -40,10 +41,13 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                     bunifuCustomDataGridTypesDataBase.Rows.Clear();
             }
 
+            if (types != null)
+                types.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadclients = new SqlCommand("Select * From [Fabric_curtains_types];", connection);
@@ -52,33 +56,50 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
 
             try
             {
-                reader = await command_loadclients.ExecuteReaderAsync();
-                if (bunifuCustomDataGridTypesDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridTypesDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        while (await reader.ReadAsync())
-                            bunifuCustomDataGridTypesDataBase.Rows.Add(
-                        new object[] { reader["Type_id"].ToString(), reader["Type_name"].ToString() });
-                    });
+                reader = command_loadclients.ExecuteReader();
 
-                }
-                else
+                while(reader.Read())
                 {
-                    while (await reader.ReadAsync())
-                        bunifuCustomDataGridTypesDataBase.Rows.Add(
-                    new object[] { reader["Type_id"].ToString(), reader["Type_name"].ToString() });
+                    types.Add(new Classes.Type()
+                    {
+                        id = reader["Type_id"].ToString(),
+                        name = reader["Type_name"].ToString()
+                    });
                 }
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (types == null)
+                return;
+
+            if (bunifuCustomDataGridTypesDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridTypesDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.Type type in types)
+                    {
+                        bunifuCustomDataGridTypesDataBase.Rows.Add(new object[] { type.id, type.name });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.Type type in types)
+                {
+                    bunifuCustomDataGridTypesDataBase.Rows.Add(new object[] { type.id, type.name });
+                }
             }
         }
 

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelContentFabricCurtainTable = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,10 +74,6 @@
             this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -87,14 +82,14 @@
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.ColumnHeadersHeight = 50;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -116,28 +111,26 @@
             this.ColumnEdit,
             this.ColumnDelete});
             this.bunifuCustomDataGrid1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuCustomDataGrid1.DefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(12, 12);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
+            this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
-            this.bunifuCustomDataGrid1.RowTemplate.Height = 3;
+            this.bunifuCustomDataGrid1.RowTemplate.Height = 25;
             this.bunifuCustomDataGrid1.RowTemplate.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -149,84 +142,98 @@
             this.Number.FillWeight = 60.40609F;
             this.Number.HeaderText = "№";
             this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
             // 
             // ColumnType
             // 
             this.ColumnType.FillWeight = 80.30664F;
             this.ColumnType.HeaderText = "Тип";
             this.ColumnType.Name = "ColumnType";
+            this.ColumnType.ReadOnly = true;
             // 
             // ColumnSubtype
             // 
             this.ColumnSubtype.FillWeight = 136.4784F;
             this.ColumnSubtype.HeaderText = "Підтип";
             this.ColumnSubtype.Name = "ColumnSubtype";
+            this.ColumnSubtype.ReadOnly = true;
             // 
             // ColumnFabric
             // 
             this.ColumnFabric.FillWeight = 94.16879F;
             this.ColumnFabric.HeaderText = "Тканина";
             this.ColumnFabric.Name = "ColumnFabric";
+            this.ColumnFabric.ReadOnly = true;
             // 
             // ColumnSystemColor
             // 
             this.ColumnSystemColor.FillWeight = 81.61752F;
             this.ColumnSystemColor.HeaderText = "Колір";
             this.ColumnSystemColor.Name = "ColumnSystemColor";
+            this.ColumnSystemColor.ReadOnly = true;
             // 
             // ColumnSize
             // 
             this.ColumnSize.FillWeight = 152.4117F;
             this.ColumnSize.HeaderText = "Розміри";
             this.ColumnSize.Name = "ColumnSize";
+            this.ColumnSize.ReadOnly = true;
             // 
             // ColumnCount
             // 
             this.ColumnCount.FillWeight = 81.18237F;
             this.ColumnCount.HeaderText = "Кільк.";
             this.ColumnCount.Name = "ColumnCount";
+            this.ColumnCount.ReadOnly = true;
             // 
             // ColumnSides
             // 
             this.ColumnSides.FillWeight = 151.653F;
             this.ColumnSides.HeaderText = "Керування";
             this.ColumnSides.Name = "ColumnSides";
+            this.ColumnSides.ReadOnly = true;
             // 
             // ColumnEquipment
             // 
             this.ColumnEquipment.FillWeight = 154.8776F;
             this.ColumnEquipment.HeaderText = "Комплектація";
             this.ColumnEquipment.Name = "ColumnEquipment";
+            this.ColumnEquipment.ReadOnly = true;
             // 
             // ColumnInstallation
             // 
             this.ColumnInstallation.FillWeight = 150.9061F;
             this.ColumnInstallation.HeaderText = "Встановлення";
             this.ColumnInstallation.Name = "ColumnInstallation";
+            this.ColumnInstallation.ReadOnly = true;
             // 
             // ColumnCustomer
             // 
             this.ColumnCustomer.FillWeight = 115.284F;
             this.ColumnCustomer.HeaderText = "Замовник";
             this.ColumnCustomer.Name = "ColumnCustomer";
+            this.ColumnCustomer.ReadOnly = true;
             // 
             // ColumnDates
             // 
             this.ColumnDates.FillWeight = 134.2656F;
             this.ColumnDates.HeaderText = "Дати";
             this.ColumnDates.Name = "ColumnDates";
+            this.ColumnDates.ReadOnly = true;
             // 
             // ColumnPicture
             // 
             this.ColumnPicture.FillWeight = 63.05059F;
             this.ColumnPicture.HeaderText = "Мал.";
             this.ColumnPicture.Name = "ColumnPicture";
+            this.ColumnPicture.ReadOnly = true;
             // 
             // ColumnPrice
             // 
             this.ColumnPrice.FillWeight = 78.08628F;
             this.ColumnPrice.HeaderText = "Ціна";
             this.ColumnPrice.Name = "ColumnPrice";
+            this.ColumnPrice.ReadOnly = true;
             // 
             // ColumnPrint
             // 
@@ -235,6 +242,7 @@
             this.ColumnPrint.Image = global::CurtainDesigner.Properties.Resources.icons8_print_30px;
             this.ColumnPrint.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ColumnPrint.Name = "ColumnPrint";
+            this.ColumnPrint.ReadOnly = true;
             // 
             // ColumnEdit
             // 
@@ -243,6 +251,7 @@
             this.ColumnEdit.Image = global::CurtainDesigner.Properties.Resources.icons8_pencil_drawing_30px;
             this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ColumnEdit.Name = "ColumnEdit";
+            this.ColumnEdit.ReadOnly = true;
             // 
             // ColumnDelete
             // 
@@ -251,6 +260,7 @@
             this.ColumnDelete.Image = global::CurtainDesigner.Properties.Resources.icons8_delete_bin_30px;
             this.ColumnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ColumnDelete.Name = "ColumnDelete";
+            this.ColumnDelete.ReadOnly = true;
             // 
             // bunifuElipse1
             // 

@@ -16,11 +16,12 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
         private SqlConnection connectionForTypeName;
+        List<Classes.AdditionalEquipment> additionals;
 
         public UserControlCurt_AdditionalEquipmentFC()
         {
             InitializeComponent();
-            load_equipments();
+            additionals = new List<Classes.AdditionalEquipment>();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
             await Task.Run(() => load_data());
         }
 
-        private async void load_data()
+        private void load_data()
         {
             if (bunifuCustomDataGridEquipmentsDataBase.Rows.Count != 0)
             {
@@ -50,10 +51,13 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
                     bunifuCustomDataGridEquipmentsDataBase.Rows.Clear();
             }
 
+            if (additionals != null)
+                additionals.Clear();
+
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
             SqlCommand command_loadEQUIPMENT = new SqlCommand("Select * From [Additional_equipment];", connection);
@@ -62,41 +66,53 @@ namespace CurtainDesigner.UserControls.UCSettingsFabricCurtain
 
             try
             {
-                reader = await command_loadEQUIPMENT.ExecuteReaderAsync();
-                if (bunifuCustomDataGridEquipmentsDataBase.InvokeRequired)
-                {
-                    bunifuCustomDataGridEquipmentsDataBase.Invoke((MethodInvoker)async delegate
-                    {
-                        string tp_name = "";
-                        while (await reader.ReadAsync())
-                        {
-                            tp_name = get_TypeName(reader["Type_id"].ToString());
-                            bunifuCustomDataGridEquipmentsDataBase.Rows.Add(
-                        new object[] { reader["Equipment_id"].ToString(), reader["Type_id"].ToString(), tp_name, reader["Equipment"].ToString(), reader["Price"].ToString() });
-                        }            
-                    });
+                reader = command_loadEQUIPMENT.ExecuteReader();
 
-                }
-                else
+                while (reader.Read())
                 {
-                    string tp_name = "";
-                    while (await reader.ReadAsync())
+                    additionals.Add(new Classes.AdditionalEquipment()
                     {
-                        tp_name = get_TypeName(reader["Type_id"].ToString());
-                        bunifuCustomDataGridEquipmentsDataBase.Rows.Add(
-                    new object[] { reader["Equipment_id"].ToString(), reader["Type_id"].ToString(), tp_name, reader["Equipment"].ToString(), reader["Price"].ToString() });
-                    }
-                }
+                        id = reader["Equipment_id"].ToString(),
+                        type_id = reader["Type_id"].ToString(),
+                        type_name = get_TypeName(reader["Type_id"].ToString()),
+                        equipment_name = reader["Equipment"].ToString(),
+                        price = reader["Price"].ToString()
+                    });
+                } 
+
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                connection.Close();
+
+                insert_data_in_dataGrid();
             }
             catch (Exception exeption)
             {
                 MessageBox.Show(exeption.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+        }
+
+        private void insert_data_in_dataGrid()
+        {
+            if (additionals == null)
+                return;
+
+            if (bunifuCustomDataGridEquipmentsDataBase.InvokeRequired)
             {
-                if (reader != null && !reader.IsClosed)
-                    reader.Close();
-                connection.Close();
+                bunifuCustomDataGridEquipmentsDataBase.Invoke((MethodInvoker)delegate
+                {
+                    foreach (Classes.AdditionalEquipment additional in additionals)
+                    {
+                        bunifuCustomDataGridEquipmentsDataBase.Rows.Add(new object[] { additional.id, additional.type_id, additional.type_name, additional.equipment_name, additional.price });
+                    }
+                });
+            }
+            else
+            {
+                foreach (Classes.AdditionalEquipment additional in additionals)
+                {
+                    bunifuCustomDataGridEquipmentsDataBase.Rows.Add(new object[] { additional.id, additional.type_id, additional.type_name, additional.equipment_name, additional.price });
+                }
             }
         }
 

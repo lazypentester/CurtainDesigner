@@ -46,11 +46,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
+            this.bunifuMetroTextboxCategory = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.comboBoxCurtainType = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextboxCategory = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel32.SuspendLayout();
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
@@ -262,11 +262,35 @@
             this.panel28.Size = new System.Drawing.Size(389, 333);
             this.panel28.TabIndex = 0;
             // 
+            // bunifuMetroTextboxCategory
+            // 
+            this.bunifuMetroTextboxCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextboxCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuMetroTextboxCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextboxCategory.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMetroTextboxCategory.HintText = "";
+            this.bunifuMetroTextboxCategory.isPassword = false;
+            this.bunifuMetroTextboxCategory.LineFocusedColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuMetroTextboxCategory.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
+            this.bunifuMetroTextboxCategory.LineMouseHoverColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuMetroTextboxCategory.LineThickness = 3;
+            this.bunifuMetroTextboxCategory.Location = new System.Drawing.Point(104, 186);
+            this.bunifuMetroTextboxCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextboxCategory.Name = "bunifuMetroTextboxCategory";
+            this.bunifuMetroTextboxCategory.Size = new System.Drawing.Size(272, 32);
+            this.bunifuMetroTextboxCategory.TabIndex = 9;
+            this.bunifuMetroTextboxCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // numericUpDownPrice
             // 
             this.numericUpDownPrice.DecimalPlaces = 2;
             this.numericUpDownPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDownPrice.Location = new System.Drawing.Point(269, 243);
+            this.numericUpDownPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(78, 21);
             this.numericUpDownPrice.TabIndex = 4;
@@ -302,25 +326,6 @@
             this.label6.Size = new System.Drawing.Size(16, 18);
             this.label6.TabIndex = 0;
             this.label6.Text = "$";
-            // 
-            // bunifuMetroTextboxCategory
-            // 
-            this.bunifuMetroTextboxCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextboxCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextboxCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextboxCategory.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMetroTextboxCategory.HintText = "";
-            this.bunifuMetroTextboxCategory.isPassword = false;
-            this.bunifuMetroTextboxCategory.LineFocusedColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextboxCategory.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
-            this.bunifuMetroTextboxCategory.LineMouseHoverColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextboxCategory.LineThickness = 3;
-            this.bunifuMetroTextboxCategory.Location = new System.Drawing.Point(104, 186);
-            this.bunifuMetroTextboxCategory.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextboxCategory.Name = "bunifuMetroTextboxCategory";
-            this.bunifuMetroTextboxCategory.Size = new System.Drawing.Size(272, 32);
-            this.bunifuMetroTextboxCategory.TabIndex = 9;
-            this.bunifuMetroTextboxCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FCFabricCategoryAddForm
             // 
