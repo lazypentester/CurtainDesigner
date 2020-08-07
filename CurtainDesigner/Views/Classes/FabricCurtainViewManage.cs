@@ -56,6 +56,50 @@ namespace CurtainDesigner.Views.Classes
             }
         }
 
+        public async void loadDataFromDB_comboboxes(ComboBox comboBox, SqlDataReader reader, BindingList<KeyValuePair<string, int>> pair, string key_name, string value_name, int selected_value)
+        {
+            if (reader == null || comboBox == null || pair == null)
+                throw new NullReferenceException();
+
+            try
+            {
+                if (comboBox.InvokeRequired)
+                {
+                    comboBox.Invoke((MethodInvoker)async delegate
+                    {
+                        comboBox.DisplayMember = "Key";
+                        comboBox.ValueMember = "Value";
+                        comboBox.DataSource = pair;
+                        while (await reader.ReadAsync())
+                        {
+                            pair.Add(new KeyValuePair<string, int>(reader[key_name].ToString(), Convert.ToInt32(reader[value_name])));
+                            if (selected_value == Convert.ToInt32(reader[value_name])) comboBox.SelectedValue = selected_value;
+                        }
+                    });
+                }
+                else
+                {
+                    comboBox.DisplayMember = "Key";
+                    comboBox.ValueMember = "Value";
+                    comboBox.DataSource = pair;
+                    while (await reader.ReadAsync())
+                    {
+                        pair.Add(new KeyValuePair<string, int>(reader[key_name].ToString(), Convert.ToInt32(reader[value_name])));
+                        if (selected_value == Convert.ToInt32(reader[value_name])) comboBox.SelectedValue = selected_value;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+        }
+
         public async void loadDataFromDB_label(Label labelprice, Label label_id, SqlDataReader reader, string value_name, string key)
         {
             if (reader == null || labelprice == null)
@@ -172,12 +216,15 @@ namespace CurtainDesigner.Views.Classes
                         curtain.subtype_id,
                         curtain.fabric_name,
                         curtain.fabric_id,
-                        curtain.fabric_category_name,
-                        curtain.fabric_category_id,
                         (curtain.fabric_category_price + " $"),
+                        curtain.fabric_category_id,
+                        curtain.fabric_category_name,
                         curtain.system_color_name,
                         curtain.system_color_id,
                         ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
+                        curtain.width,
+                        curtain.height,
+                        curtain.yardage,
                         curtain.count,
                         curtain.side_name,
                         curtain.side_id,
@@ -187,6 +234,8 @@ namespace CurtainDesigner.Views.Classes
                         curtain.installation_id,
                         curtain.customer_id,
                         (curtain.start_order_time + " - " + curtain.end_order_time),
+                        curtain.start_order_time,
+                        curtain.end_order_time,
                         curtain.picture,
                         (curtain.price + " $")
                        });

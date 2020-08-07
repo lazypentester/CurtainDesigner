@@ -47,13 +47,17 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.dateTimePickerDateStart = new System.Windows.Forms.DateTimePicker();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.bunifuImageButtonSeeClientDetail = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
+            this.iconButtonCreateNewClientAndSelect = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSelectClient = new FontAwesome.Sharp.IconButton();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuButtonCustomInstallPrice = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCheckboxCustomInstallation = new Bunifu.Framework.UI.BunifuCheckbox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -74,6 +78,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.labelFabricCategory = new System.Windows.Forms.Label();
@@ -101,11 +106,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuImageButtonSeeClientDetail = new Bunifu.Framework.UI.BunifuImageButton();
-            this.iconButtonCreateNewClientAndSelect = new FontAwesome.Sharp.IconButton();
-            this.iconButtonSelectClient = new FontAwesome.Sharp.IconButton();
-            this.bunifuButtonCustomInstallPrice = new Bunifu.Framework.UI.BunifuImageButton();
-            this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
             this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
@@ -124,8 +124,10 @@
             this.panel13.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).BeginInit();
             this.panel12.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
@@ -136,8 +138,6 @@
             this.panel32.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).BeginInit();
@@ -348,6 +348,20 @@
             this.panel8.TabIndex = 9;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
+            // bunifuImageButtonSeeClientDetail
+            // 
+            this.bunifuImageButtonSeeClientDetail.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButtonSeeClientDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButtonSeeClientDetail.Image = global::CurtainDesigner.Properties.Resources.icons8_info_40px;
+            this.bunifuImageButtonSeeClientDetail.ImageActive = null;
+            this.bunifuImageButtonSeeClientDetail.Location = new System.Drawing.Point(282, 37);
+            this.bunifuImageButtonSeeClientDetail.Name = "bunifuImageButtonSeeClientDetail";
+            this.bunifuImageButtonSeeClientDetail.Size = new System.Drawing.Size(25, 25);
+            this.bunifuImageButtonSeeClientDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButtonSeeClientDetail.TabIndex = 7;
+            this.bunifuImageButtonSeeClientDetail.TabStop = false;
+            this.bunifuImageButtonSeeClientDetail.Zoom = 7;
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.DodgerBlue;
@@ -376,6 +390,42 @@
             this.label19.Size = new System.Drawing.Size(102, 16);
             this.label19.TabIndex = 0;
             this.label19.Text = "ID Замовника:";
+            // 
+            // iconButtonCreateNewClientAndSelect
+            // 
+            this.iconButtonCreateNewClientAndSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCreateNewClientAndSelect.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonCreateNewClientAndSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCreateNewClientAndSelect.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButtonCreateNewClientAndSelect.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonCreateNewClientAndSelect.IconColor = System.Drawing.Color.Black;
+            this.iconButtonCreateNewClientAndSelect.IconSize = 16;
+            this.iconButtonCreateNewClientAndSelect.Location = new System.Drawing.Point(159, 72);
+            this.iconButtonCreateNewClientAndSelect.Name = "iconButtonCreateNewClientAndSelect";
+            this.iconButtonCreateNewClientAndSelect.Rotation = 0D;
+            this.iconButtonCreateNewClientAndSelect.Size = new System.Drawing.Size(150, 30);
+            this.iconButtonCreateNewClientAndSelect.TabIndex = 6;
+            this.iconButtonCreateNewClientAndSelect.Text = "Створити нового";
+            this.iconButtonCreateNewClientAndSelect.UseVisualStyleBackColor = true;
+            this.iconButtonCreateNewClientAndSelect.Click += new System.EventHandler(this.iconButtonCreateNewClientAndSelect_Click);
+            // 
+            // iconButtonSelectClient
+            // 
+            this.iconButtonSelectClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonSelectClient.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonSelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSelectClient.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.iconButtonSelectClient.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonSelectClient.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSelectClient.IconSize = 16;
+            this.iconButtonSelectClient.Location = new System.Drawing.Point(8, 72);
+            this.iconButtonSelectClient.Name = "iconButtonSelectClient";
+            this.iconButtonSelectClient.Rotation = 0D;
+            this.iconButtonSelectClient.Size = new System.Drawing.Size(150, 30);
+            this.iconButtonSelectClient.TabIndex = 6;
+            this.iconButtonSelectClient.Text = "Вибрати зі списку";
+            this.iconButtonSelectClient.UseVisualStyleBackColor = true;
+            this.iconButtonSelectClient.Click += new System.EventHandler(this.iconButtonSelectClient_Click);
             // 
             // labelCustomer
             // 
@@ -435,6 +485,22 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(317, 188);
             this.panel3.TabIndex = 9;
+            // 
+            // bunifuButtonCustomInstallPrice
+            // 
+            this.bunifuButtonCustomInstallPrice.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuButtonCustomInstallPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuButtonCustomInstallPrice.Enabled = false;
+            this.bunifuButtonCustomInstallPrice.Image = global::CurtainDesigner.Properties.Resources.icons8_save_25px;
+            this.bunifuButtonCustomInstallPrice.ImageActive = null;
+            this.bunifuButtonCustomInstallPrice.Location = new System.Drawing.Point(257, 156);
+            this.bunifuButtonCustomInstallPrice.Name = "bunifuButtonCustomInstallPrice";
+            this.bunifuButtonCustomInstallPrice.Size = new System.Drawing.Size(25, 25);
+            this.bunifuButtonCustomInstallPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuButtonCustomInstallPrice.TabIndex = 7;
+            this.bunifuButtonCustomInstallPrice.TabStop = false;
+            this.bunifuButtonCustomInstallPrice.Zoom = 7;
+            this.bunifuButtonCustomInstallPrice.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
             // 
             // bunifuCheckboxCustomInstallation
             // 
@@ -670,6 +736,34 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Квадратура:";
             // 
+            // iconButtonNewOrder
+            // 
+            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonNewOrder.AutoSize = true;
+            this.iconButtonNewOrder.BackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
+            this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonNewOrder.IconSize = 32;
+            this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
+            this.iconButtonNewOrder.Name = "iconButtonNewOrder";
+            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
+            this.iconButtonNewOrder.Rotation = 0D;
+            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
+            this.iconButtonNewOrder.TabIndex = 8;
+            this.iconButtonNewOrder.Text = "Створити замовлення";
+            this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonNewOrder.UseVisualStyleBackColor = false;
+            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
@@ -802,7 +896,9 @@
             this.comboBoxEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEquipment.Enabled = false;
             this.comboBoxEquipment.FormattingEnabled = true;
+            this.comboBoxEquipment.IntegralHeight = false;
             this.comboBoxEquipment.Location = new System.Drawing.Point(118, 95);
+            this.comboBoxEquipment.MaxLength = 500;
             this.comboBoxEquipment.Name = "comboBoxEquipment";
             this.comboBoxEquipment.Size = new System.Drawing.Size(334, 21);
             this.comboBoxEquipment.TabIndex = 5;
@@ -963,100 +1059,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
-            // 
-            // bunifuImageButtonSeeClientDetail
-            // 
-            this.bunifuImageButtonSeeClientDetail.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButtonSeeClientDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButtonSeeClientDetail.Image = global::CurtainDesigner.Properties.Resources.icons8_info_40px;
-            this.bunifuImageButtonSeeClientDetail.ImageActive = null;
-            this.bunifuImageButtonSeeClientDetail.Location = new System.Drawing.Point(282, 37);
-            this.bunifuImageButtonSeeClientDetail.Name = "bunifuImageButtonSeeClientDetail";
-            this.bunifuImageButtonSeeClientDetail.Size = new System.Drawing.Size(25, 25);
-            this.bunifuImageButtonSeeClientDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButtonSeeClientDetail.TabIndex = 7;
-            this.bunifuImageButtonSeeClientDetail.TabStop = false;
-            this.bunifuImageButtonSeeClientDetail.Zoom = 7;
-            // 
-            // iconButtonCreateNewClientAndSelect
-            // 
-            this.iconButtonCreateNewClientAndSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonCreateNewClientAndSelect.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonCreateNewClientAndSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCreateNewClientAndSelect.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButtonCreateNewClientAndSelect.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonCreateNewClientAndSelect.IconColor = System.Drawing.Color.Black;
-            this.iconButtonCreateNewClientAndSelect.IconSize = 16;
-            this.iconButtonCreateNewClientAndSelect.Location = new System.Drawing.Point(159, 72);
-            this.iconButtonCreateNewClientAndSelect.Name = "iconButtonCreateNewClientAndSelect";
-            this.iconButtonCreateNewClientAndSelect.Rotation = 0D;
-            this.iconButtonCreateNewClientAndSelect.Size = new System.Drawing.Size(150, 30);
-            this.iconButtonCreateNewClientAndSelect.TabIndex = 6;
-            this.iconButtonCreateNewClientAndSelect.Text = "Створити нового";
-            this.iconButtonCreateNewClientAndSelect.UseVisualStyleBackColor = true;
-            this.iconButtonCreateNewClientAndSelect.Click += new System.EventHandler(this.iconButtonCreateNewClientAndSelect_Click);
-            // 
-            // iconButtonSelectClient
-            // 
-            this.iconButtonSelectClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonSelectClient.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonSelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSelectClient.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.iconButtonSelectClient.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonSelectClient.IconColor = System.Drawing.Color.Black;
-            this.iconButtonSelectClient.IconSize = 16;
-            this.iconButtonSelectClient.Location = new System.Drawing.Point(8, 72);
-            this.iconButtonSelectClient.Name = "iconButtonSelectClient";
-            this.iconButtonSelectClient.Rotation = 0D;
-            this.iconButtonSelectClient.Size = new System.Drawing.Size(150, 30);
-            this.iconButtonSelectClient.TabIndex = 6;
-            this.iconButtonSelectClient.Text = "Вибрати зі списку";
-            this.iconButtonSelectClient.UseVisualStyleBackColor = true;
-            this.iconButtonSelectClient.Click += new System.EventHandler(this.iconButtonSelectClient_Click);
-            // 
-            // bunifuButtonCustomInstallPrice
-            // 
-            this.bunifuButtonCustomInstallPrice.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButtonCustomInstallPrice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButtonCustomInstallPrice.Enabled = false;
-            this.bunifuButtonCustomInstallPrice.Image = global::CurtainDesigner.Properties.Resources.icons8_save_25px;
-            this.bunifuButtonCustomInstallPrice.ImageActive = null;
-            this.bunifuButtonCustomInstallPrice.Location = new System.Drawing.Point(257, 156);
-            this.bunifuButtonCustomInstallPrice.Name = "bunifuButtonCustomInstallPrice";
-            this.bunifuButtonCustomInstallPrice.Size = new System.Drawing.Size(25, 25);
-            this.bunifuButtonCustomInstallPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuButtonCustomInstallPrice.TabIndex = 7;
-            this.bunifuButtonCustomInstallPrice.TabStop = false;
-            this.bunifuButtonCustomInstallPrice.Zoom = 7;
-            this.bunifuButtonCustomInstallPrice.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
-            // 
-            // iconButtonNewOrder
-            // 
-            this.iconButtonNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonNewOrder.AutoSize = true;
-            this.iconButtonNewOrder.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonNewOrder.FlatAppearance.BorderSize = 0;
-            this.iconButtonNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonNewOrder.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonNewOrder.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonNewOrder.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.iconButtonNewOrder.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonNewOrder.IconSize = 32;
-            this.iconButtonNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.Location = new System.Drawing.Point(13, 498);
-            this.iconButtonNewOrder.Name = "iconButtonNewOrder";
-            this.iconButtonNewOrder.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.iconButtonNewOrder.Rotation = 0D;
-            this.iconButtonNewOrder.Size = new System.Drawing.Size(317, 38);
-            this.iconButtonNewOrder.TabIndex = 8;
-            this.iconButtonNewOrder.Text = "Створити замовлення";
-            this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonNewOrder.UseVisualStyleBackColor = false;
-            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
             // 
             // ucStatusNotOk2
             // 
@@ -1241,9 +1243,11 @@
             this.panel17.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
@@ -1256,8 +1260,6 @@
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).EndInit();

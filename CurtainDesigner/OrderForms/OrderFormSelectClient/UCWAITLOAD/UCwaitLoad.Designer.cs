@@ -34,6 +34,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::CurtainDesigner.Properties.Resources.Spinner_1s_200px;
             this.pictureBox1.Location = new System.Drawing.Point(270, 107);
             this.pictureBox1.Name = "pictureBox1";

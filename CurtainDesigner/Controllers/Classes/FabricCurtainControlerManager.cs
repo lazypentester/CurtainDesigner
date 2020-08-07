@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CurtainDesigner.Controllers.Classes
 {
@@ -33,6 +34,16 @@ namespace CurtainDesigner.Controllers.Classes
             view.loadDataFromDB_comboboxes((form as CurtainDesigner.FormFabricCurtainOrder).comboBoxInstallation, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), "Price", "Installation_id");
 
             model.closeConnection();
+        }
+
+        public async void load_data_once_comboboxes(ComboBox comboBox, string query, string key, string value, int selected_value)
+        {
+            CurtainDesigner.Models.Classes.FabricCurtainManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();
+            CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T> view = new CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T>();
+            SqlDataReader reader = null;
+
+            reader = await model.getDataFromDB(query);
+            view.loadDataFromDB_comboboxes(comboBox, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), key, value, selected_value);
         }
 
         public async void load_data(F form)

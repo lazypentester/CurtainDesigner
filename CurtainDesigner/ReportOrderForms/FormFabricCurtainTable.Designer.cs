@@ -47,10 +47,13 @@
             this.ColumnFabric_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCategory_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCategory_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCategory_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSystemColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnColor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnYardage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSides = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSide_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +63,8 @@
             this.ColumnInstallation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDates = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPicture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrint = new System.Windows.Forms.DataGridViewImageColumn();
@@ -115,10 +120,13 @@
             this.ColumnFabric_id,
             this.ColumnCategory,
             this.ColumnCategory_id,
-            this.ColumnCategory_price,
+            this.ColumnCategory_name,
             this.ColumnSystemColor,
             this.ColumnColor_id,
             this.ColumnSize,
+            this.ColumnWidth,
+            this.ColumnHeight,
+            this.ColumnYardage,
             this.ColumnCount,
             this.ColumnSides,
             this.ColumnSide_id,
@@ -128,6 +136,8 @@
             this.ColumnInstallation,
             this.ColumnCustomer,
             this.ColumnDates,
+            this.ColumnStartDate,
+            this.ColumnEndDate,
             this.ColumnPicture,
             this.ColumnPrice,
             this.ColumnPrint,
@@ -148,7 +158,7 @@
             this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
@@ -158,6 +168,7 @@
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1266, 478);
             this.bunifuCustomDataGrid1.TabIndex = 1;
+            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
             // bunifuElipse1
             // 
@@ -263,12 +274,12 @@
             this.ColumnCategory_id.ReadOnly = true;
             this.ColumnCategory_id.Visible = false;
             // 
-            // ColumnCategory_price
+            // ColumnCategory_name
             // 
-            this.ColumnCategory_price.HeaderText = "Category_price";
-            this.ColumnCategory_price.Name = "ColumnCategory_price";
-            this.ColumnCategory_price.ReadOnly = true;
-            this.ColumnCategory_price.Visible = false;
+            this.ColumnCategory_name.HeaderText = "Category_name";
+            this.ColumnCategory_name.Name = "ColumnCategory_name";
+            this.ColumnCategory_name.ReadOnly = true;
+            this.ColumnCategory_name.Visible = false;
             // 
             // ColumnSystemColor
             // 
@@ -294,6 +305,27 @@
             this.ColumnSize.MinimumWidth = 100;
             this.ColumnSize.Name = "ColumnSize";
             this.ColumnSize.ReadOnly = true;
+            // 
+            // ColumnWidth
+            // 
+            this.ColumnWidth.HeaderText = "Width";
+            this.ColumnWidth.Name = "ColumnWidth";
+            this.ColumnWidth.ReadOnly = true;
+            this.ColumnWidth.Visible = false;
+            // 
+            // ColumnHeight
+            // 
+            this.ColumnHeight.HeaderText = "Height";
+            this.ColumnHeight.Name = "ColumnHeight";
+            this.ColumnHeight.ReadOnly = true;
+            this.ColumnHeight.Visible = false;
+            // 
+            // ColumnYardage
+            // 
+            this.ColumnYardage.HeaderText = "Yardage";
+            this.ColumnYardage.Name = "ColumnYardage";
+            this.ColumnYardage.ReadOnly = true;
+            this.ColumnYardage.Visible = false;
             // 
             // ColumnCount
             // 
@@ -365,6 +397,20 @@
             this.ColumnDates.MinimumWidth = 100;
             this.ColumnDates.Name = "ColumnDates";
             this.ColumnDates.ReadOnly = true;
+            // 
+            // ColumnStartDate
+            // 
+            this.ColumnStartDate.HeaderText = "StartDate";
+            this.ColumnStartDate.Name = "ColumnStartDate";
+            this.ColumnStartDate.ReadOnly = true;
+            this.ColumnStartDate.Visible = false;
+            // 
+            // ColumnEndDate
+            // 
+            this.ColumnEndDate.HeaderText = "EndDate";
+            this.ColumnEndDate.Name = "ColumnEndDate";
+            this.ColumnEndDate.ReadOnly = true;
+            this.ColumnEndDate.Visible = false;
             // 
             // ColumnPicture
             // 
@@ -446,10 +492,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFabric_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSystemColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnColor_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnWidth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnYardage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSides;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSide_id;
@@ -459,6 +508,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstallation;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDates;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPicture;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrice;
         private System.Windows.Forms.DataGridViewImageColumn ColumnPrint;
