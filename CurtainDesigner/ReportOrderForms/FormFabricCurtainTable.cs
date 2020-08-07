@@ -15,19 +15,24 @@ namespace CurtainDesigner.ReportOrderForms
         public FormFabricCurtainTable()
         {
             InitializeComponent();
-            set_buttonsStyle();
+            //set_buttonsStyle();
             fillDataBase();
         }
 
         async private void fillDataBase()
         {
             CurtainDesigner.Controllers.IControlerManage<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            await Task.Run(() => controler.unpacking(new List<Classes.FabricCurtain2>(), this.bunifuCustomDataGrid1));
+            await Task.Run(() => controler.unpacking(Classes.FC_Caontainer.curtains, this.bunifuCustomDataGrid1));
         }
 
         private void set_buttonsStyle()
         {
             this.bunifuCustomDataGrid1.Rows.AddRange(new DataGridViewRow(), new DataGridViewRow(), new DataGridViewRow());
+        }
+
+        private void bunifuCustomDataGridClientsDataBase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

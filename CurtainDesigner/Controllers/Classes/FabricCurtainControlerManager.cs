@@ -20,7 +20,7 @@ namespace CurtainDesigner.Controllers.Classes
         {
             CurtainDesigner.Views.Interfaces.IViewManage<O, L, F, T> view = new CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T>();
             CurtainDesigner.Models.Interfaces.IObjectManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();
-            view.writeObjects(list, table);
+            view.writeObjects(model.readObjects(list), table);
         }
 
         public async void load_installations(F form)

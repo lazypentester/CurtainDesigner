@@ -49,136 +49,93 @@ namespace CurtainDesigner.Models.Classes
             return reader;
         }
 
-        async public Task<L> readObjects(L list)
+        public L readObjects(L list)
         {
             if (list == null)
                 throw new NullReferenceException();
+            else
+                (list as List<CurtainDesigner.Classes.FabricCurtain2>).Clear();
 
             if (connection == null || connection.State == ConnectionState.Closed)
             {
                 connection = new SqlConnection(connect_str);
-                await connection.OpenAsync();
+                connection.Open();
             }
 
-            SqlDataReader reader_fabric_curtain = null;
-            SqlCommand command_get_fabric_curtain = new SqlCommand("Select * From [Fabric_curtains];", connection);
+            SqlCommand command_get_fabric_curtain = new SqlCommand("Select * From [Fabric_curtains] order by Curtain_id desc;", connection);
 
+
+            SqlDataReader reader_fabric_curtain = null;
             SqlDataReader reader_type = null;
             SqlDataReader reader_subtype = null;
+            SqlDataReader reader_fabric_category = null;
             SqlDataReader reader_other = null;
-            CurtainDesigner.Classes.FabricCurtain2 obj;
+            CurtainDesigner.Classes.FabricCurtain2 obj = null;
 
             try
             {
-                reader_fabric_curtain = await command_get_fabric_curtain.ExecuteReaderAsync();
-                while (await reader_fabric_curtain.ReadAsync())
+                reader_fabric_curtain = command_get_fabric_curtain.ExecuteReader();
+                while (reader_fabric_curtain.Read())
                 {
                     obj = new CurtainDesigner.Classes.FabricCurtain2();
 
                     //get id
                     obj.fb_id = reader_fabric_curtain["Curtain_id"].ToString();
 
-                    //Get type and subtype
-                    SqlCommand command_get_type = new SqlCommand($"Select * From [Fabric_curtains_types] Where Type_id = {reader_fabric_curtain["Type_id"]};", connection);
-                    reader_type = await command_get_type.ExecuteReaderAsync();
-                    while(await reader_type.ReadAsync())
-                    {
-                        obj.type = reader_type["Type_name"].ToString();
-                        SqlCommand command_get_subtype = new SqlCommand($"Select * From [Fabric_curtains_subtypes] Where Subtype_id = {reader_type["Subtype_id"]};", connection);
-                        reader_subtype = await command_get_subtype.ExecuteReaderAsync();
-                        while (await reader_subtype.ReadAsync())
-                            obj.subtype = reader_subtype["Subtype_name"].ToString();
-
-                        if (reader_subtype != null && !reader_subtype.IsClosed)
-                            reader_subtype.Close();
-                    }
-                    if (reader_type != null && !reader_type.IsClosed)
-                        reader_type.Close();
-
-                    //Get fabric
-                    SqlCommand command_get_fabric = new SqlCommand($"Select * From [Fabric] Where Fabric_id = {reader_fabric_curtain["Fabric_id"]};", connection);
-                    reader_other = await command_get_fabric.ExecuteReaderAsync();
-                    while(await reader_other.ReadAsync())
-                    {
-                        obj.fabric_name = reader_other["Name"].ToString();
-                        obj.fabric_additionally = reader_other["Additionally"].ToString();
-                        obj.fabric_image = reader_other["Picture"].ToString();
-                        obj.fabric_price = (float)Convert.ToDouble(reader_other["Price"]);
-                    }
-                    if (reader_other != null && !reader_other.IsClosed)
-                        reader_other.Close();
-
-                    //Get system_color
-                    SqlCommand command_get_system_color = new SqlCommand($"Select * From [System_color] Where Color_id = {reader_fabric_curtain["Color_id"]};", connection);
-                    reader_other = await command_get_system_color.ExecuteReaderAsync();
-                    while (await reader_other.ReadAsync())
-                    {
-                        obj.system_color_name = reader_other["Name"].ToString();
-                        obj.system_color_image = reader_other["Picture"].ToString();
-                    }
-                    if (reader_other != null && !reader_other.IsClosed)
-                        reader_other.Close();
-
+                    //Get start informations
+                    obj.fabric_id = reader_fabric_curtain["Fabric_id"].ToString();
+                    obj.subtype_id = reader_fabric_curtain["Subtype_id"].ToString();
+                    obj.type_id = reader_fabric_curtain["Type_id"].ToString();
+                    obj.fabric_category_id = reader_fabric_curtain["Category_id"].ToString();
+                    obj.system_color_id = reader_fabric_curtain["Color_id"].ToString();
+                    obj.side_id = reader_fabric_curtain["Control_id"].ToString();
+                    obj.equipment_id = reader_fabric_curtain["Equipment_id"].ToString();
+                    obj.installation_id = reader_fabric_curtain["Installation_id"].ToString();
+                    obj.customer_id = reader_fabric_curtain["Customer_id"].ToString();
+                    //Get dates, image, price
+                    obj.start_order_time = Convert.ToDateTime(reader_fabric_curtain["Order_data"]);
+                    obj.end_order_time = Convert.ToDateTime(reader_fabric_curtain["End_date"]);
+                    obj.picture = (reader_fabric_curtain["Drawing"]).ToString();
+                    obj.price = (float)Convert.ToDouble(reader_fabric_curtain["Price"]);
                     //Get sizes and count
                     obj.width = (float)Convert.ToDouble(reader_fabric_curtain["Width"]);
                     obj.height = (float)Convert.ToDouble(reader_fabric_curtain["Height"]);
                     obj.yardage = (float)Convert.ToDouble(reader_fabric_curtain["Yardage"]);
                     obj.count = Convert.ToInt32(reader_fabric_curtain["Count"]);
 
+                    //get type
+                    obj.type = get_type(obj.type_id.ToString(), reader_type);
+
+                    //get subtype
+                    obj.subtype = get_subtype(obj.subtype_id.ToString(), reader_subtype);
+
+                    //get fabric
+                    obj.fabric_name = get_fabrc(obj.fabric_id.ToString(), reader_other);
+
+                    //Get Fabric Category
+                    string[] category = get_category(obj.fabric_category_id, reader_fabric_category);
+                    obj.fabric_category_name = category[0];
+                    obj.fabric_category_price = (float) Convert.ToDouble(category[1]);
+
+                    //Get system_color
+                    obj.system_color_name = get_system_color(obj.system_color_id, reader_other);
+
                     //Get control_side
-                    SqlCommand command_get_control_side = new SqlCommand($"Select * From [Control] Where Control_id = {reader_fabric_curtain["Control_id"]};", connection);
-                    reader_other = await command_get_control_side.ExecuteReaderAsync();
-                    while (await reader_other.ReadAsync())
-                    {
-                        obj.side_name = reader_other["Control_side"].ToString();
-                    }
-                    if (reader_other != null && !reader_other.IsClosed)
-                        reader_other.Close();
+                    obj.side_name = get_side(obj.side_id, reader_other);
 
                     //Get equipment
-                    SqlCommand command_get_equipment = new SqlCommand($"Select * From [Additional_equipment] Where Equipment_id = {reader_fabric_curtain["Equipment_id"]};", connection);
-                    reader_other = await command_get_equipment.ExecuteReaderAsync();
-                    while (await reader_other.ReadAsync())
-                    {
-                        obj.equipment_name = reader_other["Equipment"].ToString();
-                        obj.equipment_price = (float)Convert.ToDouble(reader_other["Price"]);
-                    }
-                    if (reader_other != null && !reader_other.IsClosed)
-                        reader_other.Close();
+                    obj.equipment_price = (float) Convert.ToDouble(get_equipment(obj.equipment_id, reader_other));
 
                     //Get Installation
-                    SqlCommand command_get_installation = new SqlCommand($"Select * From [Installation] Where Installation_id = {reader_fabric_curtain["Installation_id"]};", connection);
-                    reader_other = await command_get_installation.ExecuteReaderAsync();
-                    while (await reader_other.ReadAsync())
-                    {
-                        obj.installation_obj = reader_other["Installation_object"].ToString();
-                        obj.installation_price = (float)Convert.ToDouble(reader_other["Price"]);
-                    }
-                    if (reader_other != null && !reader_other.IsClosed)
-                        reader_other.Close();
+                    obj.installation_price = (float)Convert.ToDouble(get_installation(obj.installation_id, reader_other));
 
-                    //Get customer
-                    SqlCommand command_get_customer = new SqlCommand($"Select * From [Clients] Where Customer_id = {reader_fabric_curtain["Customer_id"]};", connection);
-                    reader_other = await command_get_customer.ExecuteReaderAsync();
-                    while (await reader_other.ReadAsync())
-                    {
-                        obj.customer_id = reader_other["Customer_id"].ToString();
-                        obj.customer_name = reader_other["Name"].ToString();
-                        obj.customer_surname = reader_other["Surname"].ToString();
-                        obj.customer_address = reader_other["Address"].ToString();
-                        obj.customer_phone = reader_other["Phone"].ToString();
-                    }
-                    if (reader_other != null && !reader_other.IsClosed)
-                        reader_other.Close();
 
-                    //Get dates, image, price
-                    obj.start_order_time = Convert.ToDateTime(reader_fabric_curtain["Order_data"]);
-                    obj.end_order_time = Convert.ToDateTime(reader_fabric_curtain["End_date"]);
-                    obj.picture = (Image)(reader_fabric_curtain["Drawing"]);
-                    obj.price = (float)Convert.ToDouble(reader_fabric_curtain["Price"]);
-
+                    //add to list
                     (list as List<CurtainDesigner.Classes.FabricCurtain2>).Add(obj);
                 }
+
+                if (reader_fabric_curtain != null && !reader_fabric_curtain.IsClosed)
+                    reader_fabric_curtain.Close();
             }
             catch (Exception exeption)
             {
@@ -186,8 +143,6 @@ namespace CurtainDesigner.Models.Classes
             }
             finally
             {
-                if (reader_fabric_curtain != null && !reader_fabric_curtain.IsClosed)
-                    reader_fabric_curtain.Close();
                 connection.Close();
             }
             return list;         
@@ -246,6 +201,263 @@ namespace CurtainDesigner.Models.Classes
                 connection.Close();
             }
             return true;
+        }
+
+        private string get_type(string type_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [Fabric_curtains_types] Where Type_id = {type_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Type_name"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\nПомилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string get_subtype(string subtype_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [Fabric_curtains_subtypes] Where Subtype_id = {subtype_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Subtype_name"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string get_fabrc(string fabric_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [Fabric] Where Fabric_id = {fabric_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Name"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string[] get_category(string category_id, SqlDataReader reader)
+        {
+            string[] res = new string[2];
+
+            SqlCommand command = new SqlCommand($"Select * From [Fabric_curtains_category] Where Category_id = {category_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res[0] = reader["Category"].ToString();
+                    res[1] = reader["Price"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string get_system_color(string color_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [System_color] Where Color_id = {color_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Name"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string get_side(string side_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [Control] Where Control_id = {side_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Control_side"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string get_equipment(string equipment_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [Additional_equipment] Where Equipment_id = {equipment_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Price"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
+        }
+
+        private string get_installation(string installation_id, SqlDataReader reader)
+        {
+            string res = "";
+
+            SqlCommand command = new SqlCommand($"Select * From [Installation] Where Installation_id = {installation_id};", new SqlConnection(connect_str));
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    res = reader["Price"].ToString();
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+
+            return res;
         }
     }
 }

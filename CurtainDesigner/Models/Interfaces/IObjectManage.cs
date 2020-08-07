@@ -9,7 +9,7 @@ namespace CurtainDesigner.Models.Interfaces
     interface IObjectManage<L>
     {
         Task<bool> writeObject(object obj);
-        Task<L> readObjects(L list);
+        L readObjects(L list);
         Task<bool> editObject();
     }
 }

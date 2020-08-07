@@ -146,43 +146,141 @@ namespace CurtainDesigner.Views.Classes
                  "T12:32:21";
 
             (obj as CurtainDesigner.Classes.FabricCurtain).picture = "";
-            (obj as CurtainDesigner.Classes.FabricCurtain).price = Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).labelPrice.Text.Split(' ')[1])));
+            (obj as CurtainDesigner.Classes.FabricCurtain).price = string.Join(".", Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).labelPrice.Text.Split(' ')[1]), 2, MidpointRounding.AwayFromZero)).Split(','));
             return obj;
         }
 
         async public Task<bool> writeObjects(L list, T table)
         {
+            bool res = true;
+
             if (list == null || table == null)
                 throw new NullReferenceException();
 
-            for (int i = 0; i < (list as List<CurtainDesigner.Classes.FabricCurtain2>).Count; i++)
+            if((table as Bunifu.Framework.UI.BunifuCustomDataGrid).InvokeRequired)
             {
-                //Дописать везде валюту(грн) в конце строк.
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add();
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["Number"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].fb_id;
-                //Вместо типа записать картинку замочка
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnType"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].type;
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSubtype"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].subtype;
-                // сделать тултипы с названиями обьектов и прикрепить к картинкам в таблице, И так же картиночки прикрепить вместо цвета и ткани
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnFabric"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].fabric_image;
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSystemColor"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].system_color_image;
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSize"].Value = "ш: " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].width.ToString() + " x " + "в: " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].height.ToString() + " (Пл: " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].yardage.ToString() + ")";
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnCount"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].count.ToString();
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSides"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].side_name;
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnEquipment"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].equipment_name + "[" + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].equipment_price.ToString() + "]";
-                if ((list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].installation_price == 0)
-                    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnInstallation"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].installation_obj;
-                else
-                    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnInstallation"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].installation_price.ToString();
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnCustomer"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].customer_surname + " " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].customer_name + " " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].customer_id;
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnDates"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].start_order_time.ToString() + " - " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].end_order_time.ToString();
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnPicture"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].picture;
-                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnPrice"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].price.ToString();
-
-               
+                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Invoke((MethodInvoker)delegate
+               {
+                   foreach (CurtainDesigner.Classes.FabricCurtain2 curtain in (list as List<CurtainDesigner.Classes.FabricCurtain2>))
+                   {
+                       (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
+                       {
+                        curtain.fb_id,
+                        curtain.type,
+                        curtain.type_id,
+                        curtain.subtype,
+                        curtain.subtype_id,
+                        curtain.fabric_name,
+                        curtain.fabric_id,
+                        curtain.fabric_category_name,
+                        curtain.fabric_category_id,
+                        (curtain.fabric_category_price + " $"),
+                        curtain.system_color_name,
+                        curtain.system_color_id,
+                        ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
+                        curtain.count,
+                        curtain.side_name,
+                        curtain.side_id,
+                        (curtain.equipment_price + " $"),
+                        curtain.equipment_id,
+                        (curtain.installation_price + " $"),
+                        curtain.installation_id,
+                        curtain.customer_id,
+                        (curtain.start_order_time + " - " + curtain.end_order_time),
+                        curtain.picture,
+                        (curtain.price + " $")
+                       });
+                   }
+               });
+            }
+            else
+            {
+                foreach (CurtainDesigner.Classes.FabricCurtain2 curtain in (list as List<CurtainDesigner.Classes.FabricCurtain2>))
+                {
+                    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
+                    {
+                        curtain.fb_id,
+                        curtain.type,
+                        curtain.type_id,
+                        curtain.subtype,
+                        curtain.subtype_id,
+                        curtain.fabric_name,
+                        curtain.fabric_id,
+                        curtain.fabric_category_name,
+                        curtain.fabric_category_id,
+                        (curtain.fabric_category_price + " $"),
+                        curtain.system_color_name,
+                        curtain.system_color_id,
+                        ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
+                        curtain.count,
+                        curtain.side_name,
+                        curtain.side_id,
+                        (curtain.equipment_price + " $"),
+                        curtain.equipment_id,
+                        (curtain.installation_price + " $"),
+                        curtain.installation_id,
+                        curtain.customer_id,
+                        (curtain.start_order_time + " - " + curtain.end_order_time),
+                        curtain.picture,
+                        (curtain.price + " $")
+                    });
+                }
             }
 
-            return true;
+            //foreach (CurtainDesigner.Classes.FabricCurtain2 curtain in (list as List<CurtainDesigner.Classes.FabricCurtain2>))
+            //{
+            //    //Дописать везде валюту($) в конце строк.
+            //    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
+            //    {
+            //        curtain.fb_id,
+            //        curtain.type,
+            //        curtain.type_id,
+            //        curtain.subtype,
+            //        curtain.subtype_id,
+            //        curtain.fabric_name,
+            //        curtain.fabric_id,
+            //        curtain.fabric_category_name,
+            //        curtain.fabric_category_id,
+            //        (curtain.fabric_category_price + " $"),
+            //        curtain.system_color_name,
+            //        curtain.system_color_id,
+            //        ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
+            //        curtain.count,
+            //        curtain.side_name,
+            //        curtain.side_id,
+            //        (curtain.equipment_price + " $"),
+            //        curtain.equipment_id,
+            //        (curtain.installation_price + " $"),
+            //        curtain.installation_id,
+            //        curtain.customer_id,
+            //        (curtain.start_order_time + " - " + curtain.end_order_time),
+            //        curtain.picture,
+            //        (curtain.price + " $")
+            //    });
+
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add();
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["Number"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].fb_id;
+            //    ////Вместо типа записать картинку замочка
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnType"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].type;
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSubtype"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].subtype;
+            //    //// сделать тултипы с названиями обьектов и прикрепить к картинкам в таблице, И так же картиночки прикрепить вместо цвета и ткани
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnFabric"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].fabric_image;
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSystemColor"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].system_color_image;
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSize"].Value = "ш: " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].width.ToString() + " x " + "в: " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].height.ToString() + " (Пл: " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].yardage.ToString() + ")";
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnCount"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].count.ToString();
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnSides"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].side_name;
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnEquipment"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].equipment_name + "[" + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].equipment_price.ToString() + "]";
+            //    //if ((list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].installation_price == 0)
+            //    //    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnInstallation"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].installation_obj;
+            //    //else
+            //    //    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnInstallation"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].installation_price.ToString();
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnCustomer"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].customer_surname + " " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].customer_name + " " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].customer_id;
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnDates"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].start_order_time.ToString() + " - " + (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].end_order_time.ToString();
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnPicture"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].picture;
+            //    //(table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows[i].Cells["ColumnPrice"].Value = (list as List<CurtainDesigner.Classes.FabricCurtain2>)[i].price.ToString();  
+            //}
+
+            return res;
         }
     }
 }

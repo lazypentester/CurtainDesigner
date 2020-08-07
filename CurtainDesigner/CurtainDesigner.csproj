@@ -132,6 +132,7 @@
     <Compile Include="Classes\ConnectionString.cs" />
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
+    <Compile Include="Classes\FC_Caontainer.cs" />
     <Compile Include="Classes\PathCombiner.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />
