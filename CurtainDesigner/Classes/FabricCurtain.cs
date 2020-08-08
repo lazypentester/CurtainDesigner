@@ -21,8 +21,8 @@ namespace CurtainDesigner.Classes
         public int equipment_id { get; set; }
         public int installation_id { get; set; }
         public int customer_id { get; set; }
-        public string start_order_time { get; set; }
-        public string end_order_time { get; set; }
+        public DateTime start_order_time { get; set; }
+        public DateTime end_order_time { get; set; }
         public string picture { get; set; }
         public string price { get; set; }
         public int category_id { get; set; }

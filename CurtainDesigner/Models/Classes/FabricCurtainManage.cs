@@ -183,13 +183,18 @@ namespace CurtainDesigner.Models.Classes
                                                                                                     $"{fabricCurtain.installation_id}, " +
                                                                                                     $"{fabricCurtain.subtype_id}, " +
                                                                                                     $"{fabricCurtain.category_id});", connection);
-                command_addFB.Parameters.Add("@image", SqlDbType.NVarChar).Value = fabricCurtain.picture;
-                command_addFB.Parameters.Add("@start_date", SqlDbType.DateTime2).Value = fabricCurtain.start_order_time;
-                command_addFB.Parameters.Add("@end_date", SqlDbType.DateTime2).Value = fabricCurtain.end_order_time;
-                await command_addFB.ExecuteNonQueryAsync();
 
-                //SqlCommand command_addFB = new SqlCommand($"Insert Into [Fabric_curtains] ([Order_data]) Values (N'{fabricCurtain.start_order_time}');", connection);
-                //await command_addFB.ExecuteNonQueryAsync();
+                try
+                {
+                    command_addFB.Parameters.Add("@image", SqlDbType.NVarChar).Value = fabricCurtain.picture;
+                    command_addFB.Parameters.Add("@start_date", SqlDbType.DateTime2).Value = fabricCurtain.start_order_time;
+                    command_addFB.Parameters.Add("@end_date", SqlDbType.DateTime2).Value = fabricCurtain.end_order_time;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Помилка при конвертаціії дати або чертежа замовлення, подрбиці: \n{ex.Message}","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                    await command_addFB.ExecuteNonQueryAsync();
             }
             catch(Exception exeption)
             {
