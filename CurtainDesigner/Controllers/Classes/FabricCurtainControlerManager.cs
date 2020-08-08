@@ -46,6 +46,16 @@ namespace CurtainDesigner.Controllers.Classes
             view.loadDataFromDB_comboboxes(comboBox, reader, new System.ComponentModel.BindingList<KeyValuePair<string, int>>(), key, value, selected_value);
         }
 
+        public async void load_data_once_label(Label label_price, Label label_id, string query, string key, string value)
+        {
+            CurtainDesigner.Models.Classes.FabricCurtainManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();
+            CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T> view = new CurtainDesigner.Views.Classes.FabricCurtainViewManage<O, L, F, T>();
+            SqlDataReader reader = null;
+
+            reader = await model.getDataFromDB(query);
+            view.loadDataFromDB_label(label_price, label_id, reader, value, key);
+        }
+
         public async void load_data(F form)
         {
             CurtainDesigner.Models.Classes.FabricCurtainManage<L> model = new CurtainDesigner.Models.Classes.FabricCurtainManage<L>();

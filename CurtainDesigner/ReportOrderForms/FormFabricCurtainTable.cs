@@ -19,8 +19,14 @@ namespace CurtainDesigner.ReportOrderForms
             fillDataBase();
         }
 
-        async private void fillDataBase()
+        async internal void fillDataBase()
         {
+            if (bunifuCustomDataGrid1.Rows.Count != 0)
+                bunifuCustomDataGrid1.Invoke((MethodInvoker)delegate
+                {
+                    bunifuCustomDataGrid1.Rows.Clear();
+                });
+
             CurtainDesigner.Controllers.IControlerManage<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
             await Task.Run(() => controler.unpacking(Classes.FC_Caontainer.curtains, this.bunifuCustomDataGrid1));
         }
@@ -78,25 +84,26 @@ namespace CurtainDesigner.ReportOrderForms
                     edit_FC_Order.DialogResult = DialogResult.None;
                     edit_FC_Order.load_info();
                     edit_FC_Order.ShowDialog();
+
+                    if (edit_FC_Order.DialogResult == DialogResult.OK)
+                        fillDataBase();
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show($"Помилка при редагуванні.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                //if (edit_FC_Order.DialogResult == DialogResult.OK)
-                //load_clients();
             }
             else if (e.ColumnIndex == 31)
             {
-                //DialogResult dialog = MessageBox.Show("Ви дійсно бажаєте видалити цей об'єкт?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //if (dialog == DialogResult.No)
-                //    return;
+                DialogResult dialog = MessageBox.Show("Ви дійсно бажаєте видалити цей об'єкт?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                    return;
 
-                //AddForms.FormAddNewClient removeClient = new AddForms.FormAddNewClient(
-                //    bunifuCustomDataGridClientsDataBase.Rows[e.RowIndex].Cells["ColumnNumber"].Value.ToString(),
-                //    this
-                //    );
+                EditOrderForms.Edit_FC_OrderForm edit_FC_Order = new EditOrderForms.Edit_FC_OrderForm();
+                edit_FC_Order.removeCurtain(
+                    bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["Number"].Value.ToString(),
+                    this
+                    );
             }
         }
     }

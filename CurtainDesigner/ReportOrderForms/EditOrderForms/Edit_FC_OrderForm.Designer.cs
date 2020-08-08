@@ -146,7 +146,7 @@
             this.numericUpDownPrice.DecimalPlaces = 2;
             this.numericUpDownPrice.Location = new System.Drawing.Point(634, 332);
             this.numericUpDownPrice.Maximum = new decimal(new int[] {
-            100000,
+            1000000,
             0,
             0,
             0});
@@ -471,9 +471,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.label4.Location = new System.Drawing.Point(297, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 16);
+            this.label4.Size = new System.Drawing.Size(126, 16);
             this.label4.TabIndex = 19;
-            this.label4.Text = "Цінова категорія($):";
+            this.label4.Text = "Цінова категорія:";
             // 
             // comboBoxFabric
             // 
@@ -683,6 +683,7 @@
             this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonOk.UseVisualStyleBackColor = false;
+            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
             // 
             // bunifuDragControlForm
             // 
@@ -714,6 +715,7 @@
             this.Controls.Add(this.bunifuGradientPanel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit_FC_OrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit_FC_OrderForm";
             this.bunifuGradientPanel5.ResumeLayout(false);
             this.bunifuGradientPanel5.PerformLayout();
@@ -743,7 +745,6 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.ComboBox comboBoxFabric;
-        private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label labelFabricCategoryId;
         private System.Windows.Forms.Label label5;
@@ -776,5 +777,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseButtonOk;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseButtonCancel;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseForm;
+        internal System.Windows.Forms.Label labelCategory;
     }
 }
