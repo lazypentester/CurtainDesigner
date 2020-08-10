@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ImageMagick;
+using ImageMagick.Configuration;
+using ImageMagick.Defines;
+using ImageMagick.ImageOptimizers;
 
 namespace CurtainDesigner
 {
@@ -21,6 +25,8 @@ namespace CurtainDesigner
         public FormFabricCurtainOrder()
         {
             InitializeComponent();
+            
+
             processing = true;
             this.tip = new ToolTip();
             tip.UseAnimation = true;
@@ -33,28 +39,57 @@ namespace CurtainDesigner
             comboBoxCurtainSubtype.SelectionChangeCommitted += new EventHandler(loadNextDataFromDB);
             comboBoxFabric.SelectionChangeCommitted += new EventHandler(loadFabricCategoryFromBD);
 
-            comboBoxSide.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
-            comboBoxSystemColor.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSystemColor.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
-            comboBoxEquipment.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxEquipment.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxSide.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxSystemColor.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxSystemColor.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxEquipment.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxEquipment.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
 
             //comboBoxInstallation.SelectionChangeCommitted += new EventHandler(update_status);
             //labelCustomer.TextChanged += (s, e) => { update_status_onlabel(s, e); };
             //labelPrice.TextChanged += (s, e) => { update_status_onlabel(s, e); };
 
-            bunifuImageButtonSeeClientDetail.Click += (s, e) => { if (!string.IsNullOrEmpty(labelCustomer.Text)) MessageBox.Show(tip.GetToolTip(labelCustomer), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); };
+            bunifuImageButtonSeeClientDetail.Click += (sender, e) => { if (!string.IsNullOrEmpty(labelCustomer.Text)) MessageBox.Show(tip.GetToolTip(labelCustomer), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); };
 
-            numericUpDownWidth.ValueChanged += (s, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
-            numericUpDownHeight.ValueChanged += (s, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
+            numericUpDownWidth.ValueChanged += (sender, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
+            numericUpDownHeight.ValueChanged += (sender, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
 
             setTooltipsyardage();
 
-            labelFabricCategory.TextChanged += (s, e) => { updatePrice(); };
-            comboBoxEquipment.SelectedValueChanged += (s, e) => { updatePrice(); };
-            labelYardage.TextChanged += (s, e) => { updatePrice(); };
-            comboBoxInstallation.SelectedValueChanged += (s, e) => { updatePrice(); };
-            numericUpDownCount.ValueChanged += (s, e) => { updatePrice(); };
+            labelFabricCategory.TextChanged += (sender, e) => { updatePrice(); };
+            comboBoxEquipment.SelectedValueChanged += (sender, e) => { updatePrice(); };
+            labelYardage.TextChanged += (sender, e) => { updatePrice(); };
+            comboBoxInstallation.SelectedValueChanged += (sender, e) => { updatePrice(); };
+            numericUpDownCount.ValueChanged += (sender, e) => { updatePrice(); };
+
+
+            update_draw();
+
+
             processing = false;
 
+        }
+
+        private void update_draw()
+        {
+            MagickColor font_color = new MagickColor(MagickColors.SteelBlue);
+            MagickColor back_color = new MagickColor(MagickColors.Transparent);
+            
+
+            Classes.MagicImage.MagicLabels labels = new Classes.MagicImage.MagicLabels();
+            labels.add_label(font_color, back_color, "Arial", 150, 100, "label:323,21");
+            labels.add_label(font_color, back_color, "Arial", 150, 100, "label:33,21");
+            labels.add_label(font_color, back_color, "Arial", 150, 100, "label:43,21");
+
+            List<int> coordinates = new List<int>()
+            {
+                450,
+                5,
+                500,
+                450,
+                0,
+                450
+            };
+
+            pictureBoxMainPicture.Image = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"));
         }
 
         private async void updatePrice()

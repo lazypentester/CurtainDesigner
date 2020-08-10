@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFabricCurtainOrder));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -106,6 +107,14 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.pictureBoxMainPicture = new System.Windows.Forms.PictureBox();
             this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
             this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
@@ -138,6 +147,8 @@
             this.panel32.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel22.SuspendLayout();
+            this.panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).BeginInit();
@@ -793,7 +804,7 @@
             this.panel28.Controls.Add(this.label1);
             this.panel28.Location = new System.Drawing.Point(478, 12);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(460, 128);
+            this.panel28.Size = new System.Drawing.Size(469, 128);
             this.panel28.TabIndex = 9;
             // 
             // labelFabricCategory
@@ -834,7 +845,7 @@
             // 
             this.panel29.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel29.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel29.Location = new System.Drawing.Point(458, 25);
+            this.panel29.Location = new System.Drawing.Point(467, 25);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(2, 101);
             this.panel29.TabIndex = 3;
@@ -854,7 +865,7 @@
             this.panel31.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel31.Location = new System.Drawing.Point(0, 126);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(460, 2);
+            this.panel31.Size = new System.Drawing.Size(469, 2);
             this.panel31.TabIndex = 1;
             // 
             // comboBoxFabric
@@ -900,7 +911,7 @@
             this.comboBoxEquipment.Location = new System.Drawing.Point(118, 95);
             this.comboBoxEquipment.MaxLength = 500;
             this.comboBoxEquipment.Name = "comboBoxEquipment";
-            this.comboBoxEquipment.Size = new System.Drawing.Size(334, 21);
+            this.comboBoxEquipment.Size = new System.Drawing.Size(343, 21);
             this.comboBoxEquipment.TabIndex = 5;
             // 
             // panel32
@@ -911,7 +922,7 @@
             this.panel32.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel32.Location = new System.Drawing.Point(0, 0);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(460, 25);
+            this.panel32.Size = new System.Drawing.Size(469, 25);
             this.panel32.TabIndex = 0;
             // 
             // comboBoxSystemColor
@@ -921,7 +932,7 @@
             this.comboBoxSystemColor.FormattingEnabled = true;
             this.comboBoxSystemColor.Location = new System.Drawing.Point(123, 65);
             this.comboBoxSystemColor.Name = "comboBoxSystemColor";
-            this.comboBoxSystemColor.Size = new System.Drawing.Size(329, 21);
+            this.comboBoxSystemColor.Size = new System.Drawing.Size(338, 21);
             this.comboBoxSystemColor.TabIndex = 5;
             // 
             // label1
@@ -1059,6 +1070,83 @@
             // 
             this.bunifuElipse1.ElipseRadius = 3;
             this.bunifuElipse1.TargetControl = this.iconButtonNewOrder;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel23.Location = new System.Drawing.Point(0, 532);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(947, 60);
+            this.panel23.TabIndex = 2;
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel24.Location = new System.Drawing.Point(0, 151);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(13, 381);
+            this.panel24.TabIndex = 3;
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.pictureBoxMainPicture);
+            this.panel25.Controls.Add(this.panel26);
+            this.panel25.Controls.Add(this.panel27);
+            this.panel25.Controls.Add(this.panel38);
+            this.panel25.Controls.Add(this.panel39);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(13, 151);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(934, 381);
+            this.panel25.TabIndex = 10;
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel26.Location = new System.Drawing.Point(932, 2);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(2, 377);
+            this.panel26.TabIndex = 3;
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel27.Location = new System.Drawing.Point(0, 2);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(2, 377);
+            this.panel27.TabIndex = 2;
+            // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel38.Location = new System.Drawing.Point(0, 379);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(934, 2);
+            this.panel38.TabIndex = 1;
+            // 
+            // panel39
+            // 
+            this.panel39.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel39.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel39.Location = new System.Drawing.Point(0, 0);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(934, 2);
+            this.panel39.TabIndex = 0;
+            // 
+            // pictureBoxMainPicture
+            // 
+            this.pictureBoxMainPicture.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMainPicture.Image")));
+            this.pictureBoxMainPicture.Location = new System.Drawing.Point(190, 48);
+            this.pictureBoxMainPicture.Name = "pictureBoxMainPicture";
+            this.pictureBoxMainPicture.Size = new System.Drawing.Size(552, 272);
+            this.pictureBoxMainPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMainPicture.TabIndex = 4;
+            this.pictureBoxMainPicture.TabStop = false;
             // 
             // ucStatusNotOk2
             // 
@@ -1227,6 +1315,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1290, 592);
+            this.Controls.Add(this.panel25);
+            this.Controls.Add(this.panel24);
+            this.Controls.Add(this.panel23);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1260,6 +1351,8 @@
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel22.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).EndInit();
@@ -1367,5 +1460,13 @@
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk2;
         private UserControls.UCFormFCORDER.UCStatusNotOk ucStatusNotOk1;
         private UserControls.UCFormFCORDER.UCStatusOk ucStatusOk1;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.PictureBox pictureBoxMainPicture;
     }
 }

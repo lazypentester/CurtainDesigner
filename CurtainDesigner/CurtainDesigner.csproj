@@ -55,6 +55,12 @@
     <Reference Include="FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.13.0\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Magick.NET-Q8-AnyCPU, Version=7.21.1.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q8-AnyCPU.7.21.1\lib\net40\Magick.NET-Q8-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET.Core.4.1.0\lib\net40\Magick.NET.Core.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -133,6 +139,8 @@
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
     <Compile Include="Classes\FC_Caontainer.cs" />
+    <Compile Include="Classes\MagicImage\ClassMagicImage.cs" />
+    <Compile Include="Classes\MagicImage\MagicLabels.cs" />
     <Compile Include="Classes\PathCombiner.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />
