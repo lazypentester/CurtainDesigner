@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImageMagick;
@@ -39,7 +40,7 @@ namespace CurtainDesigner
             comboBoxCurtainSubtype.SelectionChangeCommitted += new EventHandler(loadNextDataFromDB);
             comboBoxFabric.SelectionChangeCommitted += new EventHandler(loadFabricCategoryFromBD);
 
-            comboBoxSide.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxSide.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м."); };
             comboBoxSystemColor.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxSystemColor.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
             comboBoxEquipment.SelectionChangeCommitted += (sender, e) => { setToolTip((Control)sender, comboBoxEquipment.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
 
@@ -49,8 +50,8 @@ namespace CurtainDesigner
 
             bunifuImageButtonSeeClientDetail.Click += (sender, e) => { if (!string.IsNullOrEmpty(labelCustomer.Text)) MessageBox.Show(tip.GetToolTip(labelCustomer), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); };
 
-            numericUpDownWidth.ValueChanged += (sender, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
-            numericUpDownHeight.ValueChanged += (sender, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
+            numericUpDownWidth.ValueChanged += (sender, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м."); };
+            numericUpDownHeight.ValueChanged += (sender, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м."); };
 
             setTooltipsyardage();
 
@@ -60,36 +61,87 @@ namespace CurtainDesigner
             comboBoxInstallation.SelectedValueChanged += (sender, e) => { updatePrice(); };
             numericUpDownCount.ValueChanged += (sender, e) => { updatePrice(); };
 
-
-            update_draw();
-
-
             processing = false;
 
+            update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м.");
         }
 
-        private void update_draw()
+        private void update_draw(string width, string height, string yardage)
         {
-            MagickColor font_color = new MagickColor(MagickColors.SteelBlue);
+            if (processing)
+            {
+                MessageBox.Show("Зачекайте, будь ласка, програма створює креслення.", "Please, wait..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            processing = true;
+
+            try
+            {
+                string selected_side = "";
+
+                if (comboBoxSide.DataSource == null || comboBoxSide.Items.Count == 0 || comboBoxSide.SelectedValue == null)
+                    selected_side = "";
+                else
+                    selected_side = (comboBoxSide.DataSource as BindingList<KeyValuePair<string, int>>).Where(x => x.Value == Convert.ToInt32(comboBoxSide.SelectedValue)).Select(x => x.Key).Single();
+
+                Thread set_img = new Thread(new ParameterizedThreadStart(get_and_set_img));
+                set_img.Start(new string[] { width, yardage, height, selected_side });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при спробі обробки та завантаження малюнку: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void get_and_set_img(object values)
+        {
+            string[] vls = (string[])values;
+            if (vls == null || vls.Length < 4)
+                return;
+
+            MagickColor font_color = new MagickColor(MagickColors.Black);
             MagickColor back_color = new MagickColor(MagickColors.Transparent);
-            
 
             Classes.MagicImage.MagicLabels labels = new Classes.MagicImage.MagicLabels();
-            labels.add_label(font_color, back_color, "Arial", 150, 100, "label:323,21");
-            labels.add_label(font_color, back_color, "Arial", 150, 100, "label:33,21");
-            labels.add_label(font_color, back_color, "Arial", 150, 100, "label:43,21");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{vls[0]}");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{vls[1]}");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{vls[2]}");
 
             List<int> coordinates = new List<int>()
             {
-                450,
-                5,
-                500,
-                450,
-                0,
-                450
+                600,
+                50,
+                575,
+                525,
+                90,
+                600
             };
 
-            pictureBoxMainPicture.Image = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"));
+            try
+            {
+                Bitmap bitmap = null;
+
+                if ((vls[3].Contains("лів") || vls[3].Contains("Лів")) && (vls[3].Contains("прав") || vls[3].Contains("Прав")))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90);
+                else if (vls[3].Contains("прав") || vls[3].Contains("Прав"))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                else if (vls[3].Contains("лів") || vls[3].Contains("Лів"))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90);         
+                else
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+
+                pictureBoxMainPicture.Invoke((MethodInvoker) delegate {
+                    pictureBoxMainPicture.Image = bitmap;
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при спробі обробки та завантаження малюнку: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                processing = false;
+            }
         }
 
         private async void updatePrice()
@@ -130,6 +182,10 @@ namespace CurtainDesigner
                 {
                     MessageBox.Show($"Помилка при спробі розрахунку ціни, подробиці: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     labelPrice.Text = "[ 0 $ ]";
+                }
+                finally
+                {
+                    processing = false;
                 }
             }
             else

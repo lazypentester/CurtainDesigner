@@ -110,11 +110,11 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.pictureBoxMainPicture = new System.Windows.Forms.PictureBox();
             this.panel26 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
-            this.pictureBoxMainPicture = new System.Windows.Forms.PictureBox();
             this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
             this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
@@ -1102,6 +1102,16 @@
             this.panel25.Size = new System.Drawing.Size(934, 381);
             this.panel25.TabIndex = 10;
             // 
+            // pictureBoxMainPicture
+            // 
+            this.pictureBoxMainPicture.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMainPicture.Image")));
+            this.pictureBoxMainPicture.Location = new System.Drawing.Point(192, 8);
+            this.pictureBoxMainPicture.Name = "pictureBoxMainPicture";
+            this.pictureBoxMainPicture.Size = new System.Drawing.Size(552, 314);
+            this.pictureBoxMainPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMainPicture.TabIndex = 4;
+            this.pictureBoxMainPicture.TabStop = false;
+            // 
             // panel26
             // 
             this.panel26.BackColor = System.Drawing.Color.DodgerBlue;
@@ -1137,16 +1147,6 @@
             this.panel39.Name = "panel39";
             this.panel39.Size = new System.Drawing.Size(934, 2);
             this.panel39.TabIndex = 0;
-            // 
-            // pictureBoxMainPicture
-            // 
-            this.pictureBoxMainPicture.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMainPicture.Image")));
-            this.pictureBoxMainPicture.Location = new System.Drawing.Point(190, 48);
-            this.pictureBoxMainPicture.Name = "pictureBoxMainPicture";
-            this.pictureBoxMainPicture.Size = new System.Drawing.Size(552, 272);
-            this.pictureBoxMainPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMainPicture.TabIndex = 4;
-            this.pictureBoxMainPicture.TabStop = false;
             // 
             // ucStatusNotOk2
             // 
