@@ -30,7 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_FC_OrderForm));
+            this.bunifuDragControlForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipseButtonOk = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseButtonCancel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel5 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label_img_id = new System.Windows.Forms.Label();
+            this.pictureBoxImg = new System.Windows.Forms.PictureBox();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.labelP = new System.Windows.Forms.Label();
             this.dateTimePickerDateEnd = new System.Windows.Forms.DateTimePicker();
@@ -46,6 +52,7 @@
             this.numericUpDownCount = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.labelYardage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -73,11 +80,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.iconButtonOk = new FontAwesome.Sharp.IconButton();
-            this.bunifuDragControlForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipseButtonOk = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipseButtonCancel = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
@@ -85,10 +89,34 @@
             this.bunifuGradientPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
+            // bunifuDragControlForm
+            // 
+            this.bunifuDragControlForm.Fixed = true;
+            this.bunifuDragControlForm.Horizontal = true;
+            this.bunifuDragControlForm.TargetControl = this.bunifuGradientPanel4;
+            this.bunifuDragControlForm.Vertical = true;
+            // 
+            // bunifuElipseButtonOk
+            // 
+            this.bunifuElipseButtonOk.ElipseRadius = 3;
+            this.bunifuElipseButtonOk.TargetControl = this.iconButtonOk;
+            // 
+            // bunifuElipseButtonCancel
+            // 
+            this.bunifuElipseButtonCancel.ElipseRadius = 3;
+            this.bunifuElipseButtonCancel.TargetControl = this.iconButtonCancel;
+            // 
+            // bunifuElipseForm
+            // 
+            this.bunifuElipseForm.ElipseRadius = 5;
+            this.bunifuElipseForm.TargetControl = this;
+            // 
             // bunifuGradientPanel5
             // 
             this.bunifuGradientPanel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel5.BackgroundImage")));
             this.bunifuGradientPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel5.Controls.Add(this.label_img_id);
+            this.bunifuGradientPanel5.Controls.Add(this.pictureBoxImg);
             this.bunifuGradientPanel5.Controls.Add(this.numericUpDownPrice);
             this.bunifuGradientPanel5.Controls.Add(this.labelP);
             this.bunifuGradientPanel5.Controls.Add(this.dateTimePickerDateEnd);
@@ -104,6 +132,7 @@
             this.bunifuGradientPanel5.Controls.Add(this.numericUpDownCount);
             this.bunifuGradientPanel5.Controls.Add(this.label15);
             this.bunifuGradientPanel5.Controls.Add(this.labelYardage);
+            this.bunifuGradientPanel5.Controls.Add(this.label1);
             this.bunifuGradientPanel5.Controls.Add(this.label13);
             this.bunifuGradientPanel5.Controls.Add(this.label6);
             this.bunifuGradientPanel5.Controls.Add(this.label11);
@@ -141,6 +170,30 @@
             this.bunifuGradientPanel5.Size = new System.Drawing.Size(916, 450);
             this.bunifuGradientPanel5.TabIndex = 11;
             // 
+            // label_img_id
+            // 
+            this.label_img_id.AutoSize = true;
+            this.label_img_id.BackColor = System.Drawing.Color.Transparent;
+            this.label_img_id.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_img_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label_img_id.Location = new System.Drawing.Point(865, 334);
+            this.label_img_id.Name = "label_img_id";
+            this.label_img_id.Size = new System.Drawing.Size(46, 16);
+            this.label_img_id.TabIndex = 46;
+            this.label_img_id.Text = "ImgId";
+            this.label_img_id.Visible = false;
+            // 
+            // pictureBoxImg
+            // 
+            this.pictureBoxImg.BackColor = System.Drawing.Color.Azure;
+            this.pictureBoxImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxImg.Location = new System.Drawing.Point(829, 324);
+            this.pictureBoxImg.Name = "pictureBoxImg";
+            this.pictureBoxImg.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImg.TabIndex = 45;
+            this.pictureBoxImg.TabStop = false;
+            // 
             // numericUpDownPrice
             // 
             this.numericUpDownPrice.DecimalPlaces = 2;
@@ -151,7 +204,7 @@
             0,
             0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
-            this.numericUpDownPrice.Size = new System.Drawing.Size(153, 20);
+            this.numericUpDownPrice.Size = new System.Drawing.Size(75, 20);
             this.numericUpDownPrice.TabIndex = 44;
             // 
             // labelP
@@ -246,7 +299,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label10.Location = new System.Drawing.Point(791, 333);
+            this.label10.Location = new System.Drawing.Point(712, 333);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 16);
             this.label10.TabIndex = 35;
@@ -316,6 +369,18 @@
             this.labelYardage.Size = new System.Drawing.Size(15, 16);
             this.labelYardage.TabIndex = 31;
             this.labelYardage.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label1.Location = new System.Drawing.Point(740, 333);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Креслення:";
             // 
             // label13
             // 
@@ -685,28 +750,6 @@
             this.iconButtonOk.UseVisualStyleBackColor = false;
             this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
             // 
-            // bunifuDragControlForm
-            // 
-            this.bunifuDragControlForm.Fixed = true;
-            this.bunifuDragControlForm.Horizontal = true;
-            this.bunifuDragControlForm.TargetControl = this.bunifuGradientPanel4;
-            this.bunifuDragControlForm.Vertical = true;
-            // 
-            // bunifuElipseButtonOk
-            // 
-            this.bunifuElipseButtonOk.ElipseRadius = 3;
-            this.bunifuElipseButtonOk.TargetControl = this.iconButtonOk;
-            // 
-            // bunifuElipseButtonCancel
-            // 
-            this.bunifuElipseButtonCancel.ElipseRadius = 3;
-            this.bunifuElipseButtonCancel.TargetControl = this.iconButtonCancel;
-            // 
-            // bunifuElipseForm
-            // 
-            this.bunifuElipseForm.ElipseRadius = 5;
-            this.bunifuElipseForm.TargetControl = this;
-            // 
             // Edit_FC_OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,6 +762,7 @@
             this.Text = "Edit_FC_OrderForm";
             this.bunifuGradientPanel5.ResumeLayout(false);
             this.bunifuGradientPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
@@ -778,5 +822,8 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseButtonCancel;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseForm;
         internal System.Windows.Forms.Label labelCategory;
+        private System.Windows.Forms.PictureBox pictureBoxImg;
+        private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label_img_id;
     }
 }

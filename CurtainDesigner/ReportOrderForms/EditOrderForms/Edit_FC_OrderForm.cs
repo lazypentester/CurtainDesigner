@@ -4,11 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ImageMagick;
+using ImageMagick.Configuration;
+using ImageMagick.Defines;
+using ImageMagick.ImageOptimizers;
 
 namespace CurtainDesigner.ReportOrderForms.EditOrderForms
 {
@@ -17,6 +22,8 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
         private bool processing;
+        private Bitmap img = null;
+        private bool img_processing;
 
         private OrderForms.OrderFormSelectClient.UCWAITLOAD.UCwaitLoad load;
 
@@ -32,6 +39,7 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
         {
             InitializeComponent();
 
+            img_processing = false;
             processing = true;
             this.tip = new ToolTip();
             curtain2 = obj;
@@ -50,10 +58,10 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
                 Task t1 = Task.Run(() => controler.load_data_once_label(labelCategory, labelFabricCategoryId, $"Select * From [Fabric_curtains_category] fcc Where [fcc].[Category_id] IN (Select Category_id From [Fabric] ffc Where [ffc].[Fabric_id] = {curtain2.fabric_id}) and [fcc].[Type_id] = {curtain2.type_id} and [fcc].[Subtype_id] = {curtain2.subtype_id};", "Category_id", "Price"));
             };
 
-            numericUpDownWidth.ValueChanged += (s, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
-            numericUpDownHeight.ValueChanged += (s, e) => { labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
+            numericUpDownWidth.ValueChanged += (s, e) => { setTooltipsyardage(); update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м."); labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); };
+            numericUpDownHeight.ValueChanged += (s, e) => { update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м.");  labelYardage.Text = string.Join(",", Convert.ToString((float)Math.Round(Convert.ToDouble(numericUpDownWidth.Value * numericUpDownHeight.Value), 2, MidpointRounding.AwayFromZero)).Split(',')); setTooltipsyardage(); };
 
-            comboBoxSide.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
+            comboBoxSide.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSide.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м."); };
             comboBoxSystemColor.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxSystemColor.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
             comboBoxEquipment.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxEquipment.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
             comboBoxFabric.SelectionChangeCommitted += (s, e) => { setToolTip((Control)s, comboBoxFabric.SelectedItem.ToString().Split(new char[] { '[', ',', ']' }, StringSplitOptions.None)[1]); };
@@ -64,6 +72,98 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
             labelYardage.TextChanged += (s, e) => { updatePrice(); };
             comboBoxInstallation.SelectedValueChanged += (s, e) => { updatePrice(); };
             numericUpDownCount.ValueChanged += (s, e) => { updatePrice(); };
+
+            pictureBoxImg.MouseClick += (s, e) =>
+            {
+                if (img_processing)
+                {
+                    MessageBox.Show("Зачекайте, будь ласка, програма створює креслення.", "Please, wait..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                FormOpenDraw openDraw = new FormOpenDraw((Bitmap)pictureBoxImg.Image);
+                openDraw.ShowDialog();
+            };
+        }
+
+        private void update_draw(string width, string height, string yardage)
+        {
+            if (processing)
+                return;
+
+            if (img_processing)
+            {
+                MessageBox.Show("Зачекайте, будь ласка, програма створює креслення.", "Please, wait..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            img_processing = true;
+
+            try
+            {
+                string selected_side = "";
+
+                if (comboBoxSide.DataSource == null || comboBoxSide.Items.Count == 0 || comboBoxSide.SelectedValue == null)
+                    selected_side = "";
+                else
+                    selected_side = (comboBoxSide.DataSource as BindingList<KeyValuePair<string, int>>).Where(x => x.Value == Convert.ToInt32(comboBoxSide.SelectedValue)).Select(x => x.Key).Single();
+
+                Thread set_img = new Thread(new ParameterizedThreadStart(get_and_set_img));
+                set_img.Start(new string[] { width, yardage, height, selected_side });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при спробі обробки та завантаження малюнку: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void get_and_set_img(object values)
+        {
+            string[] vls = (string[])values;
+            if (vls == null || vls.Length < 4)
+                return;
+
+            MagickColor font_color = new MagickColor(MagickColors.Black);
+            MagickColor back_color = new MagickColor(MagickColors.Transparent);
+
+            Classes.MagicImage.MagicLabels labels = new Classes.MagicImage.MagicLabels();
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{vls[0]}");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{vls[1]}");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{vls[2]}");
+
+            List<int> coordinates = new List<int>()
+            {
+                600,
+                50,
+                575,
+                525,
+                90,
+                600
+            };
+
+            try
+            {
+                Bitmap bitmap = null;
+
+                if ((vls[3].Contains("лів") || vls[3].Contains("Лів")) && (vls[3].Contains("прав") || vls[3].Contains("Прав")))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90);
+                else if (vls[3].Contains("прав") || vls[3].Contains("Прав"))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                else if (vls[3].Contains("лів") || vls[3].Contains("Лів"))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90);
+                else
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+
+                pictureBoxImg.Invoke((MethodInvoker)delegate {
+                    pictureBoxImg.Image = bitmap;
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при спробі обробки та завантаження малюнку: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                img_processing = false;
+            }
         }
 
         private void setToolTip(Control control, string tooltip)
@@ -113,6 +213,18 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
             labelCustomer_id.Text = curtain2.customer_id;
             dateTimePickerDateStart.Value = curtain2.start_order_time;
             dateTimePickerDateEnd.Value = curtain2.end_order_time;
+
+            if (File.Exists(Classes.PathCombiner.join_combine(curtain2.picture)))
+            {
+                using (FileStream stream = new FileStream(Classes.PathCombiner.join_combine(curtain2.picture), FileMode.Open))
+                {
+                    img = new Bitmap(stream);
+                }
+
+                pictureBoxImg.Image = img;
+                label_img_id.Text = curtain2.picture;
+            }
+
             numericUpDownPrice.Value = (decimal)curtain2.price;
 
 
@@ -246,14 +358,45 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
             return price;
         }
 
+        private void edit_img_id(string img)
+        {
+            if (File.Exists(Classes.PathCombiner.join_combine(img)))
+            {
+                File.Delete(Classes.PathCombiner.join_combine(img));
+            }
+
+            int random = 0;
+            string path = Classes.PathCombiner.join_combine("\\");
+            Random num = new Random();
+            random = num.Next();
+            path = string.Join("", path, "draw_images\\fc\\print\\", random.ToString(), ".png");
+            while (File.Exists(path))
+            {
+                random = num.Next();
+                path = string.Join("", path, "draw_images\\fc\\print\\", random.ToString(), ".png");
+            }
+            if (File.Exists(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
+            {
+                File.Copy(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png"), path, true);
+                label_img_id.Text = Classes.PathCombiner.combine(path);
+            }
+        }
+
         private async void iconButtonOk_Click(object sender, EventArgs e)
         {
+            if (img_processing || processing)
+            {
+                MessageBox.Show("Зачекайте, будь ласка, програма створює креслення.", "Please, wait..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (!checkIsEmpty())
             {
                 MessageBox.Show("Одне з полів не заповнено.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            edit_img_id(curtain2.picture);
             update_curtain();
 
             bool send = await Task.Run(() => editCurtain());
@@ -270,6 +413,12 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
         private bool checkIsEmpty()
         {
             #region [Check information before create order]
+            if (!File.Exists(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
+            {
+                MessageBox.Show("Не вдалось знайти креслення, спробуйте ще раз.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             if (string.IsNullOrEmpty(labelSystemType.Text))
             {
                 MessageBox.Show("Поле \"Тип системи\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -359,6 +508,7 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
             curtain2.count = (int)numericUpDownCount.Value;
             curtain2.installation_id = comboBoxInstallation.SelectedValue.ToString();
             curtain2.end_order_time = dateTimePickerDateEnd.Value;
+            curtain2.picture = label_img_id.Text;
             curtain2.price = (float)numericUpDownPrice.Value;
         }
 
@@ -383,16 +533,18 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
                 $"[Count] = {curtain2.count}," +
                 $"[Installation_id] = {curtain2.installation_id}," +
                 $"[End_date] = {"@end_date"}," +
+                $"[Drawing] = {"@img"}," +
                 $"[Price] = {string.Join(".", Convert.ToString((float)Math.Round(Convert.ToDouble(curtain2.price), 2, MidpointRounding.AwayFromZero)).Split(','))} " +
                 $"Where [Curtain_id] = {curtain2.fb_id}", connection);
 
             try
             {
                 sqlCommand.Parameters.Add("@end_date", SqlDbType.DateTime2).Value = curtain2.end_order_time;
+                sqlCommand.Parameters.Add("@img", SqlDbType.NVarChar).Value = curtain2.picture;
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Помилка при спробі редагувати дату. Операція зпрервана.","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Помилка при спробі редагувати дату. Операція зпрервана.\n\n{ex.Message}","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

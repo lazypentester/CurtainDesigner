@@ -473,6 +473,16 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_undo_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_undo_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_yarn_25px {
             get {
                 object obj = ResourceManager.GetObject("icons8_yarn_25px", resourceCulture);

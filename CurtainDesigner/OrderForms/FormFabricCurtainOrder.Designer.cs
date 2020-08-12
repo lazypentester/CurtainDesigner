@@ -38,6 +38,8 @@
             this.labelP = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
             this.panel37 = new System.Windows.Forms.Panel();
+            this.ucStatusNotOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -46,6 +48,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.ucStatusNotOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.dateTimePickerDateStart = new System.Windows.Forms.DateTimePicker();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bunifuImageButtonSeeClientDetail = new Bunifu.Framework.UI.BunifuImageButton();
@@ -57,6 +61,8 @@
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.ucStatusNotOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuButtonCustomInstallPrice = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCheckboxCustomInstallation = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -64,6 +70,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ucStatusNotOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBoxInstallation = new System.Windows.Forms.ComboBox();
@@ -93,6 +101,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxEquipment = new System.Windows.Forms.ComboBox();
             this.panel32 = new System.Windows.Forms.Panel();
+            this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.comboBoxSystemColor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -103,6 +113,8 @@
             this.comboBoxCurtainType = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
+            this.ucStatusOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
@@ -115,29 +127,26 @@
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
-            this.ucStatusNotOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk2 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
-            this.ucStatusNotOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk1 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
-            this.ucStatusNotOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk6 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
-            this.ucStatusNotOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk5 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
-            this.ucStatusNotOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk4 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
-            this.ucStatusNotOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusNotOk();
-            this.ucStatusOk3 = new CurtainDesigner.UserControls.UCFormFCORDER.UCStatusOk();
+            this.label_img_id = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel37.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).BeginInit();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomInstallationPrice)).BeginInit();
@@ -145,22 +154,15 @@
             this.panel2.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel32.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).BeginInit();
+            this.panel18.SuspendLayout();
+            this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).BeginInit();
+            this.panel23.SuspendLayout();
+            this.panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -251,6 +253,33 @@
             this.panel37.TabIndex = 0;
             this.panel37.Paint += new System.Windows.Forms.PaintEventHandler(this.panel37_Paint);
             // 
+            // ucStatusNotOk6
+            // 
+            this.ucStatusNotOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk6.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk6.Name = "ucStatusNotOk6";
+            this.ucStatusNotOk6.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk6.TabIndex = 2;
+            this.ucStatusNotOk6.TabStop = false;
+            this.ucStatusNotOk6.Visible = false;
+            // 
+            // ucStatusOk6
+            // 
+            this.ucStatusOk6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk6.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk6.Name = "ucStatusOk6";
+            this.ucStatusOk6.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk6.TabIndex = 1;
+            this.ucStatusOk6.TabStop = false;
+            this.ucStatusOk6.Visible = false;
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.panel14);
@@ -333,6 +362,33 @@
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(317, 25);
             this.panel17.TabIndex = 0;
+            // 
+            // ucStatusNotOk5
+            // 
+            this.ucStatusNotOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk5.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk5.Name = "ucStatusNotOk5";
+            this.ucStatusNotOk5.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk5.TabIndex = 2;
+            this.ucStatusNotOk5.TabStop = false;
+            this.ucStatusNotOk5.Visible = false;
+            // 
+            // ucStatusOk5
+            // 
+            this.ucStatusOk5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk5.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk5.Name = "ucStatusOk5";
+            this.ucStatusOk5.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk5.TabIndex = 1;
+            this.ucStatusOk5.TabStop = false;
+            this.ucStatusOk5.Visible = false;
             // 
             // dateTimePickerDateStart
             // 
@@ -469,6 +525,33 @@
             this.panel12.Size = new System.Drawing.Size(317, 25);
             this.panel12.TabIndex = 0;
             // 
+            // ucStatusNotOk4
+            // 
+            this.ucStatusNotOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk4.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk4.Name = "ucStatusNotOk4";
+            this.ucStatusNotOk4.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk4.TabIndex = 2;
+            this.ucStatusNotOk4.TabStop = false;
+            this.ucStatusNotOk4.Visible = false;
+            // 
+            // ucStatusOk4
+            // 
+            this.ucStatusOk4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk4.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk4.Name = "ucStatusOk4";
+            this.ucStatusOk4.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk4.TabIndex = 1;
+            this.ucStatusOk4.TabStop = false;
+            this.ucStatusOk4.Visible = false;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.bunifuButtonCustomInstallPrice);
@@ -515,7 +598,7 @@
             // 
             // bunifuCheckboxCustomInstallation
             // 
-            this.bunifuCheckboxCustomInstallation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckboxCustomInstallation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckboxCustomInstallation.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckboxCustomInstallation.Checked = false;
             this.bunifuCheckboxCustomInstallation.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -563,6 +646,33 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(317, 25);
             this.panel4.TabIndex = 0;
+            // 
+            // ucStatusNotOk3
+            // 
+            this.ucStatusNotOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk3.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk3.Name = "ucStatusNotOk3";
+            this.ucStatusNotOk3.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk3.TabIndex = 2;
+            this.ucStatusNotOk3.TabStop = false;
+            this.ucStatusNotOk3.Visible = false;
+            // 
+            // ucStatusOk3
+            // 
+            this.ucStatusOk3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk3.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk3.Name = "ucStatusOk3";
+            this.ucStatusOk3.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk3.TabIndex = 1;
+            this.ucStatusOk3.TabStop = false;
+            this.ucStatusOk3.Visible = false;
             // 
             // label3
             // 
@@ -925,6 +1035,33 @@
             this.panel32.Size = new System.Drawing.Size(469, 25);
             this.panel32.TabIndex = 0;
             // 
+            // ucStatusNotOk2
+            // 
+            this.ucStatusNotOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk2.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk2.Name = "ucStatusNotOk2";
+            this.ucStatusNotOk2.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk2.TabIndex = 2;
+            this.ucStatusNotOk2.TabStop = false;
+            this.ucStatusNotOk2.Visible = false;
+            // 
+            // ucStatusOk2
+            // 
+            this.ucStatusOk2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk2.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk2.Name = "ucStatusOk2";
+            this.ucStatusOk2.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk2.TabIndex = 1;
+            this.ucStatusOk2.TabStop = false;
+            this.ucStatusOk2.Visible = false;
+            // 
             // comboBoxSystemColor
             // 
             this.comboBoxSystemColor.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -1033,6 +1170,33 @@
             this.panel22.Size = new System.Drawing.Size(460, 25);
             this.panel22.TabIndex = 0;
             // 
+            // ucStatusNotOk1
+            // 
+            this.ucStatusNotOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
+            this.ucStatusNotOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
+            this.ucStatusNotOk1.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusNotOk1.Name = "ucStatusNotOk1";
+            this.ucStatusNotOk1.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusNotOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusNotOk1.TabIndex = 1;
+            this.ucStatusNotOk1.TabStop = false;
+            this.ucStatusNotOk1.Visible = false;
+            // 
+            // ucStatusOk1
+            // 
+            this.ucStatusOk1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucStatusOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
+            this.ucStatusOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
+            this.ucStatusOk1.Location = new System.Drawing.Point(0, 0);
+            this.ucStatusOk1.Name = "ucStatusOk1";
+            this.ucStatusOk1.Size = new System.Drawing.Size(25, 25);
+            this.ucStatusOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ucStatusOk1.TabIndex = 0;
+            this.ucStatusOk1.TabStop = false;
+            this.ucStatusOk1.Visible = false;
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1074,6 +1238,7 @@
             // panel23
             // 
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.panel23.Controls.Add(this.label_img_id);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel23.Location = new System.Drawing.Point(0, 532);
             this.panel23.Name = "panel23";
@@ -1148,167 +1313,17 @@
             this.panel39.Size = new System.Drawing.Size(934, 2);
             this.panel39.TabIndex = 0;
             // 
-            // ucStatusNotOk2
+            // label_img_id
             // 
-            this.ucStatusNotOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk2.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk2.Name = "ucStatusNotOk2";
-            this.ucStatusNotOk2.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk2.TabIndex = 2;
-            this.ucStatusNotOk2.TabStop = false;
-            this.ucStatusNotOk2.Visible = false;
-            // 
-            // ucStatusOk2
-            // 
-            this.ucStatusOk2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk2.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk2.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk2.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk2.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk2.Name = "ucStatusOk2";
-            this.ucStatusOk2.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk2.TabIndex = 1;
-            this.ucStatusOk2.TabStop = false;
-            this.ucStatusOk2.Visible = false;
-            // 
-            // ucStatusNotOk1
-            // 
-            this.ucStatusNotOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk1.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk1.Name = "ucStatusNotOk1";
-            this.ucStatusNotOk1.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk1.TabIndex = 1;
-            this.ucStatusNotOk1.TabStop = false;
-            this.ucStatusNotOk1.Visible = false;
-            // 
-            // ucStatusOk1
-            // 
-            this.ucStatusOk1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk1.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk1.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk1.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk1.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk1.Name = "ucStatusOk1";
-            this.ucStatusOk1.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk1.TabIndex = 0;
-            this.ucStatusOk1.TabStop = false;
-            this.ucStatusOk1.Visible = false;
-            // 
-            // ucStatusNotOk6
-            // 
-            this.ucStatusNotOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk6.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk6.Name = "ucStatusNotOk6";
-            this.ucStatusNotOk6.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk6.TabIndex = 2;
-            this.ucStatusNotOk6.TabStop = false;
-            this.ucStatusNotOk6.Visible = false;
-            // 
-            // ucStatusOk6
-            // 
-            this.ucStatusOk6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk6.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk6.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk6.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk6.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk6.Name = "ucStatusOk6";
-            this.ucStatusOk6.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk6.TabIndex = 1;
-            this.ucStatusOk6.TabStop = false;
-            this.ucStatusOk6.Visible = false;
-            // 
-            // ucStatusNotOk5
-            // 
-            this.ucStatusNotOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk5.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk5.Name = "ucStatusNotOk5";
-            this.ucStatusNotOk5.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk5.TabIndex = 2;
-            this.ucStatusNotOk5.TabStop = false;
-            this.ucStatusNotOk5.Visible = false;
-            // 
-            // ucStatusOk5
-            // 
-            this.ucStatusOk5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk5.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk5.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk5.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk5.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk5.Name = "ucStatusOk5";
-            this.ucStatusOk5.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk5.TabIndex = 1;
-            this.ucStatusOk5.TabStop = false;
-            this.ucStatusOk5.Visible = false;
-            // 
-            // ucStatusNotOk4
-            // 
-            this.ucStatusNotOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk4.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk4.Name = "ucStatusNotOk4";
-            this.ucStatusNotOk4.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk4.TabIndex = 2;
-            this.ucStatusNotOk4.TabStop = false;
-            this.ucStatusNotOk4.Visible = false;
-            // 
-            // ucStatusOk4
-            // 
-            this.ucStatusOk4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk4.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk4.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk4.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk4.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk4.Name = "ucStatusOk4";
-            this.ucStatusOk4.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk4.TabIndex = 1;
-            this.ucStatusOk4.TabStop = false;
-            this.ucStatusOk4.Visible = false;
-            // 
-            // ucStatusNotOk3
-            // 
-            this.ucStatusNotOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_cancel_21px;
-            this.ucStatusNotOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_unchecked_radio_button_21px;
-            this.ucStatusNotOk3.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusNotOk3.Name = "ucStatusNotOk3";
-            this.ucStatusNotOk3.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusNotOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusNotOk3.TabIndex = 2;
-            this.ucStatusNotOk3.TabStop = false;
-            this.ucStatusNotOk3.Visible = false;
-            // 
-            // ucStatusOk3
-            // 
-            this.ucStatusOk3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucStatusOk3.Image = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk3.image_enter = global::CurtainDesigner.Properties.Resources.icons8_ok_21px;
-            this.ucStatusOk3.image_leave = global::CurtainDesigner.Properties.Resources.icons8_checked_21px_2;
-            this.ucStatusOk3.Location = new System.Drawing.Point(0, 0);
-            this.ucStatusOk3.Name = "ucStatusOk3";
-            this.ucStatusOk3.Size = new System.Drawing.Size(25, 25);
-            this.ucStatusOk3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ucStatusOk3.TabIndex = 1;
-            this.ucStatusOk3.TabStop = false;
-            this.ucStatusOk3.Visible = false;
+            this.label_img_id.AutoSize = true;
+            this.label_img_id.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_img_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label_img_id.Location = new System.Drawing.Point(463, 22);
+            this.label_img_id.Name = "label_img_id";
+            this.label_img_id.Size = new System.Drawing.Size(70, 16);
+            this.label_img_id.TabIndex = 11;
+            this.label_img_id.Text = "Image_id";
+            this.label_img_id.Visible = false;
             // 
             // FormFabricCurtainOrder
             // 
@@ -1329,17 +1344,25 @@
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
             this.panel37.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonSeeClientDetail)).EndInit();
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuButtonCustomInstallPrice)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomInstallationPrice)).EndInit();
@@ -1348,23 +1371,17 @@
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel32.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel22.ResumeLayout(false);
-            this.panel25.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusNotOk3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucStatusOk3)).EndInit();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1468,5 +1485,6 @@
         private System.Windows.Forms.Panel panel38;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.PictureBox pictureBoxMainPicture;
+        internal System.Windows.Forms.Label label_img_id;
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -22,6 +23,7 @@ namespace CurtainDesigner
         private SqlConnection connection;
         internal ToolTip tip;
         private bool processing;
+        private bool img_processing;
 
         public FormFabricCurtainOrder()
         {
@@ -29,6 +31,7 @@ namespace CurtainDesigner
             
 
             processing = true;
+            img_processing = false;
             this.tip = new ToolTip();
             tip.UseAnimation = true;
             tip.UseFading = true;
@@ -66,14 +69,33 @@ namespace CurtainDesigner
             update_draw(numericUpDownWidth.Value.ToString() + "м.", numericUpDownHeight.Value.ToString() + "м.", labelYardage.Text + "м.");
         }
 
+        private void create_img_id()
+        {
+            int random = 0;
+            string path = Classes.PathCombiner.join_combine("\\");
+            Random num = new Random();
+            random = num.Next();
+            path = string.Join("", path, "draw_images\\fc\\print\\", random.ToString(), ".png");
+            while(File.Exists(path))
+            {
+                random = num.Next();
+                path = string.Join("", path, "draw_images\\fc\\print\\", random.ToString(), ".png");
+            }
+            if (File.Exists(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
+            {
+                File.Copy(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png"), path, true);
+                label_img_id.Text = Classes.PathCombiner.combine(path);
+            }
+        }
+
         private void update_draw(string width, string height, string yardage)
         {
-            if (processing)
+            if (img_processing)
             {
                 MessageBox.Show("Зачекайте, будь ласка, програма створює креслення.", "Please, wait..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            processing = true;
+            img_processing = true;
 
             try
             {
@@ -140,7 +162,7 @@ namespace CurtainDesigner
             }
             finally
             {
-                processing = false;
+                img_processing = false;
             }
         }
 
@@ -243,6 +265,12 @@ namespace CurtainDesigner
         private void iconButtonNewOrder_Click(object sender, EventArgs e)
         {
             #region [Check information before create order]
+            if (!File.Exists(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
+            {
+                MessageBox.Show("Не вдалось знайти креслення, спробуйте ще раз.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (comboBoxCurtainType.DataSource == null || comboBoxCurtainType.Items.Count == 0 || comboBoxCurtainType.SelectedValue == null)
             {
                 MessageBox.Show("Поле \"Тип системи\" не заповнено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -316,6 +344,7 @@ namespace CurtainDesigner
             }
             #endregion
 
+            create_img_id();
             CurtainDesigner.Controllers.IControlerManage<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
             controler.packing(new Classes.FabricCurtain(), new List<Classes.FabricCurtain2>(), this);
             MessageBox.Show("Замовлення успішно створено.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

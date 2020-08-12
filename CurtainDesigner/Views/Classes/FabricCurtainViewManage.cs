@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -184,7 +185,10 @@ namespace CurtainDesigner.Views.Classes
             (obj as CurtainDesigner.Classes.FabricCurtain).start_order_time = (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateStart.Value;
             (obj as CurtainDesigner.Classes.FabricCurtain).end_order_time = (form as CurtainDesigner.FormFabricCurtainOrder).dateTimePickerDateEnd.Value;
 
-            (obj as CurtainDesigner.Classes.FabricCurtain).picture = "";
+            if (File.Exists(CurtainDesigner.Classes.PathCombiner.join_combine((form as CurtainDesigner.FormFabricCurtainOrder).label_img_id.Text)))
+                (obj as CurtainDesigner.Classes.FabricCurtain).picture = (form as CurtainDesigner.FormFabricCurtainOrder).label_img_id.Text;
+            else
+                (obj as CurtainDesigner.Classes.FabricCurtain).picture = "null";
             (obj as CurtainDesigner.Classes.FabricCurtain).price = string.Join(".", Convert.ToString((float)Math.Round(Convert.ToDouble((form as CurtainDesigner.FormFabricCurtainOrder).labelPrice.Text.Split(' ')[1]), 2, MidpointRounding.AwayFromZero)).Split(','));
             return obj;
         }

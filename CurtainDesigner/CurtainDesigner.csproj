@@ -185,6 +185,12 @@
     <Compile Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.Designer.cs">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\FormOpenDraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\FormOpenDraw.Designer.cs">
+      <DependentUpon>FormOpenDraw.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportOrderForms\FormFabricCurtainTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.resx">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\EditOrderForms\FormOpenDraw.resx">
+      <DependentUpon>FormOpenDraw.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\FormFabricCurtainTable.resx">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,6 +443,7 @@
     <None Include="bin\Debug\imgs\icons8_conversion_30px.png" />
     <None Include="bin\Debug\imgs\icons8_broom_30px.png" />
     <None Include="bin\Debug\imgs\icons8_info_40px.png" />
+    <None Include="bin\Debug\imgs\icons8_undo_100px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
