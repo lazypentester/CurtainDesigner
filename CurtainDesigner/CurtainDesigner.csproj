@@ -61,6 +61,9 @@
     <Reference Include="Magick.NET.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
       <HintPath>..\packages\Magick.NET.Core.4.1.0\lib\net40\Magick.NET.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -142,6 +145,7 @@
     <Compile Include="Classes\MagicImage\ClassMagicImage.cs" />
     <Compile Include="Classes\MagicImage\MagicLabels.cs" />
     <Compile Include="Classes\PathCombiner.cs" />
+    <Compile Include="Classes\Print.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />
     <Compile Include="MainForm\Form1.cs">
@@ -196,6 +200,12 @@
     </Compile>
     <Compile Include="ReportOrderForms\FormFabricCurtainTable.Designer.cs">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrderForms\printOrder\FormSelectPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\printOrder\FormSelectPrint.Designer.cs">
+      <DependentUpon>FormSelectPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingForm\FormSettings.cs">
       <SubType>Form</SubType>
@@ -347,6 +357,9 @@
     <EmbeddedResource Include="ReportOrderForms\FormFabricCurtainTable.resx">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\printOrder\FormSelectPrint.resx">
+      <DependentUpon>FormSelectPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingForm\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +457,11 @@
     <None Include="bin\Debug\imgs\icons8_broom_30px.png" />
     <None Include="bin\Debug\imgs\icons8_info_40px.png" />
     <None Include="bin\Debug\imgs\icons8_undo_100px.png" />
+    <None Include="bin\Debug\imgs\icons8_pdf_42px.png" />
+    <None Include="bin\Debug\imgs\icons8_work_30px.png" />
+    <None Include="bin\Debug\imgs\icons8_word_42px.png" />
+    <None Include="bin\Debug\imgs\icons8_send_to_printer_42px.png" />
+    <None Include="bin\Debug\imgs\icons8_delete_16px.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

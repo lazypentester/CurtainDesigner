@@ -43,7 +43,12 @@ namespace CurtainDesigner.ReportOrderForms
 
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 30)
+            if(e.ColumnIndex == 29)
+            {
+                printOrder.FormSelectPrint formSelect = new printOrder.FormSelectPrint();
+                formSelect.ShowDialog();
+            }
+            else if (e.ColumnIndex == 30)
             {
                 Classes.FabricCurtain2 fabricCurtain = null;
                 try
