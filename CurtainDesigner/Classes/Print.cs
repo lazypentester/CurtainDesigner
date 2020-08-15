@@ -86,9 +86,19 @@ namespace CurtainDesigner.Classes
             try
             {
                 wordDocument = wordApp.Documents.Open(TemplatePath);
-                wordDocument.Activate();
+                wordDocument.Activate();     
 
-                keyValuePairs.ForEach(x => ReplaceWord(x.Key, x.Value, wordDocument));
+                foreach(var pair in keyValuePairs)
+                {
+                    if (pair.Key != "{picture}")
+                        ReplaceWord(pair.Key, pair.Value, wordDocument);
+                    else
+                    {
+                        ReplaceWord(pair.Key, "", wordDocument);
+                        InsertImg(pair.Value.ToString(), 285, 570, 200, 200, wordDocument);
+                    }
+                }
+
                 Order_num = keyValuePairs.Where(x => x.Key == "{fb_id}").Select(x => x.Value).SingleOrDefault().ToString();
 
                 wordDocument.ExportAsFixedFormat($@"{SavePath}\Замовлення №{Order_num}", Word.WdExportFormat.wdExportFormatPDF, false);
@@ -111,6 +121,11 @@ namespace CurtainDesigner.Classes
             var range = document.Content;
             range.Find.ClearFormatting();
             range.Find.Execute(FindText: stubToReplace, ReplaceWith: obj);
+        }
+
+        private void InsertImg(string path, int x, int y, int width, int height, Word.Document document)
+        {
+            document.Shapes.AddPicture(FileName:path, Left:x, Top:y, Width: width, Height: height);
         }
 
         public void GetSavePath()

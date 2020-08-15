@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ImageMagick;
+using ImageMagick.Configuration;
+using ImageMagick.Defines;
+using ImageMagick.ImageOptimizers;
 
 namespace CurtainDesigner.ReportOrderForms
 {
     public partial class FormFabricCurtainTable : Form
     {
+        private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
+        private Bitmap order_img = null;
+
         public FormFabricCurtainTable()
         {
             InitializeComponent();
@@ -92,14 +101,23 @@ namespace CurtainDesigner.ReportOrderForms
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{yardage}", value: fabricCurtain.yardage));
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{count}", value: fabricCurtain.count));
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{side_name}", value: fabricCurtain.side_name));
-                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{equipment_id}", value: fabricCurtain.equipment_id));
+
+                    get_equipment(keyValuePairs, fabricCurtain.equipment_id);
+
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{equipment_price}", value: fabricCurtain.equipment_price));
-                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{installation_id}", value: fabricCurtain.installation_id));
+
+                    get_installation(keyValuePairs, fabricCurtain.installation_id);
+
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{installation_price}", value: fabricCurtain.installation_price));
-                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{customer_id}", value: fabricCurtain.customer_id));
+
+                    get_customer(keyValuePairs, fabricCurtain.customer_id);
+
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{start_order_time}", value: fabricCurtain.start_order_time));
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{end_order_time}", value: fabricCurtain.end_order_time));
-                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{picture}", value: fabricCurtain.picture));
+
+                    load_img(keyValuePairs, fabricCurtain.picture, fabricCurtain.width, fabricCurtain.height, fabricCurtain.yardage, fabricCurtain.side_name);
+                    //keyValuePairs.Add(new KeyValuePair<string, object>(key: "{picture}", value: fabricCurtain.picture));
+
                     keyValuePairs.Add(new KeyValuePair<string, object>(key: "{price}", value: fabricCurtain.price));
                 }
                 catch (Exception ex)
@@ -171,6 +189,165 @@ namespace CurtainDesigner.ReportOrderForms
                     bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["Number"].Value.ToString(),
                     this
                     );
+            }
+        }
+
+        private void get_equipment(List<KeyValuePair<string, object>> keyValuePairs, string equipment_id)
+        {
+
+            SqlCommand command = new SqlCommand($"Select * From [Additional_equipment] Where Equipment_id = {equipment_id};", new SqlConnection(connect_str));
+            SqlDataReader reader = null;
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{equipment}", value: reader["Equipment"].ToString()));
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+        }
+
+        private void get_installation(List<KeyValuePair<string, object>> keyValuePairs, string installation_id)
+        {
+
+            SqlCommand command = new SqlCommand($"Select * From [Installation] Where Installation_id = {installation_id};", new SqlConnection(connect_str));
+            SqlDataReader reader = null;
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{installation}", value: reader["Installation_object"].ToString()));
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+        }
+
+        private void get_customer(List<KeyValuePair<string, object>> keyValuePairs, string customer_id)
+        {
+
+            SqlCommand command = new SqlCommand($"Select * From [Clients] Where Customer_id = {customer_id};", new SqlConnection(connect_str));
+            SqlDataReader reader = null;
+
+            if (command.Connection.State != ConnectionState.Open && command.Connection != null)
+                command.Connection.Open();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{name}", value: reader["Name"].ToString()));
+                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{surname}", value: reader["Surname"].ToString()));
+                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{address}", value: reader["Address"].ToString()));
+                    keyValuePairs.Add(new KeyValuePair<string, object>(key: "{phone}", value: reader["Phone"].ToString()));
+                }
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка при читанні данних з БД.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed && command.Connection != null)
+                    command.Connection.Close();
+            }
+        }
+
+        private void load_img(List<KeyValuePair<string, object>> keyValuePairs, string pic_path, float widh, float height, float yardage, string side)
+        {
+            if (File.Exists(Classes.PathCombiner.join_combine(pic_path)))
+            {
+                pic_path = Classes.PathCombiner.join_combine(pic_path);
+                keyValuePairs.Add(new KeyValuePair<string, object>(key: "{picture}", value: pic_path));
+            }
+            else
+            {
+                create_img(side, widh.ToString(), height.ToString(), yardage.ToString());
+                copy_img(pic_path);
+
+                pic_path = Classes.PathCombiner.join_combine(pic_path);
+                keyValuePairs.Add(new KeyValuePair<string, object>(key: "{picture}", value: pic_path));
+            }
+        }
+
+        private void copy_img(string img_path)
+        {
+            string path = Classes.PathCombiner.join_combine($"{img_path}");
+            if (File.Exists(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
+            {
+                File.Copy(Classes.PathCombiner.join_combine("\\draw_images\\fc\\draw.png"), path, true);
+            }
+        }
+
+        private void create_img(string side, string width, string height, string yardage)
+        {
+
+            MagickColor font_color = new MagickColor(MagickColors.Black);
+            MagickColor back_color = new MagickColor(MagickColors.Transparent);
+
+            Classes.MagicImage.MagicLabels labels = new Classes.MagicImage.MagicLabels();
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{width}");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{yardage}");
+            labels.add_label(font_color, back_color, "Arial", 120, 70, $"label:{height}");
+
+            List<int> coordinates = new List<int>()
+            {
+                600,
+                50,
+                575,
+                525,
+                90,
+                600
+            };
+
+            try
+            {
+                Bitmap bitmap = null;
+
+                if ((side.Contains("лів") || side.Contains("Лів")) && (side.Contains("прав") || side.Contains("Прав")))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90);
+                else if (side.Contains("прав") || side.Contains("Прав"))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                else if (side.Contains("лів") || side.Contains("Лів"))
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90);
+                else
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при спробі обробки та завантаження малюнку: \n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
