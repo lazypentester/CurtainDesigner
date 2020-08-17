@@ -543,6 +543,26 @@ namespace CurtainDesigner.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ok_1976099_128023 {
+            get {
+                object obj = ResourceManager.GetObject("ok-1976099_128023", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ripple_1s_207px {
+            get {
+                object obj = ResourceManager.GetObject("Ripple-1s-207px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Spinner_1s_200px {
             get {
                 object obj = ResourceManager.GetObject("Spinner-1s-200px", resourceCulture);

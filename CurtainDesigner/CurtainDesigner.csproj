@@ -207,6 +207,12 @@
     <Compile Include="ReportOrderForms\printOrder\FormSelectPrint.Designer.cs">
       <DependentUpon>FormSelectPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportOrderForms\printOrder\FormWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\printOrder\FormWait.Designer.cs">
+      <DependentUpon>FormWait.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingForm\FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     <EmbeddedResource Include="ReportOrderForms\printOrder\FormSelectPrint.resx">
       <DependentUpon>FormSelectPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\printOrder\FormWait.resx">
+      <DependentUpon>FormWait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingForm\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -462,6 +471,9 @@
     <None Include="bin\Debug\imgs\icons8_word_42px.png" />
     <None Include="bin\Debug\imgs\icons8_send_to_printer_42px.png" />
     <None Include="bin\Debug\imgs\icons8_delete_16px.png" />
+    <None Include="bin\Debug\imgs\Ripple-1s-200px.gif" />
+    <None Include="bin\Debug\imgs\Ripple-1s-207px.gif" />
+    <None Include="bin\Debug\imgs\ok-1976099_128023.png" />
     <Content Include="DB\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

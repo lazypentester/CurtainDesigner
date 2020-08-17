@@ -198,7 +198,9 @@ namespace CurtainDesigner
                     categoryPrice = Convert.ToDouble(labelFabricCategory.Text.Split('$')[0]);
                     good_count = Convert.ToInt32(numericUpDownCount.Value);
 
-                    labelPrice.Text = string.Join(" ", "[", ((yardage * categoryPrice + installation + equipment_price) * good_count).ToString(), "$", "]");
+                    double allPrice = Convert.ToDouble((yardage * categoryPrice + installation + equipment_price) * good_count);
+
+                    labelPrice.Text = string.Join(" ", "[", (Math.Round(allPrice, 2, MidpointRounding.AwayFromZero)).ToString(), "$", "]");
                 }
                 catch(Exception ex)
                 {

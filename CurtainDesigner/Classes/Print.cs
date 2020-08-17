@@ -12,8 +12,8 @@ namespace CurtainDesigner.Classes
 {
     public class Print
     {
-        private string SavePath = Classes.PathCombiner.join_combine("\\");
-        public bool savePathRes = false;
+        private static string SavePath = Classes.PathCombiner.join_combine("\\");
+        public static bool savePathRes = false;
         private string Order_num = "0";
 
         public void print(List<KeyValuePair<string, object>> keyValuePairs, string TemplatePath)
@@ -27,7 +27,52 @@ namespace CurtainDesigner.Classes
                 wordDocument = wordApp.Documents.Open(TemplatePath);
                 wordDocument.Activate();
 
-                keyValuePairs.ForEach(x => ReplaceWord(x.Key, x.Value, wordDocument));
+                foreach (var pair in keyValuePairs)
+                {
+                    switch (pair.Key)
+                    {
+                        case "{picture}":
+                            ReplaceWord(pair.Key, "", wordDocument);
+                            InsertImg(pair.Value.ToString(), 285, 570, 200, 200, wordDocument);
+                            break;
+
+                        case "{fabric_category_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{count}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "шт."), wordDocument);
+                            break;
+
+                        case "{width}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м."), wordDocument);
+                            break;
+
+                        case "{height}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м."), wordDocument);
+                            break;
+
+                        case "{yardage}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м2"), wordDocument);
+                            break;
+
+                        case "{equipment_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{installation_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        default:
+                            ReplaceWord(pair.Key, pair.Value, wordDocument);
+                            break;
+                    }
+                }
 
                 wordApp.Visible = true;
 
@@ -59,7 +104,53 @@ namespace CurtainDesigner.Classes
                 wordDocument = wordApp.Documents.Open(TemplatePath);
                 wordDocument.Activate();
 
-                keyValuePairs.ForEach(x => ReplaceWord(x.Key, x.Value, wordDocument));
+                foreach (var pair in keyValuePairs)
+                {
+                    switch (pair.Key)
+                    {
+                        case "{picture}":
+                            ReplaceWord(pair.Key, "", wordDocument);
+                            InsertImg(pair.Value.ToString(), 285, 570, 200, 200, wordDocument);
+                            break;
+
+                        case "{fabric_category_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{count}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "шт."), wordDocument);
+                            break;
+
+                        case "{width}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м."), wordDocument);
+                            break;
+
+                        case "{height}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м."), wordDocument);
+                            break;
+
+                        case "{yardage}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м2"), wordDocument);
+                            break;
+
+                        case "{equipment_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{installation_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        default:
+                            ReplaceWord(pair.Key, pair.Value, wordDocument);
+                            break;
+                    }
+                }
+
                 Order_num = keyValuePairs.Where(x => x.Key == "{fb_id}").Select(x => x.Value).SingleOrDefault().ToString();
 
                 wordDocument.SaveAs2($@"{SavePath}\Замовлення №{Order_num}");
@@ -90,12 +181,48 @@ namespace CurtainDesigner.Classes
 
                 foreach(var pair in keyValuePairs)
                 {
-                    if (pair.Key != "{picture}")
-                        ReplaceWord(pair.Key, pair.Value, wordDocument);
-                    else
+                    switch (pair.Key)
                     {
-                        ReplaceWord(pair.Key, "", wordDocument);
-                        InsertImg(pair.Value.ToString(), 285, 570, 200, 200, wordDocument);
+                        case "{picture}":
+                            ReplaceWord(pair.Key, "", wordDocument);
+                            InsertImg(pair.Value.ToString(), 285, 570, 200, 200, wordDocument);
+                            break;
+
+                        case "{fabric_category_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{count}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "шт."), wordDocument);
+                            break;
+
+                        case "{width}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м."), wordDocument);
+                            break;
+
+                        case "{height}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м."), wordDocument);
+                            break;
+
+                        case "{yardage}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "м2"), wordDocument);
+                            break;
+
+                        case "{equipment_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{installation_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        case "{price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
+                        default:
+                            ReplaceWord(pair.Key, pair.Value, wordDocument);
+                            break;
                     }
                 }
 
@@ -128,7 +255,7 @@ namespace CurtainDesigner.Classes
             document.Shapes.AddPicture(FileName:path, Left:x, Top:y, Width: width, Height: height);
         }
 
-        public void GetSavePath()
+        public static void GetSavePath()
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Будь ласка, виберіть ПОРОЖНЮ папку для збереження файлу. Або створіть нову папку у будь-якому зручному для Вас місці.";
