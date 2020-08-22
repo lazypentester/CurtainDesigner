@@ -125,7 +125,7 @@ namespace CurtainDesigner.ReportOrderForms
                     MessageBox.Show($"Помилка при відображенні форми друкування.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                printOrder.FormSelectPrint formSelect = new printOrder.FormSelectPrint(keyValuePairs);
+                printOrder.FormSelectPrint formSelect = new printOrder.FormSelectPrint(keyValuePairs, Classes.ClassPatternPath.FC_PATTERN);
                 formSelect.ShowDialog();
             }
             else if (e.ColumnIndex == 30)

@@ -20,16 +20,18 @@ namespace CurtainDesigner.ReportOrderForms.printOrder
         private delegate void Current_method(object form);
         private string savePath = Classes.PathCombiner.join_combine("");
         private bool is_process = false;
+        private string pattern = "";
 
         public FormSelectPrint()
         {
             InitializeComponent();
         }
 
-        public FormSelectPrint(List<KeyValuePair<string, object>> keyValuePairs)
+        public FormSelectPrint(List<KeyValuePair<string, object>> keyValuePairs, string pattern)
         {
             InitializeComponent();
             this.keyValuePairs = keyValuePairs;
+            this.pattern = pattern;
         }
 
         private void bunifuImageButtonClose_Click(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace CurtainDesigner.ReportOrderForms.printOrder
             Classes.Print print = new Classes.Print();
 
             if (keyValuePairs != null)
-                print.print(keyValuePairs, @"C:\Users\glebg\Desktop\doc.docx");
+                print.print(keyValuePairs, pattern);
 
             if ((form as FormWait) != null)
                 (form as FormWait).Invoke((MethodInvoker)delegate {
@@ -100,7 +102,7 @@ namespace CurtainDesigner.ReportOrderForms.printOrder
 
             if (keyValuePairs != null)
             {
-                print.saveAsPdf(keyValuePairs, @"C:\Users\glebg\Desktop\doc.docx");
+                print.saveAsPdf(keyValuePairs, pattern);
             }
 
             if ((form as FormWait) != null)
@@ -116,7 +118,7 @@ namespace CurtainDesigner.ReportOrderForms.printOrder
 
             if (keyValuePairs != null)
             {
-                print.saveAsWord(keyValuePairs, @"C:\Users\glebg\Desktop\doc.docx");
+                print.saveAsWord(keyValuePairs, pattern);
             }
 
             if ((form as FormWait) != null)

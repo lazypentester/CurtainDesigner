@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
@@ -76,10 +77,12 @@ namespace CurtainDesigner.Classes
 
                 wordApp.Visible = true;
 
-                var dialogResult = wordApp.Dialogs[Word.WdWordDialog.wdDialogFilePrint].Show();
+                wordApp.Dialogs[Word.WdWordDialog.wdDialogFilePrint].Show();
                 
-                
-
+                while(wordApp.BackgroundPrintingStatus > 0)
+                {
+                    Thread.Sleep(1000);
+                }
             }
             catch(Exception ex)
             {
@@ -170,16 +173,23 @@ namespace CurtainDesigner.Classes
 
         public void saveAsPdf(List<KeyValuePair<string, object>> keyValuePairs, string TemplatePath)
         {
+            MessageBox.Show("Etap 0");
             Word.Document wordDocument = null;
+            MessageBox.Show("Etap 1");
             var wordApp = new Word.Application();
+            MessageBox.Show("Etap 2");
             wordApp.Visible = false;
+            MessageBox.Show("Etap 3");
 
             try
             {
+                MessageBox.Show("Etap 4");
                 wordDocument = wordApp.Documents.Open(TemplatePath);
-                wordDocument.Activate();     
+                MessageBox.Show("Etap 5");
+                wordDocument.Activate();
+                MessageBox.Show("Etap 6");
 
-                foreach(var pair in keyValuePairs)
+                foreach (var pair in keyValuePairs)
                 {
                     switch (pair.Key)
                     {
@@ -228,8 +238,9 @@ namespace CurtainDesigner.Classes
 
                 Order_num = keyValuePairs.Where(x => x.Key == "{fb_id}").Select(x => x.Value).SingleOrDefault().ToString();
 
+                MessageBox.Show("Etap 7");
                 wordDocument.ExportAsFixedFormat($@"{SavePath}\Замовлення №{Order_num}", Word.WdExportFormat.wdExportFormatPDF, false);
-
+                MessageBox.Show("Etap 8");
             }
             catch (Exception ex)
             {

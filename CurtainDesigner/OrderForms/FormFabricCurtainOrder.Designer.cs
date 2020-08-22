@@ -120,6 +120,7 @@
             this.comboBoxCurtainSubtype = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel23 = new System.Windows.Forms.Panel();
+            this.label_img_id = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.pictureBoxMainPicture = new System.Windows.Forms.PictureBox();
@@ -127,7 +128,6 @@
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
-            this.label_img_id = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel37.SuspendLayout();
@@ -1245,6 +1245,18 @@
             this.panel23.Size = new System.Drawing.Size(947, 60);
             this.panel23.TabIndex = 2;
             // 
+            // label_img_id
+            // 
+            this.label_img_id.AutoSize = true;
+            this.label_img_id.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_img_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label_img_id.Location = new System.Drawing.Point(463, 22);
+            this.label_img_id.Name = "label_img_id";
+            this.label_img_id.Size = new System.Drawing.Size(70, 16);
+            this.label_img_id.TabIndex = 11;
+            this.label_img_id.Text = "Image_id";
+            this.label_img_id.Visible = false;
+            // 
             // panel24
             // 
             this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
@@ -1313,21 +1325,10 @@
             this.panel39.Size = new System.Drawing.Size(934, 2);
             this.panel39.TabIndex = 0;
             // 
-            // label_img_id
-            // 
-            this.label_img_id.AutoSize = true;
-            this.label_img_id.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_img_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label_img_id.Location = new System.Drawing.Point(463, 22);
-            this.label_img_id.Name = "label_img_id";
-            this.label_img_id.Size = new System.Drawing.Size(70, 16);
-            this.label_img_id.TabIndex = 11;
-            this.label_img_id.Text = "Image_id";
-            this.label_img_id.Visible = false;
-            // 
             // FormFabricCurtainOrder
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1290, 592);
             this.Controls.Add(this.panel25);

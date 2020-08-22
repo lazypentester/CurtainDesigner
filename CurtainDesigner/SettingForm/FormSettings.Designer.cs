@@ -504,7 +504,7 @@
             this.pictureBoxView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxView2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxView2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxView2.Location = new System.Drawing.Point(307, 36);
+            this.pictureBoxView2.Location = new System.Drawing.Point(368, 36);
             this.pictureBoxView2.Name = "pictureBoxView2";
             this.pictureBoxView2.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxView2.TabIndex = 2;
@@ -516,7 +516,7 @@
             this.labelView2.AutoSize = true;
             this.labelView2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelView2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
-            this.labelView2.Location = new System.Drawing.Point(343, 39);
+            this.labelView2.Location = new System.Drawing.Point(404, 39);
             this.labelView2.Name = "labelView2";
             this.labelView2.Size = new System.Drawing.Size(0, 27);
             this.labelView2.TabIndex = 1;
@@ -925,8 +925,8 @@
             // 
             // FormSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1290, 592);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelSideBarMenu);

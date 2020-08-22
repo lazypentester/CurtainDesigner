@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_FC_OrderForm));
             this.bunifuDragControlForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuGradientPanel4 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label9 = new System.Windows.Forms.Label();
             this.bunifuElipseButtonOk = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.bunifuElipseButtonCancel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.bunifuElipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel5 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label_img_id = new System.Windows.Forms.Label();
@@ -74,19 +78,15 @@
             this.bunifuMetroTextboxSubtype = new System.Windows.Forms.TextBox();
             this.bunifuMetroTextboxCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label25 = new System.Windows.Forms.Label();
-            this.bunifuGradientPanel4 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.label9 = new System.Windows.Forms.Label();
             this.labelSystemType = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
-            this.iconButtonOk = new FontAwesome.Sharp.IconButton();
+            this.bunifuGradientPanel4.SuspendLayout();
             this.bunifuGradientPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).BeginInit();
-            this.bunifuGradientPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuDragControlForm
@@ -96,15 +96,99 @@
             this.bunifuDragControlForm.TargetControl = this.bunifuGradientPanel4;
             this.bunifuDragControlForm.Vertical = true;
             // 
+            // bunifuGradientPanel4
+            // 
+            this.bunifuGradientPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel4.BackgroundImage")));
+            this.bunifuGradientPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel4.Controls.Add(this.label9);
+            this.bunifuGradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGradientPanel4.GradientBottomLeft = System.Drawing.Color.LightSkyBlue;
+            this.bunifuGradientPanel4.GradientBottomRight = System.Drawing.Color.Goldenrod;
+            this.bunifuGradientPanel4.GradientTopLeft = System.Drawing.Color.DodgerBlue;
+            this.bunifuGradientPanel4.GradientTopRight = System.Drawing.Color.LightGray;
+            this.bunifuGradientPanel4.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
+            this.bunifuGradientPanel4.Quality = 10;
+            this.bunifuGradientPanel4.Size = new System.Drawing.Size(916, 59);
+            this.bunifuGradientPanel4.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label9.Location = new System.Drawing.Point(344, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(250, 23);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Редагування замовлення";
+            // 
             // bunifuElipseButtonOk
             // 
             this.bunifuElipseButtonOk.ElipseRadius = 3;
             this.bunifuElipseButtonOk.TargetControl = this.iconButtonOk;
             // 
+            // iconButtonOk
+            // 
+            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonOk.AutoSize = true;
+            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
+            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonOk.FlatAppearance.BorderSize = 0;
+            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOk.IconSize = 28;
+            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.Location = new System.Drawing.Point(12, 400);
+            this.iconButtonOk.Name = "iconButtonOk";
+            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(150, 0, 0, 0);
+            this.iconButtonOk.Rotation = 0D;
+            this.iconButtonOk.Size = new System.Drawing.Size(443, 38);
+            this.iconButtonOk.TabIndex = 7;
+            this.iconButtonOk.Text = "Підтвердити";
+            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOk.UseVisualStyleBackColor = false;
+            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
+            // 
             // bunifuElipseButtonCancel
             // 
             this.bunifuElipseButtonCancel.ElipseRadius = 3;
             this.bunifuElipseButtonCancel.TargetControl = this.iconButtonCancel;
+            // 
+            // iconButtonCancel
+            // 
+            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonCancel.AutoSize = true;
+            this.iconButtonCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
+            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButtonCancel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconButtonCancel.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCancel.IconSize = 28;
+            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.Location = new System.Drawing.Point(461, 400);
+            this.iconButtonCancel.Name = "iconButtonCancel";
+            this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(150, 0, 0, 0);
+            this.iconButtonCancel.Rotation = 0D;
+            this.iconButtonCancel.Size = new System.Drawing.Size(443, 38);
+            this.iconButtonCancel.TabIndex = 8;
+            this.iconButtonCancel.Text = "Скасувати";
+            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
             // 
             // bunifuElipseForm
             // 
@@ -642,34 +726,6 @@
             this.label25.TabIndex = 11;
             this.label25.Text = "Підтип системи:";
             // 
-            // bunifuGradientPanel4
-            // 
-            this.bunifuGradientPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel4.BackgroundImage")));
-            this.bunifuGradientPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel4.Controls.Add(this.label9);
-            this.bunifuGradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanel4.GradientBottomLeft = System.Drawing.Color.LightSkyBlue;
-            this.bunifuGradientPanel4.GradientBottomRight = System.Drawing.Color.Goldenrod;
-            this.bunifuGradientPanel4.GradientTopLeft = System.Drawing.Color.DodgerBlue;
-            this.bunifuGradientPanel4.GradientTopRight = System.Drawing.Color.LightGray;
-            this.bunifuGradientPanel4.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
-            this.bunifuGradientPanel4.Quality = 10;
-            this.bunifuGradientPanel4.Size = new System.Drawing.Size(916, 59);
-            this.bunifuGradientPanel4.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label9.Location = new System.Drawing.Point(344, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(250, 23);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Редагування замовлення";
-            // 
             // labelSystemType
             // 
             this.labelSystemType.AutoSize = true;
@@ -694,72 +750,18 @@
             this.label24.TabIndex = 9;
             this.label24.Text = "Тип системи:";
             // 
-            // iconButtonCancel
-            // 
-            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonCancel.AutoSize = true;
-            this.iconButtonCancel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonCancel.FlatAppearance.BorderSize = 0;
-            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCancel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonCancel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconButtonCancel.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonCancel.IconSize = 28;
-            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.Location = new System.Drawing.Point(461, 400);
-            this.iconButtonCancel.Name = "iconButtonCancel";
-            this.iconButtonCancel.Padding = new System.Windows.Forms.Padding(150, 0, 0, 0);
-            this.iconButtonCancel.Rotation = 0D;
-            this.iconButtonCancel.Size = new System.Drawing.Size(443, 38);
-            this.iconButtonCancel.TabIndex = 8;
-            this.iconButtonCancel.Text = "Скасувати";
-            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonCancel.UseVisualStyleBackColor = false;
-            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
-            // 
-            // iconButtonOk
-            // 
-            this.iconButtonOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonOk.AutoSize = true;
-            this.iconButtonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(184)))), ((int)(((byte)(132)))));
-            this.iconButtonOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonOk.FlatAppearance.BorderSize = 0;
-            this.iconButtonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonOk.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButtonOk.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButtonOk.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOk.IconSize = 28;
-            this.iconButtonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.Location = new System.Drawing.Point(12, 400);
-            this.iconButtonOk.Name = "iconButtonOk";
-            this.iconButtonOk.Padding = new System.Windows.Forms.Padding(150, 0, 0, 0);
-            this.iconButtonOk.Rotation = 0D;
-            this.iconButtonOk.Size = new System.Drawing.Size(443, 38);
-            this.iconButtonOk.TabIndex = 7;
-            this.iconButtonOk.Text = "Підтвердити";
-            this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonOk.UseVisualStyleBackColor = false;
-            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
-            // 
             // Edit_FC_OrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(916, 450);
             this.Controls.Add(this.bunifuGradientPanel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit_FC_OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit_FC_OrderForm";
+            this.bunifuGradientPanel4.ResumeLayout(false);
+            this.bunifuGradientPanel4.PerformLayout();
             this.bunifuGradientPanel5.ResumeLayout(false);
             this.bunifuGradientPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).EndInit();
@@ -767,8 +769,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).EndInit();
-            this.bunifuGradientPanel4.ResumeLayout(false);
-            this.bunifuGradientPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

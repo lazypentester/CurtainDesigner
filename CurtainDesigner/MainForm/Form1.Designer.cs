@@ -35,6 +35,8 @@
             this.iconButtonAllOrders = new FontAwesome.Sharp.IconButton();
             this.iconButtonNewOrder = new FontAwesome.Sharp.IconButton();
             this.panelSubMenu = new System.Windows.Forms.Panel();
+            this.iconButtonPliseCurtain = new FontAwesome.Sharp.IconButton();
+            this.nOrderMosquitoNets = new FontAwesome.Sharp.IconButton();
             this.iconButtonOrderHorisontallJalousie = new FontAwesome.Sharp.IconButton();
             this.iconButtonOrderVerticalJalousie = new FontAwesome.Sharp.IconButton();
             this.iconButtonOrderRomanCurtains = new FontAwesome.Sharp.IconButton();
@@ -43,6 +45,8 @@
             this.iconButtonOrderFabricCurtains = new FontAwesome.Sharp.IconButton();
             this.timerOpenSubMenu = new System.Windows.Forms.Timer(this.components);
             this.panelSubMenuTables = new System.Windows.Forms.Panel();
+            this.iconButtonTablePliseCurtain = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTableMosquitoNets = new FontAwesome.Sharp.IconButton();
             this.iconButtonTableHorisontallJalousie = new FontAwesome.Sharp.IconButton();
             this.iconButtonTableVerticalJalousie = new FontAwesome.Sharp.IconButton();
             this.iconButtonTableRomanCurtains = new FontAwesome.Sharp.IconButton();
@@ -50,10 +54,6 @@
             this.iconButtonTableDay_NightCurtains = new FontAwesome.Sharp.IconButton();
             this.iconButtonTableFabricCurtains = new FontAwesome.Sharp.IconButton();
             this.panelMainContent = new System.Windows.Forms.Panel();
-            this.nOrderMosquitoNets = new FontAwesome.Sharp.IconButton();
-            this.iconButtonPliseCurtain = new FontAwesome.Sharp.IconButton();
-            this.iconButtonTableMosquitoNets = new FontAwesome.Sharp.IconButton();
-            this.iconButtonTablePliseCurtain = new FontAwesome.Sharp.IconButton();
             this.panelMainMenu.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
             this.panelSubMenuTables.SuspendLayout();
@@ -94,6 +94,7 @@
             this.iconButtonInfo.Text = "Про программу";
             this.iconButtonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonInfo.UseCompatibleTextRendering = true;
             this.iconButtonInfo.UseVisualStyleBackColor = true;
             this.iconButtonInfo.Click += new System.EventHandler(this.iconButtonInfo_Click);
             // 
@@ -119,6 +120,7 @@
             this.iconButtonSettings.Text = "Налаштування";
             this.iconButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonSettings.UseCompatibleTextRendering = true;
             this.iconButtonSettings.UseVisualStyleBackColor = true;
             this.iconButtonSettings.Click += new System.EventHandler(this.iconButtonSettings_Click);
             // 
@@ -144,6 +146,7 @@
             this.iconButtonAllOrders.Text = "Таблиці замовлень";
             this.iconButtonAllOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAllOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonAllOrders.UseCompatibleTextRendering = true;
             this.iconButtonAllOrders.UseVisualStyleBackColor = true;
             this.iconButtonAllOrders.Click += new System.EventHandler(this.iconButtonAllOrders_Click);
             // 
@@ -169,6 +172,7 @@
             this.iconButtonNewOrder.Text = "Нове замовлення";
             this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonNewOrder.UseCompatibleTextRendering = true;
             this.iconButtonNewOrder.UseVisualStyleBackColor = true;
             this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click_1);
             // 
@@ -189,6 +193,52 @@
             this.panelSubMenu.Name = "panelSubMenu";
             this.panelSubMenu.Size = new System.Drawing.Size(1290, 90);
             this.panelSubMenu.TabIndex = 1;
+            // 
+            // iconButtonPliseCurtain
+            // 
+            this.iconButtonPliseCurtain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonPliseCurtain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonPliseCurtain.FlatAppearance.BorderSize = 0;
+            this.iconButtonPliseCurtain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonPliseCurtain.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonPliseCurtain.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonPliseCurtain.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButtonPliseCurtain.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonPliseCurtain.IconSize = 30;
+            this.iconButtonPliseCurtain.Location = new System.Drawing.Point(1127, 0);
+            this.iconButtonPliseCurtain.Name = "iconButtonPliseCurtain";
+            this.iconButtonPliseCurtain.Rotation = 0D;
+            this.iconButtonPliseCurtain.Size = new System.Drawing.Size(161, 90);
+            this.iconButtonPliseCurtain.TabIndex = 8;
+            this.iconButtonPliseCurtain.Text = "Штори плісе";
+            this.iconButtonPliseCurtain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonPliseCurtain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonPliseCurtain.UseVisualStyleBackColor = true;
+            this.iconButtonPliseCurtain.MouseEnter += new System.EventHandler(this.iconButtonPliseCurtain_MouseEnter);
+            this.iconButtonPliseCurtain.MouseLeave += new System.EventHandler(this.iconButtonPliseCurtain_MouseLeave);
+            // 
+            // nOrderMosquitoNets
+            // 
+            this.nOrderMosquitoNets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nOrderMosquitoNets.Dock = System.Windows.Forms.DockStyle.Left;
+            this.nOrderMosquitoNets.FlatAppearance.BorderSize = 0;
+            this.nOrderMosquitoNets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nOrderMosquitoNets.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.nOrderMosquitoNets.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nOrderMosquitoNets.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.nOrderMosquitoNets.IconColor = System.Drawing.Color.Gainsboro;
+            this.nOrderMosquitoNets.IconSize = 30;
+            this.nOrderMosquitoNets.Location = new System.Drawing.Point(966, 0);
+            this.nOrderMosquitoNets.Name = "nOrderMosquitoNets";
+            this.nOrderMosquitoNets.Rotation = 0D;
+            this.nOrderMosquitoNets.Size = new System.Drawing.Size(161, 90);
+            this.nOrderMosquitoNets.TabIndex = 7;
+            this.nOrderMosquitoNets.Text = "Москітні сітки";
+            this.nOrderMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.nOrderMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.nOrderMosquitoNets.UseVisualStyleBackColor = true;
+            this.nOrderMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonOrderMosquitoNets_MouseEnter);
+            this.nOrderMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonOrderMosquitoNets_MouseLeave);
             // 
             // iconButtonOrderHorisontallJalousie
             // 
@@ -352,6 +402,53 @@
             this.panelSubMenuTables.Size = new System.Drawing.Size(1290, 90);
             this.panelSubMenuTables.TabIndex = 3;
             // 
+            // iconButtonTablePliseCurtain
+            // 
+            this.iconButtonTablePliseCurtain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTablePliseCurtain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTablePliseCurtain.FlatAppearance.BorderSize = 0;
+            this.iconButtonTablePliseCurtain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTablePliseCurtain.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTablePliseCurtain.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTablePliseCurtain.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTablePliseCurtain.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTablePliseCurtain.IconSize = 30;
+            this.iconButtonTablePliseCurtain.Location = new System.Drawing.Point(1127, 0);
+            this.iconButtonTablePliseCurtain.Name = "iconButtonTablePliseCurtain";
+            this.iconButtonTablePliseCurtain.Rotation = 0D;
+            this.iconButtonTablePliseCurtain.Size = new System.Drawing.Size(161, 90);
+            this.iconButtonTablePliseCurtain.TabIndex = 8;
+            this.iconButtonTablePliseCurtain.Text = "Штори плісе";
+            this.iconButtonTablePliseCurtain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTablePliseCurtain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTablePliseCurtain.UseVisualStyleBackColor = true;
+            this.iconButtonTablePliseCurtain.Click += new System.EventHandler(this.iconButton4_Click);
+            this.iconButtonTablePliseCurtain.MouseEnter += new System.EventHandler(this.iconButtonTablePliseCurtain_MouseEnter);
+            this.iconButtonTablePliseCurtain.MouseLeave += new System.EventHandler(this.iconButtonTablePliseCurtain_MouseLeave);
+            // 
+            // iconButtonTableMosquitoNets
+            // 
+            this.iconButtonTableMosquitoNets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonTableMosquitoNets.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButtonTableMosquitoNets.FlatAppearance.BorderSize = 0;
+            this.iconButtonTableMosquitoNets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTableMosquitoNets.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonTableMosquitoNets.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableMosquitoNets.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonTableMosquitoNets.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonTableMosquitoNets.IconSize = 30;
+            this.iconButtonTableMosquitoNets.Location = new System.Drawing.Point(966, 0);
+            this.iconButtonTableMosquitoNets.Name = "iconButtonTableMosquitoNets";
+            this.iconButtonTableMosquitoNets.Rotation = 0D;
+            this.iconButtonTableMosquitoNets.Size = new System.Drawing.Size(161, 90);
+            this.iconButtonTableMosquitoNets.TabIndex = 7;
+            this.iconButtonTableMosquitoNets.Text = "Москітні сітки";
+            this.iconButtonTableMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonTableMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButtonTableMosquitoNets.UseVisualStyleBackColor = true;
+            this.iconButtonTableMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseEnter);
+            this.iconButtonTableMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseLeave);
+            // 
             // iconButtonTableHorisontallJalousie
             // 
             this.iconButtonTableHorisontallJalousie.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -500,103 +597,10 @@
             this.panelMainContent.Size = new System.Drawing.Size(1290, 372);
             this.panelMainContent.TabIndex = 4;
             // 
-            // nOrderMosquitoNets
-            // 
-            this.nOrderMosquitoNets.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nOrderMosquitoNets.Dock = System.Windows.Forms.DockStyle.Left;
-            this.nOrderMosquitoNets.FlatAppearance.BorderSize = 0;
-            this.nOrderMosquitoNets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nOrderMosquitoNets.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.nOrderMosquitoNets.ForeColor = System.Drawing.Color.Gainsboro;
-            this.nOrderMosquitoNets.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.nOrderMosquitoNets.IconColor = System.Drawing.Color.Gainsboro;
-            this.nOrderMosquitoNets.IconSize = 30;
-            this.nOrderMosquitoNets.Location = new System.Drawing.Point(966, 0);
-            this.nOrderMosquitoNets.Name = "nOrderMosquitoNets";
-            this.nOrderMosquitoNets.Rotation = 0D;
-            this.nOrderMosquitoNets.Size = new System.Drawing.Size(161, 90);
-            this.nOrderMosquitoNets.TabIndex = 7;
-            this.nOrderMosquitoNets.Text = "Москітні сітки";
-            this.nOrderMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.nOrderMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.nOrderMosquitoNets.UseVisualStyleBackColor = true;
-            this.nOrderMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonOrderMosquitoNets_MouseEnter);
-            this.nOrderMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonOrderMosquitoNets_MouseLeave);
-            // 
-            // iconButtonPliseCurtain
-            // 
-            this.iconButtonPliseCurtain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonPliseCurtain.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButtonPliseCurtain.FlatAppearance.BorderSize = 0;
-            this.iconButtonPliseCurtain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonPliseCurtain.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonPliseCurtain.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonPliseCurtain.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButtonPliseCurtain.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonPliseCurtain.IconSize = 30;
-            this.iconButtonPliseCurtain.Location = new System.Drawing.Point(1127, 0);
-            this.iconButtonPliseCurtain.Name = "iconButtonPliseCurtain";
-            this.iconButtonPliseCurtain.Rotation = 0D;
-            this.iconButtonPliseCurtain.Size = new System.Drawing.Size(161, 90);
-            this.iconButtonPliseCurtain.TabIndex = 8;
-            this.iconButtonPliseCurtain.Text = "Штори плісе";
-            this.iconButtonPliseCurtain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButtonPliseCurtain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButtonPliseCurtain.UseVisualStyleBackColor = true;
-            this.iconButtonPliseCurtain.MouseEnter += new System.EventHandler(this.iconButtonPliseCurtain_MouseEnter);
-            this.iconButtonPliseCurtain.MouseLeave += new System.EventHandler(this.iconButtonPliseCurtain_MouseLeave);
-            // 
-            // iconButtonTableMosquitoNets
-            // 
-            this.iconButtonTableMosquitoNets.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonTableMosquitoNets.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButtonTableMosquitoNets.FlatAppearance.BorderSize = 0;
-            this.iconButtonTableMosquitoNets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonTableMosquitoNets.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonTableMosquitoNets.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonTableMosquitoNets.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButtonTableMosquitoNets.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonTableMosquitoNets.IconSize = 30;
-            this.iconButtonTableMosquitoNets.Location = new System.Drawing.Point(966, 0);
-            this.iconButtonTableMosquitoNets.Name = "iconButtonTableMosquitoNets";
-            this.iconButtonTableMosquitoNets.Rotation = 0D;
-            this.iconButtonTableMosquitoNets.Size = new System.Drawing.Size(161, 90);
-            this.iconButtonTableMosquitoNets.TabIndex = 7;
-            this.iconButtonTableMosquitoNets.Text = "Москітні сітки";
-            this.iconButtonTableMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButtonTableMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButtonTableMosquitoNets.UseVisualStyleBackColor = true;
-            this.iconButtonTableMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseEnter);
-            this.iconButtonTableMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseLeave);
-            // 
-            // iconButtonTablePliseCurtain
-            // 
-            this.iconButtonTablePliseCurtain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonTablePliseCurtain.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButtonTablePliseCurtain.FlatAppearance.BorderSize = 0;
-            this.iconButtonTablePliseCurtain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonTablePliseCurtain.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonTablePliseCurtain.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonTablePliseCurtain.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButtonTablePliseCurtain.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonTablePliseCurtain.IconSize = 30;
-            this.iconButtonTablePliseCurtain.Location = new System.Drawing.Point(1127, 0);
-            this.iconButtonTablePliseCurtain.Name = "iconButtonTablePliseCurtain";
-            this.iconButtonTablePliseCurtain.Rotation = 0D;
-            this.iconButtonTablePliseCurtain.Size = new System.Drawing.Size(161, 90);
-            this.iconButtonTablePliseCurtain.TabIndex = 8;
-            this.iconButtonTablePliseCurtain.Text = "Штори плісе";
-            this.iconButtonTablePliseCurtain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButtonTablePliseCurtain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButtonTablePliseCurtain.UseVisualStyleBackColor = true;
-            this.iconButtonTablePliseCurtain.Click += new System.EventHandler(this.iconButton4_Click);
-            this.iconButtonTablePliseCurtain.MouseEnter += new System.EventHandler(this.iconButtonTablePliseCurtain_MouseEnter);
-            this.iconButtonTablePliseCurtain.MouseLeave += new System.EventHandler(this.iconButtonTablePliseCurtain_MouseLeave);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1290, 611);

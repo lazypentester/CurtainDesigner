@@ -8,6 +8,7 @@ namespace CurtainDesigner.Classes
 {
     public static class ConnectionString
     {
-        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\glebg\source\repos\CurtainDesigner\CurtainDesigner\CurtainDesigner\DB\Database.mdf;Integrated Security=True";
+        public static string conn = $@"Data Source=(LocalDB)\gg;AttachDbFilename={Classes.PathCombiner.join_combine("")}\DB\Database.mdf;Integrated Security=True";
     }
+    //MSSQLLocalDB
 }
