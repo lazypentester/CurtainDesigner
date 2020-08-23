@@ -14,7 +14,6 @@ namespace CurtainDesigner.Classes
     public class Print
     {
         private static string SavePath = Classes.PathCombiner.join_combine("\\");
-        public static bool savePathRes = false;
         private string Order_num = "0";
 
         public void print(List<KeyValuePair<string, object>> keyValuePairs, string TemplatePath)
@@ -173,21 +172,14 @@ namespace CurtainDesigner.Classes
 
         public void saveAsPdf(List<KeyValuePair<string, object>> keyValuePairs, string TemplatePath)
         {
-            MessageBox.Show("Etap 0");
             Word.Document wordDocument = null;
-            MessageBox.Show("Etap 1");
             var wordApp = new Word.Application();
-            MessageBox.Show("Etap 2");
             wordApp.Visible = false;
-            MessageBox.Show("Etap 3");
 
             try
             {
-                MessageBox.Show("Etap 4");
                 wordDocument = wordApp.Documents.Open(TemplatePath);
-                MessageBox.Show("Etap 5");
                 wordDocument.Activate();
-                MessageBox.Show("Etap 6");
 
                 foreach (var pair in keyValuePairs)
                 {
@@ -238,9 +230,7 @@ namespace CurtainDesigner.Classes
 
                 Order_num = keyValuePairs.Where(x => x.Key == "{fb_id}").Select(x => x.Value).SingleOrDefault().ToString();
 
-                MessageBox.Show("Etap 7");
                 wordDocument.ExportAsFixedFormat($@"{SavePath}\Замовлення №{Order_num}", Word.WdExportFormat.wdExportFormatPDF, false);
-                MessageBox.Show("Etap 8");
             }
             catch (Exception ex)
             {
@@ -256,26 +246,42 @@ namespace CurtainDesigner.Classes
 
         private void ReplaceWord(string stubToReplace, object obj, Word.Document document)
         {
-            var range = document.Content;
-            range.Find.ClearFormatting();
-            range.Find.Execute(FindText: stubToReplace, ReplaceWith: obj);
+            try
+            {
+                var range = document.Content;
+                range.Find.ClearFormatting();
+                range.Find.Execute(FindText: stubToReplace, ReplaceWith: obj);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Помилка при роздрукуванні документа.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void InsertImg(string path, int x, int y, int width, int height, Word.Document document)
         {
-            document.Shapes.AddPicture(FileName:path, Left:x, Top:y, Width: width, Height: height);
+            try
+            {
+                document.Shapes.AddPicture(FileName: path, Left: x, Top: y, Width: width, Height: height);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при роздрукуванні документа.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        public static void GetSavePath()
+        public static bool GetSavePath()
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Будь ласка, виберіть ПОРОЖНЮ папку для збереження файлу. Або створіть нову папку у будь-якому зручному для Вас місці.";
             fbd.RootFolder = Environment.SpecialFolder.DesktopDirectory;
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                savePathRes = true;
                 SavePath = fbd.SelectedPath;
             }
+            else
+                return false;
+            return true;
         }
     }
 }

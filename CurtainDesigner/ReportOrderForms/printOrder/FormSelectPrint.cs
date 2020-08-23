@@ -146,8 +146,11 @@ namespace CurtainDesigner.ReportOrderForms.printOrder
 
             is_process = true;
 
-            Classes.Print.GetSavePath();
-            if (Classes.Print.savePathRes)
+            if (!Classes.Print.GetSavePath())
+            {
+                is_process = false;
+            }
+            else
             {
                 thread_2 = new Thread(new ParameterizedThreadStart(start_check_thread));
                 thread_2.Start(3);
@@ -161,8 +164,11 @@ namespace CurtainDesigner.ReportOrderForms.printOrder
 
             is_process = true;
 
-            Classes.Print.GetSavePath();
-            if (Classes.Print.savePathRes)
+            if(!Classes.Print.GetSavePath())
+            {
+                is_process = false;
+            }
+            else
             {
                 thread_2 = new Thread(new ParameterizedThreadStart(start_check_thread));
                 thread_2.Start(2);
