@@ -31,6 +31,12 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC control_fc_additionalEquipment;
         private UserControls.UCSettingsFabricCurtain.UserControlCurt_fabricFC control_fc_fabric;
 
+        private UserControls.UCSettingsDayNightCurtain.UserControlCurt_AdditionalEquipmentDNC control_dnc_additionalEquipment;
+        //private UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC control_dnc_types;
+        //private UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC control_dnc_subtypes;
+        //private UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC control_dnc_additionalEquipment;
+        //private UserControls.UCSettingsFabricCurtain.UserControlCurt_fabricFC control_dnc_fabric;
+
         private Panel mainMenuSidePanel = null;
 
         public FormSettings()
@@ -72,11 +78,14 @@ namespace CurtainDesigner.SettingForm
             this.panelContainer.Controls.Add(control_sidecontrol = new UserControls.UserControlSideControllDataBase()); control_sidecontrol.Hide();
             this.panelContainer.Controls.Add(control_colors = new UserControls.UserControlColorDataBase()); control_colors.Hide();
             this.panelContainer.Controls.Add(control_clients = new UserControls.UserControlClientDataBase()); control_clients.Hide();
+
             this.panelContainer.Controls.Add(control_fc_categories = new UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB()); control_fc_categories.Hide();
             this.panelContainer.Controls.Add(control_fc_types = new UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC()); control_fc_types.Hide();
             this.panelContainer.Controls.Add(control_fc_subtypes = new UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC()); control_fc_subtypes.Hide();
             this.panelContainer.Controls.Add(control_fc_additionalEquipment = new UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC()); control_fc_additionalEquipment.Hide();
             this.panelContainer.Controls.Add(control_fc_fabric = new UserControls.UCSettingsFabricCurtain.UserControlCurt_fabricFC()); control_fc_fabric.Hide();
+
+            this.panelContainer.Controls.Add(control_dnc_additionalEquipment = new UserControls.UCSettingsDayNightCurtain.UserControlCurt_AdditionalEquipmentDNC()); control_dnc_additionalEquipment.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -311,6 +320,7 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+            openSidePanel(panelSidePanelDNC);
         }
 
         private void bunifuFlatButtonMainSettingProtectiveCurtains_Click(object sender, EventArgs e)
@@ -387,6 +397,13 @@ namespace CurtainDesigner.SettingForm
             //do_visiblePanelOthers(sender);
             OpenChildControl(control_installation, sender);
             control_installation.load_installations();
+        }
+
+        private void bunifuAdditionalEquipmentButtonDNC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_dnc_additionalEquipment, sender);
+            control_dnc_additionalEquipment.load_equipments();
         }
     }
 }

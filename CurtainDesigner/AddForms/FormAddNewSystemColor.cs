@@ -372,7 +372,7 @@ namespace CurtainDesigner.AddForms
                 try
                 {
                     string file = open_dialog.FileName;
-                    if (file.Contains("fabric_images") || file.Contains("color_images") || file.Contains("drawing_images"))
+                    if (file.Contains("fabric_images") || file.Contains("color_images") || file.Contains("draw_images"))
                     {
                         pictureBoxSelectedImg.Image = new Bitmap(file);
                         pictureBoxSelectedImg.Invalidate();

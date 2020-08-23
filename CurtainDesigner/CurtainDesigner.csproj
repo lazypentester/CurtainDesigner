@@ -105,6 +105,36 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricAdditionalEquipmentAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricAdditionalEquipmentAddForm.Designer.cs">
+      <DependentUpon>DNCFabricAdditionalEquipmentAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricCategoryAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricCategoryAddForm.Designer.cs">
+      <DependentUpon>DNCFabricCategoryAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricFabricAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricFabricAddForm.Designer.cs">
+      <DependentUpon>DNCFabricFabricAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricSubtypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricSubtypeAddForm.Designer.cs">
+      <DependentUpon>DNCFabricSubtypeAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricTypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\DNCAddForm\DNCFabricTypeAddForm.Designer.cs">
+      <DependentUpon>DNCFabricTypeAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\FabricCurtainAddForm\FCFabricAdditionalEquipmentAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +298,12 @@
     <Compile Include="UserControls\UCFormFCORDER\UCStatusOk.Designer.cs">
       <DependentUpon>UCStatusOk.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_AdditionalEquipmentDNC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_AdditionalEquipmentDNC.Designer.cs">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentDNC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -324,6 +360,21 @@
     </Compile>
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
+    <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricAdditionalEquipmentAddForm.resx">
+      <DependentUpon>DNCFabricAdditionalEquipmentAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricCategoryAddForm.resx">
+      <DependentUpon>DNCFabricCategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricFabricAddForm.resx">
+      <DependentUpon>DNCFabricFabricAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricSubtypeAddForm.resx">
+      <DependentUpon>DNCFabricSubtypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricTypeAddForm.resx">
+      <DependentUpon>DNCFabricTypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\FabricCurtainAddForm\FCFabricAdditionalEquipmentAddForm.resx">
       <DependentUpon>FCFabricAdditionalEquipmentAddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCFormFCORDER\UCStatusOk.resx">
       <DependentUpon>UCStatusOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_AdditionalEquipmentDNC.resx">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentDNC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.resx">
       <DependentUpon>UserControlCurt_AdditionalEquipmentFC.cs</DependentUpon>
