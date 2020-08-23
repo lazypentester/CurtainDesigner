@@ -104,6 +104,7 @@
             this.bunifuCheckboxWithOutImg.Name = "bunifuCheckboxWithOutImg";
             this.bunifuCheckboxWithOutImg.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckboxWithOutImg.TabIndex = 11;
+            this.bunifuCheckboxWithOutImg.OnChange += new System.EventHandler(this.bunifuCheckboxWithOutImg_OnChange);
             // 
             // pictureBoxSelectedImg
             // 

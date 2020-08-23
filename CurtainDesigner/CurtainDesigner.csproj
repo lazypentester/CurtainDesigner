@@ -304,6 +304,30 @@
     <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_AdditionalEquipmentDNC.Designer.cs">
       <DependentUpon>UserControlCurt_AdditionalEquipmentDNC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_categoryDNC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_categoryDNC.Designer.cs">
+      <DependentUpon>UserControlCurt_categoryDNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_fabricDNC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_fabricDNC.Designer.cs">
+      <DependentUpon>UserControlCurt_fabricDNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_SubtypeDNC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_SubtypeDNC.Designer.cs">
+      <DependentUpon>UserControlCurt_SubtypeDNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_TypeDNC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_TypeDNC.Designer.cs">
+      <DependentUpon>UserControlCurt_TypeDNC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -456,6 +480,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_AdditionalEquipmentDNC.resx">
       <DependentUpon>UserControlCurt_AdditionalEquipmentDNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_categoryDNC.resx">
+      <DependentUpon>UserControlCurt_categoryDNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_fabricDNC.resx">
+      <DependentUpon>UserControlCurt_fabricDNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_SubtypeDNC.resx">
+      <DependentUpon>UserControlCurt_SubtypeDNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsDayNightCurtain\UserControlCurt_TypeDNC.resx">
+      <DependentUpon>UserControlCurt_TypeDNC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_AdditionalEquipmentFC.resx">
       <DependentUpon>UserControlCurt_AdditionalEquipmentFC.cs</DependentUpon>

@@ -132,7 +132,7 @@ namespace CurtainDesigner.AddForms.DNCAddForm
             if (send)
             {
                 MessageBox.Show("Підтип успішно видалений.", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (control as UserControls.UCSettingsFabricCurtain.UserControlCurt_SubtypeFC).load_subtypes();
+                (control as UserControls.UCSettingsDayNightCurtain.UserControlCurt_SubtypeDNC).load_subtypes();
             }
             else
                 MessageBox.Show("Помилка при видаленні категорії.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

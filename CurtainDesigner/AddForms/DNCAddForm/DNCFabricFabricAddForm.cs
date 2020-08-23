@@ -71,7 +71,7 @@ namespace CurtainDesigner.AddForms.DNCAddForm
             if (send)
             {
                 MessageBox.Show("Тканина успішно видалена.", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (control as UserControls.UCSettingsFabricCurtain.UserControlCurt_fabricFC).load_fabrics();
+                (control as UserControls.UCSettingsDayNightCurtain.UserControlCurt_fabricDNC).load_fabrics();
             }
             else
                 MessageBox.Show("Помилка при видаленні тканини.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -258,7 +258,7 @@ namespace CurtainDesigner.AddForms.DNCAddForm
 
             SqlDataReader reader = null;
 
-            SqlCommand sqlCommandTypes = new SqlCommand($"Select * From [DNCs_types];", connection);
+            SqlCommand sqlCommandTypes = new SqlCommand($"Select * From [DNC_types];", connection);
 
             try
             {

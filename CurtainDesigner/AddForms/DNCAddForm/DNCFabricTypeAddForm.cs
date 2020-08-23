@@ -111,7 +111,7 @@ namespace CurtainDesigner.AddForms.DNCAddForm
             if (send)
             {
                 MessageBox.Show("Тип успішно видалений.", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (control as UserControls.UCSettingsFabricCurtain.UserControlCurt_TypeFC).load_types();
+                (control as UserControls.UCSettingsDayNightCurtain.UserControlCurt_TypeDNC).load_types();
             }
             else
                 MessageBox.Show("Помилка при видаленні типу.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

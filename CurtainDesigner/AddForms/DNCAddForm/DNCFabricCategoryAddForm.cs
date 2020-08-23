@@ -248,7 +248,7 @@ namespace CurtainDesigner.AddForms.DNCAddForm
             if (send)
             {
                 MessageBox.Show("Категорія успішно видалена.", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (control as UserControls.UCSettingsFabricCurtain.UserControlCurt_categoryFB).load_categories();
+                (control as UserControls.UCSettingsDayNightCurtain.UserControlCurt_categoryDNC).load_categories();
             }
             else
                 MessageBox.Show("Помилка при видаленні категорії.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

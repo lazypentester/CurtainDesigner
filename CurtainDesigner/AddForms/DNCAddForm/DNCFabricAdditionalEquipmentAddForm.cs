@@ -265,7 +265,7 @@ namespace CurtainDesigner.AddForms.DNCAddForm
             if (send)
             {
                 MessageBox.Show("Комплектація успішно видалена.", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (control as UserControls.UCSettingsFabricCurtain.UserControlCurt_AdditionalEquipmentFC).load_equipments();
+                (control as UserControls.UCSettingsDayNightCurtain.UserControlCurt_AdditionalEquipmentDNC).load_equipments();
             }
             else
                 MessageBox.Show("Помилка при видаленні Комплектації.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

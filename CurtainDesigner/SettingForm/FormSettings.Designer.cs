@@ -53,6 +53,12 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timerForIconSettingsAndLabel = new System.Windows.Forms.Timer(this.components);
             this.panelSideBarMenu = new System.Windows.Forms.Panel();
+            this.panelSidePanelDNC = new System.Windows.Forms.Panel();
+            this.bunifuSubtypesSystemButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatFabricCategiryButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuAdditionalEquipmentButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuSystemTypesButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDNCFabricDataBaseButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelOtherSettings = new System.Windows.Forms.Panel();
             this.bunifuInstallationButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuClientDataBaseButton = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -64,12 +70,6 @@
             this.bunifuAdditionalEquipmentButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSystemTypesButtonFC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFabricDataBaseButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelSidePanelDNC = new System.Windows.Forms.Panel();
-            this.bunifuSubtypesSystemButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatFabricCategiryButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuAdditionalEquipmentButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuSystemTypesButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuDNCFabricDataBaseButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSettings)).BeginInit();
@@ -78,9 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
             this.panelSideBarMenu.SuspendLayout();
+            this.panelSidePanelDNC.SuspendLayout();
             this.panelOtherSettings.SuspendLayout();
             this.panelSidePanelFabricCurtain.SuspendLayout();
-            this.panelSidePanelDNC.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -575,6 +575,203 @@
             this.panelSideBarMenu.Size = new System.Drawing.Size(280, 592);
             this.panelSideBarMenu.TabIndex = 3;
             // 
+            // panelSidePanelDNC
+            // 
+            this.panelSidePanelDNC.Controls.Add(this.bunifuSubtypesSystemButtonDNC);
+            this.panelSidePanelDNC.Controls.Add(this.bunifuFlatFabricCategiryButtonDNC);
+            this.panelSidePanelDNC.Controls.Add(this.bunifuAdditionalEquipmentButtonDNC);
+            this.panelSidePanelDNC.Controls.Add(this.bunifuSystemTypesButtonDNC);
+            this.panelSidePanelDNC.Controls.Add(this.bunifuDNCFabricDataBaseButton);
+            this.panelSidePanelDNC.Location = new System.Drawing.Point(0, 130);
+            this.panelSidePanelDNC.Name = "panelSidePanelDNC";
+            this.panelSidePanelDNC.Size = new System.Drawing.Size(280, 220);
+            this.panelSidePanelDNC.TabIndex = 3;
+            // 
+            // bunifuSubtypesSystemButtonDNC
+            // 
+            this.bunifuSubtypesSystemButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuSubtypesSystemButtonDNC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSubtypesSystemButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuSubtypesSystemButtonDNC.BorderRadius = 0;
+            this.bunifuSubtypesSystemButtonDNC.ButtonText = "Підтипи систем";
+            this.bunifuSubtypesSystemButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuSubtypesSystemButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuSubtypesSystemButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSubtypesSystemButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSubtypesSystemButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuSubtypesSystemButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_tree_structure_25px;
+            this.bunifuSubtypesSystemButtonDNC.Iconimage_right = null;
+            this.bunifuSubtypesSystemButtonDNC.Iconimage_right_Selected = null;
+            this.bunifuSubtypesSystemButtonDNC.Iconimage_Selected = null;
+            this.bunifuSubtypesSystemButtonDNC.IconMarginLeft = 35;
+            this.bunifuSubtypesSystemButtonDNC.IconMarginRight = 0;
+            this.bunifuSubtypesSystemButtonDNC.IconRightVisible = false;
+            this.bunifuSubtypesSystemButtonDNC.IconRightZoom = 0D;
+            this.bunifuSubtypesSystemButtonDNC.IconVisible = true;
+            this.bunifuSubtypesSystemButtonDNC.IconZoom = 55D;
+            this.bunifuSubtypesSystemButtonDNC.IsTab = false;
+            this.bunifuSubtypesSystemButtonDNC.Location = new System.Drawing.Point(0, 83);
+            this.bunifuSubtypesSystemButtonDNC.Name = "bunifuSubtypesSystemButtonDNC";
+            this.bunifuSubtypesSystemButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuSubtypesSystemButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuSubtypesSystemButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSubtypesSystemButtonDNC.selected = false;
+            this.bunifuSubtypesSystemButtonDNC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuSubtypesSystemButtonDNC.TabIndex = 21;
+            this.bunifuSubtypesSystemButtonDNC.Text = "Підтипи систем";
+            this.bunifuSubtypesSystemButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuSubtypesSystemButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSubtypesSystemButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSubtypesSystemButtonDNC.Click += new System.EventHandler(this.bunifuSubtypesSystemButtonDNC_Click);
+            // 
+            // bunifuFlatFabricCategiryButtonDNC
+            // 
+            this.bunifuFlatFabricCategiryButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuFlatFabricCategiryButtonDNC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuFlatFabricCategiryButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuFlatFabricCategiryButtonDNC.BorderRadius = 0;
+            this.bunifuFlatFabricCategiryButtonDNC.ButtonText = "Категорії тканин";
+            this.bunifuFlatFabricCategiryButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatFabricCategiryButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuFlatFabricCategiryButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatFabricCategiryButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuFlatFabricCategiryButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatFabricCategiryButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_tags_25px;
+            this.bunifuFlatFabricCategiryButtonDNC.Iconimage_right = null;
+            this.bunifuFlatFabricCategiryButtonDNC.Iconimage_right_Selected = null;
+            this.bunifuFlatFabricCategiryButtonDNC.Iconimage_Selected = null;
+            this.bunifuFlatFabricCategiryButtonDNC.IconMarginLeft = 35;
+            this.bunifuFlatFabricCategiryButtonDNC.IconMarginRight = 0;
+            this.bunifuFlatFabricCategiryButtonDNC.IconRightVisible = false;
+            this.bunifuFlatFabricCategiryButtonDNC.IconRightZoom = 0D;
+            this.bunifuFlatFabricCategiryButtonDNC.IconVisible = true;
+            this.bunifuFlatFabricCategiryButtonDNC.IconZoom = 55D;
+            this.bunifuFlatFabricCategiryButtonDNC.IsTab = false;
+            this.bunifuFlatFabricCategiryButtonDNC.Location = new System.Drawing.Point(0, 123);
+            this.bunifuFlatFabricCategiryButtonDNC.Name = "bunifuFlatFabricCategiryButtonDNC";
+            this.bunifuFlatFabricCategiryButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatFabricCategiryButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuFlatFabricCategiryButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuFlatFabricCategiryButtonDNC.selected = false;
+            this.bunifuFlatFabricCategiryButtonDNC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuFlatFabricCategiryButtonDNC.TabIndex = 20;
+            this.bunifuFlatFabricCategiryButtonDNC.Text = "Категорії тканин";
+            this.bunifuFlatFabricCategiryButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatFabricCategiryButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuFlatFabricCategiryButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatFabricCategiryButtonDNC.Click += new System.EventHandler(this.bunifuFlatFabricCategiryButtonDNC_Click);
+            // 
+            // bunifuAdditionalEquipmentButtonDNC
+            // 
+            this.bunifuAdditionalEquipmentButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuAdditionalEquipmentButtonDNC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuAdditionalEquipmentButtonDNC.BorderRadius = 0;
+            this.bunifuAdditionalEquipmentButtonDNC.ButtonText = "Додаткові комплектації";
+            this.bunifuAdditionalEquipmentButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuAdditionalEquipmentButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuAdditionalEquipmentButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuAdditionalEquipmentButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_sum_25px;
+            this.bunifuAdditionalEquipmentButtonDNC.Iconimage_right = null;
+            this.bunifuAdditionalEquipmentButtonDNC.Iconimage_right_Selected = null;
+            this.bunifuAdditionalEquipmentButtonDNC.Iconimage_Selected = null;
+            this.bunifuAdditionalEquipmentButtonDNC.IconMarginLeft = 35;
+            this.bunifuAdditionalEquipmentButtonDNC.IconMarginRight = 0;
+            this.bunifuAdditionalEquipmentButtonDNC.IconRightVisible = false;
+            this.bunifuAdditionalEquipmentButtonDNC.IconRightZoom = 0D;
+            this.bunifuAdditionalEquipmentButtonDNC.IconVisible = true;
+            this.bunifuAdditionalEquipmentButtonDNC.IconZoom = 55D;
+            this.bunifuAdditionalEquipmentButtonDNC.IsTab = false;
+            this.bunifuAdditionalEquipmentButtonDNC.Location = new System.Drawing.Point(0, 163);
+            this.bunifuAdditionalEquipmentButtonDNC.Name = "bunifuAdditionalEquipmentButtonDNC";
+            this.bunifuAdditionalEquipmentButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuAdditionalEquipmentButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonDNC.selected = false;
+            this.bunifuAdditionalEquipmentButtonDNC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuAdditionalEquipmentButtonDNC.TabIndex = 20;
+            this.bunifuAdditionalEquipmentButtonDNC.Text = "Додаткові комплектації";
+            this.bunifuAdditionalEquipmentButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuAdditionalEquipmentButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuAdditionalEquipmentButtonDNC.Click += new System.EventHandler(this.bunifuAdditionalEquipmentButtonDNC_Click);
+            // 
+            // bunifuSystemTypesButtonDNC
+            // 
+            this.bunifuSystemTypesButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuSystemTypesButtonDNC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSystemTypesButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuSystemTypesButtonDNC.BorderRadius = 0;
+            this.bunifuSystemTypesButtonDNC.ButtonText = "Типи систем";
+            this.bunifuSystemTypesButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuSystemTypesButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuSystemTypesButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSystemTypesButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSystemTypesButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuSystemTypesButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_text_width_25px_1;
+            this.bunifuSystemTypesButtonDNC.Iconimage_right = null;
+            this.bunifuSystemTypesButtonDNC.Iconimage_right_Selected = null;
+            this.bunifuSystemTypesButtonDNC.Iconimage_Selected = null;
+            this.bunifuSystemTypesButtonDNC.IconMarginLeft = 35;
+            this.bunifuSystemTypesButtonDNC.IconMarginRight = 0;
+            this.bunifuSystemTypesButtonDNC.IconRightVisible = false;
+            this.bunifuSystemTypesButtonDNC.IconRightZoom = 0D;
+            this.bunifuSystemTypesButtonDNC.IconVisible = true;
+            this.bunifuSystemTypesButtonDNC.IconZoom = 55D;
+            this.bunifuSystemTypesButtonDNC.IsTab = false;
+            this.bunifuSystemTypesButtonDNC.Location = new System.Drawing.Point(0, 43);
+            this.bunifuSystemTypesButtonDNC.Name = "bunifuSystemTypesButtonDNC";
+            this.bunifuSystemTypesButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuSystemTypesButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuSystemTypesButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSystemTypesButtonDNC.selected = false;
+            this.bunifuSystemTypesButtonDNC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuSystemTypesButtonDNC.TabIndex = 19;
+            this.bunifuSystemTypesButtonDNC.Text = "Типи систем";
+            this.bunifuSystemTypesButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuSystemTypesButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSystemTypesButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSystemTypesButtonDNC.Click += new System.EventHandler(this.bunifuSystemTypesButtonDNC_Click);
+            // 
+            // bunifuDNCFabricDataBaseButton
+            // 
+            this.bunifuDNCFabricDataBaseButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuDNCFabricDataBaseButton.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDNCFabricDataBaseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuDNCFabricDataBaseButton.BorderRadius = 0;
+            this.bunifuDNCFabricDataBaseButton.ButtonText = "База тканин";
+            this.bunifuDNCFabricDataBaseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuDNCFabricDataBaseButton.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuDNCFabricDataBaseButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuDNCFabricDataBaseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuDNCFabricDataBaseButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuDNCFabricDataBaseButton.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_yarn_25px;
+            this.bunifuDNCFabricDataBaseButton.Iconimage_right = null;
+            this.bunifuDNCFabricDataBaseButton.Iconimage_right_Selected = null;
+            this.bunifuDNCFabricDataBaseButton.Iconimage_Selected = null;
+            this.bunifuDNCFabricDataBaseButton.IconMarginLeft = 35;
+            this.bunifuDNCFabricDataBaseButton.IconMarginRight = 0;
+            this.bunifuDNCFabricDataBaseButton.IconRightVisible = false;
+            this.bunifuDNCFabricDataBaseButton.IconRightZoom = 0D;
+            this.bunifuDNCFabricDataBaseButton.IconVisible = true;
+            this.bunifuDNCFabricDataBaseButton.IconZoom = 55D;
+            this.bunifuDNCFabricDataBaseButton.IsTab = false;
+            this.bunifuDNCFabricDataBaseButton.Location = new System.Drawing.Point(0, 3);
+            this.bunifuDNCFabricDataBaseButton.Name = "bunifuDNCFabricDataBaseButton";
+            this.bunifuDNCFabricDataBaseButton.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuDNCFabricDataBaseButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuDNCFabricDataBaseButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuDNCFabricDataBaseButton.selected = false;
+            this.bunifuDNCFabricDataBaseButton.Size = new System.Drawing.Size(280, 41);
+            this.bunifuDNCFabricDataBaseButton.TabIndex = 18;
+            this.bunifuDNCFabricDataBaseButton.Text = "База тканин";
+            this.bunifuDNCFabricDataBaseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuDNCFabricDataBaseButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuDNCFabricDataBaseButton.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuDNCFabricDataBaseButton.Click += new System.EventHandler(this.bunifuDNCFabricDataBaseButton_Click);
+            // 
             // panelOtherSettings
             // 
             this.panelOtherSettings.Controls.Add(this.bunifuInstallationButton);
@@ -931,199 +1128,6 @@
             this.bunifuFabricDataBaseButton.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFabricDataBaseButton.Click += new System.EventHandler(this.bunifuFabricDataBaseButton_Click);
             // 
-            // panelSidePanelDNC
-            // 
-            this.panelSidePanelDNC.Controls.Add(this.bunifuSubtypesSystemButtonDNC);
-            this.panelSidePanelDNC.Controls.Add(this.bunifuFlatFabricCategiryButtonDNC);
-            this.panelSidePanelDNC.Controls.Add(this.bunifuAdditionalEquipmentButtonDNC);
-            this.panelSidePanelDNC.Controls.Add(this.bunifuSystemTypesButtonDNC);
-            this.panelSidePanelDNC.Controls.Add(this.bunifuDNCFabricDataBaseButton);
-            this.panelSidePanelDNC.Location = new System.Drawing.Point(0, 130);
-            this.panelSidePanelDNC.Name = "panelSidePanelDNC";
-            this.panelSidePanelDNC.Size = new System.Drawing.Size(280, 220);
-            this.panelSidePanelDNC.TabIndex = 3;
-            // 
-            // bunifuSubtypesSystemButtonDNC
-            // 
-            this.bunifuSubtypesSystemButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuSubtypesSystemButtonDNC.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSubtypesSystemButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuSubtypesSystemButtonDNC.BorderRadius = 0;
-            this.bunifuSubtypesSystemButtonDNC.ButtonText = "Підтипи систем";
-            this.bunifuSubtypesSystemButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuSubtypesSystemButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.bunifuSubtypesSystemButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuSubtypesSystemButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuSubtypesSystemButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuSubtypesSystemButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_tree_structure_25px;
-            this.bunifuSubtypesSystemButtonDNC.Iconimage_right = null;
-            this.bunifuSubtypesSystemButtonDNC.Iconimage_right_Selected = null;
-            this.bunifuSubtypesSystemButtonDNC.Iconimage_Selected = null;
-            this.bunifuSubtypesSystemButtonDNC.IconMarginLeft = 35;
-            this.bunifuSubtypesSystemButtonDNC.IconMarginRight = 0;
-            this.bunifuSubtypesSystemButtonDNC.IconRightVisible = false;
-            this.bunifuSubtypesSystemButtonDNC.IconRightZoom = 0D;
-            this.bunifuSubtypesSystemButtonDNC.IconVisible = true;
-            this.bunifuSubtypesSystemButtonDNC.IconZoom = 55D;
-            this.bunifuSubtypesSystemButtonDNC.IsTab = false;
-            this.bunifuSubtypesSystemButtonDNC.Location = new System.Drawing.Point(0, 83);
-            this.bunifuSubtypesSystemButtonDNC.Name = "bunifuSubtypesSystemButtonDNC";
-            this.bunifuSubtypesSystemButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuSubtypesSystemButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuSubtypesSystemButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuSubtypesSystemButtonDNC.selected = false;
-            this.bunifuSubtypesSystemButtonDNC.Size = new System.Drawing.Size(280, 41);
-            this.bunifuSubtypesSystemButtonDNC.TabIndex = 21;
-            this.bunifuSubtypesSystemButtonDNC.Text = "Підтипи систем";
-            this.bunifuSubtypesSystemButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuSubtypesSystemButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuSubtypesSystemButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatFabricCategiryButtonDNC
-            // 
-            this.bunifuFlatFabricCategiryButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuFlatFabricCategiryButtonDNC.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatFabricCategiryButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuFlatFabricCategiryButtonDNC.BorderRadius = 0;
-            this.bunifuFlatFabricCategiryButtonDNC.ButtonText = "Категорії тканин";
-            this.bunifuFlatFabricCategiryButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatFabricCategiryButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.bunifuFlatFabricCategiryButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatFabricCategiryButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuFlatFabricCategiryButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatFabricCategiryButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_tags_25px;
-            this.bunifuFlatFabricCategiryButtonDNC.Iconimage_right = null;
-            this.bunifuFlatFabricCategiryButtonDNC.Iconimage_right_Selected = null;
-            this.bunifuFlatFabricCategiryButtonDNC.Iconimage_Selected = null;
-            this.bunifuFlatFabricCategiryButtonDNC.IconMarginLeft = 35;
-            this.bunifuFlatFabricCategiryButtonDNC.IconMarginRight = 0;
-            this.bunifuFlatFabricCategiryButtonDNC.IconRightVisible = false;
-            this.bunifuFlatFabricCategiryButtonDNC.IconRightZoom = 0D;
-            this.bunifuFlatFabricCategiryButtonDNC.IconVisible = true;
-            this.bunifuFlatFabricCategiryButtonDNC.IconZoom = 55D;
-            this.bunifuFlatFabricCategiryButtonDNC.IsTab = false;
-            this.bunifuFlatFabricCategiryButtonDNC.Location = new System.Drawing.Point(0, 123);
-            this.bunifuFlatFabricCategiryButtonDNC.Name = "bunifuFlatFabricCategiryButtonDNC";
-            this.bunifuFlatFabricCategiryButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatFabricCategiryButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuFlatFabricCategiryButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuFlatFabricCategiryButtonDNC.selected = false;
-            this.bunifuFlatFabricCategiryButtonDNC.Size = new System.Drawing.Size(280, 41);
-            this.bunifuFlatFabricCategiryButtonDNC.TabIndex = 20;
-            this.bunifuFlatFabricCategiryButtonDNC.Text = "Категорії тканин";
-            this.bunifuFlatFabricCategiryButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatFabricCategiryButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuFlatFabricCategiryButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuAdditionalEquipmentButtonDNC
-            // 
-            this.bunifuAdditionalEquipmentButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuAdditionalEquipmentButtonDNC.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuAdditionalEquipmentButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuAdditionalEquipmentButtonDNC.BorderRadius = 0;
-            this.bunifuAdditionalEquipmentButtonDNC.ButtonText = "Додаткові комплектації";
-            this.bunifuAdditionalEquipmentButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuAdditionalEquipmentButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.bunifuAdditionalEquipmentButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuAdditionalEquipmentButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuAdditionalEquipmentButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuAdditionalEquipmentButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_sum_25px;
-            this.bunifuAdditionalEquipmentButtonDNC.Iconimage_right = null;
-            this.bunifuAdditionalEquipmentButtonDNC.Iconimage_right_Selected = null;
-            this.bunifuAdditionalEquipmentButtonDNC.Iconimage_Selected = null;
-            this.bunifuAdditionalEquipmentButtonDNC.IconMarginLeft = 35;
-            this.bunifuAdditionalEquipmentButtonDNC.IconMarginRight = 0;
-            this.bunifuAdditionalEquipmentButtonDNC.IconRightVisible = false;
-            this.bunifuAdditionalEquipmentButtonDNC.IconRightZoom = 0D;
-            this.bunifuAdditionalEquipmentButtonDNC.IconVisible = true;
-            this.bunifuAdditionalEquipmentButtonDNC.IconZoom = 55D;
-            this.bunifuAdditionalEquipmentButtonDNC.IsTab = false;
-            this.bunifuAdditionalEquipmentButtonDNC.Location = new System.Drawing.Point(0, 163);
-            this.bunifuAdditionalEquipmentButtonDNC.Name = "bunifuAdditionalEquipmentButtonDNC";
-            this.bunifuAdditionalEquipmentButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuAdditionalEquipmentButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuAdditionalEquipmentButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuAdditionalEquipmentButtonDNC.selected = false;
-            this.bunifuAdditionalEquipmentButtonDNC.Size = new System.Drawing.Size(280, 41);
-            this.bunifuAdditionalEquipmentButtonDNC.TabIndex = 20;
-            this.bunifuAdditionalEquipmentButtonDNC.Text = "Додаткові комплектації";
-            this.bunifuAdditionalEquipmentButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuAdditionalEquipmentButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuAdditionalEquipmentButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuAdditionalEquipmentButtonDNC.Click += new System.EventHandler(this.bunifuAdditionalEquipmentButtonDNC_Click);
-            // 
-            // bunifuSystemTypesButtonDNC
-            // 
-            this.bunifuSystemTypesButtonDNC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuSystemTypesButtonDNC.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSystemTypesButtonDNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuSystemTypesButtonDNC.BorderRadius = 0;
-            this.bunifuSystemTypesButtonDNC.ButtonText = "Типи систем";
-            this.bunifuSystemTypesButtonDNC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuSystemTypesButtonDNC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.bunifuSystemTypesButtonDNC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuSystemTypesButtonDNC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuSystemTypesButtonDNC.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuSystemTypesButtonDNC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_text_width_25px_1;
-            this.bunifuSystemTypesButtonDNC.Iconimage_right = null;
-            this.bunifuSystemTypesButtonDNC.Iconimage_right_Selected = null;
-            this.bunifuSystemTypesButtonDNC.Iconimage_Selected = null;
-            this.bunifuSystemTypesButtonDNC.IconMarginLeft = 35;
-            this.bunifuSystemTypesButtonDNC.IconMarginRight = 0;
-            this.bunifuSystemTypesButtonDNC.IconRightVisible = false;
-            this.bunifuSystemTypesButtonDNC.IconRightZoom = 0D;
-            this.bunifuSystemTypesButtonDNC.IconVisible = true;
-            this.bunifuSystemTypesButtonDNC.IconZoom = 55D;
-            this.bunifuSystemTypesButtonDNC.IsTab = false;
-            this.bunifuSystemTypesButtonDNC.Location = new System.Drawing.Point(0, 43);
-            this.bunifuSystemTypesButtonDNC.Name = "bunifuSystemTypesButtonDNC";
-            this.bunifuSystemTypesButtonDNC.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuSystemTypesButtonDNC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuSystemTypesButtonDNC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuSystemTypesButtonDNC.selected = false;
-            this.bunifuSystemTypesButtonDNC.Size = new System.Drawing.Size(280, 41);
-            this.bunifuSystemTypesButtonDNC.TabIndex = 19;
-            this.bunifuSystemTypesButtonDNC.Text = "Типи систем";
-            this.bunifuSystemTypesButtonDNC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuSystemTypesButtonDNC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuSystemTypesButtonDNC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuDNCFabricDataBaseButton
-            // 
-            this.bunifuDNCFabricDataBaseButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuDNCFabricDataBaseButton.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDNCFabricDataBaseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuDNCFabricDataBaseButton.BorderRadius = 0;
-            this.bunifuDNCFabricDataBaseButton.ButtonText = "База тканин";
-            this.bunifuDNCFabricDataBaseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuDNCFabricDataBaseButton.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
-            this.bunifuDNCFabricDataBaseButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDNCFabricDataBaseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuDNCFabricDataBaseButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuDNCFabricDataBaseButton.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_yarn_25px;
-            this.bunifuDNCFabricDataBaseButton.Iconimage_right = null;
-            this.bunifuDNCFabricDataBaseButton.Iconimage_right_Selected = null;
-            this.bunifuDNCFabricDataBaseButton.Iconimage_Selected = null;
-            this.bunifuDNCFabricDataBaseButton.IconMarginLeft = 35;
-            this.bunifuDNCFabricDataBaseButton.IconMarginRight = 0;
-            this.bunifuDNCFabricDataBaseButton.IconRightVisible = false;
-            this.bunifuDNCFabricDataBaseButton.IconRightZoom = 0D;
-            this.bunifuDNCFabricDataBaseButton.IconVisible = true;
-            this.bunifuDNCFabricDataBaseButton.IconZoom = 55D;
-            this.bunifuDNCFabricDataBaseButton.IsTab = false;
-            this.bunifuDNCFabricDataBaseButton.Location = new System.Drawing.Point(0, 3);
-            this.bunifuDNCFabricDataBaseButton.Name = "bunifuDNCFabricDataBaseButton";
-            this.bunifuDNCFabricDataBaseButton.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuDNCFabricDataBaseButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
-            this.bunifuDNCFabricDataBaseButton.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuDNCFabricDataBaseButton.selected = false;
-            this.bunifuDNCFabricDataBaseButton.Size = new System.Drawing.Size(280, 41);
-            this.bunifuDNCFabricDataBaseButton.TabIndex = 18;
-            this.bunifuDNCFabricDataBaseButton.Text = "База тканин";
-            this.bunifuDNCFabricDataBaseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuDNCFabricDataBaseButton.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
-            this.bunifuDNCFabricDataBaseButton.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1146,9 +1150,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).EndInit();
             this.panelSideBarMenu.ResumeLayout(false);
+            this.panelSidePanelDNC.ResumeLayout(false);
             this.panelOtherSettings.ResumeLayout(false);
             this.panelSidePanelFabricCurtain.ResumeLayout(false);
-            this.panelSidePanelDNC.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
