@@ -19,6 +19,15 @@ namespace CurtainDesigner.Models.Classes
 
         public Task<bool> editObject()
         {
+            //try
+            //{
+            //    throw new NotImplementedException();
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
             throw new NotImplementedException();
         }
 

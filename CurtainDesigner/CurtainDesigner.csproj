@@ -191,6 +191,8 @@
     </Compile>
     <Compile Include="Classes\ClassPatternPath.cs" />
     <Compile Include="Classes\ConnectionString.cs" />
+    <Compile Include="Classes\DNC.cs" />
+    <Compile Include="Classes\DNC2.cs" />
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
     <Compile Include="Classes\FC_Caontainer.cs" />
@@ -198,6 +200,7 @@
     <Compile Include="Classes\MagicImage\MagicLabels.cs" />
     <Compile Include="Classes\PathCombiner.cs" />
     <Compile Include="Classes\Print.cs" />
+    <Compile Include="Controllers\Classes\DNCControlerManager.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />
     <Compile Include="MainForm\Form1.cs">
@@ -206,8 +209,15 @@
     <Compile Include="MainForm\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Classes\DNCManage.cs" />
     <Compile Include="Models\Classes\FabricCurtainManage.cs" />
     <Compile Include="Models\Interfaces\IObjectManage.cs" />
+    <Compile Include="OrderForms\FormDNCOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForms\FormDNCOrder.Designer.cs">
+      <DependentUpon>FormDNCOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderForms\FormFabricCurtainOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,6 +392,7 @@
     <Compile Include="UserControls\UserControlSideControllDataBase.Designer.cs">
       <DependentUpon>UserControlSideControllDataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Classes\DNCViewManage.cs" />
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
     <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricAdditionalEquipmentAddForm.resx">
@@ -428,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\FormDNCOrder.resx">
+      <DependentUpon>FormDNCOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\FormFabricCurtainOrder.resx">
       <DependentUpon>FormFabricCurtainOrder.cs</DependentUpon>

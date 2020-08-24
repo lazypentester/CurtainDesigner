@@ -352,6 +352,7 @@
             this.iconButtonOrderDay_NightCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonOrderDay_NightCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonOrderDay_NightCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonOrderDay_NightCurtains.Click += new System.EventHandler(this.iconButtonOrderDay_NightCurtains_Click);
             this.iconButtonOrderDay_NightCurtains.MouseEnter += new System.EventHandler(this.iconButtonOrderDay_NightCurtains_MouseEnter);
             this.iconButtonOrderDay_NightCurtains.MouseLeave += new System.EventHandler(this.iconButtonOrderDay_NightCurtains_MouseLeave);
             // 
