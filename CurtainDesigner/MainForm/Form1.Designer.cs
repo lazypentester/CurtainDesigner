@@ -562,6 +562,7 @@
             this.iconButtonTableDay_NightCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonTableDay_NightCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonTableDay_NightCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonTableDay_NightCurtains.Click += new System.EventHandler(this.iconButtonTableDay_NightCurtains_Click);
             this.iconButtonTableDay_NightCurtains.MouseEnter += new System.EventHandler(this.iconButtonTableDay_NightCurtains_MouseEnter);
             this.iconButtonTableDay_NightCurtains.MouseLeave += new System.EventHandler(this.iconButtonTableDay_NightCurtains_MouseLeave);
             // 

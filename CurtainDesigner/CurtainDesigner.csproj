@@ -193,6 +193,7 @@
     <Compile Include="Classes\ConnectionString.cs" />
     <Compile Include="Classes\DNC.cs" />
     <Compile Include="Classes\DNC2.cs" />
+    <Compile Include="Classes\DNC_Container.cs" />
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
     <Compile Include="Classes\FC_Caontainer.cs" />
@@ -245,6 +246,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_DNC_OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_DNC_OrderForm.Designer.cs">
+      <DependentUpon>Edit_DNC_OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +263,12 @@
     </Compile>
     <Compile Include="ReportOrderForms\EditOrderForms\FormOpenDraw.Designer.cs">
       <DependentUpon>FormOpenDraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrderForms\FormDNCTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\FormDNCTable.Designer.cs">
+      <DependentUpon>FormDNCTable.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportOrderForms\FormFabricCurtainTable.cs">
       <SubType>Form</SubType>
@@ -465,11 +478,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_DNC_OrderForm.resx">
+      <DependentUpon>Edit_DNC_OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.resx">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\FormOpenDraw.resx">
       <DependentUpon>FormOpenDraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\FormDNCTable.resx">
+      <DependentUpon>FormDNCTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\FormFabricCurtainTable.resx">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>

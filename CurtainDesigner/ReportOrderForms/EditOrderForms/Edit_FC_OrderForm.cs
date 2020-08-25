@@ -144,13 +144,13 @@ namespace CurtainDesigner.ReportOrderForms.EditOrderForms
                 Bitmap bitmap = null;
 
                 if ((vls[3].Contains("лів") || vls[3].Contains("Лів")) && (vls[3].Contains("прав") || vls[3].Contains("Прав")))
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90, "fc");
                 else if (vls[3].Contains("прав") || vls[3].Contains("Прав"))
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90, "fc");
                 else if (vls[3].Contains("лів") || vls[3].Contains("Лів"))
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90, "fc");
                 else
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90, "fc");
 
                 pictureBoxImg.Invoke((MethodInvoker)delegate {
                     pictureBoxImg.Image = bitmap;

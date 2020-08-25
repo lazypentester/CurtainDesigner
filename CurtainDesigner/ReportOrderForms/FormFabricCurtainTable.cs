@@ -337,13 +337,13 @@ namespace CurtainDesigner.ReportOrderForms
                 Bitmap bitmap = null;
 
                 if ((side.Contains("лів") || side.Contains("Лів")) && (side.Contains("прав") || side.Contains("Прав")))
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_and_right_side.png"), -45, -90, "fc");
                 else if (side.Contains("прав") || side.Contains("Прав"))
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90, "fc");
                 else if (side.Contains("лів") || side.Contains("Лів"))
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_left_side.png"), -45, -90, "fc");
                 else
-                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90);
+                    bitmap = Classes.MagicImage.ClassMagicImage.create_img(labels.getList, coordinates, Classes.PathCombiner.join_combine("\\draw_images\\fc\\fabric_curtain_right_side.png"), -45, -90, "fc");
             }
             catch (Exception ex)
             {

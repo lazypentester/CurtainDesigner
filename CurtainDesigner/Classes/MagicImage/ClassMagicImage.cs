@@ -14,7 +14,7 @@ namespace CurtainDesigner.Classes.MagicImage
 {
     public class ClassMagicImage
     {
-        public static Bitmap create_img(List<MagickImage> labels, List<int> coordinates, string input_img, double rotate_secondNum, double rotate_thirdNum)
+        public static Bitmap create_img(List<MagickImage> labels, List<int> coordinates, string input_img, double rotate_secondNum, double rotate_thirdNum, string curtain_folder)
         {
             Bitmap res = null;
             int count = 0;
@@ -37,18 +37,18 @@ namespace CurtainDesigner.Classes.MagicImage
 
                 try
                 {
-                    if (File.Exists(PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
-                        File.Delete(PathCombiner.join_combine("\\draw_images\\fc\\draw.png"));
+                    if (File.Exists(PathCombiner.join_combine($"\\draw_images\\{curtain_folder}\\draw.png")))
+                        File.Delete(PathCombiner.join_combine($"\\draw_images\\{curtain_folder}\\draw.png"));
 
                     if (image != null)
                     {
-                        image.Write(PathCombiner.join_combine("\\draw_images\\fc\\draw.png"));
+                        image.Write(PathCombiner.join_combine($"\\draw_images\\{curtain_folder}\\draw.png"));
                         image.Dispose();
                     }
 
-                    if (File.Exists(PathCombiner.join_combine("\\draw_images\\fc\\draw.png")))
+                    if (File.Exists(PathCombiner.join_combine($"\\draw_images\\{curtain_folder}\\draw.png")))
                     {
-                        using (FileStream fileStream = new FileStream(PathCombiner.join_combine("\\draw_images\\fc\\draw.png"), FileMode.Open))
+                        using (FileStream fileStream = new FileStream(PathCombiner.join_combine($"\\draw_images\\{curtain_folder}\\draw.png"), FileMode.Open))
                         {
                             res = new Bitmap(fileStream);
                         }

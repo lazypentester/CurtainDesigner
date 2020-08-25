@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CurtainDesigner.Classes
 {
-    class DNC2
+    public class DNC2
     {
         public string fb_id { get; set; }
 

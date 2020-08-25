@@ -531,5 +531,13 @@ namespace CurtainDesigner
             timerOpenSubMenu.Start();
             OpenChildForm(new CurtainDesigner.OrderForms.FormDNCOrder(), sender);
         }
+
+        private void iconButtonTableDay_NightCurtains_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Colors.color3);
+            currentClickButton = sender;
+            timerOpenSubMenu.Start();
+            OpenChildForm(new CurtainDesigner.ReportOrderForms.FormDNCTable(), sender);
+        }
     }
 }

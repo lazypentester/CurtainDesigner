@@ -10,5 +10,6 @@ namespace CurtainDesigner.Classes
     public class ClassPatternPath
     {
         public static readonly string FC_PATTERN = Classes.PathCombiner.join_combine("\\report_patterns\\fc_pattern.docx");
+        public static readonly string DNC_PATTERN = Classes.PathCombiner.join_combine("\\report_patterns\\dnc_pattern.docx");
     }
 }
