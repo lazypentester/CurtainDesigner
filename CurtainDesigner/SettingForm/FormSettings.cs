@@ -37,6 +37,9 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsDayNightCurtain.UserControlCurt_categoryDNC control_dnc_categories;
         private UserControls.UCSettingsDayNightCurtain.UserControlCurt_fabricDNC control_dnc_fabric;
 
+        private UserControls.UCSettingsProtectiveCurtain.UserControlCurt_AdditionalEquipmentPC control_pc_additionalEquipment;
+        private UserControls.UCSettingsProtectiveCurtain.UserControlCurt_categoryPC control_pc_categories;
+
         private Panel mainMenuSidePanel = null;
 
         public FormSettings()
@@ -90,6 +93,9 @@ namespace CurtainDesigner.SettingForm
             this.panelContainer.Controls.Add(control_dnc_fabric = new UserControls.UCSettingsDayNightCurtain.UserControlCurt_fabricDNC()); control_dnc_fabric.Hide();
             this.panelContainer.Controls.Add(control_dnc_subtypes = new UserControls.UCSettingsDayNightCurtain.UserControlCurt_SubtypeDNC()); control_dnc_subtypes.Hide();
             this.panelContainer.Controls.Add(control_dnc_types = new UserControls.UCSettingsDayNightCurtain.UserControlCurt_TypeDNC()); control_dnc_types.Hide();
+
+            this.panelContainer.Controls.Add(control_pc_additionalEquipment = new UserControls.UCSettingsProtectiveCurtain.UserControlCurt_AdditionalEquipmentPC()); control_pc_additionalEquipment.Hide();
+            this.panelContainer.Controls.Add(control_pc_categories = new UserControls.UCSettingsProtectiveCurtain.UserControlCurt_categoryPC()); control_pc_categories.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -331,6 +337,7 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+            openSidePanel(panelSidePanelPC);
         }
 
         private void bunifuFlatButtonMainSettingRomanCurtains_Click(object sender, EventArgs e)
@@ -436,6 +443,20 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             OpenChildControl(control_dnc_types, sender);
             control_dnc_types.load_types();
+        }
+
+        private void bunifuAdditionalEquipmentButtonPC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_pc_additionalEquipment, sender);
+            control_pc_additionalEquipment.load_equipments();
+        }
+
+        private void bunifuFlatFabricCategiryButtonPC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_pc_categories, sender);
+            control_pc_categories.load_categories();
         }
     }
 }

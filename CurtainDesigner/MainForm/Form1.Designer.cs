@@ -329,6 +329,7 @@
             this.iconButtonOrderProtectiveCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonOrderProtectiveCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonOrderProtectiveCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonOrderProtectiveCurtains.Click += new System.EventHandler(this.iconButtonOrderProtectiveCurtains_Click);
             this.iconButtonOrderProtectiveCurtains.MouseEnter += new System.EventHandler(this.iconButtonOrderProtectiveCurtains_MouseEnter);
             this.iconButtonOrderProtectiveCurtains.MouseLeave += new System.EventHandler(this.iconButtonOrderProtectiveCurtains_MouseLeave);
             // 

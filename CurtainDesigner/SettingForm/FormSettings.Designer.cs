@@ -53,6 +53,9 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timerForIconSettingsAndLabel = new System.Windows.Forms.Timer(this.components);
             this.panelSideBarMenu = new System.Windows.Forms.Panel();
+            this.panelSidePanelPC = new System.Windows.Forms.Panel();
+            this.bunifuFlatFabricCategiryButtonPC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuAdditionalEquipmentButtonPC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSidePanelDNC = new System.Windows.Forms.Panel();
             this.bunifuSubtypesSystemButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatFabricCategiryButtonDNC = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -78,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
             this.panelSideBarMenu.SuspendLayout();
+            this.panelSidePanelPC.SuspendLayout();
             this.panelSidePanelDNC.SuspendLayout();
             this.panelOtherSettings.SuspendLayout();
             this.panelSidePanelFabricCurtain.SuspendLayout();
@@ -566,6 +570,7 @@
             // panelSideBarMenu
             // 
             this.panelSideBarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.panelSideBarMenu.Controls.Add(this.panelSidePanelPC);
             this.panelSideBarMenu.Controls.Add(this.panelSidePanelDNC);
             this.panelSideBarMenu.Controls.Add(this.panelOtherSettings);
             this.panelSideBarMenu.Controls.Add(this.panelSidePanelFabricCurtain);
@@ -575,6 +580,89 @@
             this.panelSideBarMenu.Size = new System.Drawing.Size(280, 592);
             this.panelSideBarMenu.TabIndex = 3;
             // 
+            // panelSidePanelPC
+            // 
+            this.panelSidePanelPC.Controls.Add(this.bunifuFlatFabricCategiryButtonPC);
+            this.panelSidePanelPC.Controls.Add(this.bunifuAdditionalEquipmentButtonPC);
+            this.panelSidePanelPC.Location = new System.Drawing.Point(0, 133);
+            this.panelSidePanelPC.Name = "panelSidePanelPC";
+            this.panelSidePanelPC.Size = new System.Drawing.Size(280, 99);
+            this.panelSidePanelPC.TabIndex = 4;
+            // 
+            // bunifuFlatFabricCategiryButtonPC
+            // 
+            this.bunifuFlatFabricCategiryButtonPC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuFlatFabricCategiryButtonPC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuFlatFabricCategiryButtonPC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuFlatFabricCategiryButtonPC.BorderRadius = 0;
+            this.bunifuFlatFabricCategiryButtonPC.ButtonText = "Цінові категорії";
+            this.bunifuFlatFabricCategiryButtonPC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatFabricCategiryButtonPC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuFlatFabricCategiryButtonPC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatFabricCategiryButtonPC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuFlatFabricCategiryButtonPC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatFabricCategiryButtonPC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_tags_25px;
+            this.bunifuFlatFabricCategiryButtonPC.Iconimage_right = null;
+            this.bunifuFlatFabricCategiryButtonPC.Iconimage_right_Selected = null;
+            this.bunifuFlatFabricCategiryButtonPC.Iconimage_Selected = null;
+            this.bunifuFlatFabricCategiryButtonPC.IconMarginLeft = 35;
+            this.bunifuFlatFabricCategiryButtonPC.IconMarginRight = 0;
+            this.bunifuFlatFabricCategiryButtonPC.IconRightVisible = false;
+            this.bunifuFlatFabricCategiryButtonPC.IconRightZoom = 0D;
+            this.bunifuFlatFabricCategiryButtonPC.IconVisible = true;
+            this.bunifuFlatFabricCategiryButtonPC.IconZoom = 55D;
+            this.bunifuFlatFabricCategiryButtonPC.IsTab = false;
+            this.bunifuFlatFabricCategiryButtonPC.Location = new System.Drawing.Point(0, 7);
+            this.bunifuFlatFabricCategiryButtonPC.Name = "bunifuFlatFabricCategiryButtonPC";
+            this.bunifuFlatFabricCategiryButtonPC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatFabricCategiryButtonPC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuFlatFabricCategiryButtonPC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuFlatFabricCategiryButtonPC.selected = false;
+            this.bunifuFlatFabricCategiryButtonPC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuFlatFabricCategiryButtonPC.TabIndex = 20;
+            this.bunifuFlatFabricCategiryButtonPC.Text = "Цінові категорії";
+            this.bunifuFlatFabricCategiryButtonPC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatFabricCategiryButtonPC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuFlatFabricCategiryButtonPC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatFabricCategiryButtonPC.Click += new System.EventHandler(this.bunifuFlatFabricCategiryButtonPC_Click);
+            // 
+            // bunifuAdditionalEquipmentButtonPC
+            // 
+            this.bunifuAdditionalEquipmentButtonPC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuAdditionalEquipmentButtonPC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonPC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuAdditionalEquipmentButtonPC.BorderRadius = 0;
+            this.bunifuAdditionalEquipmentButtonPC.ButtonText = "Додаткові комплектації";
+            this.bunifuAdditionalEquipmentButtonPC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuAdditionalEquipmentButtonPC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuAdditionalEquipmentButtonPC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuAdditionalEquipmentButtonPC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonPC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonPC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_sum_25px;
+            this.bunifuAdditionalEquipmentButtonPC.Iconimage_right = null;
+            this.bunifuAdditionalEquipmentButtonPC.Iconimage_right_Selected = null;
+            this.bunifuAdditionalEquipmentButtonPC.Iconimage_Selected = null;
+            this.bunifuAdditionalEquipmentButtonPC.IconMarginLeft = 35;
+            this.bunifuAdditionalEquipmentButtonPC.IconMarginRight = 0;
+            this.bunifuAdditionalEquipmentButtonPC.IconRightVisible = false;
+            this.bunifuAdditionalEquipmentButtonPC.IconRightZoom = 0D;
+            this.bunifuAdditionalEquipmentButtonPC.IconVisible = true;
+            this.bunifuAdditionalEquipmentButtonPC.IconZoom = 55D;
+            this.bunifuAdditionalEquipmentButtonPC.IsTab = false;
+            this.bunifuAdditionalEquipmentButtonPC.Location = new System.Drawing.Point(0, 47);
+            this.bunifuAdditionalEquipmentButtonPC.Name = "bunifuAdditionalEquipmentButtonPC";
+            this.bunifuAdditionalEquipmentButtonPC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonPC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuAdditionalEquipmentButtonPC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonPC.selected = false;
+            this.bunifuAdditionalEquipmentButtonPC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuAdditionalEquipmentButtonPC.TabIndex = 20;
+            this.bunifuAdditionalEquipmentButtonPC.Text = "Додаткові комплектації";
+            this.bunifuAdditionalEquipmentButtonPC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuAdditionalEquipmentButtonPC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonPC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuAdditionalEquipmentButtonPC.Click += new System.EventHandler(this.bunifuAdditionalEquipmentButtonPC_Click);
+            // 
             // panelSidePanelDNC
             // 
             this.panelSidePanelDNC.Controls.Add(this.bunifuSubtypesSystemButtonDNC);
@@ -582,7 +670,7 @@
             this.panelSidePanelDNC.Controls.Add(this.bunifuAdditionalEquipmentButtonDNC);
             this.panelSidePanelDNC.Controls.Add(this.bunifuSystemTypesButtonDNC);
             this.panelSidePanelDNC.Controls.Add(this.bunifuDNCFabricDataBaseButton);
-            this.panelSidePanelDNC.Location = new System.Drawing.Point(0, 130);
+            this.panelSidePanelDNC.Location = new System.Drawing.Point(0, 133);
             this.panelSidePanelDNC.Name = "panelSidePanelDNC";
             this.panelSidePanelDNC.Size = new System.Drawing.Size(280, 220);
             this.panelSidePanelDNC.TabIndex = 3;
@@ -1150,6 +1238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).EndInit();
             this.panelSideBarMenu.ResumeLayout(false);
+            this.panelSidePanelPC.ResumeLayout(false);
             this.panelSidePanelDNC.ResumeLayout(false);
             this.panelOtherSettings.ResumeLayout(false);
             this.panelSidePanelFabricCurtain.ResumeLayout(false);
@@ -1199,5 +1288,8 @@
         internal Bunifu.Framework.UI.BunifuFlatButton bunifuAdditionalEquipmentButtonDNC;
         internal Bunifu.Framework.UI.BunifuFlatButton bunifuSystemTypesButtonDNC;
         internal Bunifu.Framework.UI.BunifuFlatButton bunifuDNCFabricDataBaseButton;
+        private System.Windows.Forms.Panel panelSidePanelPC;
+        internal Bunifu.Framework.UI.BunifuFlatButton bunifuFlatFabricCategiryButtonPC;
+        internal Bunifu.Framework.UI.BunifuFlatButton bunifuAdditionalEquipmentButtonPC;
     }
 }
