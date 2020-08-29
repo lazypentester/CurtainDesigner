@@ -540,6 +540,7 @@
             this.iconButtonTableProtectiveCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonTableProtectiveCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonTableProtectiveCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonTableProtectiveCurtains.Click += new System.EventHandler(this.iconButtonTableProtectiveCurtains_Click);
             this.iconButtonTableProtectiveCurtains.MouseEnter += new System.EventHandler(this.iconButtonTableProtectiveCurtains_MouseEnter);
             this.iconButtonTableProtectiveCurtains.MouseLeave += new System.EventHandler(this.iconButtonTableProtectiveCurtains_MouseLeave);
             // 

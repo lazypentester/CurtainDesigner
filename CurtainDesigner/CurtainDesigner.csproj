@@ -214,6 +214,7 @@
     <Compile Include="Classes\PathCombiner.cs" />
     <Compile Include="Classes\PC.cs" />
     <Compile Include="Classes\PC2.cs" />
+    <Compile Include="Classes\PC_Container.cs" />
     <Compile Include="Classes\Print.cs" />
     <Compile Include="Controllers\Classes\DNCControlerManager.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
@@ -280,6 +281,12 @@
     <Compile Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.Designer.cs">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_PC_OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_PC_OrderForm.Designer.cs">
+      <DependentUpon>Edit_PC_OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportOrderForms\EditOrderForms\FormOpenDraw.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +304,12 @@
     </Compile>
     <Compile Include="ReportOrderForms\FormFabricCurtainTable.Designer.cs">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrderForms\FormPCTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\FormPCTable.Designer.cs">
+      <DependentUpon>FormPCTable.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportOrderForms\printOrder\FormSelectPrint.cs">
       <SubType>Form</SubType>
@@ -528,6 +541,9 @@
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.resx">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_PC_OrderForm.resx">
+      <DependentUpon>Edit_PC_OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\FormOpenDraw.resx">
       <DependentUpon>FormOpenDraw.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +552,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\FormFabricCurtainTable.resx">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\FormPCTable.resx">
+      <DependentUpon>FormPCTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\printOrder\FormSelectPrint.resx">
       <DependentUpon>FormSelectPrint.cs</DependentUpon>
