@@ -52,12 +52,19 @@ namespace CurtainDesigner.SettingForm
             init_MainbuttonSelectedPanel();
         }
 
+        //private void setActiveButtonOnStartForm()
+        //{
+        //    AvtivateMainMenuButton(bunifuFlatButtonMainSettingFabricCurtains);
+        //    CloseChildControl();
+        //    openSidePanel(panelSidePanelFabricCurtain);
+        //}
+
         //Color struct
         private struct Colors
         {
-            public static Color colorMainMenuButtonInactive = Color.FromArgb(18, 16, 51);
+            public static Color colorMainMenuButtonInactive = Color.FromArgb(7, 5, 33);
             public static Color colorMainMenuTextInactive = Color.FromArgb(62, 72, 93);
-            public static Color colorMainMenuButtonActive = Color.FromArgb(7, 5, 33);
+            public static Color colorMainMenuButtonActive = Color.FromArgb(18, 16, 51);
             public static Color colorMainMenuTextActive = Color.FromArgb(112, 123, 140);
 
             public static Color colorSubMenuButtonInactive = Color.FromArgb(232, 238, 245);

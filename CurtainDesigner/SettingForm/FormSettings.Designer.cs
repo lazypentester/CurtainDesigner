@@ -89,7 +89,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.bunifuFlatButtonMainSettingPliseCurtain);
             this.panel1.Controls.Add(this.bunifuFlatButtonMainSettingMosquitoNets);
@@ -108,7 +108,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
             this.panel4.Controls.Add(this.labelSettings);
             this.panel4.Controls.Add(this.iconPictureBoxSettings);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -130,7 +130,7 @@
             // 
             // iconPictureBoxSettings
             // 
-            this.iconPictureBoxSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
+            this.iconPictureBoxSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
             this.iconPictureBoxSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
             this.iconPictureBoxSettings.IconChar = FontAwesome.Sharp.IconChar.Cogs;
             this.iconPictureBoxSettings.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
@@ -146,7 +146,7 @@
             // 
             // bunifuFlatButtonMainSettingPliseCurtain
             // 
-            this.bunifuFlatButtonMainSettingPliseCurtain.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingPliseCurtain.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingPliseCurtain.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingPliseCurtain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingPliseCurtain.BorderRadius = 0;
@@ -183,7 +183,7 @@
             // 
             // bunifuFlatButtonMainSettingMosquitoNets
             // 
-            this.bunifuFlatButtonMainSettingMosquitoNets.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingMosquitoNets.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingMosquitoNets.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingMosquitoNets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingMosquitoNets.BorderRadius = 0;
@@ -220,7 +220,7 @@
             // 
             // bunifuFlatButtonMainSettingHorisontallJalousie
             // 
-            this.bunifuFlatButtonMainSettingHorisontallJalousie.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingHorisontallJalousie.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingHorisontallJalousie.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingHorisontallJalousie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingHorisontallJalousie.BorderRadius = 0;
@@ -257,7 +257,7 @@
             // 
             // bunifuFlatButtonMainSettingVerticalJalousie
             // 
-            this.bunifuFlatButtonMainSettingVerticalJalousie.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingVerticalJalousie.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingVerticalJalousie.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingVerticalJalousie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingVerticalJalousie.BorderRadius = 0;
@@ -294,7 +294,7 @@
             // 
             // bunifuFlatButtonMainSettingRomanCurtains
             // 
-            this.bunifuFlatButtonMainSettingRomanCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingRomanCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingRomanCurtains.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingRomanCurtains.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingRomanCurtains.BorderRadius = 0;
@@ -331,7 +331,7 @@
             // 
             // bunifuFlatButtonMainSettingProtectiveCurtains
             // 
-            this.bunifuFlatButtonMainSettingProtectiveCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingProtectiveCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingProtectiveCurtains.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingProtectiveCurtains.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingProtectiveCurtains.BorderRadius = 0;
@@ -368,7 +368,7 @@
             // 
             // bunifuFlatButtonMainSettingDay_NightCurtains
             // 
-            this.bunifuFlatButtonMainSettingDay_NightCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingDay_NightCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingDay_NightCurtains.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingDay_NightCurtains.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingDay_NightCurtains.BorderRadius = 0;
@@ -405,7 +405,7 @@
             // 
             // bunifuFlatButtonMainSettingFabricCurtains
             // 
-            this.bunifuFlatButtonMainSettingFabricCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuFlatButtonMainSettingFabricCurtains.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuFlatButtonMainSettingFabricCurtains.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButtonMainSettingFabricCurtains.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuFlatButtonMainSettingFabricCurtains.BorderRadius = 0;
@@ -442,7 +442,7 @@
             // 
             // bunifuConnectDataBaseButton
             // 
-            this.bunifuConnectDataBaseButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(5)))), ((int)(((byte)(33)))));
+            this.bunifuConnectDataBaseButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(51)))));
             this.bunifuConnectDataBaseButton.BackColor = System.Drawing.Color.Transparent;
             this.bunifuConnectDataBaseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuConnectDataBaseButton.BorderRadius = 0;
@@ -586,7 +586,7 @@
             this.panelSidePanelPC.Controls.Add(this.bunifuAdditionalEquipmentButtonPC);
             this.panelSidePanelPC.Location = new System.Drawing.Point(0, 133);
             this.panelSidePanelPC.Name = "panelSidePanelPC";
-            this.panelSidePanelPC.Size = new System.Drawing.Size(280, 99);
+            this.panelSidePanelPC.Size = new System.Drawing.Size(280, 220);
             this.panelSidePanelPC.TabIndex = 4;
             // 
             // bunifuFlatFabricCategiryButtonPC
