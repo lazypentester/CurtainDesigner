@@ -40,6 +40,10 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsProtectiveCurtain.UserControlCurt_AdditionalEquipmentPC control_pc_additionalEquipment;
         private UserControls.UCSettingsProtectiveCurtain.UserControlCurt_categoryPC control_pc_categories;
 
+        private UserControls.UCSettingsRomanCurtain.UserControlCurt_AdditionalEquipmentRC control_rc_additionalEquipment;
+        private UserControls.UCSettingsRomanCurtain.UserControlCurt_categoryRC control_rc_categories;
+        private UserControls.UCSettingsRomanCurtain.UserControlCurt_fabricRC control_rc_fabric;
+
         private Panel mainMenuSidePanel = null;
 
         public FormSettings()
@@ -103,6 +107,10 @@ namespace CurtainDesigner.SettingForm
 
             this.panelContainer.Controls.Add(control_pc_additionalEquipment = new UserControls.UCSettingsProtectiveCurtain.UserControlCurt_AdditionalEquipmentPC()); control_pc_additionalEquipment.Hide();
             this.panelContainer.Controls.Add(control_pc_categories = new UserControls.UCSettingsProtectiveCurtain.UserControlCurt_categoryPC()); control_pc_categories.Hide();
+
+            this.panelContainer.Controls.Add(control_rc_additionalEquipment = new UserControls.UCSettingsRomanCurtain.UserControlCurt_AdditionalEquipmentRC()); control_rc_additionalEquipment.Hide();
+            this.panelContainer.Controls.Add(control_rc_categories = new UserControls.UCSettingsRomanCurtain.UserControlCurt_categoryRC()); control_rc_categories.Hide();
+            this.panelContainer.Controls.Add(control_rc_fabric = new UserControls.UCSettingsRomanCurtain.UserControlCurt_fabricRC()); control_rc_fabric.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -351,6 +359,7 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+            openSidePanel(panelSidePanelRC);
         }
 
         private void bunifuFlatButtonMainSettingHorisontallJalousie_Click(object sender, EventArgs e)
@@ -464,6 +473,27 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             OpenChildControl(control_pc_categories, sender);
             control_pc_categories.load_categories();
+        }
+
+        private void bunifuAdditionalEquipmentButtonRC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_rc_additionalEquipment, sender);
+            control_rc_additionalEquipment.load_equipments();
+        }
+
+        private void bunifuFlatFabricCategiryButtonRC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_rc_categories, sender);
+            control_rc_categories.load_categories();
+        }
+
+        private void bunifuRCFabricDataBaseButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_rc_fabric, sender);
+            control_rc_fabric.load_fabrics();
         }
     }
 }

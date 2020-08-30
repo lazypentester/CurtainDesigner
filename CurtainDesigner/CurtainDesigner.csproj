@@ -201,6 +201,24 @@
     <Compile Include="AddForms\PCAddForm\PCPriceCategoryAddForm.Designer.cs">
       <DependentUpon>PCPriceCategoryAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\RCAddForm\RCAdditionalEquipmentAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\RCAddForm\RCAdditionalEquipmentAddForm.Designer.cs">
+      <DependentUpon>RCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\RCAddForm\RCFabricAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\RCAddForm\RCFabricAddForm.Designer.cs">
+      <DependentUpon>RCFabricAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\RCAddForm\RCPriceCategoryAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\RCAddForm\RCPriceCategoryAddForm.Designer.cs">
+      <DependentUpon>RCPriceCategoryAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ClassPatternPath.cs" />
     <Compile Include="Classes\ConnectionString.cs" />
     <Compile Include="Classes\DNC.cs" />
@@ -341,6 +359,7 @@
     <Compile Include="UserControls\Classes\Color.cs" />
     <Compile Include="UserControls\Classes\Fabric.cs" />
     <Compile Include="UserControls\Classes\Installation.cs" />
+    <Compile Include="UserControls\Classes\RC_Fabric.cs" />
     <Compile Include="UserControls\Classes\Side.cs" />
     <Compile Include="UserControls\Classes\Subtype.cs" />
     <Compile Include="UserControls\Classes\Type.cs" />
@@ -428,6 +447,24 @@
     <Compile Include="UserControls\UCSettingsProtectiveCurtain\UserControlCurt_categoryPC.Designer.cs">
       <DependentUpon>UserControlCurt_categoryPC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_AdditionalEquipmentRC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_AdditionalEquipmentRC.Designer.cs">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentRC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_categoryRC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_categoryRC.Designer.cs">
+      <DependentUpon>UserControlCurt_categoryRC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_fabricRC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_fabricRC.Designer.cs">
+      <DependentUpon>UserControlCurt_fabricRC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlClientDataBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -503,6 +540,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\PCAddForm\PCPriceCategoryAddForm.resx">
       <DependentUpon>PCPriceCategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\RCAddForm\RCAdditionalEquipmentAddForm.resx">
+      <DependentUpon>RCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\RCAddForm\RCFabricAddForm.resx">
+      <DependentUpon>RCFabricAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\RCAddForm\RCPriceCategoryAddForm.resx">
+      <DependentUpon>RCPriceCategoryAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -609,6 +655,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsProtectiveCurtain\UserControlCurt_categoryPC.resx">
       <DependentUpon>UserControlCurt_categoryPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_AdditionalEquipmentRC.resx">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentRC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_categoryRC.resx">
+      <DependentUpon>UserControlCurt_categoryRC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_fabricRC.resx">
+      <DependentUpon>UserControlCurt_fabricRC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlClientDataBase.resx">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>

@@ -15,7 +15,7 @@ namespace CurtainDesigner.AddForms.PCAddForm
     {
         private static string connect_str = CurtainDesigner.Classes.ConnectionString.conn;
         private SqlConnection connection;
-        private SqlConnection connection2;
+        //private SqlConnection connection2;
         private bool isEditCategory;
         private string category_id;
 
