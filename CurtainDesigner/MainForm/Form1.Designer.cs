@@ -306,6 +306,7 @@
             this.iconButtonOrderRomanCurtains.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonOrderRomanCurtains.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonOrderRomanCurtains.UseVisualStyleBackColor = true;
+            this.iconButtonOrderRomanCurtains.Click += new System.EventHandler(this.iconButtonOrderRomanCurtains_Click);
             this.iconButtonOrderRomanCurtains.MouseEnter += new System.EventHandler(this.iconButtonOrderRomanCurtains_MouseEnter);
             this.iconButtonOrderRomanCurtains.MouseLeave += new System.EventHandler(this.iconButtonOrderRomanCurtains_MouseLeave);
             // 

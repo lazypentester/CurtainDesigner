@@ -580,7 +580,7 @@
             this.bunifuCheckboxCustomInstallation.Name = "bunifuCheckboxCustomInstallation";
             this.bunifuCheckboxCustomInstallation.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckboxCustomInstallation.TabIndex = 6;
-            this.bunifuCheckboxCustomInstallation.Click += new System.EventHandler(this.bunifuCheckboxCustomInstallation_OnChange);
+            this.bunifuCheckboxCustomInstallation.OnChange += new System.EventHandler(this.bunifuCheckboxCustomInstallation_OnChange);
             // 
             // panel9
             // 

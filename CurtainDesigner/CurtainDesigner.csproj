@@ -234,9 +234,12 @@
     <Compile Include="Classes\PC2.cs" />
     <Compile Include="Classes\PC_Container.cs" />
     <Compile Include="Classes\Print.cs" />
+    <Compile Include="Classes\RC.cs" />
+    <Compile Include="Classes\RC2.cs" />
     <Compile Include="Controllers\Classes\DNCControlerManager.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Classes\PCControlerManager.cs" />
+    <Compile Include="Controllers\Classes\RCControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />
     <Compile Include="MainForm\Form1.cs">
       <SubType>Form</SubType>
@@ -247,6 +250,7 @@
     <Compile Include="Models\Classes\DNCManage.cs" />
     <Compile Include="Models\Classes\FabricCurtainManage.cs" />
     <Compile Include="Models\Classes\PCManage.cs" />
+    <Compile Include="Models\Classes\RCManage.cs" />
     <Compile Include="Models\Interfaces\IObjectManage.cs" />
     <Compile Include="OrderForms\FormDNCOrder.cs">
       <SubType>Form</SubType>
@@ -265,6 +269,12 @@
     </Compile>
     <Compile Include="OrderForms\FormPCOrder.Designer.cs">
       <DependentUpon>FormPCOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderForms\FormRCOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForms\FormRCOrder.Designer.cs">
+      <DependentUpon>FormRCOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderForms\OrderFormSelectClient\FormSelectClient.cs">
       <SubType>Form</SubType>
@@ -492,6 +502,7 @@
     <Compile Include="Views\Classes\DNCViewManage.cs" />
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
     <Compile Include="Views\Classes\PCViewManage.cs" />
+    <Compile Include="Views\Classes\RCViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
     <EmbeddedResource Include="AddForms\DNCAddForm\DNCFabricAdditionalEquipmentAddForm.resx">
       <DependentUpon>DNCFabricAdditionalEquipmentAddForm.cs</DependentUpon>
@@ -561,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\FormPCOrder.resx">
       <DependentUpon>FormPCOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\FormRCOrder.resx">
+      <DependentUpon>FormRCOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\OrderFormSelectClient\FormSelectClient.resx">
       <DependentUpon>FormSelectClient.cs</DependentUpon>
