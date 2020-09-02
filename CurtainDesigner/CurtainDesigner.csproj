@@ -236,6 +236,7 @@
     <Compile Include="Classes\Print.cs" />
     <Compile Include="Classes\RC.cs" />
     <Compile Include="Classes\RC2.cs" />
+    <Compile Include="Classes\RC_Container.cs" />
     <Compile Include="Controllers\Classes\DNCControlerManager.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
     <Compile Include="Controllers\Classes\PCControlerManager.cs" />
@@ -315,6 +316,12 @@
     <Compile Include="ReportOrderForms\EditOrderForms\Edit_PC_OrderForm.Designer.cs">
       <DependentUpon>Edit_PC_OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_RC_OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_RC_OrderForm.Designer.cs">
+      <DependentUpon>Edit_RC_OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportOrderForms\EditOrderForms\FormOpenDraw.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +357,12 @@
     </Compile>
     <Compile Include="ReportOrderForms\printOrder\FormWait.Designer.cs">
       <DependentUpon>FormWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrderForms\RCCurtainTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\RCCurtainTable.Designer.cs">
+      <DependentUpon>RCCurtainTable.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingForm\FormSettings.cs">
       <SubType>Form</SubType>
@@ -604,6 +617,9 @@
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_PC_OrderForm.resx">
       <DependentUpon>Edit_PC_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_RC_OrderForm.resx">
+      <DependentUpon>Edit_RC_OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\FormOpenDraw.resx">
       <DependentUpon>FormOpenDraw.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +637,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\printOrder\FormWait.resx">
       <DependentUpon>FormWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\RCCurtainTable.resx">
+      <DependentUpon>RCCurtainTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingForm\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
