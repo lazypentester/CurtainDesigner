@@ -185,75 +185,77 @@ namespace CurtainDesigner.Views.Classes
             if (list == null || table == null)
                 throw new NullReferenceException();
 
-            //if ((table as Bunifu.Framework.UI.BunifuCustomDataGrid).InvokeRequired)
-            //{
-            //    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Invoke((MethodInvoker)delegate
-            //    {
-            //        foreach (CurtainDesigner.Classes.RC2 curtain in (list as List<CurtainDesigner.Classes.RC2>))
-            //        {
-            //            (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
-            //            {
-            //            curtain.fabric_name,
-            //            curtain.fabric_id,
-            //            (curtain.fabric_category_price + " $"),
-            //            curtain.fabric_category_id,
-            //            curtain.fabric_category_name,
-            //            curtain.system_color_name,
-            //            curtain.system_color_id,
-            //            ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
-            //            curtain.width,
-            //            curtain.height,
-            //            curtain.yardage,
-            //            curtain.count,
-            //            curtain.side_name,
-            //            curtain.side_id,
-            //            (curtain.equipment_price + " $"),
-            //            curtain.equipment_id,
-            //            (curtain.installation_price + " $"),
-            //            curtain.installation_id,
-            //            curtain.customer_id,
-            //            (curtain.start_order_time + " - " + curtain.end_order_time),
-            //            curtain.start_order_time,
-            //            curtain.end_order_time,
-            //            curtain.picture,
-            //            (curtain.price + " $")
-            //            });
-            //        }
-            //    });
-            //}
-            //else
-            //{
-            //    foreach (CurtainDesigner.Classes.FabricCurtain2 curtain in (list as List<CurtainDesigner.Classes.FabricCurtain2>))
-            //    {
-            //        (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
-            //        {
-            //            curtain.fb_id,
-            //            curtain.type,
-            //            curtain.type_id,
-            //            curtain.subtype,
-            //            curtain.subtype_id,
-            //            curtain.fabric_name,
-            //            curtain.fabric_id,
-            //            curtain.fabric_category_name,
-            //            curtain.fabric_category_id,
-            //            (curtain.fabric_category_price + " $"),
-            //            curtain.system_color_name,
-            //            curtain.system_color_id,
-            //            ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
-            //            curtain.count,
-            //            curtain.side_name,
-            //            curtain.side_id,
-            //            (curtain.equipment_price + " $"),
-            //            curtain.equipment_id,
-            //            (curtain.installation_price + " $"),
-            //            curtain.installation_id,
-            //            curtain.customer_id,
-            //            (curtain.start_order_time + " - " + curtain.end_order_time),
-            //            curtain.picture,
-            //            (curtain.price + " $")
-            //        });
-            //    }
-            //}
+            if ((table as Bunifu.Framework.UI.BunifuCustomDataGrid).InvokeRequired)
+            {
+                (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Invoke((MethodInvoker)delegate
+                {
+                    foreach (CurtainDesigner.Classes.RC2 curtain in (list as List<CurtainDesigner.Classes.RC2>))
+                    {
+                        (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
+                        {
+                        curtain.fb_id,
+                        curtain.fabric_name,
+                        curtain.fabric_id,
+                        (curtain.fabric_category_price + " $"),
+                        curtain.fabric_category_id,
+                        curtain.fabric_category_name,
+                        curtain.system_color_name,
+                        curtain.system_color_id,
+                        ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
+                        curtain.width,
+                        curtain.height,
+                        curtain.yardage,
+                        curtain.count,
+                        curtain.side_name,
+                        curtain.side_id,
+                        (curtain.equipment_price + " $"),
+                        curtain.equipment_id,
+                        (curtain.installation_price + " $"),
+                        curtain.installation_id,
+                        curtain.customer_id,
+                        (curtain.start_order_time + " - " + curtain.end_order_time),
+                        curtain.start_order_time,
+                        curtain.end_order_time,
+                        curtain.picture,
+                        (curtain.price + " $")
+                        });
+                    }
+                });
+            }
+            else
+            {
+                foreach (CurtainDesigner.Classes.RC2 curtain in (list as List<CurtainDesigner.Classes.RC2>))
+                {
+                    (table as Bunifu.Framework.UI.BunifuCustomDataGrid).Rows.Add(new object[]
+                    {
+                        curtain.fb_id,
+                        curtain.fabric_name,
+                        curtain.fabric_id,
+                        (curtain.fabric_category_price + " $"),
+                        curtain.fabric_category_id,
+                        curtain.fabric_category_name,
+                        curtain.system_color_name,
+                        curtain.system_color_id,
+                        ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
+                        curtain.width,
+                        curtain.height,
+                        curtain.yardage,
+                        curtain.count,
+                        curtain.side_name,
+                        curtain.side_id,
+                        (curtain.equipment_price + " $"),
+                        curtain.equipment_id,
+                        (curtain.installation_price + " $"),
+                        curtain.installation_id,
+                        curtain.customer_id,
+                        (curtain.start_order_time + " - " + curtain.end_order_time),
+                        curtain.start_order_time,
+                        curtain.end_order_time,
+                        curtain.picture,
+                        (curtain.price + " $")
+                    });
+                }
+            }
 
             return res;
         }

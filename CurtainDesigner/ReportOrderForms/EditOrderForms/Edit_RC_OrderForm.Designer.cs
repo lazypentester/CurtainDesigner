@@ -626,6 +626,7 @@
             this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
             // 
             // iconButtonOk
             // 
@@ -653,6 +654,7 @@
             this.iconButtonOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonOk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonOk.UseVisualStyleBackColor = false;
+            this.iconButtonOk.Click += new System.EventHandler(this.iconButtonOk_Click);
             // 
             // Edit_RC_OrderForm
             // 

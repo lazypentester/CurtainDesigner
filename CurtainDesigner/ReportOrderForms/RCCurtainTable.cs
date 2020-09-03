@@ -41,7 +41,7 @@ namespace CurtainDesigner.ReportOrderForms
 
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 29)
+            if (e.ColumnIndex == 25)
             {
                 Classes.RC2 fabricCurtain = null;
                 List<KeyValuePair<string, object>> keyValuePairs = new List<KeyValuePair<string, object>>();
@@ -108,10 +108,10 @@ namespace CurtainDesigner.ReportOrderForms
                     MessageBox.Show($"Помилка при відображенні форми друкування.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                printOrder.FormSelectPrint formSelect = new printOrder.FormSelectPrint(keyValuePairs, Classes.ClassPatternPath.FC_PATTERN);
+                printOrder.FormSelectPrint formSelect = new printOrder.FormSelectPrint(keyValuePairs, Classes.ClassPatternPath.RC_PATTERN);
                 formSelect.ShowDialog();
             }
-            else if (e.ColumnIndex == 30)
+            else if (e.ColumnIndex == 26)
             {
                 Classes.RC2 fabricCurtain = null;
                 try
@@ -143,31 +143,31 @@ namespace CurtainDesigner.ReportOrderForms
                         price = (float)Convert.ToDouble(bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["ColumnPrice"].Value.ToString().ToString().Split(' ')[0])
                     };
 
-                    //EditOrderForms.Edit_FC_OrderForm edit_FC_Order = new EditOrderForms.Edit_FC_OrderForm(fabricCurtain);
+                    EditOrderForms.Edit_RC_OrderForm edit_RC_Order = new EditOrderForms.Edit_RC_OrderForm(fabricCurtain);
 
-                    //edit_FC_Order.DialogResult = DialogResult.None;
-                    //edit_FC_Order.load_info();
-                    //edit_FC_Order.ShowDialog();
+                    edit_RC_Order.DialogResult = DialogResult.None;
+                    edit_RC_Order.load_info();
+                    edit_RC_Order.ShowDialog();
 
-                    //if (edit_FC_Order.DialogResult == DialogResult.OK)
-                    //    fillDataBase();
+                    if (edit_RC_Order.DialogResult == DialogResult.OK)
+                        fillDataBase();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Помилка при редагуванні.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (e.ColumnIndex == 31)
+            else if (e.ColumnIndex == 27)
             {
                 DialogResult dialog = MessageBox.Show("Ви дійсно бажаєте видалити цей об'єкт?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.No)
                     return;
 
-                //EditOrderForms.Edit_FC_OrderForm edit_FC_Order = new EditOrderForms.Edit_FC_OrderForm();
-                //edit_FC_Order.removeCurtain(
-                //    bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["Number"].Value.ToString(),
-                //    this
-                //    );
+                EditOrderForms.Edit_RC_OrderForm edit_RC_Order = new EditOrderForms.Edit_RC_OrderForm();
+                edit_RC_Order.removeCurtain(
+                    bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["Number"].Value.ToString(),
+                    this
+                    );
             }
         }
 
