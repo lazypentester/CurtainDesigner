@@ -44,6 +44,9 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsRomanCurtain.UserControlCurt_categoryRC control_rc_categories;
         private UserControls.UCSettingsRomanCurtain.UserControlCurt_fabricRC control_rc_fabric;
 
+        private UserControls.UCSettingsMosquitoCurtain.UserControlCurt_AdditionalEquipmentMC control_mc_additionalEquipment;
+        private UserControls.UCSettingsMosquitoCurtain.UserControlCurt_TypeMC control_mc_types;
+
         private Panel mainMenuSidePanel = null;
 
         public FormSettings()
@@ -111,6 +114,9 @@ namespace CurtainDesigner.SettingForm
             this.panelContainer.Controls.Add(control_rc_additionalEquipment = new UserControls.UCSettingsRomanCurtain.UserControlCurt_AdditionalEquipmentRC()); control_rc_additionalEquipment.Hide();
             this.panelContainer.Controls.Add(control_rc_categories = new UserControls.UCSettingsRomanCurtain.UserControlCurt_categoryRC()); control_rc_categories.Hide();
             this.panelContainer.Controls.Add(control_rc_fabric = new UserControls.UCSettingsRomanCurtain.UserControlCurt_fabricRC()); control_rc_fabric.Hide();
+
+            this.panelContainer.Controls.Add(control_mc_additionalEquipment = new UserControls.UCSettingsMosquitoCurtain.UserControlCurt_AdditionalEquipmentMC()); control_mc_additionalEquipment.Hide();
+            this.panelContainer.Controls.Add(control_mc_types = new UserControls.UCSettingsMosquitoCurtain.UserControlCurt_TypeMC()); control_mc_types.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -378,6 +384,7 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+            openSidePanel(panelSidePanelMC);
         }
 
         private void bunifuFlatButtonMainSettingPliseCurtain_Click(object sender, EventArgs e)
@@ -494,6 +501,20 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             OpenChildControl(control_rc_fabric, sender);
             control_rc_fabric.load_fabrics();
+        }
+
+        private void bunifuAdditionalEquipmentButtonMC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_mc_additionalEquipment, sender);
+            control_mc_additionalEquipment.load_equipments();
+        }
+
+        private void bunifuSystemTypesButtonMC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_mc_types, sender);
+            control_mc_types.load_types();
         }
     }
 }

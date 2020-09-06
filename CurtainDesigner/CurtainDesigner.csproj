@@ -189,6 +189,18 @@
     <Compile Include="AddForms\FormAddNewSystemColor.Designer.cs">
       <DependentUpon>FormAddNewSystemColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\MCAddForm\MCAdditionalEquipmentAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\MCAddForm\MCAdditionalEquipmentAddForm.Designer.cs">
+      <DependentUpon>MCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\MCAddForm\MCTypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\MCAddForm\MCTypeAddForm.Designer.cs">
+      <DependentUpon>MCTypeAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\PCAddForm\PCAdditionalEquipmentAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +241,8 @@
     <Compile Include="Classes\FC_Caontainer.cs" />
     <Compile Include="Classes\MagicImage\ClassMagicImage.cs" />
     <Compile Include="Classes\MagicImage\MagicLabels.cs" />
+    <Compile Include="Classes\MC.cs" />
+    <Compile Include="Classes\MC2.cs" />
     <Compile Include="Classes\PathCombiner.cs" />
     <Compile Include="Classes\PC.cs" />
     <Compile Include="Classes\PC2.cs" />
@@ -250,6 +264,7 @@
     </Compile>
     <Compile Include="Models\Classes\DNCManage.cs" />
     <Compile Include="Models\Classes\FabricCurtainManage.cs" />
+    <Compile Include="Models\Classes\MCManage.cs" />
     <Compile Include="Models\Classes\PCManage.cs" />
     <Compile Include="Models\Classes\RCManage.cs" />
     <Compile Include="Models\Interfaces\IObjectManage.cs" />
@@ -264,6 +279,12 @@
     </Compile>
     <Compile Include="OrderForms\FormFabricCurtainOrder.Designer.cs">
       <DependentUpon>FormFabricCurtainOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderForms\FormMCOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForms\FormMCOrder.Designer.cs">
+      <DependentUpon>FormMCOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderForms\FormPCOrder.cs">
       <SubType>Form</SubType>
@@ -386,6 +407,7 @@
     <Compile Include="UserControls\Classes\Side.cs" />
     <Compile Include="UserControls\Classes\Subtype.cs" />
     <Compile Include="UserControls\Classes\Type.cs" />
+    <Compile Include="UserControls\Classes\TypeWithPrice.cs" />
     <Compile Include="UserControls\UCFormFCORDER\UCStatusNotOk.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -458,6 +480,18 @@
     <Compile Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_TypeFC.Designer.cs">
       <DependentUpon>UserControlCurt_TypeFC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsMosquitoCurtain\UserControlCurt_AdditionalEquipmentMC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsMosquitoCurtain\UserControlCurt_AdditionalEquipmentMC.Designer.cs">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsMosquitoCurtain\UserControlCurt_TypeMC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsMosquitoCurtain\UserControlCurt_TypeMC.Designer.cs">
+      <DependentUpon>UserControlCurt_TypeMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCSettingsProtectiveCurtain\UserControlCurt_AdditionalEquipmentPC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -514,6 +548,7 @@
     </Compile>
     <Compile Include="Views\Classes\DNCViewManage.cs" />
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
+    <Compile Include="Views\Classes\MCViewManage.cs" />
     <Compile Include="Views\Classes\PCViewManage.cs" />
     <Compile Include="Views\Classes\RCViewManage.cs" />
     <Compile Include="Views\Interfaces\IViewManage.cs" />
@@ -559,6 +594,12 @@
     <EmbeddedResource Include="AddForms\FormAddNewSystemColor.resx">
       <DependentUpon>FormAddNewSystemColor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\MCAddForm\MCAdditionalEquipmentAddForm.resx">
+      <DependentUpon>MCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\MCAddForm\MCTypeAddForm.resx">
+      <DependentUpon>MCTypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\PCAddForm\PCAdditionalEquipmentAddForm.resx">
       <DependentUpon>PCAdditionalEquipmentAddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -582,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\FormFabricCurtainOrder.resx">
       <DependentUpon>FormFabricCurtainOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\FormMCOrder.resx">
+      <DependentUpon>FormMCOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\FormPCOrder.resx">
       <DependentUpon>FormPCOrder.cs</DependentUpon>
@@ -682,6 +726,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsFabricCurtain\UserControlCurt_TypeFC.resx">
       <DependentUpon>UserControlCurt_TypeFC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsMosquitoCurtain\UserControlCurt_AdditionalEquipmentMC.resx">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsMosquitoCurtain\UserControlCurt_TypeMC.resx">
+      <DependentUpon>UserControlCurt_TypeMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsProtectiveCurtain\UserControlCurt_AdditionalEquipmentPC.resx">
       <DependentUpon>UserControlCurt_AdditionalEquipmentPC.cs</DependentUpon>
