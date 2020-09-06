@@ -151,6 +151,45 @@ namespace CurtainDesigner.Views.Classes
             }
         }
 
+        public async void loadDataFromDB_label(Label label,  SqlDataReader reader, string key)
+        {
+            if (reader == null || label == null)
+                throw new NullReferenceException();
+
+            try
+            {
+                while (await reader.ReadAsync())
+                {
+                    if (label.InvokeRequired)
+                    {
+                        label.Invoke((MethodInvoker)delegate
+                        {
+                            if (key.Equals("Price"))
+                                label.Text = string.Join("", reader[key].ToString(), "$");
+                            else
+                                label.Text = reader[key].ToString();
+                        });
+                    }
+                    else
+                    {
+                        if (key.Equals("Price"))
+                            label.Text = string.Join("", reader[key].ToString(), "$");
+                        else
+                            label.Text = reader[key].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+        }
+
         public O readObject(F form, O obj)
         {
             if (obj == null || form == null)

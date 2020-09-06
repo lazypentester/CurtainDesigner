@@ -177,6 +177,7 @@
             this.bunifuButtonCustomInstallPrice.TabIndex = 7;
             this.bunifuButtonCustomInstallPrice.TabStop = false;
             this.bunifuButtonCustomInstallPrice.Zoom = 7;
+            this.bunifuButtonCustomInstallPrice.Click += new System.EventHandler(this.bunifuButtonCustomInstallPrice_Click);
             // 
             // bunifuCheckboxCustomInstallation
             // 
@@ -189,6 +190,7 @@
             this.bunifuCheckboxCustomInstallation.Name = "bunifuCheckboxCustomInstallation";
             this.bunifuCheckboxCustomInstallation.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckboxCustomInstallation.TabIndex = 6;
+            this.bunifuCheckboxCustomInstallation.OnChange += new System.EventHandler(this.bunifuCheckboxCustomInstallation_OnChange);
             // 
             // panel7
             // 
@@ -380,6 +382,7 @@
             this.iconButtonNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonNewOrder.UseVisualStyleBackColor = false;
+            this.iconButtonNewOrder.Click += new System.EventHandler(this.iconButtonNewOrder_Click);
             // 
             // pictureBoxMainPicture
             // 
@@ -893,6 +896,7 @@
             this.iconButtonCreateNewClientAndSelect.TabIndex = 6;
             this.iconButtonCreateNewClientAndSelect.Text = "Створити нового";
             this.iconButtonCreateNewClientAndSelect.UseVisualStyleBackColor = true;
+            this.iconButtonCreateNewClientAndSelect.Click += new System.EventHandler(this.iconButtonCreateNewClientAndSelect_Click);
             // 
             // iconButtonSelectClient
             // 
@@ -910,6 +914,7 @@
             this.iconButtonSelectClient.TabIndex = 6;
             this.iconButtonSelectClient.Text = "Вибрати зі списку";
             this.iconButtonSelectClient.UseVisualStyleBackColor = true;
+            this.iconButtonSelectClient.Click += new System.EventHandler(this.iconButtonSelectClient_Click);
             // 
             // labelCustomer
             // 

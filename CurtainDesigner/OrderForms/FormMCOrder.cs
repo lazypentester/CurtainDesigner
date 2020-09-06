@@ -306,16 +306,16 @@ namespace CurtainDesigner.OrderForms
             }
             #endregion
 
-            //create_img_id();
-            //CurtainDesigner.Controllers.IControlerManage<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            //controler.packing(new Classes.FabricCurtain(), new List<Classes.FabricCurtain2>(), this);
-            //MessageBox.Show("Замовлення успішно створено.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            create_img_id();
+            CurtainDesigner.Controllers.IControlerManage<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView>();
+            controler.packing(new Classes.MC(), new List<Classes.MC2>(), this);
+            MessageBox.Show("Замовлення успішно створено.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private async void LoadDataFromDb()
         {
-            //CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            //await Task.Run(() => controler.load_data(this));
+            CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView>();
+            await Task.Run(() => controler.load_data(this));
         }
 
         private async void loadTypePriceFromBD(object sender, EventArgs e)
@@ -330,9 +330,9 @@ namespace CurtainDesigner.OrderForms
             else
                 boxCurtainType = comboBoxCurtainType.SelectedValue.ToString();
 
-            //CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            //Task t1 = Task.Run(() => controler.load_FabricCategorydata(this, boxCurtainType));
-            //await Task.WhenAll(t1);
+            CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView>();
+            Task t1 = Task.Run(() => controler.load_TypePriceData(this, boxCurtainType));
+            await Task.WhenAll(t1);
         }
 
         private void bunifuCheckboxCustomInstallation_OnChange(object sender, EventArgs e)
@@ -418,8 +418,8 @@ namespace CurtainDesigner.OrderForms
 
         private async void load_installations()
         {
-            //CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.FabricCurtainControlerManager<Classes.FabricCurtain, List<Classes.FabricCurtain2>, FormFabricCurtainOrder, DataGridView>();
-            //await Task.Run(() => controler.load_installations(this));
+            CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView> controler = new CurtainDesigner.Controllers.Classes.MCControlerManager<Classes.MC, List<Classes.MC2>, OrderForms.FormMCOrder, DataGridView>();
+            await Task.Run(() => controler.load_installations(this));
         }
 
         private void iconButtonSelectClient_Click(object sender, EventArgs e)

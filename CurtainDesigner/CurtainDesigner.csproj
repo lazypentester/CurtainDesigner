@@ -253,6 +253,7 @@
     <Compile Include="Classes\RC_Container.cs" />
     <Compile Include="Controllers\Classes\DNCControlerManager.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
+    <Compile Include="Controllers\Classes\MCControlerManager.cs" />
     <Compile Include="Controllers\Classes\PCControlerManager.cs" />
     <Compile Include="Controllers\Classes\RCControlerManager.cs" />
     <Compile Include="Controllers\Interfaces\IControlerManage.cs" />

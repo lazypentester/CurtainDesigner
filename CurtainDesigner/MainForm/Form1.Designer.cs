@@ -237,6 +237,7 @@
             this.nOrderMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.nOrderMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.nOrderMosquitoNets.UseVisualStyleBackColor = true;
+            this.nOrderMosquitoNets.Click += new System.EventHandler(this.nOrderMosquitoNets_Click);
             this.nOrderMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonOrderMosquitoNets_MouseEnter);
             this.nOrderMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonOrderMosquitoNets_MouseLeave);
             // 
