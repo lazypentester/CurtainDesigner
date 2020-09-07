@@ -40,6 +40,10 @@ namespace CurtainDesigner.Classes
                             ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
                             break;
 
+                        case "{type_price}":
+                            ReplaceWord(pair.Key, string.Join(" ", pair.Value, "$"), wordDocument);
+                            break;
+
                         case "{count}":
                             ReplaceWord(pair.Key, string.Join(" ", pair.Value, "шт."), wordDocument);
                             break;

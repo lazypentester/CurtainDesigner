@@ -232,8 +232,8 @@ namespace CurtainDesigner.Views.Classes
                         {
                         curtain.fb_id,
                         curtain.type,
-                        curtain.type_price,
                         curtain.type_id,
+                        curtain.type_price,
                         curtain.system_color_name,
                         curtain.system_color_id,
                         ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),
@@ -263,8 +263,8 @@ namespace CurtainDesigner.Views.Classes
                     {
                         curtain.fb_id,
                         curtain.type,
-                        curtain.type_price,
                         curtain.type_id,
+                        curtain.type_price,
                         curtain.system_color_name,
                         curtain.system_color_id,
                         ("ш: " + curtain.width + " x " + "в: " + curtain.height + " (Пл: " + curtain.yardage + ")"),

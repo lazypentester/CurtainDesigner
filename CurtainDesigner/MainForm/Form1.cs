@@ -579,5 +579,13 @@ namespace CurtainDesigner
             timerOpenSubMenu.Start();
             OpenChildForm(new CurtainDesigner.OrderForms.FormMCOrder(), sender);
         }
+
+        private void iconButtonTableMosquitoNets_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Colors.color3);
+            currentClickButton = sender;
+            timerOpenSubMenu.Start();
+            OpenChildForm(new CurtainDesigner.ReportOrderForms.FormMCTable(), sender);
+        }
     }
 }

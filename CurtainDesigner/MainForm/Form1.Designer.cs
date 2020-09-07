@@ -450,6 +450,7 @@
             this.iconButtonTableMosquitoNets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonTableMosquitoNets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonTableMosquitoNets.UseVisualStyleBackColor = true;
+            this.iconButtonTableMosquitoNets.Click += new System.EventHandler(this.iconButtonTableMosquitoNets_Click);
             this.iconButtonTableMosquitoNets.MouseEnter += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseEnter);
             this.iconButtonTableMosquitoNets.MouseLeave += new System.EventHandler(this.iconButtonTableMosquitoNets_MouseLeave);
             // 
