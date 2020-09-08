@@ -47,6 +47,9 @@ namespace CurtainDesigner.SettingForm
         private UserControls.UCSettingsMosquitoCurtain.UserControlCurt_AdditionalEquipmentMC control_mc_additionalEquipment;
         private UserControls.UCSettingsMosquitoCurtain.UserControlCurt_TypeMC control_mc_types;
 
+        private UserControls.UCSettingsHorizontalCurtain.UserControlCurt_AdditionalEquipmentHC control_hc_additionalEquipment;
+        private UserControls.UCSettingsHorizontalCurtain.UserControlCurt_TypeHC control_hc_types;
+
         private Panel mainMenuSidePanel = null;
 
         public FormSettings()
@@ -117,6 +120,9 @@ namespace CurtainDesigner.SettingForm
 
             this.panelContainer.Controls.Add(control_mc_additionalEquipment = new UserControls.UCSettingsMosquitoCurtain.UserControlCurt_AdditionalEquipmentMC()); control_mc_additionalEquipment.Hide();
             this.panelContainer.Controls.Add(control_mc_types = new UserControls.UCSettingsMosquitoCurtain.UserControlCurt_TypeMC()); control_mc_types.Hide();
+
+            this.panelContainer.Controls.Add(control_hc_additionalEquipment = new UserControls.UCSettingsHorizontalCurtain.UserControlCurt_AdditionalEquipmentHC()); control_hc_additionalEquipment.Hide();
+            this.panelContainer.Controls.Add(control_hc_types = new UserControls.UCSettingsHorizontalCurtain.UserControlCurt_TypeHC()); control_hc_types.Hide();
         }
 
         private void openSidePanel(Panel sender)
@@ -372,6 +378,7 @@ namespace CurtainDesigner.SettingForm
         {
             AvtivateMainMenuButton(sender);
             CloseChildControl();
+            openSidePanel(panelSidePanelHC);
         }
 
         private void bunifuFlatButtonMainSettingVerticalJalousie_Click(object sender, EventArgs e)
@@ -515,6 +522,20 @@ namespace CurtainDesigner.SettingForm
             ActivateButton(sender);
             OpenChildControl(control_mc_types, sender);
             control_mc_types.load_types();
+        }
+
+        private void bunifuSystemTypesButtonHC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_hc_types, sender);
+            control_hc_types.load_types();
+        }
+
+        private void bunifuAdditionalEquipmentButtonHC_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildControl(control_hc_additionalEquipment, sender);
+            control_hc_additionalEquipment.load_equipments();
         }
     }
 }

@@ -53,6 +53,9 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timerForIconSettingsAndLabel = new System.Windows.Forms.Timer(this.components);
             this.panelSideBarMenu = new System.Windows.Forms.Panel();
+            this.panelSidePanelHC = new System.Windows.Forms.Panel();
+            this.bunifuAdditionalEquipmentButtonHC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuSystemTypesButtonHC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSidePanelMC = new System.Windows.Forms.Panel();
             this.bunifuAdditionalEquipmentButtonMC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSystemTypesButtonMC = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -88,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
             this.panelSideBarMenu.SuspendLayout();
+            this.panelSidePanelHC.SuspendLayout();
             this.panelSidePanelMC.SuspendLayout();
             this.panelSidePanelRC.SuspendLayout();
             this.panelSidePanelPC.SuspendLayout();
@@ -579,6 +583,7 @@
             // panelSideBarMenu
             // 
             this.panelSideBarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.panelSideBarMenu.Controls.Add(this.panelSidePanelHC);
             this.panelSideBarMenu.Controls.Add(this.panelSidePanelMC);
             this.panelSideBarMenu.Controls.Add(this.panelSidePanelRC);
             this.panelSideBarMenu.Controls.Add(this.panelSidePanelPC);
@@ -590,6 +595,89 @@
             this.panelSideBarMenu.Name = "panelSideBarMenu";
             this.panelSideBarMenu.Size = new System.Drawing.Size(280, 592);
             this.panelSideBarMenu.TabIndex = 3;
+            // 
+            // panelSidePanelHC
+            // 
+            this.panelSidePanelHC.Controls.Add(this.bunifuAdditionalEquipmentButtonHC);
+            this.panelSidePanelHC.Controls.Add(this.bunifuSystemTypesButtonHC);
+            this.panelSidePanelHC.Location = new System.Drawing.Point(0, 133);
+            this.panelSidePanelHC.Name = "panelSidePanelHC";
+            this.panelSidePanelHC.Size = new System.Drawing.Size(280, 220);
+            this.panelSidePanelHC.TabIndex = 6;
+            // 
+            // bunifuAdditionalEquipmentButtonHC
+            // 
+            this.bunifuAdditionalEquipmentButtonHC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuAdditionalEquipmentButtonHC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonHC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuAdditionalEquipmentButtonHC.BorderRadius = 0;
+            this.bunifuAdditionalEquipmentButtonHC.ButtonText = "Додаткові комплектації";
+            this.bunifuAdditionalEquipmentButtonHC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuAdditionalEquipmentButtonHC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuAdditionalEquipmentButtonHC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuAdditionalEquipmentButtonHC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonHC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonHC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_sum_25px;
+            this.bunifuAdditionalEquipmentButtonHC.Iconimage_right = null;
+            this.bunifuAdditionalEquipmentButtonHC.Iconimage_right_Selected = null;
+            this.bunifuAdditionalEquipmentButtonHC.Iconimage_Selected = null;
+            this.bunifuAdditionalEquipmentButtonHC.IconMarginLeft = 35;
+            this.bunifuAdditionalEquipmentButtonHC.IconMarginRight = 0;
+            this.bunifuAdditionalEquipmentButtonHC.IconRightVisible = false;
+            this.bunifuAdditionalEquipmentButtonHC.IconRightZoom = 0D;
+            this.bunifuAdditionalEquipmentButtonHC.IconVisible = true;
+            this.bunifuAdditionalEquipmentButtonHC.IconZoom = 55D;
+            this.bunifuAdditionalEquipmentButtonHC.IsTab = false;
+            this.bunifuAdditionalEquipmentButtonHC.Location = new System.Drawing.Point(0, 47);
+            this.bunifuAdditionalEquipmentButtonHC.Name = "bunifuAdditionalEquipmentButtonHC";
+            this.bunifuAdditionalEquipmentButtonHC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuAdditionalEquipmentButtonHC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuAdditionalEquipmentButtonHC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonHC.selected = false;
+            this.bunifuAdditionalEquipmentButtonHC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuAdditionalEquipmentButtonHC.TabIndex = 20;
+            this.bunifuAdditionalEquipmentButtonHC.Text = "Додаткові комплектації";
+            this.bunifuAdditionalEquipmentButtonHC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuAdditionalEquipmentButtonHC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuAdditionalEquipmentButtonHC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuAdditionalEquipmentButtonHC.Click += new System.EventHandler(this.bunifuAdditionalEquipmentButtonHC_Click);
+            // 
+            // bunifuSystemTypesButtonHC
+            // 
+            this.bunifuSystemTypesButtonHC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuSystemTypesButtonHC.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSystemTypesButtonHC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuSystemTypesButtonHC.BorderRadius = 0;
+            this.bunifuSystemTypesButtonHC.ButtonText = "Типи систем";
+            this.bunifuSystemTypesButtonHC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuSystemTypesButtonHC.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
+            this.bunifuSystemTypesButtonHC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSystemTypesButtonHC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSystemTypesButtonHC.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuSystemTypesButtonHC.Iconimage = global::CurtainDesigner.Properties.Resources.icons8_text_width_25px_1;
+            this.bunifuSystemTypesButtonHC.Iconimage_right = null;
+            this.bunifuSystemTypesButtonHC.Iconimage_right_Selected = null;
+            this.bunifuSystemTypesButtonHC.Iconimage_Selected = null;
+            this.bunifuSystemTypesButtonHC.IconMarginLeft = 35;
+            this.bunifuSystemTypesButtonHC.IconMarginRight = 0;
+            this.bunifuSystemTypesButtonHC.IconRightVisible = false;
+            this.bunifuSystemTypesButtonHC.IconRightZoom = 0D;
+            this.bunifuSystemTypesButtonHC.IconVisible = true;
+            this.bunifuSystemTypesButtonHC.IconZoom = 55D;
+            this.bunifuSystemTypesButtonHC.IsTab = false;
+            this.bunifuSystemTypesButtonHC.Location = new System.Drawing.Point(0, 7);
+            this.bunifuSystemTypesButtonHC.Name = "bunifuSystemTypesButtonHC";
+            this.bunifuSystemTypesButtonHC.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuSystemTypesButtonHC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(232)))), ((int)(((byte)(242)))));
+            this.bunifuSystemTypesButtonHC.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSystemTypesButtonHC.selected = false;
+            this.bunifuSystemTypesButtonHC.Size = new System.Drawing.Size(280, 41);
+            this.bunifuSystemTypesButtonHC.TabIndex = 19;
+            this.bunifuSystemTypesButtonHC.Text = "Типи систем";
+            this.bunifuSystemTypesButtonHC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuSystemTypesButtonHC.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(140)))));
+            this.bunifuSystemTypesButtonHC.TextFont = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuSystemTypesButtonHC.Click += new System.EventHandler(this.bunifuSystemTypesButtonHC_Click);
             // 
             // panelSidePanelMC
             // 
@@ -1453,6 +1541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).EndInit();
             this.panelSideBarMenu.ResumeLayout(false);
+            this.panelSidePanelHC.ResumeLayout(false);
             this.panelSidePanelMC.ResumeLayout(false);
             this.panelSidePanelRC.ResumeLayout(false);
             this.panelSidePanelPC.ResumeLayout(false);
@@ -1515,5 +1604,8 @@
         private System.Windows.Forms.Panel panelSidePanelMC;
         internal Bunifu.Framework.UI.BunifuFlatButton bunifuAdditionalEquipmentButtonMC;
         internal Bunifu.Framework.UI.BunifuFlatButton bunifuSystemTypesButtonMC;
+        private System.Windows.Forms.Panel panelSidePanelHC;
+        internal Bunifu.Framework.UI.BunifuFlatButton bunifuAdditionalEquipmentButtonHC;
+        internal Bunifu.Framework.UI.BunifuFlatButton bunifuSystemTypesButtonHC;
     }
 }
