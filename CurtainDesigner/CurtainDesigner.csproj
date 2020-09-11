@@ -253,6 +253,7 @@
     <Compile Include="Classes\FC_Caontainer.cs" />
     <Compile Include="Classes\HC.cs" />
     <Compile Include="Classes\HC2.cs" />
+    <Compile Include="Classes\HC_Container.cs" />
     <Compile Include="Classes\MagicImage\ClassMagicImage.cs" />
     <Compile Include="Classes\MagicImage\MagicLabels.cs" />
     <Compile Include="Classes\MC.cs" />
@@ -355,6 +356,12 @@
     <Compile Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.Designer.cs">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_HC_OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\EditOrderForms\Edit_HC_OrderForm.Designer.cs">
+      <DependentUpon>Edit_HC_OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportOrderForms\EditOrderForms\Edit_MC_OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +397,12 @@
     </Compile>
     <Compile Include="ReportOrderForms\FormFabricCurtainTable.Designer.cs">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrderForms\FormHCTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrderForms\FormHCTable.Designer.cs">
+      <DependentUpon>FormHCTable.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportOrderForms\FormMCTable.cs">
       <SubType>Form</SubType>
@@ -716,6 +729,9 @@
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_FC_OrderForm.resx">
       <DependentUpon>Edit_FC_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_HC_OrderForm.resx">
+      <DependentUpon>Edit_HC_OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\EditOrderForms\Edit_MC_OrderForm.resx">
       <DependentUpon>Edit_MC_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -733,6 +749,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\FormFabricCurtainTable.resx">
       <DependentUpon>FormFabricCurtainTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportOrderForms\FormHCTable.resx">
+      <DependentUpon>FormHCTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOrderForms\FormMCTable.resx">
       <DependentUpon>FormMCTable.cs</DependentUpon>

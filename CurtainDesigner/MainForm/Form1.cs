@@ -590,7 +590,10 @@ namespace CurtainDesigner
 
         private void iconButtonTableHorisontallJalousie_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender, Colors.color3);
+            currentClickButton = sender;
+            timerOpenSubMenu.Start();
+            OpenChildForm(new CurtainDesigner.ReportOrderForms.FormHCTable(), sender);
         }
 
         private void iconButtonOrderHorisontallJalousie_Click(object sender, EventArgs e)

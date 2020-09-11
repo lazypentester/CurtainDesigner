@@ -14,5 +14,6 @@ namespace CurtainDesigner.Classes
         public static readonly string PC_PATTERN = Classes.PathCombiner.join_combine("\\report_patterns\\pc_pattern.docx");
         public static readonly string RC_PATTERN = Classes.PathCombiner.join_combine("\\report_patterns\\rc_pattern.docx");
         public static readonly string MC_PATTERN = Classes.PathCombiner.join_combine("\\report_patterns\\mc_pattern.docx");
+        public static readonly string HC_PATTERN = Classes.PathCombiner.join_combine("\\report_patterns\\hc_pattern.docx");
     }
 }
