@@ -251,6 +251,8 @@
     <Compile Include="Classes\FabricCurtain.cs" />
     <Compile Include="Classes\FabricCurtain2.cs" />
     <Compile Include="Classes\FC_Caontainer.cs" />
+    <Compile Include="Classes\HC.cs" />
+    <Compile Include="Classes\HC2.cs" />
     <Compile Include="Classes\MagicImage\ClassMagicImage.cs" />
     <Compile Include="Classes\MagicImage\MagicLabels.cs" />
     <Compile Include="Classes\MC.cs" />
@@ -266,6 +268,7 @@
     <Compile Include="Classes\RC_Container.cs" />
     <Compile Include="Controllers\Classes\DNCControlerManager.cs" />
     <Compile Include="Controllers\Classes\FabricCurtainControlerManager.cs" />
+    <Compile Include="Controllers\Classes\HCControlerManager.cs" />
     <Compile Include="Controllers\Classes\MCControlerManager.cs" />
     <Compile Include="Controllers\Classes\PCControlerManager.cs" />
     <Compile Include="Controllers\Classes\RCControlerManager.cs" />
@@ -278,6 +281,7 @@
     </Compile>
     <Compile Include="Models\Classes\DNCManage.cs" />
     <Compile Include="Models\Classes\FabricCurtainManage.cs" />
+    <Compile Include="Models\Classes\HCManage.cs" />
     <Compile Include="Models\Classes\MCManage.cs" />
     <Compile Include="Models\Classes\PCManage.cs" />
     <Compile Include="Models\Classes\RCManage.cs" />
@@ -293,6 +297,12 @@
     </Compile>
     <Compile Include="OrderForms\FormFabricCurtainOrder.Designer.cs">
       <DependentUpon>FormFabricCurtainOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderForms\FormHCOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForms\FormHCOrder.Designer.cs">
+      <DependentUpon>FormHCOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderForms\FormMCOrder.cs">
       <SubType>Form</SubType>
@@ -586,6 +596,7 @@
     </Compile>
     <Compile Include="Views\Classes\DNCViewManage.cs" />
     <Compile Include="Views\Classes\FabricCurtainViewManage.cs" />
+    <Compile Include="Views\Classes\HCViewManage.cs" />
     <Compile Include="Views\Classes\MCViewManage.cs" />
     <Compile Include="Views\Classes\PCViewManage.cs" />
     <Compile Include="Views\Classes\RCViewManage.cs" />
@@ -667,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\FormFabricCurtainOrder.resx">
       <DependentUpon>FormFabricCurtainOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\FormHCOrder.resx">
+      <DependentUpon>FormHCOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForms\FormMCOrder.resx">
       <DependentUpon>FormMCOrder.cs</DependentUpon>

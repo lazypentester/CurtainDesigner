@@ -261,6 +261,7 @@
             this.iconButtonOrderHorisontallJalousie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonOrderHorisontallJalousie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonOrderHorisontallJalousie.UseVisualStyleBackColor = true;
+            this.iconButtonOrderHorisontallJalousie.Click += new System.EventHandler(this.iconButtonOrderHorisontallJalousie_Click);
             this.iconButtonOrderHorisontallJalousie.MouseEnter += new System.EventHandler(this.iconButtonOrderHorisontallJalousie_MouseEnter);
             this.iconButtonOrderHorisontallJalousie.MouseLeave += new System.EventHandler(this.iconButtonOrderHorisontallJalousie_MouseLeave);
             // 
@@ -474,6 +475,7 @@
             this.iconButtonTableHorisontallJalousie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButtonTableHorisontallJalousie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButtonTableHorisontallJalousie.UseVisualStyleBackColor = true;
+            this.iconButtonTableHorisontallJalousie.Click += new System.EventHandler(this.iconButtonTableHorisontallJalousie_Click);
             this.iconButtonTableHorisontallJalousie.MouseEnter += new System.EventHandler(this.iconButtonTableHorisontallJalousie_MouseEnter);
             this.iconButtonTableHorisontallJalousie.MouseLeave += new System.EventHandler(this.iconButtonTableHorisontallJalousie_MouseLeave);
             // 

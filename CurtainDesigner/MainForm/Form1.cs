@@ -587,5 +587,18 @@ namespace CurtainDesigner
             timerOpenSubMenu.Start();
             OpenChildForm(new CurtainDesigner.ReportOrderForms.FormMCTable(), sender);
         }
+
+        private void iconButtonTableHorisontallJalousie_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonOrderHorisontallJalousie_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Colors.color3);
+            currentClickButton = sender;
+            timerOpenSubMenu.Start();
+            OpenChildForm(new CurtainDesigner.OrderForms.FormHCOrder(), sender);
+        }
     }
 }
