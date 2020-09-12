@@ -243,6 +243,12 @@
     <Compile Include="AddForms\RCAddForm\RCPriceCategoryAddForm.Designer.cs">
       <DependentUpon>RCPriceCategoryAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\VCAddForm\VCAdditionalEquipmentAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\VCAddForm\VCAdditionalEquipmentAddForm.Designer.cs">
+      <DependentUpon>VCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ClassPatternPath.cs" />
     <Compile Include="Classes\ConnectionString.cs" />
     <Compile Include="Classes\DNC.cs" />
