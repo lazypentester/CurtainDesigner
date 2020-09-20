@@ -29,32 +29,49 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.buttonDrag = new System.Windows.Forms.Button();
             this.bunifuMetroTextboxEquipment = new System.Windows.Forms.TextBox();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.bunifuMetroTextboxCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.comboBoxCurtainType = new System.Windows.Forms.ComboBox();
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.iconButtonOk = new FontAwesome.Sharp.IconButton();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
-            this.buttonDrag = new System.Windows.Forms.Button();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.comboBoxCurtainType = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel28 = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             this.panel32.SuspendLayout();
             this.panel28.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 2;
+            this.bunifuElipse3.TargetControl = this.buttonDrag;
+            // 
+            // buttonDrag
+            // 
+            this.buttonDrag.BackColor = System.Drawing.Color.Gold;
+            this.buttonDrag.FlatAppearance.BorderSize = 0;
+            this.buttonDrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDrag.Location = new System.Drawing.Point(95, 7);
+            this.buttonDrag.Name = "buttonDrag";
+            this.buttonDrag.Size = new System.Drawing.Size(196, 7);
+            this.buttonDrag.TabIndex = 0;
+            this.buttonDrag.TabStop = false;
+            this.buttonDrag.UseVisualStyleBackColor = false;
             // 
             // bunifuMetroTextboxEquipment
             // 
@@ -100,6 +117,16 @@
             this.bunifuMetroTextboxCat.TabIndex = 3;
             this.bunifuMetroTextboxCat.TabStop = false;
             this.bunifuMetroTextboxCat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // comboBoxCurtainType
+            // 
+            this.comboBoxCurtainType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCurtainType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCurtainType.FormattingEnabled = true;
+            this.comboBoxCurtainType.Location = new System.Drawing.Point(132, 99);
+            this.comboBoxCurtainType.Name = "comboBoxCurtainType";
+            this.comboBoxCurtainType.Size = new System.Drawing.Size(239, 21);
+            this.comboBoxCurtainType.TabIndex = 1;
             // 
             // iconButtonCancel
             // 
@@ -194,52 +221,6 @@
             this.panel32.Size = new System.Drawing.Size(389, 25);
             this.panel32.TabIndex = 0;
             // 
-            // buttonDrag
-            // 
-            this.buttonDrag.BackColor = System.Drawing.Color.Gold;
-            this.buttonDrag.FlatAppearance.BorderSize = 0;
-            this.buttonDrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDrag.Location = new System.Drawing.Point(95, 7);
-            this.buttonDrag.Name = "buttonDrag";
-            this.buttonDrag.Size = new System.Drawing.Size(196, 7);
-            this.buttonDrag.TabIndex = 0;
-            this.buttonDrag.TabStop = false;
-            this.buttonDrag.UseVisualStyleBackColor = false;
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.bunifuMetroTextboxEquipment);
-            this.panel28.Controls.Add(this.numericUpDownPrice);
-            this.panel28.Controls.Add(this.bunifuMetroTextboxCat);
-            this.panel28.Controls.Add(this.comboBoxCurtainType);
-            this.panel28.Controls.Add(this.iconButtonCancel);
-            this.panel28.Controls.Add(this.iconButtonOk);
-            this.panel28.Controls.Add(this.panel29);
-            this.panel28.Controls.Add(this.panel30);
-            this.panel28.Controls.Add(this.panel31);
-            this.panel28.Controls.Add(this.panel32);
-            this.panel28.Controls.Add(this.label6);
-            this.panel28.Controls.Add(this.label1);
-            this.panel28.Controls.Add(this.label5);
-            this.panel28.Controls.Add(this.label4);
-            this.panel28.Controls.Add(this.label2);
-            this.panel28.Controls.Add(this.labelName);
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel28.Location = new System.Drawing.Point(0, 0);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(389, 391);
-            this.panel28.TabIndex = 1;
-            // 
-            // comboBoxCurtainType
-            // 
-            this.comboBoxCurtainType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxCurtainType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCurtainType.FormattingEnabled = true;
-            this.comboBoxCurtainType.Location = new System.Drawing.Point(132, 99);
-            this.comboBoxCurtainType.Name = "comboBoxCurtainType";
-            this.comboBoxCurtainType.Size = new System.Drawing.Size(239, 21);
-            this.comboBoxCurtainType.TabIndex = 1;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -250,6 +231,17 @@
             this.label6.Size = new System.Drawing.Size(16, 18);
             this.label6.TabIndex = 0;
             this.label6.Text = "$";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label1.Location = new System.Drawing.Point(353, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "$";
             // 
             // label5
             // 
@@ -305,10 +297,29 @@
             this.bunifuElipse2.ElipseRadius = 3;
             this.bunifuElipse2.TargetControl = this.iconButtonCancel;
             // 
-            // bunifuElipse3
+            // panel28
             // 
-            this.bunifuElipse3.ElipseRadius = 2;
-            this.bunifuElipse3.TargetControl = this.buttonDrag;
+            this.panel28.Controls.Add(this.bunifuMetroTextboxEquipment);
+            this.panel28.Controls.Add(this.numericUpDownPrice);
+            this.panel28.Controls.Add(this.bunifuMetroTextboxCat);
+            this.panel28.Controls.Add(this.comboBoxCurtainType);
+            this.panel28.Controls.Add(this.iconButtonCancel);
+            this.panel28.Controls.Add(this.iconButtonOk);
+            this.panel28.Controls.Add(this.panel29);
+            this.panel28.Controls.Add(this.panel30);
+            this.panel28.Controls.Add(this.panel31);
+            this.panel28.Controls.Add(this.panel32);
+            this.panel28.Controls.Add(this.label6);
+            this.panel28.Controls.Add(this.label1);
+            this.panel28.Controls.Add(this.label5);
+            this.panel28.Controls.Add(this.label4);
+            this.panel28.Controls.Add(this.label2);
+            this.panel28.Controls.Add(this.labelName);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel28.Location = new System.Drawing.Point(0, 0);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(389, 391);
+            this.panel28.TabIndex = 3;
             // 
             // bunifuDragControl1
             // 
@@ -316,17 +327,6 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.buttonDrag;
             this.bunifuDragControl1.Vertical = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(353, 297);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "$";
             // 
             // FCFabricAdditionalEquipmentAddForm
             // 
@@ -348,27 +348,27 @@
 
         #endregion
 
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private System.Windows.Forms.Button buttonDrag;
         private System.Windows.Forms.TextBox bunifuMetroTextboxEquipment;
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextboxCat;
+        internal System.Windows.Forms.ComboBox comboBoxCurtainType;
         private FontAwesome.Sharp.IconButton iconButtonCancel;
         private FontAwesome.Sharp.IconButton iconButtonOk;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Button buttonDrag;
-        private System.Windows.Forms.Panel panel28;
-        internal System.Windows.Forms.ComboBox comboBoxCurtainType;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelName;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private System.Windows.Forms.Panel panel28;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.Label label1;
     }
 }

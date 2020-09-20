@@ -243,11 +243,29 @@
     <Compile Include="AddForms\RCAddForm\RCPriceCategoryAddForm.Designer.cs">
       <DependentUpon>RCPriceCategoryAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\VCAddForm\FormAddNewSideControllVC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\VCAddForm\FormAddNewSideControllVC.Designer.cs">
+      <DependentUpon>FormAddNewSideControllVC.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\VCAddForm\VCAdditionalEquipmentAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddForms\VCAddForm\VCAdditionalEquipmentAddForm.Designer.cs">
       <DependentUpon>VCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\VCAddForm\VCFabricAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\VCAddForm\VCFabricAddForm.Designer.cs">
+      <DependentUpon>VCFabricAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\VCAddForm\VCTypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\VCAddForm\VCTypeAddForm.Designer.cs">
+      <DependentUpon>VCTypeAddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\ClassPatternPath.cs" />
     <Compile Include="Classes\ConnectionString.cs" />
@@ -463,6 +481,7 @@
     <Compile Include="UserControls\Classes\Subtype.cs" />
     <Compile Include="UserControls\Classes\Type.cs" />
     <Compile Include="UserControls\Classes\TypeWithPrice.cs" />
+    <Compile Include="UserControls\Classes\VC_Fabric.cs" />
     <Compile Include="UserControls\UCFormFCORDER\UCStatusNotOk.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -589,6 +608,30 @@
     <Compile Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_fabricRC.Designer.cs">
       <DependentUpon>UserControlCurt_fabricRC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_AdditionalEquipmentVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_AdditionalEquipmentVC.Designer.cs">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_fabricVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_fabricVC.Designer.cs">
+      <DependentUpon>UserControlCurt_fabricVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_TypeVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_TypeVC.Designer.cs">
+      <DependentUpon>UserControlCurt_TypeVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlSideControllDataBaseVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSettingsVerticalCurtain\UserControlSideControllDataBaseVC.Designer.cs">
+      <DependentUpon>UserControlSideControllDataBaseVC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlClientDataBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -688,6 +731,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\RCAddForm\RCPriceCategoryAddForm.resx">
       <DependentUpon>RCPriceCategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\VCAddForm\FormAddNewSideControllVC.resx">
+      <DependentUpon>FormAddNewSideControllVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\VCAddForm\VCAdditionalEquipmentAddForm.resx">
+      <DependentUpon>VCAdditionalEquipmentAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\VCAddForm\VCFabricAddForm.resx">
+      <DependentUpon>VCFabricAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\VCAddForm\VCTypeAddForm.resx">
+      <DependentUpon>VCTypeAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -842,6 +897,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettingsRomanCurtain\UserControlCurt_fabricRC.resx">
       <DependentUpon>UserControlCurt_fabricRC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_AdditionalEquipmentVC.resx">
+      <DependentUpon>UserControlCurt_AdditionalEquipmentVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_fabricVC.resx">
+      <DependentUpon>UserControlCurt_fabricVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsVerticalCurtain\UserControlCurt_TypeVC.resx">
+      <DependentUpon>UserControlCurt_TypeVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSettingsVerticalCurtain\UserControlSideControllDataBaseVC.resx">
+      <DependentUpon>UserControlSideControllDataBaseVC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlClientDataBase.resx">
       <DependentUpon>UserControlClientDataBase.cs</DependentUpon>
