@@ -1,5 +1,5 @@
 # CurtainDesigner
 
 <p>
-    <img src="relativePath/file.png" width="220" height="240" />
+    <img src="CurtainDesignerImgs/CurtainDesigner1.jpg" width="220" height="240" />
 </p>
