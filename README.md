@@ -4,4 +4,4 @@
     <img src="AlienOld/CurtainDesignerImgs/CurtainDesigner1.jpg" width="220" height="240" />
 </p>
 
-![Logo](urtainDesignerImgs/CurtainDesigner1.jpg)
+![Logo](CurtainDesignerImgs/CurtainDesigner1.jpg) 
