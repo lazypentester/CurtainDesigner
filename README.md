@@ -1,7 +1,9 @@
 # CurtainDesigner
 
 <p>
-    <img src="AlienOld/CurtainDesignerImgs/CurtainDesigner1.jpg" width="220" height="240" />
+    <img src="https://github.com/AlienOld/CurtainDesignerImgs/blob/main/gg.png" width="1290" height="725" />
 </p>
 
-![Logo](CurtainDesignerImgs/CurtainDesigner1.jpg) 
+#![Logo](/CurtainDesignerImgs/CurtainDesigner1.jpg) 
+
+#![Logo](https://github.com/AlienOld/CurtainDesignerImgs/blob/main/gg.png) 
